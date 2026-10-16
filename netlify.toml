@@ -1,3 +1,19 @@
 [build]
   publish = "website"
   command = ""
+
+[functions]
+  deno_import_map = "./netlify/edge-functions/import_map.json"
+
+# Content routes only; dashboard, leads, APIs and assets remain outside this scope.
+[[edge_functions]]
+  function = "markdown"
+  path = "/"
+
+[[edge_functions]]
+  function = "markdown"
+  path = "/index.html"
+
+[[edge_functions]]
+  function = "markdown"
+  path = "/index"
