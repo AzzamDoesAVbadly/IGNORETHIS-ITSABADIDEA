@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "npm:turndown@7.2.0": "https://esm.sh/turndown@7.2.0?bundle&target=es2022",
+    "npm:linkedom@0.18.12": "https://esm.sh/linkedom@0.18.12/worker?bundle&target=es2022"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@netlify/edge-functions": "^4.0.2"
+  }
+}
