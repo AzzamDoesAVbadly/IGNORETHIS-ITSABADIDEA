@@ -1,0 +1,11 @@
+{
+  "cpu": "Intel(R) Xeon(R) CPU E5-1680 v2 @ 3.00GHz",
+  "ram_mb": 65536,
+  "gpu": "Apple silicon / integrated GPU",
+  "vram_mb": 0,
+  "free_disk_mb": 169106,
+  "os": "macOS-12.7.6-x86_64-i386-64bit-Mach-O",
+  "model_recommendation": "qwen2.5-coder:7b-instruct-q4_K_M",
+  "reason": "Good local fit for a 64k+ context model on a modest MacBook-sized setup while staying lightweight.",
+  "checked_at": "2026-10-15T20:08:57"
+}

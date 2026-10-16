@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lead list | Cheap AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Cheap AI</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/leads">Lead list</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="card">
+        <h1>Lead list</h1>
+        <p>This page shows every captured email and the audience topic it came from.</p>
+        <table id="lead-table" class="data-table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Topic</th>
+              <th>Source</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        try {
+          const response = await fetch('/api/leads');
+          const payload = await response.json();
+          const tbody = document.querySelector('#lead-table tbody');
+          tbody.innerHTML = (payload.items || []).map(row => `
+            <tr>
+              <td>${row.email}</td>
+              <td>${row.topic}</td>
+              <td>${row.source}</td>
+              <td>${new Date(row.created_at).toLocaleString()}</td>
+            </tr>
+          `).join('') || '<tr><td colspan="4">No leads yet.</td></tr>';
+        } catch (error) {
+          document.querySelector('#lead-table tbody').innerHTML = '<tr><td colspan="4">Lead data unavailable.</td></tr>';
+        }
+      });
+    </script>
+  </body>
+</html>

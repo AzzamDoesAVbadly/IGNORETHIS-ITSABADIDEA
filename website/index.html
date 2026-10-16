@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheap AI Business</title>
+    <meta name="description" content="A quiet, low-cost local AI business prototype." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Cheap AI</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+        <a href="#plan">Plan</a>
+        <a href="#lead-form">Lead capture</a>
+      </nav>
+    </header>
+
+    <div id="consent-banner" class="consent-banner hidden">
+      <div>
+        <strong>We use first-party cookies only.</strong>
+        <p>We keep a local profile of what you’re interested in so the next offer and article feel relevant.</p>
+      </div>
+      <div class="consent-actions">
+        <button type="button" class="secondary" data-consent="accept">Accept</button>
+        <button type="button" class="primary" data-consent="decline">Decline</button>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">local-only, low-cost, no nonsense</p>
+          <h1>Build the business with the budget still intact.</h1>
+          <p class="lede">
+            Static pages, local research, and a tight SQLite trail keep this project lean while it proves the machine can work.
+          </p>
+          <div class="actions">
+            <a class="primary" href="#plan">See the plan</a>
+            <a class="secondary" href="#lead-form">Get updates</a>
+          </div>
+        </div>
+        <div class="panel">
+          <p>Current state</p>
+          <strong>RUN</strong>
+          <small id="status-line">Budget mode: humble and cheap.</small>
+        </div>
+      </section>
+
+      <section id="about" class="card">
+        <h2>What this is</h2>
+        <p>
+          A local-first AI business prototype focused on proving demand before spending money. The site keeps the cost low and the workflow transparent.
+        </p>
+      </section>
+
+      <section id="brand" class="card">
+        <h2>Brand voice</h2>
+        <div id="brand-voice" class="voice-copy"></div>
+        <div id="mood-grid" class="mood-grid"></div>
+      </section>
+
+      <section id="stack" class="card grid-two">
+        <div>
+          <h2>Stack</h2>
+          <ul>
+            <li>Local SQLite database</li>
+            <li>Static HTML/CSS/JS site</li>
+            <li>Local research notes and log files</li>
+            <li>Ollama + local automation loop</li>
+          </ul>
+        </div>
+        <div class="mini-panel">
+          <h3>Traction</h3>
+          <ul id="topic-list" class="topic-list"></ul>
+        </div>
+      </section>
+
+      <section id="plan" class="card">
+        <h2>Cheap plan</h2>
+        <ol>
+          <li>Keep the stack local and free until the idea proves out.</li>
+          <li>Collect real research and decisions in the database.</li>
+          <li>Publish a recurring value piece and measure the response.</li>
+          <li>Only then decide if there is a product worth monetizing.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>Monetization gate</h2>
+        <p>We do not sell anything until the signal is real. The current gate is set at <strong>10 leads or 10 score points</strong>.</p>
+        <p id="gate-message">Status: locked until traction clears the threshold.</p>
+      </section>
+
+      <section class="card">
+        <h2>Weird + corporate content engine</h2>
+        <p>This system generates absurdly polished, brainstormy content: brainrot video prompts, drop-sell items, print-on-demand concepts, and listicles with a weird-corporate tone.</p>
+        <ul>
+          <li>AI with taste: weird enough to stand out, structured enough to read.</li>
+          <li>Intergalactic cable-style listicles and quizzes.</li>
+          <li>Left-leaning brainrot video prompts for public-goods vibes.</li>
+          <li>Print-to-order objects that exist on a timeline.</li>
+          <li>Random dropsell inventory that feels like a future museum gift shop.</li>
+        </ul>
+      </section>
+
+      <section id="journey" class="card journey-card">
+        <div class="journey-header">
+          <span class="eyebrow">procedural corridor</span>
+          <h2>Follow the signal deeper.</h2>
+        </div>
+        <div id="journey-room" class="journey-room"></div>
+        <div class="journey-actions">
+          <button type="button" id="next-room">Open the next corridor</button>
+        </div>
+      </section>
+
+      <section id="offers" class="card">
+        <h2>Offer stack</h2>
+        <p>The offer is intentionally gated until the signal is real.</p>
+        <div id="offer-list" class="offer-list"></div>
+        <form id="checkout-form" class="lead-form">
+          <input id="buyer-email" type="email" name="email" placeholder="you@example.com" required />
+          <select id="offer-select" name="product"></select>
+          <button type="submit">Buy the next step</button>
+        </form>
+        <p id="checkout-status" class="success-message" aria-live="polite"></p>
+      </section>
+
+      <section id="lead-form" class="card">
+        <h2>Lead capture</h2>
+        <p>Leave an email for the recurring value updates and research loop.</p>
+        <form id="lead-form-element" class="lead-form">
+          <input id="lead-email" type="email" name="email" placeholder="you@example.com" required />
+          <select id="lead-topic" name="topic">
+            <option value="general">General AI business</option>
+            <option value="local-stack">Local stack</option>
+            <option value="content">Content automation</option>
+            <option value="growth">Growth loops</option>
+          </select>
+          <button type="submit">Join the list</button>
+        </form>
+        <p id="lead-success" class="success-message" aria-live="polite"></p>
+      </section>
+
+      <section id="articles" class="card">
+        <h2>Recurring value piece</h2>
+        <div id="article-list" class="article-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

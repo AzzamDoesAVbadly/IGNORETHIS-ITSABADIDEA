@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Cheap AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Cheap AI</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/leads">Lead list</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="card metrics-grid">
+        <div>
+          <small>Total leads</small>
+          <h2 id="total-leads">0</h2>
+        </div>
+        <div>
+          <small>Monetization gate</small>
+          <h2 id="gate-status">LOCKED</h2>
+        </div>
+        <div>
+          <small>Top topic</small>
+          <h2 id="top-topic">n/a</h2>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Topic traction</h2>
+        <ul id="dashboard-topics" class="topic-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Recurring content</h2>
+        <div id="dashboard-articles" class="article-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>SEO refresh queue</h2>
+        <div id="seo-queue" class="article-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Consent and personalization</h2>
+        <div id="personalization-list" class="article-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        try {
+          const dashboardResponse = await fetch('/api/dashboard');
+          const dashboardPayload = await dashboardResponse.json();
+
+          document.getElementById('total-leads').textContent = dashboardPayload.total_leads || 0;
+          document.getElementById('gate-status').textContent = dashboardPayload.gate ? (dashboardPayload.gate.met ? 'OPEN' : 'LOCKED') : 'LOCKED';
+          document.getElementById('top-topic').textContent = dashboardPayload.top_topic || 'n/a';
+
+          const topics = document.getElementById('dashboard-topics');
+          topics.innerHTML = (dashboardPayload.topic_summary || []).map(item => `
+            <li><span>${item.topic}</span><strong>${item.score}</strong></li>
+          `).join('') || '<li>No data yet.</li>';
+
+          const articles = document.getElementById('dashboard-articles');
+          articles.innerHTML = (dashboardPayload.articles || []).map(article => `
+            <div class="article-item">
+              <h3>${article.title}</h3>
+              <small>${article.topic} • ${new Date(article.published_at).toLocaleString()}</small>
+              <p>${article.summary}</p>
+            </div>
+          `).join('') || '<div class="article-item"><h3>No published pieces yet.</h3></div>';
+        } catch (error) {
+          document.getElementById('total-leads').textContent = '0';
+          document.getElementById('gate-status').textContent = 'LOCKED';
+          document.getElementById('top-topic').textContent = 'n/a';
+          document.getElementById('dashboard-topics').innerHTML = '<li>Dashboard unavailable.</li>';
+        }
+
+        try {
+          const seoResponse = await fetch('/api/seo');
+          const seoPayload = await seoResponse.json();
+          const queue = document.getElementById('seo-queue');
+          queue.innerHTML = (seoPayload.queue || []).map(job => `
+            <div class="article-item">
+              <h3>${job.topic}</h3>
+              <small>${job.status} • ${job.queued_at || ''}</small>
+              <p>${job.summary || 'Queued refresh'}</p>
+            </div>
+          `).join('') || '<div class="article-item"><h3>No SEO jobs queued.</h3></div>';
+        } catch (error) {
+          document.getElementById('seo-queue').innerHTML = '<div class="article-item"><h3>SEO queue unavailable.</h3></div>';
+        }
+
+        try {
+          const personalResponse = await fetch('/api/admin/personalization');
+          const personalPayload = await personalResponse.json();
+          const list = document.getElementById('personalization-list');
+          list.innerHTML = (personalPayload.profiles || []).map(profile => `
+            <div class="article-item">
+              <h3>${profile.session_id}</h3>
+              <small>${profile.consent} • ${new Date(profile.last_seen).toLocaleString()}</small>
+              <p>${(profile.interests || [])}</p>
+            </div>
+          `).join('') || '<div class="article-item"><h3>No consented profiles yet.</h3></div>';
+        } catch (error) {
+          document.getElementById('personalization-list').innerHTML = '<div class="article-item"><h3>Profile data unavailable.</h3></div>';
+        }
+      });
+    </script>
+  </body>
+</html>
