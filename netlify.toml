@@ -1,2 +1,3 @@
-update
-
+[build]
+  command = "cd my-project && npm install && npm run build"
+  publish = "my-project/dist"
