@@ -1,0 +1,1 @@
+// This file provides TypeScript definitions for Vite, ensuring proper type checking.

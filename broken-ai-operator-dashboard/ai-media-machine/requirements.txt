@@ -1,0 +1,9 @@
+# requirements.txt
+
+requests==2.26.0
+numpy==1.21.2
+pandas==1.3.3
+opencv-python==4.5.3.20210927
+ffmpeg-python==0.2.0
+schedule==1.1.0
+```

@@ -1,0 +1,29 @@
+{
+  "name": "chaotic-media-site",
+  "version": "1.0.0",
+  "description": "A chaotic media website inspired by BuzzFeed, Newgrounds, and Adult Swim, featuring a content engine and monetization strategies.",
+  "main": "src/main.tsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "devDependencies": {
+    "vite": "^3.0.0",
+    "typescript": "^4.0.0",
+    "@vitejs/plugin-react": "^2.0.0"
+  },
+  "keywords": [
+    "media",
+    "chaotic",
+    "react",
+    "vite"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

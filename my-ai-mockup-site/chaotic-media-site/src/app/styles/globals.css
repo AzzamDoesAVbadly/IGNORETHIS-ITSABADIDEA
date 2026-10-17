@@ -1,0 +1,110 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Impact', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+a {
+  color: #ff4081;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  background: linear-gradient(90deg, #ff4081, #ffeb3b);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-banner {
+  background-image: url('../assets/hero-bg.jpg');
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.article-feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.content-card {
+  background-color: #1e1e1e;
+  border: 2px solid #ff4081;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.content-card:hover {
+  transform: scale(1.05);
+}
+
+.monetization-strip {
+  background-color: #ffeb3b;
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar {
+  background-color: #1e1e1e;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.trending-ticker {
+  background-color: #ff4081;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  animation: ticker 10s linear infinite;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.glitch {
+  position: relative;
+  color: #ff4081;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 1px 1px 0 rgba(255, 0, 0, 0.8); }
+  20% { text-shadow: -1px -1px 0 rgba(0, 255, 0, 0.8); }
+  40% { text-shadow: 1px 1px 0 rgba(0, 0, 255, 0.8); }
+  60% { text-shadow: -1px -1px 0 rgba(255, 255, 0, 0.8); }
+  80% { text-shadow: 1px 1px 0 rgba(255, 0, 255, 0.8); }
+  100% { text-shadow: 0 0 0 rgba(0, 0, 0, 0); }
+}
