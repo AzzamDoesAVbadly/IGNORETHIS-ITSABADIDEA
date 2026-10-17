@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: lime;
+    filter: contrast(1.2) brightness(0.9);
+}
+
+.crt-effect {
+    position: relative;
+    overflow: hidden;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+}
+
+.crt-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 255, 0, 0.1);
+    mix-blend-mode: multiply;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+    color: lime;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 1px 1px 0 rgba(0, 255, 0, 0.5), -1px -1px 0 rgba(0, 255, 0, 0.5); }
+    20% { text-shadow: -1px -1px 0 rgba(0, 255, 0, 0.5), 1px 1px 0 rgba(0, 255, 0, 0.5); }
+    40% { text-shadow: 1px 1px 0 rgba(0, 255, 0, 0.5), -1px -1px 0 rgba(0, 255, 0, 0.5); }
+    60% { text-shadow: -1px -1px 0 rgba(0, 255, 0, 0.5), 1px 1px 0 rgba(0, 255, 0, 0.5); }
+    80% { text-shadow: 1px 1px 0 rgba(0, 255, 0, 0.5), -1px -1px 0 rgba(0, 255, 0, 0.5); }
+    100% { text-shadow: -1px -1px 0 rgba(0, 255, 0, 0.5), 1px 1px 0 rgba(0, 255, 0, 0.5); }
+}
+
+.telemetry-panel {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid lime;
+    padding: 10px;
+    margin: 10px;
+    animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    50% { transform: translate(-2px, 2px); }
+    100% { transform: translate(2px, -2px); }
+}

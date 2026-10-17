@@ -1,19 +1,13 @@
 {
-  "name": "my-project",
+  "name": "cheap-ai-site",
+  "private": true,
   "version": "1.0.0",
-  "description": "A sample project using TypeScript",
-  "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "typescript": "^4.0.0",
-    "ts-node": "^10.0.0"
+    "vite": "^5.4.10"
   }
 }

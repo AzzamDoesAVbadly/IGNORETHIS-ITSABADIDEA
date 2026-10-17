@@ -1,0 +1,45 @@
+node_modules
+dist
+.git
+.gitignore<div class="hero-copy">
+  <div class="eyebrow">LOCAL-ONLY // LOW-COST // NO NONSENSE</div>
+
+  <h1 class="glitch" data-text="Build the business with the budget still intact.">
+    Build the business with the budget still intact.
+  </h1>
+
+  <p>
+    Static pages, local research, and a tight SQLite trail keep this project lean while it
+    proves the machine can work.
+  </p>
+
+  <div class="cta-row">
+    <a href="#plan" class="btn btn-primary">See the plan</a>
+    <a href="#lead-capture" class="btn btn-secondary">Get updates</a>
+  </div>
+</div>
+
+<aside class="route-panel" id="route-panel">
+  <div class="route-topline">
+    <span class="signal-dot"></span>
+    <span>current signal</span>
+  </div>
+
+  <div class="route-label">Current state</div>
+  <div class="route-status glitch" id="route-status" data-text="RUN">RUN</div>
+
+  <div class="route-meta">
+    <span id="route-mode">Budget mode: humble and cheap</span>
+    <span id="route-date">10/15/2026</span>
+  </div>
+
+  <div class="signal-meter">
+    <div class="meter-head">
+      <span>signal integrity</span>
+      <strong>98.4%</strong>
+    </div>
+    <div class="meter-track">
+      <span></span>
+    </div>
+  </div>
+</aside>

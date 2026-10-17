@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheap AI</title>
+    <meta name="description" content="Local-first AI business prototype" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+
+    <header class="topbar">
+      <div class="brand">CHEAP AI</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+        <a href="#plan">Plan</a>
+        <a href="#lead-capture">Lead capture</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">LOCAL-ONLY // LOW-COST // NO NONSENSE</div>
+
+          <h1 class="glitch" data-text="Build the business with the budget still intact.">
+            Build the business with the budget still intact.
+          </h1>
+
+          <p>
+            Static pages, local research, and a tight SQLite trail keep this project lean while it
+            proves the machine can work.
+          </p>
+
+          <div class="cta-row">
+            <a href="#plan" class="btn btn-primary">See the plan</a>
+            <a href="#lead-capture" class="btn btn-secondary">Get updates</a>
+          </div>
+        </div>
+
+        <aside class="route-panel" id="route-panel">
+          <div class="route-topline">
+            <span class="signal-dot"></span>
+            <span>current signal</span>
+          </div>
+
+          <div class="route-label">Current state</div>
+          <div class="route-status glitch" id="route-status" data-text="RUN">RUN</div>
+
+          <div class="route-meta">
+            <span id="route-mode">Budget mode: humble and cheap</span>
+            <span id="route-date">10/15/2026</span>
+          </div>
+
+          <div class="signal-meter">
+            <div class="meter-head">
+              <span>signal integrity</span>
+              <strong>98.4%</strong>
+            </div>
+            <div class="meter-track">
+              <span></span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="feature-panel" id="about">
+        <div class="card-header">What this is</div>
+        <p>
+          A local-first AI business prototype focused on proving demand before spending money.
+          The site keeps the cost low and the workflow transparent.
+        </p>
+      </section>
+
+      <section id="stack" class="section">
+        <div class="section-head">
+          <span class="eyebrow">Stack</span>
+          <h2>Minimal stack. Maximum signal.</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="mini-card">
+            <h3>Local AI</h3>
+            <p>Run the business logic and research locally without cloud lock-in.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Static front-end</h3>
+            <p>Simple pages, no heavy frameworks, no spendy runtime.</p>
+          </article>
+          <article class="mini-card">
+            <h3>SQLite + files</h3>
+            <p>Store the trail and the working notes without a giant backend.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="plan" class="section">
+        <div class="section-head">
+          <span class="eyebrow">Plan</span>
+          <h2>Prove it before it scales.</h2>
+        </div>
+
+        <div class="plan-grid">
+          <article class="plan-box">
+            <span>Phase 1</span>
+            <h3>Local prototype</h3>
+            <p>Validate the positioning and offer without external spend.</p>
+          </article>
+          <article class="plan-box active">
+            <span>Phase 2</span>
+            <h3>Route-aware UI</h3>
+            <p>AI starts curating the story and user path as they browse.</p>
+          </article>
+          <article class="plan-box">
+            <span>Phase 3</span>
+            <h3>Signal capture</h3>
+            <p>Turn the site into a funnel that responds to behavior and intent.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lead-capture" id="lead-capture">
+        <div class="lead-shell">
+          <div class="lead-copy">
+            <span class="eyebrow">Lead capture</span>
+            <h2>Get product updates.</h2>
+          </div>
+
+          <form id="lead-form" class="lead-form">
+            <input type="email" name="email" placeholder="you@example.com" />
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
