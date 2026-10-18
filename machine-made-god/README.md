@@ -22,6 +22,7 @@ The roulette rotates between whichever providers have keys. More keys mean fewer
 | Mistral | https://console.mistral.ai/api-keys | `MISTRAL_API_KEY` |
 | Cerebras | https://cloud.cerebras.ai | `CEREBRAS_API_KEY` |
 | *Optional paid fallback:* Claude | https://console.anthropic.com | `ANTHROPIC_API_KEY` |
+| *Optional paid fallback:* OpenAI | https://platform.openai.com/api-keys (needs prepaid credits) | `OPENAI_API_KEY` |
 
 Free tiers have usage limits that change over time, and some free tiers (for example Gemini's) may use your prompts to improve their models. That's fine for public satire, but don't put anything private in the prompts. Claude is only used if every free provider fails on a given piece, and only if you add its key. Leave it out to stay at $0.
 

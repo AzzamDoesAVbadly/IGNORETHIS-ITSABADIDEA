@@ -75,13 +75,13 @@ async function callOpenAICompatible(p, { system, user, schemaName }, ctx) {
   const jsonMode = ctx.state.providers?.[p.id]?.jsonMode ?? p.jsonMode;
   const body = {
     model,
-    temperature: ctx.config.temperature ?? 0.9,
-    max_tokens: 8000,
+    [p.maxTokensParam || "max_tokens"]: 8000,
     messages: [
       { role: "system", content: system },
       { role: "user", content: user },
     ],
   };
+  if (!p.noTemperature) body.temperature = ctx.config.temperature ?? 0.9;
   if (jsonMode) body.response_format = { type: "json_object" };
 
   let res;
@@ -104,6 +104,8 @@ async function callOpenAICompatible(p, { system, user, schemaName }, ctx) {
   const text = await res.text();
   if (!res.ok) {
     const lower = text.toLowerCase();
+    // Out of credits / quota: bench for a day rather than retrying every run.
+    if (/insufficient_quota|credit_balance|billing|no credits/.test(lower)) throw new ProviderError("out of credits", { kind: "auth", status: res.status });
     if (res.status === 429) throw new ProviderError(`rate limited (${schemaName})`, { kind: "rate_limit", status: 429 });
     if (res.status === 401 || res.status === 403) throw new ProviderError("key rejected", { kind: "auth", status: res.status });
     if (jsonMode && res.status === 400 && lower.includes("response_format")) {

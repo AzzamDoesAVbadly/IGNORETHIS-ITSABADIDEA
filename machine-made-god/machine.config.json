@@ -156,6 +156,35 @@
       "jsonMode": true
     },
     {
+      "id": "openai",
+      "type": "openai",
+      "baseUrl": "https://api.openai.com/v1",
+      "keyEnv": "OPENAI_API_KEY",
+      "model": "gpt-5-mini",
+      "prefer": [
+        "gpt-5-mini",
+        "gpt-4.1-mini"
+      ],
+      "avoid": [
+        "nano",
+        "codex",
+        "pro",
+        "search",
+        "audio",
+        "realtime",
+        "tts",
+        "image",
+        "transcribe",
+        "chat-latest",
+        "preview"
+      ],
+      "tier": "paid",
+      "weight": 1,
+      "jsonMode": true,
+      "noTemperature": true,
+      "maxTokensParam": "max_completion_tokens"
+    },
+    {
       "id": "claude",
       "type": "anthropic",
       "keyEnv": "ANTHROPIC_API_KEY",
