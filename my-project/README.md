@@ -1,51 +1,39 @@
-# My Project
+# Cheap AI — landing site
 
-## Overview
-This project is a TypeScript application that serves as a template for building scalable web applications. It includes essential files and configurations to get started quickly.
+The public site for the project. Plain HTML + CSS + JS, built with Vite, deployed to Netlify (or Vercel).
 
-## Project Structure
+## Run it locally
+
+```bash
+cd my-project
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # outputs dist/
+npm run preview   # serve the built dist/
 ```
-my-project
-├── .vscode
-│   └── settings.json
-├── src
-│   ├── app.ts
-│   └── index.ts
-├── .gitignore
-├── package.json
-├── README.md
-├── tsconfig.json
+
+## Layout
+
+```text
+my-project/
+├── index.html          # the page
+├── src/main.js         # scroll-spy route panel, live clock, lead form
+├── src/styles.css
+├── public/             # copied as-is: favicon.svg, thanks.html
 └── netlify.toml
 ```
 
-## Setup Instructions
+## Lead form
 
-1. **Clone the repository**
-   ```
-   git clone <repository-url>
-   cd my-project
-   ```
+The form uses [Netlify Forms](https://docs.netlify.com/forms/setup/). Netlify finds the form in
+`index.html` at deploy time, and submissions show up under **Site → Forms** in the Netlify
+dashboard. You may need to enable form detection there once.
 
-2. **Install dependencies**
-   ```
-   npm install
-   ```
+- In `npm run dev` the submission is faked (logged to the console), since Netlify Forms only exists on the deployed site.
+- Without JavaScript the form still works: it posts normally and lands on `/thanks.html`.
+- On Vercel the form won't store anything. Netlify is the intended host.
 
-3. **Run the application**
-   ```
-   npm start
-   ```
+## Deploy
 
-## Usage
-- The main application logic is located in `src/app.ts`.
-- The entry point for the application is `src/index.ts`, which starts the server.
-
-## Configuration
-- The TypeScript configuration can be found in `tsconfig.json`.
-- Workspace-specific settings are located in `.vscode/settings.json`.
-
-## Deployment
-This project can be deployed using Netlify. Configuration settings are specified in `netlify.toml`. 
-
-## License
-This project is licensed under the MIT License.
+The repo-root `netlify.toml` and `vercel.json` both point at this folder, so connecting the repo
+to either host with default settings deploys this site.

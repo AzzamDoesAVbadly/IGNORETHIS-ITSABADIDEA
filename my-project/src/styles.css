@@ -148,13 +148,13 @@ body::before {
 .glitch::before {
   transform: translate(-2px, 0);
   color: var(--cyan);
-  clip-path: inset(0 0 44% 0);
+  clip-path: inset(50% 0 50% 0);
 }
 
 .glitch::after {
   transform: translate(2px, 0);
   color: var(--red);
-  clip-path: inset(44% 0 0 0);
+  clip-path: inset(50% 0 50% 0);
 }
 
 .hero-copy p {
@@ -167,6 +167,7 @@ body::before {
 
 .cta-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-top: 30px;
 }
@@ -183,6 +184,7 @@ body::before {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid transparent;
+  white-space: nowrap;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -203,6 +205,7 @@ body::before {
 }
 
 .route-panel {
+  --accent: #f7d8ff;
   position: relative;
   background: linear-gradient(180deg, rgba(19, 11, 27, 0.96), rgba(11, 8, 18, 0.95));
   border: 1px solid var(--line);
@@ -210,8 +213,11 @@ body::before {
   padding: 22px 22px 18px;
   box-shadow:
     0 30px 60px rgba(11, 8, 18, 0.55),
+    0 0 26px color-mix(in srgb, var(--accent) 16%, transparent),
     inset 0 0 0 1px rgba(255,255,255,0.02);
+  border-color: color-mix(in srgb, var(--accent) 33%, transparent);
   min-height: 230px;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .route-panel::before {
@@ -295,6 +301,7 @@ body::before {
   display: block;
   width: 98.4%;
   height: 100%;
+  transition: width 1.2s cubic-bezier(.2,.8,.2,1);
   background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
   box-shadow: 0 0 12px rgba(154, 202, 255, 0.6);
 }
@@ -409,6 +416,12 @@ body::before {
 
 .lead-form {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lead-row {
+  display: flex;
   gap: 12px;
 }
 
@@ -438,11 +451,305 @@ body::before {
     grid-template-columns: 1fr;
   }
 
-  .lead-form {
+  .lead-row {
     flex-direction: column;
   }
 
+  .topbar {
+    padding: 14px 18px;
+    gap: 14px;
+  }
+
   .nav {
+    overflow-x: auto;
+    gap: 14px;
+    scrollbar-width: none;
+  }
+
+  .hero {
+    padding-top: 44px;
+  }
+
+  .btn {
+    padding: 0 18px;
+    font-size: 0.85rem;
+  }
+
+  .route-clock {
     display: none;
   }
+
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+/* ---------- polish ---------- */
+
+.brand {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand span {
+  margin-left: 2px;
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav a {
+  position: relative;
+  padding: 6px 0;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), var(--pink));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav a.active {
+  color: var(--ink);
+}
+
+.nav a.active::after {
+  transform: scaleX(1);
+}
+
+.cursor-glow {
+  position: fixed;
+  top: -200px;
+  left: -200px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(181, 98, 255, 0.12), transparent 65%);
+  transition: transform 0.25s ease-out;
+  z-index: 0;
+}
+
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* the headline glitches every few seconds */
+.hero-copy h1.glitch::before {
+  animation: glitch-top 4.2s infinite steps(1);
+}
+
+.hero-copy h1.glitch::after {
+  animation: glitch-bottom 4.2s infinite steps(1);
+}
+
+@keyframes glitch-top {
+  0%, 92%, 100% { transform: translate(-2px, 0); clip-path: inset(50% 0 50% 0); }
+  93% { transform: translate(-7px, -2px); clip-path: inset(10% 0 70% 0); }
+  95% { transform: translate(5px, 1px); clip-path: inset(30% 0 40% 0); }
+  97% { transform: translate(-3px, 0); clip-path: inset(78% 0 8% 0); }
+}
+
+@keyframes glitch-bottom {
+  0%, 92%, 100% { transform: translate(2px, 0); clip-path: inset(50% 0 50% 0); }
+  93% { transform: translate(6px, 2px); clip-path: inset(65% 0 10% 0); }
+  95% { transform: translate(-5px, -1px); clip-path: inset(50% 0 25% 0); }
+  97% { transform: translate(3px, 0); clip-path: inset(12% 0 76% 0); }
+}
+
+.route-status.burst::before {
+  animation: burst-top 0.45s steps(1);
+}
+
+.route-status.burst::after {
+  animation: burst-bottom 0.45s steps(1);
+}
+
+@keyframes burst-top {
+  0% { transform: translate(-8px, -2px); clip-path: inset(10% 0 60% 0); }
+  33% { transform: translate(6px, 1px); clip-path: inset(30% 0 35% 0); }
+  66% { transform: translate(-4px, 0); clip-path: inset(0 0 55% 0); }
+  100% { transform: translate(-2px, 0); clip-path: inset(50% 0 50% 0); }
+}
+
+@keyframes burst-bottom {
+  0% { transform: translate(7px, 2px); clip-path: inset(60% 0 10% 0); }
+  33% { transform: translate(-6px, -1px); clip-path: inset(45% 0 25% 0); }
+  66% { transform: translate(4px, 0); clip-path: inset(70% 0 0 0); }
+  100% { transform: translate(2px, 0); clip-path: inset(50% 0 50% 0); }
+}
+
+.route-status {
+  color: color-mix(in srgb, var(--accent) 35%, white);
+  transition: color 0.4s ease;
+}
+
+.route-clock {
+  margin-left: auto;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.5);
+}
+
+.signal-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(197,255,122,0.9); }
+  50% { opacity: 0.45; box-shadow: 0 0 4px rgba(197,255,122,0.4); }
+}
+
+.card-index {
+  display: block;
+  margin-bottom: 18px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--purple);
+  opacity: 0.8;
+}
+
+.mini-card,
+.plan-box {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.6s ease;
+}
+
+.mini-card:hover,
+.plan-box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(214, 147, 255, 0.4);
+}
+
+.plan-box.done span {
+  color: var(--lime);
+}
+
+.plan-box.active span::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  vertical-align: middle;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* scroll reveal (only hides things once JS is confirmed running) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.stack-grid .reveal:nth-child(2),
+.plan-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.stack-grid .reveal:nth-child(3),
+.plan-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+
+.lead-copy p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.lead-form input:focus {
+  outline: none;
+  border-color: rgba(139, 233, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(139, 233, 255, 0.15);
+}
+
+.lead-form button {
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.btn:disabled {
+  cursor: default;
+  opacity: 0.75;
+  transform: none;
+}
+
+.lead-form.success button {
+  background: linear-gradient(135deg, var(--lime), #7affc4);
+}
+
+.form-status {
+  min-height: 1.3em;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.lead-form.success .form-status {
+  color: var(--lime);
+}
+
+.hidden-field {
+  position: absolute;
+  left: -9999px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.footer {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 26px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
 }

@@ -1,7 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "website/**", "use": "@vercel/static" }
-  ],
-  "outputDirectory": "website"
+  "buildCommand": "cd my-project && npm install && npm run build",
+  "outputDirectory": "my-project/dist",
+  "installCommand": "echo skip"
 }

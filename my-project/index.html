@@ -3,27 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cheap AI</title>
-    <meta name="description" content="Local-first AI business prototype" />
+    <title>Cheap AI — build the business, keep the budget</title>
+    <meta name="description" content="A local-first AI business prototype that proves demand before it spends a dollar." />
+    <meta name="theme-color" content="#0c0713" />
+    <meta property="og:title" content="Cheap AI" />
+    <meta property="og:description" content="Build the business with the budget still intact." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div class="noise"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="topbar">
-      <div class="brand">CHEAP AI</div>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#stack">Stack</a>
-        <a href="#plan">Plan</a>
-        <a href="#lead-capture">Lead capture</a>
+      <a class="brand" href="#top">CHEAP<span>AI</span></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about" data-route="about">About</a>
+        <a href="#stack" data-route="stack">Stack</a>
+        <a href="#plan" data-route="plan">Plan</a>
+        <a href="#lead-capture" data-route="lead-capture">Updates</a>
       </nav>
     </header>
 
-    <main>
+    <main id="top">
       <section class="hero">
         <div class="hero-copy">
           <div class="eyebrow">LOCAL-ONLY // LOW-COST // NO NONSENSE</div>
@@ -43,10 +48,11 @@
           </div>
         </div>
 
-        <aside class="route-panel" id="route-panel">
+        <aside class="route-panel" id="route-panel" aria-live="polite">
           <div class="route-topline">
             <span class="signal-dot"></span>
             <span>current signal</span>
+            <span class="route-clock" id="route-clock"></span>
           </div>
 
           <div class="route-label">Current state</div>
@@ -54,22 +60,22 @@
 
           <div class="route-meta">
             <span id="route-mode">Budget mode: humble and cheap</span>
-            <span id="route-date">10/15/2026</span>
+            <span id="route-date"></span>
           </div>
 
           <div class="signal-meter">
             <div class="meter-head">
               <span>signal integrity</span>
-              <strong>98.4%</strong>
+              <strong id="meter-value">98.4%</strong>
             </div>
             <div class="meter-track">
-              <span></span>
+              <span id="meter-bar"></span>
             </div>
           </div>
         </aside>
       </section>
 
-      <section class="feature-panel" id="about">
+      <section class="feature-panel reveal" id="about" data-route="about">
         <div class="card-header">What this is</div>
         <p>
           A local-first AI business prototype focused on proving demand before spending money.
@@ -77,68 +83,94 @@
         </p>
       </section>
 
-      <section id="stack" class="section">
-        <div class="section-head">
+      <section id="stack" class="section" data-route="stack">
+        <div class="section-head reveal">
           <span class="eyebrow">Stack</span>
           <h2>Minimal stack. Maximum signal.</h2>
         </div>
 
         <div class="stack-grid">
-          <article class="mini-card">
+          <article class="mini-card reveal">
+            <span class="card-index">01</span>
             <h3>Local AI</h3>
             <p>Run the business logic and research locally without cloud lock-in.</p>
           </article>
-          <article class="mini-card">
+          <article class="mini-card reveal">
+            <span class="card-index">02</span>
             <h3>Static front-end</h3>
             <p>Simple pages, no heavy frameworks, no spendy runtime.</p>
           </article>
-          <article class="mini-card">
+          <article class="mini-card reveal">
+            <span class="card-index">03</span>
             <h3>SQLite + files</h3>
             <p>Store the trail and the working notes without a giant backend.</p>
           </article>
         </div>
       </section>
 
-      <section id="plan" class="section">
-        <div class="section-head">
+      <section id="plan" class="section" data-route="plan">
+        <div class="section-head reveal">
           <span class="eyebrow">Plan</span>
           <h2>Prove it before it scales.</h2>
         </div>
 
         <div class="plan-grid">
-          <article class="plan-box">
-            <span>Phase 1</span>
+          <article class="plan-box done reveal">
+            <span>Phase 1 · shipped</span>
             <h3>Local prototype</h3>
             <p>Validate the positioning and offer without external spend.</p>
           </article>
-          <article class="plan-box active">
-            <span>Phase 2</span>
+          <article class="plan-box active reveal">
+            <span>Phase 2 · in progress</span>
             <h3>Route-aware UI</h3>
             <p>AI starts curating the story and user path as they browse.</p>
           </article>
-          <article class="plan-box">
-            <span>Phase 3</span>
+          <article class="plan-box reveal">
+            <span>Phase 3 · next</span>
             <h3>Signal capture</h3>
             <p>Turn the site into a funnel that responds to behavior and intent.</p>
           </article>
         </div>
       </section>
 
-      <section class="lead-capture" id="lead-capture">
+      <section class="lead-capture reveal" id="lead-capture" data-route="lead-capture">
         <div class="lead-shell">
           <div class="lead-copy">
             <span class="eyebrow">Lead capture</span>
             <h2>Get product updates.</h2>
+            <p>One email when something real ships. No drip campaign, no nonsense.</p>
           </div>
 
-          <form id="lead-form" class="lead-form">
-            <input type="email" name="email" placeholder="you@example.com" />
-            <button type="submit" class="btn btn-primary">Send</button>
+          <!-- Netlify Forms picks this up at deploy time; submissions show in the Netlify dashboard. -->
+          <form
+            id="lead-form"
+            class="lead-form"
+            name="leads"
+            method="POST"
+            action="/thanks.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="leads" />
+            <p class="hidden-field">
+              <label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+            </p>
+            <div class="lead-row">
+              <label class="sr-only" for="lead-email">Email address</label>
+              <input id="lead-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+            <p class="form-status" id="form-status" role="status"></p>
           </form>
         </div>
       </section>
     </main>
 
-    <script src="./app.js" defer></script>
+    <footer class="footer">
+      <span>© <span id="year"></span> Cheap AI</span>
+      <span class="footer-signal">built local · shipped static · <a href="#top">back to top ↑</a></span>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

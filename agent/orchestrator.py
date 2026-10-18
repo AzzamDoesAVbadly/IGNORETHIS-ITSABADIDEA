@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import sys
 import sqlite3
 from datetime import datetime
 from pathlib import Path
@@ -255,11 +256,11 @@ def main() -> None:
 
     result = run_cycle()
     print("Autonomous cycle complete")
-    print(f"research topic: {result['research']['topic']}")
-    print(f"content title: {result['content']['title']}")
-    print(f"creative title: {result['creative']['title']}")
-    print(f"qa ok: {result['qa']['ok']}")
-    print(f"ops status: {result['ops']['status']}")
+    print(f"topic: {result['topic']} (score {result['score']})")
+    print(f"article: {result['article']['title']}")
+    print(f"video: {result['video']['title']}")
+    print(f"merch: {result['merch']['name']}")
+    print(f"status: {result['status']['label']}")
 
 
 if __name__ == "__main__":
