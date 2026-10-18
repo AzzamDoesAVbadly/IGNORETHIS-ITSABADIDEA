@@ -21,6 +21,7 @@ The roulette rotates between whichever providers have keys. More keys mean fewer
 | OpenRouter (free models only) | https://openrouter.ai/keys | `OPENROUTER_API_KEY` |
 | Mistral | https://console.mistral.ai/api-keys | `MISTRAL_API_KEY` |
 | Cerebras | https://cloud.cerebras.ai | `CEREBRAS_API_KEY` |
+| Alibaba Cloud Model Studio (Qwen) | https://modelstudio.console.alibabacloud.com (international region) | `DASHSCOPE_API_KEY` |
 | *Optional paid fallback:* Claude | https://console.anthropic.com | `ANTHROPIC_API_KEY` |
 | *Optional paid fallback:* OpenAI | https://platform.openai.com/api-keys (needs prepaid credits) | `OPENAI_API_KEY` |
 
@@ -84,6 +85,7 @@ A private, password-protected panel at **https://machinemadegod.netlify.app/cont
    GROQ_API_KEY=...
    OPENROUTER_API_KEY=...
    CEREBRAS_API_KEY=...
+   DASHSCOPE_API_KEY=...
    ```
    (The AI keys are only needed for the Playground. Add `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` too if you want those there.)
 3. **Redeploy:** Deploys → Trigger deploy → Deploy site. Then open `/control/` and log in.
