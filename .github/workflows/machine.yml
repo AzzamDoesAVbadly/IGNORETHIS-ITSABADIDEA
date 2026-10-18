@@ -6,7 +6,20 @@ on:
   schedule:
     - cron: "17 13 * * *" # ~9am US Eastern
     - cron: "47 1 * * *" # ~9pm US Eastern
-  workflow_dispatch: # "Run workflow" button in the Actions tab
+  workflow_dispatch: # "Run workflow" button in the Actions tab, or the control panel
+    inputs:
+      idea:
+        description: "Optional: an idea for one on-demand article"
+        required: false
+        type: string
+      category:
+        description: "Optional: section slug (news, lists, music, ...)"
+        required: false
+        type: string
+      format:
+        description: "Optional: news, listicle, review, announcement or essay"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -46,6 +59,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MACHINE_ENABLED: ${{ vars.MACHINE_ENABLED }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          MACHINE_IDEA: ${{ inputs.idea }}
+          MACHINE_CATEGORY: ${{ inputs.category }}
+          MACHINE_FORMAT: ${{ inputs.format }}
         run: npm run generate
 
       - name: Build and validate (nothing is published if this fails)
@@ -61,5 +78,27 @@ jobs:
             exit 0
           fi
           git commit -m "The machine has spoken ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Promote new posts (best effort, waits for the deploy)
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          PROMOTION_ENABLED: ${{ vars.PROMOTION_ENABLED }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+        run: node scripts/promote.mjs --new --wait
+
+      - name: Save promotion log (does not trigger a site rebuild)
+        run: |
+          git add src/data/promo-log.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Promotion log [skip netlify]"
           git pull --rebase origin main
           git push origin HEAD:main

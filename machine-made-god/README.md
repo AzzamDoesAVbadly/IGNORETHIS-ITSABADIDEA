@@ -60,8 +60,56 @@ Google reviews AdSense sites before approving them and has a spam policy against
 
 ---
 
+## Mission Control (`/control/`)
+
+A private, password-protected panel at **https://machinemadegod.netlify.app/control/** (works on your phone):
+
+- **Overview:** machine on/off, Run now, recent GitHub runs, what each run published (and which AI wrote and edited it), provider health (cooldowns, out-of-credit, last errors), content counts per section.
+- **Posts:** every published post with Hide / Delete; hidden posts with Show.
+- **Write:** order a piece from your own idea (pick a section/format or let the machine choose). It runs the full pipeline and publishes in about 3–5 minutes.
+- **Playground:** ask any or all AI providers the same thing side by side, or spin the roulette. Optionally use the site's editorial voice as the system prompt.
+- **Promotion:** promote any post on demand, plus the promotion log.
+
+### Set it up (once, about 10 minutes)
+
+1. **Make a GitHub token** so the panel can run, pause, hide and delete: GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token.
+   - Repository access: **Only select repositories** → this repo.
+   - Permissions → Repository: **Actions** Read and write, **Contents** Read and write, **Variables** Read and write (Metadata read is automatic).
+   - Expiration: pick the longest you're comfortable with, and set a calendar reminder to renew it.
+2. **Add Netlify environment variables:** Netlify → Site configuration → Environment variables → Add a variable → **Import from a .env file**, and paste:
+   ```text
+   CONTROL_PASSWORD=pick-a-long-password-12-plus-characters
+   GITHUB_TOKEN=github_pat_...
+   GEMINI_API_KEY=...
+   GROQ_API_KEY=...
+   OPENROUTER_API_KEY=...
+   CEREBRAS_API_KEY=...
+   ```
+   (The AI keys are only needed for the Playground. Add `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` too if you want those there.)
+3. **Redeploy:** Deploys → Trigger deploy → Deploy site. Then open `/control/` and log in.
+
+Without `GITHUB_TOKEN` the panel still works read-only (status, reports, playground). Sessions last 14 days; changing `CONTROL_PASSWORD` logs everyone out.
+
+Locally you can run the same panel against your `.env` with `npm run control` → http://localhost:8787/control/.
+
+---
+
+## Auto-promotion
+
+After every run, new posts are promoted automatically once the deploy is live:
+
+- **Bluesky:** posts an AI-written caption with a link card. Make a Bluesky account for the site, then bsky.app → Settings → Privacy and security → **App passwords** → create one. Add GitHub secrets `BLUESKY_HANDLE` (e.g. `machinemadegod.bsky.social`) and `BLUESKY_APP_PASSWORD`.
+- **Mastodon:** make an account on an instance whose rules allow automated accounts (check the instance's About page), tick "This is an automated account" in profile settings, then Preferences → Development → New application with the `write:statuses` scope. Add GitHub secrets `MASTODON_INSTANCE` (e.g. `https://mastodon.social`) and `MASTODON_TOKEN`.
+- **IndexNow:** on by default. Every new URL is pinged to Bing, Yandex and other IndexNow search engines. The key file is in `public/`.
+- **Google:** not automatable for free. Add the site to Google Search Console once and submit `/sitemap-index.xml`.
+
+Channels without credentials are skipped. Turn promotion off with the GitHub variable `PROMOTION_ENABLED=false`, or `"promotion": { "enabled": false }` in `machine.config.json`. Every post is recorded in `src/data/promo-log.json` (visible in Mission Control). Promotion commits are tagged `[skip netlify]` so they don't use Netlify build minutes.
+
+---
+
 ## Day-to-day (optional; the machine doesn't need you)
 
+- **Everything below can also be done from Mission Control (`/control/`).**
 - **Pause the machine:** GitHub → Settings → Secrets and variables → Actions → **Variables** → add `MACHINE_ENABLED` = `false`. Delete it to resume. (Or set `"enabled": false` in `machine.config.json`.)
 - **Pull a bad post:** open the file in GitHub (`machine-made-god/src/content/articles/…`), click edit, add `draft: true` to the front matter (or delete the file), commit. The site redeploys in about a minute.
 - **Run it now:** Actions → The Machine → Run workflow.

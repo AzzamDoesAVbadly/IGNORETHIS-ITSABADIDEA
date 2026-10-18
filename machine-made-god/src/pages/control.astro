@@ -1,0 +1,569 @@
+---
+import "../styles/global.css";
+import categories from "../data/categories.json";
+import config from "../../machine.config.json";
+const formats = ["news", "listicle", "review", "announcement", "essay"];
+const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free" }));
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Mission Control | Machine Made God</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  </head>
+  <body class="mc">
+    <header class="mc-top">
+      <a class="mc-brand" href="/">MACHINE MADE GOD <span>// MISSION CONTROL</span></a>
+      <div class="mc-top-right">
+        <span class="mc-pill" data-machine-pill>…</span>
+        <button class="mc-link" type="button" data-logout hidden>Log out</button>
+      </div>
+    </header>
+
+    <!-- login -->
+    <section class="mc-login" data-login hidden>
+      <form class="mc-card" data-login-form>
+        <h1>Authorized personnel only</h1>
+        <p>Enter the control password. (Set it as <code>CONTROL_PASSWORD</code> in Netlify.)</p>
+        <label class="sr-only" for="pw">Password</label>
+        <input id="pw" type="password" autocomplete="current-password" placeholder="password" required />
+        <button class="btn" type="submit">Enter</button>
+        <p class="mc-error" data-login-error role="alert"></p>
+      </form>
+    </section>
+
+    <!-- app -->
+    <div class="mc-app" data-app hidden>
+      <nav class="mc-tabs" role="tablist" aria-label="Control panel sections">
+        <button role="tab" aria-selected="true" data-tab="overview">Overview</button>
+        <button role="tab" aria-selected="false" data-tab="posts">Posts</button>
+        <button role="tab" aria-selected="false" data-tab="write">Write</button>
+        <button role="tab" aria-selected="false" data-tab="playground">Playground</button>
+        <button role="tab" aria-selected="false" data-tab="promo">Promotion</button>
+      </nav>
+      <p class="mc-flash" data-flash role="status" aria-live="polite"></p>
+
+      <!-- OVERVIEW -->
+      <section data-panel="overview" class="mc-grid">
+        <div class="mc-card">
+          <h2>The machine</h2>
+          <p class="mc-big" data-enabled>…</p>
+          <p class="mc-muted" data-schedule></p>
+          <div class="mc-row">
+            <button class="btn" type="button" data-run>Run now</button>
+            <button class="btn btn--ghost" type="button" data-toggle>…</button>
+          </div>
+          <p class="mc-muted" data-github></p>
+        </div>
+
+        <div class="mc-card">
+          <h2>Content</h2>
+          <p class="mc-big"><span data-total>…</span> <small>published pieces</small></p>
+          <div data-counts class="mc-bars"></div>
+        </div>
+
+        <div class="mc-card mc-wide">
+          <h2>Recent GitHub runs</h2>
+          <table class="mc-table"><thead><tr><th>Status</th><th>Run</th><th>When</th><th></th></tr></thead><tbody data-runs></tbody></table>
+        </div>
+
+        <div class="mc-card mc-wide">
+          <h2>What the machine did</h2>
+          <div data-reports></div>
+        </div>
+
+        <div class="mc-card mc-wide">
+          <h2>Providers</h2>
+          <p class="mc-muted">Health from the machine's last runs. "Playground" means this panel has that key in Netlify.</p>
+          <table class="mc-table"><thead><tr><th>Provider</th><th>Tier</th><th>Model</th><th>OK / fail</th><th>Status</th><th>Playground</th></tr></thead><tbody data-providers></tbody></table>
+        </div>
+      </section>
+
+      <!-- POSTS -->
+      <section data-panel="posts" hidden>
+        <div class="mc-card">
+          <div class="mc-row mc-between">
+            <h2>Published</h2>
+            <input class="mc-input" type="search" placeholder="filter…" data-post-filter aria-label="Filter posts" />
+          </div>
+          <table class="mc-table"><thead><tr><th>Title</th><th>Section</th><th>Date</th><th>Actions</th></tr></thead><tbody data-posts></tbody></table>
+        </div>
+        <div class="mc-card">
+          <h2>Hidden / not yet live</h2>
+          <p class="mc-muted" data-hidden-note></p>
+          <table class="mc-table"><tbody data-hidden></tbody></table>
+        </div>
+      </section>
+
+      <!-- WRITE -->
+      <section data-panel="write" hidden>
+        <form class="mc-card mc-narrow" data-write-form>
+          <h2>Order a piece</h2>
+          <p class="mc-muted">Give the machine an idea. It runs the full pipeline (writer → comedy editor → checks) and publishes in about 3–5 minutes. Leave everything empty for a normal run.</p>
+          <label for="idea">Idea</label>
+          <textarea id="idea" rows="4" maxlength="600" placeholder="e.g. a town installs a suggestion box for the suggestion box"></textarea>
+          <div class="mc-row">
+            <div>
+              <label for="w-cat">Section</label>
+              <select id="w-cat"><option value="">Machine picks</option>{categories.filter((c) => c.slug !== "quizzes").map((c) => <option value={c.slug}>{c.name}</option>)}</select>
+            </div>
+            <div>
+              <label for="w-format">Format</label>
+              <select id="w-format"><option value="">Machine picks</option>{formats.map((f) => <option value={f}>{f}</option>)}</select>
+            </div>
+          </div>
+          <button class="btn" type="submit">Send to the machine</button>
+        </form>
+      </section>
+
+      <!-- PLAYGROUND -->
+      <section data-panel="playground" hidden>
+        <div class="mc-card">
+          <h2>Talk to the machines</h2>
+          <div class="mc-row mc-wrap" data-provider-picks>
+            <label class="mc-check"><input type="checkbox" value="roulette" /> <b>Roulette</b> (first one that answers)</label>
+            {providers.map((p) => <label class="mc-check"><input type="checkbox" value={p.id} checked={p.tier === "free"} /> {p.id}{p.tier === "paid" ? " ($)" : ""}</label>)}
+          </div>
+          <div class="mc-row mc-wrap">
+            <label class="mc-check"><input type="checkbox" data-use-voice /> Use the site's editorial voice as the system prompt</label>
+            <button class="mc-link" type="button" data-clear-chat>Clear conversation</button>
+          </div>
+          <details>
+            <summary class="mc-muted">Custom system prompt</summary>
+            <textarea rows="3" data-system placeholder="optional instructions for every model"></textarea>
+          </details>
+        </div>
+        <div class="mc-columns" data-columns></div>
+        <form class="mc-chatbar" data-chat-form>
+          <label class="sr-only" for="chat-input">Message</label>
+          <textarea id="chat-input" rows="2" placeholder="Ask every selected model the same thing… (Enter to send, Shift+Enter for a new line)"></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </section>
+
+      <!-- PROMOTION -->
+      <section data-panel="promo" hidden class="mc-grid">
+        <div class="mc-card">
+          <h2>Promote now</h2>
+          <p class="mc-muted">New posts are promoted automatically after each run. Use this to (re)post something on demand.</p>
+          <label for="promo-slug">Post</label>
+          <select id="promo-slug" data-promo-slug><option value="">Newest not-yet-promoted article</option></select>
+          <button class="btn" type="button" data-promote>Promote</button>
+        </div>
+        <div class="mc-card">
+          <h2>Channels</h2>
+          <ul class="mc-list">
+            <li><b>Bluesky</b>: GitHub secrets <code>BLUESKY_HANDLE</code> + <code>BLUESKY_APP_PASSWORD</code> (Settings → App passwords on bsky.app)</li>
+            <li><b>Mastodon</b>: <code>MASTODON_INSTANCE</code> (e.g. https://mastodon.social) + <code>MASTODON_TOKEN</code> (Preferences → Development → New application, scope write:statuses)</li>
+            <li><b>IndexNow</b>: on by default, pings Bing/Yandex/others with every new URL</li>
+            <li><b>Google</b>: add the site in Search Console once and submit <code>/sitemap-index.xml</code></li>
+          </ul>
+        </div>
+        <div class="mc-card mc-wide">
+          <h2>Promotion log</h2>
+          <table class="mc-table"><thead><tr><th>When</th><th>Channel</th><th>Post</th><th>Result</th></tr></thead><tbody data-promo-log></tbody></table>
+        </div>
+      </section>
+    </div>
+
+    <script type="application/json" id="mc-cats" set:html={JSON.stringify(categories.map((c) => ({ slug: c.slug, name: c.name, color: c.color })))} />
+  </body>
+</html>
+
+<style is:global>
+  body.mc {
+    background: #0b0a09;
+    color: #e9e3d0;
+    background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 3px);
+  }
+  body.mc::before { opacity: 0.12; mix-blend-mode: screen; }
+  .mc code { font-family: var(--font-mono); font-size: 0.85em; background: #221d17; padding: 1px 5px; color: var(--acid); }
+  .mc-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px var(--gutter); border-bottom: 3px solid var(--sodium); background: #000; position: sticky; top: 0; z-index: 10; }
+  .mc-brand { text-decoration: none; font-family: var(--font-display); font-stretch: 85%; font-weight: 900; font-size: 1.15rem; letter-spacing: 0.02em; }
+  .mc-brand span { color: var(--sodium); font-family: var(--font-mono); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.1em; }
+  .mc-top-right { display: flex; gap: 12px; align-items: center; }
+  .mc-pill { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border: 2px solid currentColor; text-transform: uppercase; letter-spacing: 0.08em; }
+  .mc-pill.on { color: #6dff8a; }
+  .mc-pill.off { color: var(--sodium); }
+  .mc-link { background: none; border: 0; color: #b8b09c; font: inherit; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: underline; cursor: pointer; text-transform: uppercase; }
+  .mc-link:hover { color: var(--acid); }
+  .mc-login { display: grid; place-items: center; min-height: 70vh; padding: 24px var(--gutter); }
+  .mc-login .mc-card { width: min(420px, 100%); display: flex; flex-direction: column; gap: 12px; }
+  .mc-login h1 { margin: 0; font-family: var(--font-display); font-stretch: 75%; font-weight: 900; font-size: 2rem; text-transform: uppercase; color: var(--sodium); }
+  .mc-app { max-width: 1280px; margin: 0 auto; padding: 18px var(--gutter) 120px; }
+  .mc-tabs { display: flex; gap: 4px; overflow-x: auto; border-bottom: 2px solid #3a2e25; margin-bottom: 14px; }
+  .mc-tabs button { background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -2px; color: #b8b09c; padding: 10px 14px; font-family: var(--font-display); font-stretch: 85%; font-weight: 800; font-size: 1rem; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+  .mc-tabs button[aria-selected="true"] { color: var(--sodium); border-bottom-color: var(--sodium); }
+  .mc-flash { min-height: 1.4em; margin: 0 0 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--acid); }
+  .mc-flash.err { color: #ff6d6d; }
+  .mc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .mc-wide { grid-column: 1 / -1; }
+  .mc-card { background: #151210; border: 2px solid #3a2e25; padding: 16px; margin-bottom: 16px; min-width: 0; }
+  .mc-grid .mc-card { margin-bottom: 0; }
+  .mc-card h2 { margin: 0 0 10px; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sodium); }
+  .mc-narrow { max-width: 720px; display: flex; flex-direction: column; gap: 10px; }
+  .mc-big { margin: 0 0 6px; font-family: var(--font-display); font-stretch: 75%; font-weight: 900; font-size: 2.4rem; line-height: 1; text-transform: uppercase; }
+  .mc-big small { font-family: var(--font-mono); font-size: 0.75rem; color: #8c8576; text-transform: uppercase; }
+  .mc-muted { color: #8c8576; font-size: 0.85rem; margin: 6px 0; }
+  .mc-error { color: #ff6d6d; font-family: var(--font-mono); font-size: 0.8rem; min-height: 1em; margin: 0; }
+  .mc-row { display: flex; gap: 10px; align-items: flex-end; margin: 10px 0; }
+  .mc-row > div { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .mc-wrap { flex-wrap: wrap; align-items: center; }
+  .mc-between { justify-content: space-between; align-items: center; margin-top: 0; }
+  .mc label { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: #b8b09c; }
+  .mc input[type="password"], .mc-input, .mc textarea, .mc select {
+    width: 100%; background: #0b0a09; color: #e9e3d0; border: 2px solid #3a2e25; padding: 10px 12px; font: inherit; font-size: 0.95rem;
+  }
+  .mc textarea { resize: vertical; }
+  .mc input:focus, .mc textarea:focus, .mc select:focus { outline: none; border-color: var(--sodium); }
+  .mc-input { width: 240px; }
+  .mc-check { display: inline-flex; align-items: center; gap: 6px; text-transform: none; font-size: 0.85rem; letter-spacing: 0; padding: 6px 10px; border: 2px solid #3a2e25; cursor: pointer; }
+  .mc-check:has(input:checked) { border-color: var(--sodium); color: #fff; }
+  .mc .btn { box-shadow: 4px 4px 0 #000; border-color: #000; }
+  .mc .btn--ghost { background: #221d17; color: #e9e3d0; border-color: #554539; }
+  .mc-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .mc-table th { text-align: left; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8c8576; padding: 6px 8px; border-bottom: 2px solid #3a2e25; }
+  .mc-table td { padding: 8px; border-bottom: 1px solid #2a231d; vertical-align: top; }
+  .mc-table a { color: #e9e3d0; }
+  .mc-table a:hover { color: var(--acid); }
+  .mc-card { overflow-x: auto; }
+  .ok { color: #6dff8a; } .bad { color: #ff6d6d; } .warn { color: var(--hazard); }
+  .mc-mini { background: #221d17; color: #e9e3d0; border: 1px solid #554539; padding: 4px 8px; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; cursor: pointer; margin: 0 4px 4px 0; }
+  .mc-mini:hover { border-color: var(--sodium); }
+  .mc-mini.danger { border-color: #7a2a2a; color: #ff9a9a; }
+  .mc-bars { display: flex; flex-direction: column; gap: 4px; }
+  .mc-bar { display: grid; grid-template-columns: 130px 1fr 30px; gap: 8px; align-items: center; font-size: 0.78rem; }
+  .mc-bar i { display: block; height: 10px; background: var(--c); }
+  .mc-report { border-left: 3px solid #3a2e25; padding: 6px 12px; margin-bottom: 10px; font-size: 0.88rem; }
+  .mc-report b { font-family: var(--font-mono); font-size: 0.72rem; color: #b8b09c; }
+  .mc-list { margin: 0; padding-left: 1.1em; font-size: 0.88rem; line-height: 1.5; }
+  .mc-list li + li { margin-top: 6px; }
+  .mc-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .mc-col { background: #151210; border: 2px solid #3a2e25; min-height: 160px; display: flex; flex-direction: column; }
+  .mc-col h3 { margin: 0; padding: 8px 12px; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sodium); border-bottom: 2px solid #3a2e25; display: flex; justify-content: space-between; gap: 8px; }
+  .mc-col h3 small { color: #8c8576; font-weight: 400; text-transform: none; }
+  .mc-msgs { padding: 10px 12px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; max-height: 60vh; }
+  .mc-msg { white-space: pre-wrap; font-size: 0.92rem; line-height: 1.45; }
+  .mc-msg.user { color: var(--acid); font-family: var(--font-mono); font-size: 0.82rem; }
+  .mc-msg.err { color: #ff6d6d; font-family: var(--font-mono); font-size: 0.8rem; }
+  .mc-msg.wait { color: #8c8576; font-style: italic; }
+  .mc-chatbar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; gap: 10px; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom, 0px)); background: #000; border-top: 3px solid var(--sodium); z-index: 10; }
+  .mc-chatbar textarea { flex: 1; }
+  @media (max-width: 760px) {
+    .mc-grid { grid-template-columns: minmax(0, 1fr); }
+    .mc-row { flex-direction: column; align-items: stretch; }
+    .mc-wrap { flex-direction: row; }
+    .mc-input { width: 100%; }
+  }
+</style>
+
+<script>
+  const $ = <T extends HTMLElement = HTMLElement>(s: string, root: ParentNode = document) => root.querySelector<T>(s)!;
+  const $$ = <T extends HTMLElement = HTMLElement>(s: string, root: ParentNode = document) => [...root.querySelectorAll<T>(s)];
+  const esc = (s: unknown) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+  const ago = (t: string | number) => {
+    const s = (Date.now() - new Date(t).getTime()) / 1000;
+    if (s < 90) return "just now";
+    if (s < 5400) return `${Math.round(s / 60)} min ago`;
+    if (s < 129600) return `${Math.round(s / 3600)} h ago`;
+    return `${Math.round(s / 86400)} d ago`;
+  };
+  const cats: { slug: string; name: string; color: string }[] = JSON.parse($("#mc-cats").textContent || "[]");
+
+  let token = "";
+  try { token = localStorage.getItem("mmg-control") || ""; } catch {}
+
+  const flash = (msg: string, err = false) => {
+    const el = $("[data-flash]");
+    el.textContent = msg;
+    el.classList.toggle("err", err);
+  };
+
+  async function api(path: string, body?: unknown) {
+    const res = await fetch(`/api/control/${path}`, {
+      method: body === undefined ? "GET" : "POST",
+      headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
+    const data = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
+    if (res.status === 401 && path !== "login") { showLogin(); throw new Error("Session expired. Log in again."); }
+    if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+    return data;
+  }
+
+  function showLogin(msg = "") {
+    $("[data-login]").hidden = false;
+    $("[data-app]").hidden = true;
+    $("[data-logout]").hidden = true;
+    $("[data-login-error]").textContent = msg;
+    $<HTMLInputElement>("#pw").focus();
+  }
+
+  function showApp() {
+    $("[data-login]").hidden = true;
+    $("[data-app]").hidden = false;
+    $("[data-logout]").hidden = false;
+    loadStatus();
+  }
+
+  $("[data-login-form]").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    try {
+      const { token: t } = await api("login", { password: $<HTMLInputElement>("#pw").value });
+      token = t;
+      try { localStorage.setItem("mmg-control", t); } catch {}
+      $<HTMLInputElement>("#pw").value = "";
+      showApp();
+    } catch (err) {
+      $("[data-login-error]").textContent = (err as Error).message;
+    }
+  });
+  $("[data-logout]").addEventListener("click", () => {
+    token = "";
+    try { localStorage.removeItem("mmg-control"); } catch {}
+    showLogin();
+  });
+
+  // tabs
+  $$("[data-tab]").forEach((tab) =>
+    tab.addEventListener("click", () => {
+      $$("[data-tab]").forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+      $$("[data-panel]").forEach((p) => (p.hidden = p.dataset.panel !== tab.dataset.tab));
+      if (tab.dataset.tab === "posts") loadPosts();
+      if (tab.dataset.tab === "promo") loadPosts(true);
+    })
+  );
+
+  // ---------- overview ----------
+  let enabled = true;
+  async function loadStatus() {
+    try {
+      const s = await api("status");
+      enabled = s.enabled;
+      const pill = $("[data-machine-pill]");
+      pill.textContent = enabled ? "Machine on" : "Machine paused";
+      pill.className = `mc-pill ${enabled ? "on" : "off"}`;
+      $("[data-enabled]").innerHTML = enabled ? '<span class="ok">ON</span>' : '<span class="warn">PAUSED</span>';
+      $("[data-toggle]").textContent = enabled ? "Pause the machine" : "Turn the machine on";
+      const local = s.schedule.map((t: string) => {
+        const [h, m] = t.split(":").map(Number);
+        const d = new Date();
+        d.setUTCHours(h, m, 0, 0);
+        return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+      });
+      $("[data-schedule]").textContent = `Runs every day at ${local.join(" and ")} (your time).`;
+      $("[data-github]").innerHTML = s.github === "ok" ? "" : `<span class="warn">GitHub: ${esc(s.github)}</span>`;
+
+      $("[data-total]").textContent = s.content.total ?? "?";
+      const max = Math.max(1, ...Object.values(s.content.counts as Record<string, number>));
+      $("[data-counts]").innerHTML = cats
+        .map((c) => {
+          const n = s.content.counts[c.slug] || 0;
+          return `<div class="mc-bar" style="--c:${c.color}"><span>${esc(c.name)}</span><i style="width:${(n / max) * 100}%"></i><span>${n}</span></div>`;
+        })
+        .join("");
+
+      $("[data-runs]").innerHTML =
+        s.runs
+          .map((r: any) => {
+            const icon = r.status !== "completed" ? '<span class="warn">● running</span>' : r.conclusion === "success" ? '<span class="ok">✓ success</span>' : `<span class="bad">✗ ${esc(r.conclusion)}</span>`;
+            return `<tr><td>${icon}</td><td>${esc(r.name)} <span class="mc-muted">· ${esc(r.event)}</span></td><td>${ago(r.at)}</td><td><a href="${esc(r.url)}" target="_blank" rel="noopener">log ↗</a></td></tr>`;
+          })
+          .join("") || '<tr><td colspan="4" class="mc-muted">No runs visible (is GITHUB_TOKEN set?)</td></tr>';
+
+      $("[data-reports]").innerHTML =
+        s.lastRuns
+          .map((r: any) => {
+            const lines = [
+              ...(r.articles || []).map((a: any) => `<a href="/a/${esc(a.slug)}/" target="_blank">${esc(a.slug)}</a> <span class="mc-muted">via ${esc(a.provider)}</span>`),
+              r.quiz ? `quiz: <a href="/quiz/${esc(r.quiz.slug)}/" target="_blank">${esc(r.quiz.slug)}</a> <span class="mc-muted">via ${esc(r.quiz.provider)}</span>` : "",
+              r.extras ? `<span class="mc-muted">+${r.extras.ticker} ticker, +${r.extras.bumps} bumps, +${r.extras.ads} ads via ${esc(r.extras.provider)}</span>` : "",
+              ...(r.failures || []).map((f: string) => `<span class="bad">✗ ${esc(f).slice(0, 220)}</span>`),
+            ].filter(Boolean);
+            return `<div class="mc-report"><b>${ago(r.at)}${r.onDemand ? " · on demand" : ""}${r.idea ? ` · “${esc(r.idea).slice(0, 80)}”` : ""}</b><br>${lines.join("<br>") || '<span class="mc-muted">nothing</span>'}</div>`;
+          })
+          .join("") || '<p class="mc-muted">No machine reports yet.</p>';
+
+      $("[data-providers]").innerHTML = s.providers
+        .map((p: any) => {
+          const cooling = p.cooldownUntil && new Date(p.cooldownUntil) > new Date();
+          const state = cooling ? `<span class="warn">benched until ${new Date(p.cooldownUntil).toLocaleString()}</span>${p.lastError ? `<br><span class="mc-muted">${esc(p.lastError)}</span>` : ""}` : p.lastSuccess ? `<span class="ok">ok · last success ${ago(p.lastSuccess)}</span>` : p.lastError ? `<span class="bad">${esc(p.lastError)}</span>` : '<span class="mc-muted">no data yet</span>';
+          return `<tr><td><b>${esc(p.id)}</b></td><td>${esc(p.tier)}</td><td><code>${esc(p.model)}</code></td><td>${p.ok || 0} / ${p.fail || 0}</td><td>${state}</td><td>${p.inPanel ? '<span class="ok">yes</span>' : '<span class="mc-muted">no key</span>'}</td></tr>`;
+        })
+        .join("");
+
+      $("[data-promo-log]").innerHTML =
+        s.promoLog
+          .map((e: any) => `<tr><td>${ago(e.at)}</td><td>${esc(e.network)}</td><td>${esc(e.slug).slice(0, 60)}</td><td>${e.ok ? `<span class="ok">✓</span> ${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">view ↗</a>` : esc(e.detail || "")}` : `<span class="bad">✗ ${esc(e.error)}</span>`}</td></tr>`)
+          .join("") || '<tr><td colspan="4" class="mc-muted">Nothing promoted yet.</td></tr>';
+
+      // playground: dim providers without keys in the panel
+      for (const p of s.providers) {
+        const box = $(`[data-provider-picks] input[value="${p.id}"]`) as HTMLInputElement | null;
+        if (box && !p.inPanel) { box.checked = false; box.disabled = true; box.parentElement!.title = "No key in Netlify for this provider"; }
+      }
+      if (s.errors?.length) flash(`Some info unavailable: ${[...new Set(s.errors)].join(" · ")}`, true);
+    } catch (err) {
+      flash((err as Error).message, true);
+    }
+  }
+
+  $("[data-run]").addEventListener("click", async () => {
+    try { flash((await api("run", {})).message); setTimeout(loadStatus, 4000); } catch (err) { flash((err as Error).message, true); }
+  });
+  let armedToggle = false;
+  $("[data-toggle]").addEventListener("click", async () => {
+    const btn = $("[data-toggle]");
+    if (enabled && !armedToggle) { armedToggle = true; btn.textContent = "Click again to pause"; setTimeout(() => { armedToggle = false; btn.textContent = "Pause the machine"; }, 4000); return; }
+    armedToggle = false;
+    try { flash((await api("machine", { enabled: !enabled })).message); await loadStatus(); } catch (err) { flash((err as Error).message, true); }
+  });
+
+  // ---------- posts ----------
+  let postsCache: any = null;
+  async function loadPosts(forPromoOnly = false) {
+    try {
+      postsCache = postsCache || (await api("posts"));
+      const sel = $<HTMLSelectElement>("[data-promo-slug]");
+      if (sel.options.length <= 1) sel.insertAdjacentHTML("beforeend", postsCache.published.slice(0, 60).map((p: any) => `<option value="${esc(p.slug)}">${esc(p.title).slice(0, 90)}</option>`).join(""));
+      if (forPromoOnly) return;
+      renderPosts();
+      $("[data-hidden-note]").textContent = postsCache.note;
+      $("[data-hidden]").innerHTML =
+        postsCache.hidden.map((h: any) => `<tr><td>${esc(h.kind)}</td><td>${esc(h.slug)}</td><td><button class="mc-mini" data-act="show" data-slug="${esc(h.slug)}" data-kind="${esc(h.kind)}">Show</button><button class="mc-mini danger" data-act="delete" data-slug="${esc(h.slug)}" data-kind="${esc(h.kind)}">Delete</button></td></tr>`).join("") ||
+        '<tr><td class="mc-muted">None.</td></tr>';
+    } catch (err) {
+      flash((err as Error).message, true);
+    }
+  }
+  function renderPosts() {
+    const q = $<HTMLInputElement>("[data-post-filter]").value.toLowerCase();
+    $("[data-posts]").innerHTML = postsCache.published
+      .filter((p: any) => !q || p.title.toLowerCase().includes(q))
+      .map(
+        (p: any) =>
+          `<tr><td><a href="${esc(p.url)}" target="_blank">${esc(p.title)}</a></td><td>${esc(p.kind === "quiz" ? "Quiz" : p.category)}</td><td>${new Date(p.at).toLocaleDateString()}</td><td><button class="mc-mini" data-act="hide" data-slug="${esc(p.slug)}" data-kind="${esc(p.kind)}">Hide</button><button class="mc-mini danger" data-act="delete" data-slug="${esc(p.slug)}" data-kind="${esc(p.kind)}">Delete</button></td></tr>`
+      )
+      .join("");
+  }
+  $("[data-post-filter]").addEventListener("input", renderPosts);
+  document.addEventListener("click", async (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>("[data-act]");
+    if (!btn) return;
+    const { act, slug, kind } = btn.dataset;
+    if (act === "delete" && btn.dataset.armed !== "1") {
+      btn.dataset.armed = "1";
+      btn.textContent = "Really delete?";
+      setTimeout(() => { btn.dataset.armed = ""; btn.textContent = "Delete"; }, 4000);
+      return;
+    }
+    btn.disabled = true;
+    try {
+      flash((await api("post", { action: act, slug, kind })).message);
+      postsCache = null;
+      await loadPosts();
+    } catch (err) {
+      flash((err as Error).message, true);
+      btn.disabled = false;
+    }
+  });
+
+  // ---------- write ----------
+  $("[data-write-form]").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    try {
+      const r = await api("run", {
+        idea: $<HTMLTextAreaElement>("#idea").value.trim(),
+        category: $<HTMLSelectElement>("#w-cat").value,
+        format: $<HTMLSelectElement>("#w-format").value,
+      });
+      flash(r.message);
+      $<HTMLTextAreaElement>("#idea").value = "";
+    } catch (err) {
+      flash((err as Error).message, true);
+    }
+  });
+
+  // ---------- playground ----------
+  type Msg = { role: "user" | "assistant"; content: string };
+  const histories: Record<string, Msg[]> = {};
+  const columns = $("[data-columns]");
+  const selected = () => $$<HTMLInputElement>("[data-provider-picks] input:checked").map((i) => i.value);
+
+  function column(id: string) {
+    let col = columns.querySelector<HTMLElement>(`[data-col="${id}"]`);
+    if (!col) {
+      columns.insertAdjacentHTML("beforeend", `<div class="mc-col" data-col="${esc(id)}"><h3><span>${esc(id)}</span><small data-meta></small></h3><div class="mc-msgs"></div></div>`);
+      col = columns.querySelector<HTMLElement>(`[data-col="${id}"]`)!;
+    }
+    return col;
+  }
+  function addMsg(id: string, cls: string, text: string) {
+    const msgs = $(".mc-msgs", column(id));
+    const el = document.createElement("div");
+    el.className = `mc-msg ${cls}`;
+    el.textContent = text;
+    msgs.appendChild(el);
+    msgs.scrollTop = msgs.scrollHeight;
+    return el;
+  }
+
+  $("[data-chat-form]").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const input = $<HTMLTextAreaElement>("#chat-input");
+    const text = input.value.trim();
+    const picks = selected();
+    if (!text) return;
+    if (!picks.length) return flash("Pick at least one provider.", true);
+    input.value = "";
+    const roulette = picks.includes("roulette");
+    const ids = roulette ? ["roulette"] : picks;
+    const waits: Record<string, HTMLElement> = {};
+    for (const id of ids) {
+      (histories[id] ||= []).push({ role: "user", content: text });
+      addMsg(id, "user", text);
+      waits[id] = addMsg(id, "wait", "thinking…");
+    }
+    const system = $<HTMLTextAreaElement>("[data-system]").value;
+    const useVoice = $<HTMLInputElement>("[data-use-voice]").checked;
+    // one request per provider so each column keeps its own conversation
+    await Promise.all(
+      ids.map(async (id) => {
+        try {
+          const { results } = await api("chat", { providers: [id], system, useVoice, messages: histories[id] });
+          const r = results[0];
+          waits[id].remove();
+          if (r.error) { addMsg(id, "err", r.error); histories[id].pop(); return; }
+          histories[id].push({ role: "assistant", content: r.text });
+          addMsg(id, "", r.text);
+          $("[data-meta]", column(id)).textContent = `${roulette ? r.provider + " · " : ""}${r.model || ""} · ${(r.ms / 1000).toFixed(1)}s`;
+        } catch (err) {
+          waits[id].remove();
+          addMsg(id, "err", (err as Error).message);
+          histories[id].pop();
+        }
+      })
+    );
+  });
+  $<HTMLTextAreaElement>("#chat-input").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $<HTMLFormElement>("[data-chat-form]").requestSubmit(); }
+  });
+  $("[data-clear-chat]").addEventListener("click", () => {
+    for (const k of Object.keys(histories)) delete histories[k];
+    columns.innerHTML = "";
+  });
+
+  // ---------- promotion ----------
+  $("[data-promote]").addEventListener("click", async () => {
+    try { flash((await api("promote", { slug: $<HTMLSelectElement>("[data-promo-slug]").value })).message); } catch (err) { flash((err as Error).message, true); }
+  });
+
+  if (token) showApp();
+  else showLogin();
+</script>

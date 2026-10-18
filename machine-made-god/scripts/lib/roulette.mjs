@@ -69,18 +69,12 @@ export function chooseModel(ids, p, exclude = []) {
   return usable[0] || null;
 }
 
-async function callOpenAICompatible(p, { system, user, schemaName }, ctx) {
+// Raw chat call to an OpenAI-compatible endpoint. Returns { text, model }.
+async function openAIChat(p, messages, ctx, { json = false, maxTokens = 8000 } = {}) {
   const key = p.keyEnv ? ctx.env[p.keyEnv] : "ollama";
   const model = ctx.state.providers?.[p.id]?.model || p.model;
-  const jsonMode = ctx.state.providers?.[p.id]?.jsonMode ?? p.jsonMode;
-  const body = {
-    model,
-    [p.maxTokensParam || "max_tokens"]: 8000,
-    messages: [
-      { role: "system", content: system },
-      { role: "user", content: user },
-    ],
-  };
+  const jsonMode = json && (ctx.state.providers?.[p.id]?.jsonMode ?? p.jsonMode);
+  const body = { model, [p.maxTokensParam || "max_tokens"]: maxTokens, messages };
   if (!p.noTemperature) body.temperature = ctx.config.temperature ?? 0.9;
   if (jsonMode) body.response_format = { type: "json_object" };
 
@@ -106,13 +100,13 @@ async function callOpenAICompatible(p, { system, user, schemaName }, ctx) {
     const lower = text.toLowerCase();
     // Out of credits / quota: bench for a day rather than retrying every run.
     if (/insufficient_quota|credit_balance|billing|no credits/.test(lower)) throw new ProviderError("out of credits", { kind: "auth", status: res.status });
-    if (res.status === 429) throw new ProviderError(`rate limited (${schemaName})`, { kind: "rate_limit", status: 429 });
+    if (res.status === 429) throw new ProviderError("rate limited", { kind: "rate_limit", status: 429 });
     if (res.status === 401 || res.status === 403) throw new ProviderError("key rejected", { kind: "auth", status: res.status });
     if (jsonMode && res.status === 400 && lower.includes("response_format")) {
       ctx.remember(p.id, { jsonMode: false });
-      return callOpenAICompatible(p, { system, user, schemaName }, ctx);
+      return openAIChat(p, messages, ctx, { json, maxTokens });
     }
-    if (res.status === 404 || /model.*(not found|does not exist|decommission|deprecated|not supported|invalid)|no endpoints found/.test(lower)) {
+    if (res.status === 404 || /model.*(not found|does not exist|decommission|deprecated|not supported|invalid|no longer available)|no endpoints found/.test(lower)) {
       throw new ProviderError(`model "${model}" unavailable`, { kind: "model", status: res.status });
     }
     throw new ProviderError(`HTTP ${res.status}: ${text.slice(0, 200)}`, { kind: "error", status: res.status });
@@ -125,7 +119,20 @@ async function callOpenAICompatible(p, { system, user, schemaName }, ctx) {
     throw new ProviderError("provider returned non-JSON response", { kind: "error" });
   }
   const content = data.choices?.[0]?.message?.content;
-  return { json: extractJson(Array.isArray(content) ? content.map((c) => c.text || "").join("") : content), model };
+  return { text: Array.isArray(content) ? content.map((c) => c.text || "").join("") : content || "", model: data.model || model };
+}
+
+async function callOpenAICompatible(p, { system, user }, ctx) {
+  const { text, model } = await openAIChat(
+    p,
+    [
+      { role: "system", content: system },
+      { role: "user", content: user },
+    ],
+    ctx,
+    { json: true }
+  );
+  return { json: extractJson(text), model };
 }
 
 async function discoverModel(p, ctx, exclude = []) {
@@ -145,22 +152,23 @@ async function discoverModel(p, ctx, exclude = []) {
   }
 }
 
-async function callAnthropic(p, { system, user, schema }, ctx) {
+// Claude via the official SDK. `format` (a JSON schema) switches on structured output.
+async function anthropicMessage(p, { system, messages, schema, maxTokens = 16000 }, ctx) {
   const client = new Anthropic({ apiKey: ctx.env[p.keyEnv], maxRetries: 1 });
   try {
     const response = await client.beta.messages.create({
       model: p.model,
-      max_tokens: 16000,
+      max_tokens: maxTokens,
       betas: ["server-side-fallback-2026-07-01"],
       fallbacks: "default",
-      system,
-      messages: [{ role: "user", content: user }],
-      output_config: { effort: "medium", format: { type: "json_schema", schema } },
+      ...(system ? { system } : {}),
+      messages,
+      output_config: schema ? { effort: "medium", format: { type: "json_schema", schema } } : { effort: "low" },
     });
     if (response.stop_reason === "refusal") throw new ProviderError("model declined the request", { kind: "refusal" });
     if (response.stop_reason === "max_tokens") throw new ProviderError("reply was cut off", { kind: "bad_output" });
     const text = response.content.filter((b) => b.type === "text").map((b) => b.text).join("");
-    return { json: extractJson(text), model: response.model || p.model };
+    return { text, model: response.model || p.model };
   } catch (err) {
     if (err instanceof ProviderError) throw err;
     if (err instanceof Anthropic.RateLimitError) throw new ProviderError("rate limited", { kind: "rate_limit", status: 429 });
@@ -173,15 +181,19 @@ async function callAnthropic(p, { system, user, schema }, ctx) {
   }
 }
 
+async function callAnthropic(p, { system, user, schema }, ctx) {
+  const { text, model } = await anthropicMessage(p, { system, messages: [{ role: "user", content: user }], schema }, ctx);
+  return { json: extractJson(text), model };
+}
+
 async function callMock(p, request, ctx) {
   return { json: ctx.mock(request), model: "mock" };
 }
 
-export async function callProvider(p, request, ctx) {
-  if (p.type === "mock") return callMock(p, request, ctx);
-  if (p.type === "anthropic") return callAnthropic(p, request, ctx);
+// Retry once on a replacement model if the configured one has been retired.
+async function withModelRepair(p, ctx, fn) {
   try {
-    return await callOpenAICompatible(p, request, ctx);
+    return await fn();
   } catch (err) {
     if (err.kind !== "model") throw err;
     const current = ctx.state.providers?.[p.id]?.model || p.model;
@@ -190,8 +202,22 @@ export async function callProvider(p, request, ctx) {
     if (!replacement || replacement === current) throw err;
     ctx.log(`  ↻ ${p.id}: "${current}" is gone, switching to "${replacement}"`);
     ctx.remember(p.id, { model: replacement });
-    return callOpenAICompatible(p, request, ctx);
+    return fn();
   }
+}
+
+export async function callProvider(p, request, ctx) {
+  if (p.type === "mock") return callMock(p, request, ctx);
+  if (p.type === "anthropic") return callAnthropic(p, request, ctx);
+  return withModelRepair(p, ctx, () => callOpenAICompatible(p, request, ctx));
+}
+
+// Plain conversation (used by the control panel playground). Returns { text, model }.
+export async function chatProvider(p, { system, messages }, ctx) {
+  if (p.type === "mock") return { text: "mock reply", model: "mock" };
+  if (p.type === "anthropic") return anthropicMessage(p, { system, messages, maxTokens: 4000 }, ctx);
+  const full = system ? [{ role: "system", content: system }, ...messages] : messages;
+  return withModelRepair(p, ctx, () => openAIChat(p, full, ctx, { maxTokens: 4000 }));
 }
 
 // Spin the wheel: try providers in roulette order until `accept` returns a value.

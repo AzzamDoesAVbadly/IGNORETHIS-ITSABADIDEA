@@ -1,0 +1,56 @@
+# Promote one post (or the newest unpromoted one) on demand. Started from the control panel.
+name: Promote
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Optional: article/quiz slug. Empty = newest article not yet promoted."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: the-machine
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: machine-made-god
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: machine-made-god/package-lock.json
+      - run: npm ci
+      - name: Promote
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          SLUG: ${{ inputs.slug }}
+        run: |
+          if [ -n "$SLUG" ]; then node scripts/promote.mjs --slug "$SLUG"; else node scripts/promote.mjs --latest; fi
+      - name: Save promotion log
+        run: |
+          git config user.name "machine-made-god[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/promo-log.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Promotion log [skip netlify]"
+          git pull --rebase origin main
+          git push origin HEAD:main

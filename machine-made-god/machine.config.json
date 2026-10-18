@@ -18,6 +18,11 @@
     "announcement": "halcyon-tek-wellness-initiative-notifications",
     "essay": "i-am-the-algorithm-and-i-am-tired"
   },
+  "promotion": {
+    "enabled": true,
+    "aiCaptions": true,
+    "indexNowKey": "4a547763ac00e8fc4d6dbd5c065c22c4"
+  },
   "providers": [
     {
       "id": "gemini",

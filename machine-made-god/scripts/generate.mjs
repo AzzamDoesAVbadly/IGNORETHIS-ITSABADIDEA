@@ -48,6 +48,10 @@ if (env.MACHINE_MOCK) {
   config.providers = [{ id: "mock", type: "mock", weight: 1 }];
 }
 
+// On-demand mode (from the control panel): one article from a requested idea.
+const ON_DEMAND = Boolean(env.MACHINE_IDEA || env.MACHINE_CATEGORY);
+const IDEA = String(env.MACHINE_IDEA || "").trim().slice(0, 600);
+
 const random = Math.random;
 const pick = (arr) => arr[Math.floor(random() * arr.length)];
 const sample = (arr, n) => [...arr].sort(() => random() - 0.5).slice(0, n);
@@ -160,13 +164,15 @@ function exemplarFor(format) {
 
 function articlePrompt({ category, format, existing }) {
   const recent = existing.titles.slice(0, 60).map((t) => `- ${t}`).join("\n");
+  const request = IDEA ? `\nTHE EDITOR-IN-CHIEF REQUESTED THIS IDEA. Build the piece around it (still obeying every hard rule): ${IDEA}\n` : "";
   const user = `Write ONE new piece for the "${category.name}" section.
 Section description: ${category.blurb}
 
 FORMAT: ${format}
 ${formats[format]}
 ${exemplarFor(format)}
-Creative sparks (optional; use one, combine two, or ignore them if you have a better idea): ${sample(sparks, 3).join(", ")}.
+${request}
+${IDEA ? "" : `Creative sparks (optional; use one, combine two, or ignore them if you have a better idea): ${sample(sparks, 3).join(", ")}.`}
 
 Recent headlines. Do NOT repeat their premises, targets, or headline structures:
 ${recent}
@@ -393,7 +399,7 @@ async function check() {
 }
 
 async function run() {
-  if (config.enabled === false || String(env.MACHINE_ENABLED).toLowerCase() === "false") {
+  if (!ON_DEMAND && (config.enabled === false || String(env.MACHINE_ENABLED).toLowerCase() === "false")) {
     log("The machine is switched off (machine.config.json \"enabled\" or MACHINE_ENABLED=false). Nothing to do.");
     return;
   }
@@ -406,15 +412,18 @@ async function run() {
   log(`The machine wakes. Providers in the chamber: ${ready.map((p) => p.id).join(", ")}${DRY ? " (dry run)" : ""}\n`);
 
   const existing = loadExisting();
-  const summary = { at: new Date().toISOString(), articles: [], quiz: null, extras: null, failures: [] };
+  const summary = { at: new Date().toISOString(), onDemand: ON_DEMAND || undefined, idea: IDEA || undefined, articles: [], quiz: null, extras: null, failures: [] };
   const runTitles = [];
   const takenCats = [];
   const start = Date.now();
 
-  for (let i = 0; i < (config.articlesPerRun ?? 2); i++) {
-    const category = chooseCategory(existing, takenCats);
+  const articleCount = ON_DEMAND ? 1 : config.articlesPerRun ?? 2;
+  for (let i = 0; i < articleCount; i++) {
+    const requestedCat = ON_DEMAND && categories.find((c) => c.slug === env.MACHINE_CATEGORY && c.slug !== "quizzes");
+    const category = requestedCat || chooseCategory(existing, takenCats);
     takenCats.push(category.slug);
-    const format = chooseFormat(category, existing);
+    const format = ON_DEMAND && FORMATS.includes(env.MACHINE_FORMAT) ? env.MACHINE_FORMAT : chooseFormat(category, existing);
+    if (IDEA) log(`  (requested idea: ${IDEA.slice(0, 120)})`);
     const date = new Date(start + i * 60000).toISOString();
     log(`→ Article ${i + 1}: ${category.name} / ${format}`);
     try {
@@ -461,7 +470,7 @@ async function run() {
   }
 
   const daysSinceQuiz = state.lastQuizAt ? (Date.now() - new Date(state.lastQuizAt)) / 86400000 : Infinity;
-  if (daysSinceQuiz >= (config.quizEveryDays ?? 3)) {
+  if (!ON_DEMAND && daysSinceQuiz >= (config.quizEveryDays ?? 3)) {
     log("→ Quiz");
     try {
       const { item, provider, model } = await spin(quizPrompt(existing), (json) => makeQuiz(json, { existing, date: new Date(start + 5 * 60000).toISOString() }), ctx);
@@ -478,7 +487,7 @@ async function run() {
   }
 
   const counts = { ticker: config.tickerPerRun ?? 4, bumps: config.bumpsPerRun ?? 2, ads: config.adsPerRun ?? 1 };
-  if (counts.ticker + counts.bumps + counts.ads > 0) {
+  if (!ON_DEMAND && counts.ticker + counts.bumps + counts.ads > 0) {
     log("→ Ticker, bumps & parody ads");
     const ticker = readJson(join(paths.data, "ticker.json"), []);
     const bumps = readJson(join(paths.data, "bumps.json"), []);
