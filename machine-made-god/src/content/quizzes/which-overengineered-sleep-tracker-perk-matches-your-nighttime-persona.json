@@ -1,0 +1,169 @@
+{
+  "title": "Which Overengineered Sleep‑Tracker Perk Matches Your Nighttime Persona?",
+  "dek": "Take this quiz to discover whether you’re a fireworks‑fueled wake‑up, a data‑obsessed dreamer, a swag‑hoarding scheduler, or a minimalist micro‑napper.",
+  "author": "dirk-hotfix",
+  "date": "2026-10-18T01:35:12.454Z",
+  "tags": [
+    "personality",
+    "quiz",
+    "tech",
+    "sleep",
+    "fireworks"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "badge",
+    "palette": "hazard",
+    "label": "SleepSpark"
+  },
+  "questions": [
+    {
+      "q": "When a conference announces a surprise fireworks display at 2 a.m., you…",
+      "answers": [
+        {
+          "a": "Set a reminder to watch it live.",
+          "r": "fireworks"
+        },
+        {
+          "a": "Log the exact duration into your sleep tracker.",
+          "r": "data"
+        },
+        {
+          "a": "Rush to the merch table for a limited‑edition sparkler T‑shirt.",
+          "r": "swag"
+        },
+        {
+          "a": "Pretend you didn’t notice and go back to your power nap.",
+          "r": "minimal"
+        }
+      ]
+    },
+    {
+      "q": "Your sleep tracker suggests you need 7 hours 42 minutes of rest. You…",
+      "answers": [
+        {
+          "a": "Program a fireworks‑like LED alarm to celebrate reaching the goal.",
+          "r": "fireworks"
+        },
+        {
+          "a": "Create a spreadsheet with minute‑by‑minute sleep stage analysis.",
+          "r": "data"
+        },
+        {
+          "a": "Ask the conference organizer for a complimentary sleep mask with their logo.",
+          "r": "swag"
+        },
+        {
+          "a": "Ignore the suggestion and scroll Instagram until you fall asleep.",
+          "r": "minimal"
+        }
+      ]
+    },
+    {
+      "q": "At the annual Tech Expo, the keynote speaker mentions a new ‘Nap‑Inducing Fireworks’ feature. Your reaction…",
+      "answers": [
+        {
+          "a": "Envision a fireworks show that syncs with REM cycles.",
+          "r": "fireworks"
+        },
+        {
+          "a": "Take notes on latency, intensity, and decibel levels.",
+          "r": "data"
+        },
+        {
+          "a": "Immediately claim the exclusive ‘Nap‑Fireworks’ hoodie at the merch booth.",
+          "r": "swag"
+        },
+        {
+          "a": "Schedule a 5‑minute power nap on the spot, fireworks be damned.",
+          "r": "minimal"
+        }
+      ]
+    },
+    {
+      "q": "Your sleep tracker’s app prompts you to set a ‘Bedtime Celebration’. You…",
+      "answers": [
+        {
+          "a": "Choose a fireworks animation with a custom soundtrack.",
+          "r": "fireworks"
+        },
+        {
+          "a": "Customize the data dashboard with a ‘celebration’ graph motif.",
+          "r": "data"
+        },
+        {
+          "a": "Ask for a physical confetti cannon from the brand’s swag store.",
+          "r": "swag"
+        },
+        {
+          "a": "Skip the celebration and let the app silently dim the screen.",
+          "r": "minimal"
+        }
+      ]
+    },
+    {
+      "q": "During a networking break, someone offers you a ‘Sleep‑Enhancing Fireworks’ snack. You…",
+      "answers": [
+        {
+          "a": "Take it, hoping the fizz will spice up your circadian rhythm.",
+          "r": "fireworks"
+        },
+        {
+          "a": "Analyze its ingredient list for cortisol‑reducing compounds.",
+          "r": "data"
+        },
+        {
+          "a": "Trade it for a limited‑edition USB‑powered fireworks stick.",
+          "r": "swag"
+        },
+        {
+          "a": "Decline, citing you already have a 30‑minute nap scheduled.",
+          "r": "minimal"
+        }
+      ]
+    },
+    {
+      "q": "When your sleep tracker flags ‘Sleep Disruption’, you…",
+      "answers": [
+        {
+          "a": "Set off a virtual fireworks display to mask the disruption.",
+          "r": "fireworks"
+        },
+        {
+          "a": "Dive into the raw data to pinpoint the exact second of disturbance.",
+          "r": "data"
+        },
+        {
+          "a": "Request a ‘Sleep Disruption’ badge with the tracker’s logo for your LinkedIn.",
+          "r": "swag"
+        },
+        {
+          "a": "Tell yourself it’s just the universe whispering, and keep sleeping.",
+          "r": "minimal"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "fireworks": {
+      "title": "You Are the Pyrotechnic Wake‑Up",
+      "body": "You believe that every good morning starts with a bang—literally. Whether it’s a phone‑screen fireworks animation or a scheduled LED blast, you need visual fireworks to convince yourself you’ve actually risen from the mattress. You’ll proudly set “celebration” alarms, curate Instagram stories of midnight pyrotechnics, and convince anyone who will listen that the sparkle is essential for optimal cortisol levels. In short, you’re the human embodiment of a New Year’s Eve countdown, even at 6 a.m.",
+      "share": "I celebrate my wake‑up with fireworks, even if it’s just on my phone."
+    },
+    "data": {
+      "title": "You Are the Data‑Drowning Dreamer",
+      "body": "You treat sleep like a quarterly report. Your night is divided into pie charts, bar graphs, and color‑coded spreadsheets that detail every REM twitch. You’ll spend half the night adjusting metrics, cross‑referencing heart‑rate variability, and arguing with your own tracker about the “optimal” nap length. When friends ask how you slept, you respond with a three‑page PDF instead of a simple “fine.” In reality, you’re probably awake longer than the average insomniac, but at least you have the data to prove it.",
+      "share": "I’ve turned my sleep stats into a full‑blown spreadsheet obsession."
+    },
+    "swag": {
+      "title": "You Are the Swag‑Stacking Scheduler",
+      "body": "You attend conferences not for the knowledge, but for the exclusive merch. From limited‑edition firework‑shaped USB drives to sleep‑mask hoodies embroidered with the event’s logo, you collect it all and file it by deadline. Your desk is a shrine of tote bags, lanyards, and novelty snacks, each tagged with a reminder to “use for optimal rest.” You’ll even schedule nap times around merch giveaways, because nothing says “productivity” like a hoodie that says “I slept at #TechCon2026.”",
+      "share": "I own more conference swag than I have sleep hours left."
+    },
+    "minimal": {
+      "title": "You Are the Minimalist Micro‑Nap",
+      "body": "You view every extra feature as a distraction. Fireworks? Too loud. Data dashboards? Unnecessary clutter. Swag booths? Waste of pocket space. Your ideal sleep‑tracker is a single, silent light that dims at exactly 10 p.m. and never blinks again. You schedule power naps in five‑minute blocks, ignore celebration prompts, and consider any notification a violation of your personal quiet‑time covenant. In the grand theater of overengineered wellness, you’re the audience member who left before the opening act.",
+      "share": "I’d rather nap in silence than chase any gimmick."
+    }
+  }
+}

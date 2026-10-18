@@ -1,12 +1,90 @@
 [
-  { "id": "sandwich", "brand": "Dr. Crust's Opinion Clinic", "headline": "Doctors Hate This One Weirdly Specific Sandwich Opinion", "body": "Mayo on both slices? Ham under the cheese? One local man has the answer and he will not stop telling you.", "cta": "Hear His Opinion", "palette": "hazard" },
-  { "id": "emails", "brand": "Inbox Evasion Systems™", "headline": "This Local Man Found a New Way to Avoid Answering Emails", "body": "Inbox professionals are furious. He just closes the laptop. That's it. That's the trick.", "cta": "Close Laptop Now", "palette": "bleach" },
-  { "id": "compensation", "brand": "Barnaby & Tabs LLP", "headline": "You May Be Eligible for Compensation If You Have Ever Opened a Browser Tab", "body": "Call now. Or don't. We are not a real law firm, which is honestly a relief for everyone.", "cta": "Check Eligibility", "palette": "sodium" },
-  { "id": "journey", "brand": "Brandwell Consulting Group", "headline": "Brands Are Begging This Person to Stop Calling Everything 'A Journey'", "body": "Her lunch was a journey. Her commute was a journey. Her parking ticket was 'a real journey.' Experts have run out of patience.", "cta": "Begin Your Journey", "palette": "teal" },
-  { "id": "nap", "brand": "SNOOZR+ Premium Rest", "headline": "Introducing Naps, Now With a Subscription", "body": "Sleep has always been free. We fixed that. Plans start at $9.99 per blink.", "cta": "Start Free Trial (Not Free)", "palette": "sick" },
-  { "id": "water", "brand": "AQUAFINITY Hydration Labs", "headline": "Our Water Has Been Disrupted", "body": "We took regular water and added a logo. Hydration has never felt so on-brand.", "cta": "Drink the Logo", "palette": "crt" },
-  { "id": "chair", "brand": "OMNIVEX Seating Solutions", "headline": "The Ergonomic Chair That Judges Your Posture Out Loud", "body": "Features 14 points of lumbar support and one point of view about your life choices.", "cta": "Get Judged", "palette": "bleach" },
-  { "id": "mindful", "brand": "Mindfulle", "headline": "Be Present in the Moment With Our App That Sends 40 Notifications a Day", "body": "Reminders to breathe. Reminders to relax. Reminders that your streak is in danger. Breathe.", "cta": "Breathe Faster", "palette": "teal" },
-  { "id": "nft", "brand": "Certified Pre-Owned Clouds", "headline": "Own a Cloud. Not a Picture of a Cloud. Not the Rights to a Cloud. Just the Feeling.", "body": "Each cloud is unique until it moves, which is immediately. No refunds after dissipation.", "cta": "Claim Your Feeling", "palette": "sodium" },
-  { "id": "keyboard", "brand": "HALCYON-TEK Peripherals", "headline": "The Keyboard With No Backspace. Commit to What You Said.", "body": "Typos are permanent. Regrets are permanent. Productivity is up 9% and morale is under investigation.", "cta": "Type With Courage", "palette": "hazard" }
+  {
+    "id": "sandwich",
+    "brand": "Dr. Crust's Opinion Clinic",
+    "headline": "Doctors Hate This One Weirdly Specific Sandwich Opinion",
+    "body": "Mayo on both slices? Ham under the cheese? One local man has the answer and he will not stop telling you.",
+    "cta": "Hear His Opinion",
+    "palette": "hazard"
+  },
+  {
+    "id": "emails",
+    "brand": "Inbox Evasion Systems™",
+    "headline": "This Local Man Found a New Way to Avoid Answering Emails",
+    "body": "Inbox professionals are furious. He just closes the laptop. That's it. That's the trick.",
+    "cta": "Close Laptop Now",
+    "palette": "bleach"
+  },
+  {
+    "id": "compensation",
+    "brand": "Barnaby & Tabs LLP",
+    "headline": "You May Be Eligible for Compensation If You Have Ever Opened a Browser Tab",
+    "body": "Call now. Or don't. We are not a real law firm, which is honestly a relief for everyone.",
+    "cta": "Check Eligibility",
+    "palette": "sodium"
+  },
+  {
+    "id": "journey",
+    "brand": "Brandwell Consulting Group",
+    "headline": "Brands Are Begging This Person to Stop Calling Everything 'A Journey'",
+    "body": "Her lunch was a journey. Her commute was a journey. Her parking ticket was 'a real journey.' Experts have run out of patience.",
+    "cta": "Begin Your Journey",
+    "palette": "teal"
+  },
+  {
+    "id": "nap",
+    "brand": "SNOOZR+ Premium Rest",
+    "headline": "Introducing Naps, Now With a Subscription",
+    "body": "Sleep has always been free. We fixed that. Plans start at $9.99 per blink.",
+    "cta": "Start Free Trial (Not Free)",
+    "palette": "sick"
+  },
+  {
+    "id": "water",
+    "brand": "AQUAFINITY Hydration Labs",
+    "headline": "Our Water Has Been Disrupted",
+    "body": "We took regular water and added a logo. Hydration has never felt so on-brand.",
+    "cta": "Drink the Logo",
+    "palette": "crt"
+  },
+  {
+    "id": "chair",
+    "brand": "OMNIVEX Seating Solutions",
+    "headline": "The Ergonomic Chair That Judges Your Posture Out Loud",
+    "body": "Features 14 points of lumbar support and one point of view about your life choices.",
+    "cta": "Get Judged",
+    "palette": "bleach"
+  },
+  {
+    "id": "mindful",
+    "brand": "Mindfulle",
+    "headline": "Be Present in the Moment With Our App That Sends 40 Notifications a Day",
+    "body": "Reminders to breathe. Reminders to relax. Reminders that your streak is in danger. Breathe.",
+    "cta": "Breathe Faster",
+    "palette": "teal"
+  },
+  {
+    "id": "nft",
+    "brand": "Certified Pre-Owned Clouds",
+    "headline": "Own a Cloud. Not a Picture of a Cloud. Not the Rights to a Cloud. Just the Feeling.",
+    "body": "Each cloud is unique until it moves, which is immediately. No refunds after dissipation.",
+    "cta": "Claim Your Feeling",
+    "palette": "sodium"
+  },
+  {
+    "id": "keyboard",
+    "brand": "HALCYON-TEK Peripherals",
+    "headline": "The Keyboard With No Backspace. Commit to What You Said.",
+    "body": "Typos are permanent. Regrets are permanent. Productivity is up 9% and morale is under investigation.",
+    "cta": "Type With Courage",
+    "palette": "hazard"
+  },
+  {
+    "id": "nexora-dynamics-this-weighted-blanket-is",
+    "brand": "NEXORA DYNAMICS",
+    "headline": "This Weighted Blanket Is Actually Just 40 Pounds Of Shredded NDA Agreements",
+    "body": "Experience legal-grade compression. Designed by corporate litigators to simulate the comforting burden of institutional silence. Free shipping.",
+    "cta": "Settle Out Of Court",
+    "palette": "bleach"
+  }
 ]

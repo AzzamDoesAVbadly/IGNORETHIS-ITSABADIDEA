@@ -1,5 +1,52 @@
 {
-  "providers": {},
-  "lastQuizAt": null,
-  "runs": []
+  "providers": {
+    "groq": {
+      "ok": 1,
+      "lastSuccess": "2026-10-18T01:30:17.412Z"
+    },
+    "gemini": {
+      "fail": 1,
+      "ok": 1,
+      "lastSuccess": "2026-10-18T01:35:36.090Z"
+    },
+    "openrouter": {
+      "ok": 2,
+      "lastSuccess": "2026-10-18T01:32:50.716Z",
+      "fail": 1
+    },
+    "cerebras": {
+      "ok": 2,
+      "lastSuccess": "2026-10-18T01:34:53.899Z"
+    }
+  },
+  "lastQuizAt": "2026-10-18T01:34:53.899Z",
+  "runs": [
+    {
+      "at": "2026-10-18T01:30:12.454Z",
+      "articles": [
+        {
+          "slug": "9-ways-your-feed-pretends-to-be-your-therapist-while-actually-selling",
+          "provider": "groq+openrouter",
+          "model": "openai/gpt-oss-120b → nvidia/nemotron-3-super-120b-a12b:free"
+        },
+        {
+          "slug": "lavender-mist-fountain-triggers-unplanned-1994-prom-flashbacks-for-3",
+          "provider": "openrouter+cerebras",
+          "model": "nvidia/nemotron-3-super-120b-a12b:free → gpt-oss-120b"
+        }
+      ],
+      "quiz": {
+        "slug": "which-overengineered-sleep-tracker-perk-matches-your-nighttime-persona",
+        "provider": "cerebras",
+        "model": "gpt-oss-120b"
+      },
+      "extras": {
+        "provider": "gemini",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    }
+  ]
 }
