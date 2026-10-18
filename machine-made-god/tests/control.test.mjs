@@ -45,3 +45,24 @@ test("post actions reject path tricks in slugs", async () => {
   const res = await call("POST", "post", { action: "delete", slug: "../../package", kind: "article" }, token);
   assert.equal(res.status, 400);
 });
+
+test("YouTube connect validates input and the callback rejects tampered state", async () => {
+  const { token } = await (await call("POST", "login", { password: process.env.CONTROL_PASSWORD })).json();
+  const bad = await call("POST", "youtube/start", { clientId: "nope", clientSecret: "x" }, token);
+  assert.equal(bad.status, 400);
+  const good = await call("POST", "youtube/start", { clientId: "123-abc.apps.googleusercontent.com", clientSecret: "shh" }, token);
+  assert.equal(good.status, 200);
+  const { url } = await good.json();
+  const state = new URL(url).searchParams.get("state");
+  assert.ok(!state.includes("shh"), "client secret is encrypted inside state");
+  // a forged state must not be accepted (callback redirects back with an error)
+  const forged = await handler(new Request(`http://localhost/api/control/youtube/callback?code=x&state=${state.slice(0, -4)}AAAA`));
+  assert.equal(forged.status, 302);
+  assert.match(forged.headers.get("location"), /yt=error/);
+});
+
+test("socials and shorts routes require a session", async () => {
+  assert.equal((await call("GET", "socials")).status, 401);
+  assert.equal((await call("POST", "socials/connect", { network: "bluesky" })).status, 401);
+  assert.equal((await call("POST", "shorts", {})).status, 401);
+});

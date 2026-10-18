@@ -7,7 +7,8 @@
 //   GITHUB_REPO        (optional) owner/name, defaults to the repo below
 //   GEMINI_API_KEY, GROQ_API_KEY, ... (optional) enable those providers in the playground
 
-import { createHmac, timingSafeEqual } from "node:crypto";
+import { createHmac, timingSafeEqual, createHash, createCipheriv, createDecipheriv, randomBytes } from "node:crypto";
+import sodium from "libsodium-wrappers";
 import machineConfig from "../../machine.config.json" with { type: "json" };
 import categories from "../../src/data/categories.json" with { type: "json" };
 import { availableProviders, rouletteOrder, chatProvider } from "../../scripts/lib/roulette.mjs";
@@ -106,6 +107,7 @@ async function status(origin) {
     settle(readRepoFile("src/data/promo-log.json").then((t) => JSON.parse(t).slice(0, 40))),
     settle(fetch(`${origin}/search.json`).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`search.json HTTP ${r.status}`))))),
   ]);
+  const shortsLog = await settle(readRepoFile("src/data/shorts-log.json").then((t) => JSON.parse(t).slice(0, 30)));
 
   const machineState = state.ok ? state.value : { providers: {}, runs: [] };
   const counts = {};
@@ -138,6 +140,7 @@ async function status(origin) {
     content: { total: index.ok ? index.value.length : null, counts, error: index.ok ? undefined : index.error },
     categories: categories.map((c) => ({ slug: c.slug, name: c.name, color: c.color })),
     promoLog: promoLog.ok ? promoLog.value : [],
+    shortsLog: shortsLog.ok ? shortsLog.value : [],
     errors: [runs, state, promoLog, index].filter((r) => !r.ok).map((r) => r.error),
   };
 }
@@ -265,6 +268,127 @@ async function chat({ providers = [], system = "", useVoice = false, messages = 
   return { results };
 }
 
+// ---------- socials (credentials live in GitHub secrets; values never come back) ----------
+
+const SOCIAL_SECRETS = {
+  bluesky: ["BLUESKY_HANDLE", "BLUESKY_APP_PASSWORD"],
+  mastodon: ["MASTODON_INSTANCE", "MASTODON_TOKEN"],
+  youtube: ["YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "YOUTUBE_REFRESH_TOKEN"],
+};
+
+async function secretNames() {
+  try {
+    const { secrets } = await gh("/actions/secrets?per_page=100");
+    return { ok: true, names: secrets.map((x) => x.name) };
+  } catch (err) {
+    return { ok: false, names: [], error: err.status === 403 ? "Your GitHub token can't see secrets. Edit the token and add Repository permission “Secrets: Read and write”." : err.message };
+  }
+}
+
+async function setSecret(name, value) {
+  await sodium.ready;
+  const { key, key_id } = await gh("/actions/secrets/public-key");
+  const sealed = sodium.crypto_box_seal(sodium.from_string(String(value)), sodium.from_base64(key, sodium.base64_variants.ORIGINAL));
+  await gh(`/actions/secrets/${name}`, { method: "PUT", body: JSON.stringify({ encrypted_value: sodium.to_base64(sealed, sodium.base64_variants.ORIGINAL), key_id }) });
+}
+
+async function socials() {
+  const s = await secretNames();
+  const connected = Object.fromEntries(Object.entries(SOCIAL_SECRETS).map(([net, names]) => [net, names.every((n) => s.names.includes(n))]));
+  return { canManage: s.ok, error: s.error, connected, aiKeys: ["GEMINI_API_KEY", "GROQ_API_KEY", "OPENROUTER_API_KEY", "CEREBRAS_API_KEY", "DASHSCOPE_API_KEY", "OPENAI_API_KEY", "ANTHROPIC_API_KEY"].filter((n) => s.names.includes(n)) };
+}
+
+async function connectSocial({ network, fields = {} }) {
+  const f = Object.fromEntries(Object.entries(fields).map(([k, v]) => [k, String(v || "").trim()]));
+  if (network === "bluesky") {
+    const handle = f.handle.replace(/^@/, "");
+    const res = await fetch("https://bsky.social/xrpc/com.atproto.server.createSession", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ identifier: handle, password: f.appPassword }),
+    });
+    if (!res.ok) throw Object.assign(new Error("Bluesky rejected that handle/app password. Use an App Password (Settings → Privacy and security → App passwords), not your login password."), { status: 400 });
+    await setSecret("BLUESKY_HANDLE", handle);
+    await setSecret("BLUESKY_APP_PASSWORD", f.appPassword);
+    return { ok: true, message: `Bluesky connected as @${handle}. New posts will be shared there automatically.` };
+  }
+  if (network === "mastodon") {
+    const instance = (f.instance.startsWith("http") ? f.instance : `https://${f.instance}`).replace(/\/$/, "");
+    const res = await fetch(`${instance}/api/v1/accounts/verify_credentials`, { headers: { Authorization: `Bearer ${f.token}` } });
+    if (!res.ok) throw Object.assign(new Error(`Mastodon rejected that token (HTTP ${res.status}). Create it under Preferences → Development with the write:statuses scope.`), { status: 400 });
+    const acct = await res.json();
+    await setSecret("MASTODON_INSTANCE", instance);
+    await setSecret("MASTODON_TOKEN", f.token);
+    return { ok: true, message: `Mastodon connected as @${acct.acct}.` };
+  }
+  throw Object.assign(new Error("unknown network"), { status: 400 });
+}
+
+async function disconnectSocial({ network }) {
+  for (const name of SOCIAL_SECRETS[network] || []) {
+    await gh(`/actions/secrets/${name}`, { method: "DELETE" }).catch((err) => (err.status === 404 ? null : Promise.reject(err)));
+  }
+  return { ok: true, message: `${network} disconnected.` };
+}
+
+// YouTube OAuth: the client id/secret ride along in an encrypted, expiring `state`.
+const stateKey = () => createHash("sha256").update(`mmg-state:${password()}`).digest();
+function sealState(obj) {
+  const iv = randomBytes(12);
+  const c = createCipheriv("aes-256-gcm", stateKey(), iv);
+  const data = Buffer.concat([c.update(JSON.stringify(obj)), c.final()]);
+  return Buffer.concat([iv, c.getAuthTag(), data]).toString("base64url");
+}
+function openState(token) {
+  const buf = Buffer.from(String(token), "base64url");
+  const d = createDecipheriv("aes-256-gcm", stateKey(), buf.subarray(0, 12));
+  d.setAuthTag(buf.subarray(12, 28));
+  const obj = JSON.parse(Buffer.concat([d.update(buf.subarray(28)), d.final()]).toString());
+  if (obj.exp < Date.now()) throw new Error("This connect link expired. Start again from Mission Control.");
+  return obj;
+}
+
+function youtubeStart({ clientId, clientSecret }, origin) {
+  if (!/\.apps\.googleusercontent\.com$/.test(String(clientId).trim())) throw Object.assign(new Error("That doesn't look like a Google OAuth client ID (it ends in .apps.googleusercontent.com)."), { status: 400 });
+  if (!String(clientSecret).trim()) throw Object.assign(new Error("Paste the client secret too."), { status: 400 });
+  const state = sealState({ cid: clientId.trim(), cs: clientSecret.trim(), exp: Date.now() + 15 * 60000 });
+  const params = new URLSearchParams({
+    client_id: clientId.trim(),
+    redirect_uri: `${origin}/api/control/youtube/callback`,
+    response_type: "code",
+    scope: "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly",
+    access_type: "offline",
+    prompt: "consent",
+    include_granted_scopes: "true",
+    state,
+  });
+  return { url: `https://accounts.google.com/o/oauth2/v2/auth?${params}` };
+}
+
+async function youtubeCallback(url) {
+  const back = (q) => new Response(null, { status: 302, headers: { Location: `/control/?${new URLSearchParams(q)}` } });
+  try {
+    if (url.searchParams.get("error")) throw new Error(`Google said: ${url.searchParams.get("error")}`);
+    const { cid, cs } = openState(url.searchParams.get("state"));
+    const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ code: url.searchParams.get("code"), client_id: cid, client_secret: cs, redirect_uri: `${url.origin}/api/control/youtube/callback`, grant_type: "authorization_code" }),
+    });
+    const token = await tokenRes.json();
+    if (!token.refresh_token) throw new Error(token.error_description || token.error || "Google didn't return a refresh token. Remove the app's access at myaccount.google.com/permissions and try again.");
+    const ch = await fetch("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true", { headers: { Authorization: `Bearer ${token.access_token}` } }).then((r) => r.json());
+    const channel = ch.items?.[0]?.snippet?.title;
+    if (!channel) throw new Error("That Google account has no YouTube channel yet. Create one at youtube.com first, then connect again.");
+    await setSecret("YOUTUBE_CLIENT_ID", cid);
+    await setSecret("YOUTUBE_CLIENT_SECRET", cs);
+    await setSecret("YOUTUBE_REFRESH_TOKEN", token.refresh_token);
+    return back({ yt: "ok", channel });
+  } catch (err) {
+    return back({ yt: "error", msg: err.message.slice(0, 300) });
+  }
+}
+
 // ---------- router ----------
 
 export default async (req) => {
@@ -281,6 +405,9 @@ export default async (req) => {
     }
     return json(200, { token: makeToken() });
   }
+
+  // Google redirects here without our session header; the encrypted state authenticates it.
+  if (route === "youtube/callback" && req.method === "GET") return youtubeCallback(url);
 
   if (!checkToken((req.headers.get("authorization") || "").replace(/^Bearer\s+/i, ""))) return json(401, { error: "Not logged in." });
 
@@ -300,6 +427,17 @@ export default async (req) => {
       case "POST promote":
         await dispatch("promote.yml", { slug: body.slug });
         return json(200, { ok: true, message: "Promotion started. Check the promotion log in a couple of minutes." });
+      case "GET socials":
+        return json(200, await socials());
+      case "POST socials/connect":
+        return json(200, await connectSocial(body));
+      case "POST socials/disconnect":
+        return json(200, await disconnectSocial(body));
+      case "POST youtube/start":
+        return json(200, youtubeStart(body, url.origin));
+      case "POST shorts":
+        await dispatch("shorts.yml", { slug: body.slug });
+        return json(200, { ok: true, message: "Making Shorts now. They'll appear in the Shorts log (and on YouTube, if connected) in about 3–5 minutes." });
       case "POST chat":
         return json(200, await chat(body));
       default:

@@ -4,6 +4,17 @@ import categories from "../data/categories.json";
 import config from "../../machine.config.json";
 const formats = ["news", "listicle", "review", "announcement", "essay"];
 const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free" }));
+const REPO = "AzzamDoesAVbadly/IGNORETHIS-ITSABADIDEA";
+const shortsDownloads = `https://github.com/${REPO}/actions/workflows/shorts.yml`;
+const manual = [
+  { id: "tiktok", name: "TikTok", signup: "https://www.tiktok.com/signup", how: `Manual for now: download the day's Shorts from <a href="${shortsDownloads}" target="_blank" rel="noopener">GitHub</a> and upload them. Auto-posting needs TikTok to audit a developer app.` },
+  { id: "instagram", name: "Instagram (Reels)", signup: "https://www.instagram.com/accounts/emailsignup/", how: "Manual for now: post the Shorts as Reels. Auto-posting needs a free Meta developer app connected to an Instagram professional account and a Facebook Page." },
+  { id: "facebook", name: "Facebook Page", signup: "https://www.facebook.com/pages/create", how: "Create a Page (not a personal profile). Auto-posting uses the same Meta developer app as Instagram." },
+  { id: "threads", name: "Threads", signup: "https://www.threads.net/", how: "Uses your Instagram login. Auto-posting uses the same Meta developer app." },
+  { id: "x", name: "X / Twitter", signup: "https://x.com/i/flow/signup", how: "Posting through X's API is very limited on the free tier and changes often. Manual posting recommended." },
+  { id: "reddit", name: "Reddit", signup: "https://www.reddit.com/register/", how: "Post by hand in subreddits that allow satire. Reddit bans automated self-promotion." },
+  { id: "pinterest", name: "Pinterest", signup: "https://www.pinterest.com/business/create/", how: "A business account lets you pin article art. API posting needs Pinterest's approval." },
+];
 ---
 <!doctype html>
 <html lang="en">
@@ -45,6 +56,8 @@ const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free
         <button role="tab" aria-selected="false" data-tab="posts">Posts</button>
         <button role="tab" aria-selected="false" data-tab="write">Write</button>
         <button role="tab" aria-selected="false" data-tab="playground">Playground</button>
+        <button role="tab" aria-selected="false" data-tab="socials">Socials</button>
+        <button role="tab" aria-selected="false" data-tab="shorts">Shorts</button>
         <button role="tab" aria-selected="false" data-tab="promo">Promotion</button>
       </nav>
       <p class="mc-flash" data-flash role="status" aria-live="polite"></p>
@@ -145,6 +158,83 @@ const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free
           <textarea id="chat-input" rows="2" placeholder="Ask every selected model the same thing… (Enter to send, Shift+Enter for a new line)"></textarea>
           <button class="btn" type="submit">Send</button>
         </form>
+      </section>
+
+      <!-- SOCIALS -->
+      <section data-panel="socials" hidden>
+        <div class="mc-card mc-warnbox" data-socials-warn hidden></div>
+        <p class="mc-muted">Accounts have to be created by a human (every network blocks automated sign-ups), so tap a sign-up link, then connect it here. Use the same handle everywhere, e.g. <b>machinemadegod</b>. Logins are stored encrypted as GitHub secrets and never shown again.</p>
+        <div class="mc-grid">
+          <div class="mc-card mc-wide">
+            <h2>YouTube Shorts <span class="mc-status" data-status="youtube"></span></h2>
+            <ol class="mc-list">
+              <li>Create the channel: <a href="https://www.youtube.com/create_channel" target="_blank" rel="noopener">youtube.com/create_channel</a></li>
+              <li>Open <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener">Google Cloud</a> → create a project called <code>machine-made-god</code>.</li>
+              <li>Enable the <a href="https://console.cloud.google.com/apis/library/youtube.googleapis.com" target="_blank" rel="noopener">YouTube Data API v3</a>.</li>
+              <li><a href="https://console.cloud.google.com/auth/branding" target="_blank" rel="noopener">OAuth consent screen</a>: External, any app name, your email. Then under Audience click <b>Publish app</b> (otherwise Google disconnects it every 7 days).</li>
+              <li><a href="https://console.cloud.google.com/auth/clients/create" target="_blank" rel="noopener">Create an OAuth client</a>: type <b>Web application</b>, authorized redirect URI: <code data-redirect-uri></code> <button class="mc-mini" type="button" data-copy-redirect>copy</button></li>
+              <li>Paste the client ID and secret below and press Connect. Google will warn the app is unverified; choose Advanced → continue. It's your own app.</li>
+              <li>Uploads stay private until Google approves your project: submit the free <a href="https://support.google.com/youtube/contact/yt_api_form" target="_blank" rel="noopener">YouTube API audit form</a> once.</li>
+            </ol>
+            <form class="mc-row mc-wrap" data-yt-form>
+              <input class="mc-input" name="clientId" placeholder="Client ID (….apps.googleusercontent.com)" required />
+              <input class="mc-input" name="clientSecret" placeholder="Client secret" type="password" required />
+              <button class="btn" type="submit">Connect YouTube</button>
+              <button class="mc-link" type="button" data-disconnect="youtube">Disconnect</button>
+            </form>
+          </div>
+
+          <div class="mc-card">
+            <h2>Bluesky <span class="mc-status" data-status="bluesky"></span></h2>
+            <p class="mc-muted">1. <a href="https://bsky.app" target="_blank" rel="noopener">Sign up at bsky.app</a>. 2. Settings → Privacy and security → <b>App passwords</b> → Add. 3. Paste below.</p>
+            <form class="mc-stack" data-connect="bluesky">
+              <input class="mc-input" name="handle" placeholder="machinemadegod.bsky.social" required />
+              <input class="mc-input" name="appPassword" placeholder="app password (xxxx-xxxx-xxxx-xxxx)" type="password" required />
+              <div class="mc-row"><button class="btn" type="submit">Connect Bluesky</button><button class="mc-link" type="button" data-disconnect="bluesky">Disconnect</button></div>
+            </form>
+          </div>
+
+          <div class="mc-card">
+            <h2>Mastodon <span class="mc-status" data-status="mastodon"></span></h2>
+            <p class="mc-muted">1. <a href="https://joinmastodon.org/servers" target="_blank" rel="noopener">Pick a server</a> whose rules allow bots and sign up; tick "This is an automated account". 2. Preferences → Development → New application (scope <code>write:statuses</code>). 3. Paste below.</p>
+            <form class="mc-stack" data-connect="mastodon">
+              <input class="mc-input" name="instance" placeholder="mastodon.social" required />
+              <input class="mc-input" name="token" placeholder="access token" type="password" required />
+              <div class="mc-row"><button class="btn" type="submit">Connect Mastodon</button><button class="mc-link" type="button" data-disconnect="mastodon">Disconnect</button></div>
+            </form>
+          </div>
+
+          {manual.map((n) => (
+            <div class="mc-card">
+              <h2>{n.name} <span class="mc-status manual">manual</span></h2>
+              <p class="mc-muted" set:html={n.how} />
+              <a class="btn btn--ghost" href={n.signup} target="_blank" rel="noopener">Create account ↗</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- SHORTS -->
+      <section data-panel="shorts" hidden class="mc-grid">
+        <div class="mc-card">
+          <h2>Make Shorts</h2>
+          <p class="mc-muted">Every day the machine renders one bump Short and one headline Short. They upload to YouTube once it's connected (Socials tab). Until then, download them from <a href={shortsDownloads} target="_blank" rel="noopener">GitHub</a> (open a run → Artifacts).</p>
+          <label for="shorts-slug">Headline Short for</label>
+          <select id="shorts-slug" data-shorts-slug><option value="">Machine picks (one bump + one headline)</option></select>
+          <button class="btn" type="button" data-make-shorts>Make Shorts now</button>
+        </div>
+        <div class="mc-card">
+          <h2>Where they go</h2>
+          <ul class="mc-list">
+            <li><b>YouTube Shorts</b>: automatic once connected</li>
+            <li><b>TikTok, Instagram Reels, Facebook</b>: download and upload by hand for now (same files work everywhere)</li>
+            <li>Every video is labeled as AI-generated on YouTube, as required</li>
+          </ul>
+        </div>
+        <div class="mc-card mc-wide">
+          <h2>Shorts log</h2>
+          <table class="mc-table"><thead><tr><th>When</th><th>Kind</th><th>Title</th><th>Result</th></tr></thead><tbody data-shorts-log></tbody></table>
+        </div>
       </section>
 
       <!-- PROMOTION -->
@@ -255,6 +345,14 @@ const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free
   .mc-msg.wait { color: #8c8576; font-style: italic; }
   .mc-chatbar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; gap: 10px; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom, 0px)); background: #000; border-top: 3px solid var(--sodium); z-index: 10; }
   .mc-chatbar textarea { flex: 1; }
+  .mc-row > .mc-input { flex: 1 1 260px; width: auto; }
+  .mc-stack { display: flex; flex-direction: column; gap: 8px; }
+  .mc-stack .mc-input { width: 100%; }
+  .mc-status { font-family: var(--font-mono); font-size: 0.66rem; padding: 2px 6px; border: 1px solid currentColor; margin-left: 6px; vertical-align: middle; color: #8c8576; }
+  .mc-status.on { color: #6dff8a; }
+  .mc-status.manual { color: var(--hazard); }
+  .mc-warnbox { border-color: var(--hazard); color: var(--hazard); }
+  .mc-card a { color: var(--acid); }
   @media (max-width: 760px) {
     .mc-grid { grid-template-columns: minmax(0, 1fr); }
     .mc-row { flex-direction: column; align-items: stretch; }
@@ -336,7 +434,8 @@ const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free
       $$("[data-tab]").forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
       $$("[data-panel]").forEach((p) => (p.hidden = p.dataset.panel !== tab.dataset.tab));
       if (tab.dataset.tab === "posts") loadPosts();
-      if (tab.dataset.tab === "promo") loadPosts(true);
+      if (tab.dataset.tab === "promo" || tab.dataset.tab === "shorts") loadPosts(true);
+      if (tab.dataset.tab === "socials") loadSocials();
     })
   );
 
@@ -403,6 +502,11 @@ const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free
           .map((e: any) => `<tr><td>${ago(e.at)}</td><td>${esc(e.network)}</td><td>${esc(e.slug).slice(0, 60)}</td><td>${e.ok ? `<span class="ok">✓</span> ${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">view ↗</a>` : esc(e.detail || "")}` : `<span class="bad">✗ ${esc(e.error)}</span>`}</td></tr>`)
           .join("") || '<tr><td colspan="4" class="mc-muted">Nothing promoted yet.</td></tr>';
 
+      $("[data-shorts-log]").innerHTML =
+        (s.shortsLog || [])
+          .map((e: any) => `<tr><td>${ago(e.at)}</td><td>${esc(e.kind)}</td><td>${esc(e.title).slice(0, 80)}</td><td>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">YouTube ↗</a> <span class="mc-muted">${esc(e.privacy || "")}</span>${e.note ? `<br><span class="warn">${esc(e.note)}</span>` : ""}` : e.error ? `<span class="bad">✗ ${esc(e.error)}</span>` : '<span class="mc-muted">rendered, not uploaded (download from GitHub)</span>'}</td></tr>`)
+          .join("") || '<tr><td colspan="4" class="mc-muted">No Shorts yet. The first ones render today, or press “Make Shorts now”.</td></tr>';
+
       // playground: dim providers without keys in the panel
       for (const p of s.providers) {
         const box = $(`[data-provider-picks] input[value="${p.id}"]`) as HTMLInputElement | null;
@@ -431,7 +535,10 @@ const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free
     try {
       postsCache = postsCache || (await api("posts"));
       const sel = $<HTMLSelectElement>("[data-promo-slug]");
-      if (sel.options.length <= 1) sel.insertAdjacentHTML("beforeend", postsCache.published.slice(0, 60).map((p: any) => `<option value="${esc(p.slug)}">${esc(p.title).slice(0, 90)}</option>`).join(""));
+      const options = postsCache.published.filter((p: any) => p.kind === "article").slice(0, 60).map((p: any) => `<option value="${esc(p.slug)}">${esc(p.title).slice(0, 90)}</option>`).join("");
+      if (sel.options.length <= 1) sel.insertAdjacentHTML("beforeend", options);
+      const ssel = $<HTMLSelectElement>("[data-shorts-slug]");
+      if (ssel.options.length <= 1) ssel.insertAdjacentHTML("beforeend", options);
       if (forPromoOnly) return;
       renderPosts();
       $("[data-hidden-note]").textContent = postsCache.note;
@@ -558,6 +665,72 @@ const providers = config.providers.map((p) => ({ id: p.id, tier: p.tier || "free
     for (const k of Object.keys(histories)) delete histories[k];
     columns.innerHTML = "";
   });
+
+  // ---------- socials ----------
+  $("[data-redirect-uri]").textContent = `${location.origin}/api/control/youtube/callback`;
+  $("[data-copy-redirect]").addEventListener("click", () => navigator.clipboard?.writeText($("[data-redirect-uri]").textContent || "").then(() => flash("Redirect URI copied.")));
+
+  async function loadSocials() {
+    try {
+      const s = await api("socials");
+      const warn = $("[data-socials-warn]");
+      warn.hidden = s.canManage;
+      if (!s.canManage) warn.innerHTML = `${esc(s.error)} <a href="https://github.com/settings/personal-access-tokens" target="_blank" rel="noopener">Open your GitHub tokens ↗</a> → click the Mission Control token → Edit → Repository permissions → Secrets: Read and write → Update. No redeploy needed.`;
+      for (const [net, on] of Object.entries(s.connected)) {
+        const el = document.querySelector<HTMLElement>(`[data-status="${net}"]`);
+        if (el) { el.textContent = on ? "connected" : "not connected"; el.classList.toggle("on", Boolean(on)); }
+      }
+    } catch (err) {
+      flash((err as Error).message, true);
+    }
+  }
+
+  $$<HTMLFormElement>("[data-connect]").forEach((form) =>
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
+      btn.disabled = true;
+      try {
+        const r = await api("socials/connect", { network: form.dataset.connect, fields: Object.fromEntries(new FormData(form)) });
+        flash(r.message);
+        form.reset();
+        loadSocials();
+      } catch (err) {
+        flash((err as Error).message, true);
+      }
+      btn.disabled = false;
+    })
+  );
+  $$("[data-disconnect]").forEach((b) =>
+    b.addEventListener("click", async () => {
+      if (b.dataset.armed !== "1") { b.dataset.armed = "1"; b.textContent = "Click again to disconnect"; setTimeout(() => { b.dataset.armed = ""; b.textContent = "Disconnect"; }, 4000); return; }
+      try { flash((await api("socials/disconnect", { network: b.dataset.disconnect })).message); loadSocials(); } catch (err) { flash((err as Error).message, true); }
+    })
+  );
+  $<HTMLFormElement>("[data-yt-form]").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    try {
+      const { url } = await api("youtube/start", Object.fromEntries(new FormData(e.target as HTMLFormElement)));
+      location.href = url;
+    } catch (err) {
+      flash((err as Error).message, true);
+    }
+  });
+
+  // ---------- shorts ----------
+  $("[data-make-shorts]").addEventListener("click", async () => {
+    try { flash((await api("shorts", { slug: $<HTMLSelectElement>("[data-shorts-slug]").value })).message); } catch (err) { flash((err as Error).message, true); }
+  });
+
+  // back from Google's consent screen
+  const back = new URLSearchParams(location.search);
+  if (back.get("yt")) {
+    history.replaceState(null, "", "/control/");
+    setTimeout(() => {
+      (document.querySelector('[data-tab="socials"]') as HTMLButtonElement)?.click();
+      flash(back.get("yt") === "ok" ? `YouTube connected: ${back.get("channel")}. Shorts will upload there automatically.` : `YouTube connection failed: ${back.get("msg")}`, back.get("yt") !== "ok");
+    }, 300);
+  }
 
   // ---------- promotion ----------
   $("[data-promote]").addEventListener("click", async () => {
