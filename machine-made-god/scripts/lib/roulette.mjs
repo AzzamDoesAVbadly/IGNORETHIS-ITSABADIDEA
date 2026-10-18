@@ -53,8 +53,9 @@ export function extractJson(text) {
 }
 
 // Pick a replacement model from a provider's /models list.
-export function chooseModel(ids, p) {
-  const clean = ids.map((id) => id.replace(/^models\//, ""));
+export function chooseModel(ids, p, exclude = []) {
+  const skip = new Set(exclude.map((id) => id.replace(/^models\//, "")));
+  const clean = ids.map((id) => id.replace(/^models\//, "")).filter((id) => !skip.has(id));
   const avoid = (p.avoid || []).map((s) => s.toLowerCase());
   const usable = clean.filter((id) => {
     const l = id.toLowerCase();
@@ -125,7 +126,7 @@ async function callOpenAICompatible(p, { system, user, schemaName }, ctx) {
   return { json: extractJson(Array.isArray(content) ? content.map((c) => c.text || "").join("") : content), model };
 }
 
-async function discoverModel(p, ctx) {
+async function discoverModel(p, ctx, exclude = []) {
   if (p.type !== "openai") return null;
   const key = p.keyEnv ? ctx.env[p.keyEnv] : "ollama";
   try {
@@ -136,7 +137,7 @@ async function discoverModel(p, ctx) {
     if (!res.ok) return null;
     const data = await res.json();
     const ids = (data.data || data.models || []).map((m) => m.id || m.name).filter(Boolean);
-    return chooseModel(ids, p);
+    return chooseModel(ids, p, exclude);
   } catch {
     return null;
   }
@@ -181,8 +182,9 @@ export async function callProvider(p, request, ctx) {
     return await callOpenAICompatible(p, request, ctx);
   } catch (err) {
     if (err.kind !== "model") throw err;
-    const replacement = await discoverModel(p, ctx);
     const current = ctx.state.providers?.[p.id]?.model || p.model;
+    // Providers sometimes still list retired models, so never re-pick the one that just failed.
+    const replacement = await discoverModel(p, ctx, [current, p.model]);
     if (!replacement || replacement === current) throw err;
     ctx.log(`  ↻ ${p.id}: "${current}" is gone, switching to "${replacement}"`);
     ctx.remember(p.id, { model: replacement });
@@ -194,7 +196,8 @@ export async function callProvider(p, request, ctx) {
 // `accept(json)` must return the finished item or throw a ProviderError("bad_output").
 export async function spin(request, accept, ctx) {
   const tried = [];
-  const order = rouletteOrder(availableProviders(ctx.config, ctx.state, ctx.env), ctx.random);
+  let order = rouletteOrder(availableProviders(ctx.config, ctx.state, ctx.env), ctx.random);
+  if (ctx.preferNot) order = [...order.filter((p) => p.id !== ctx.preferNot), ...order.filter((p) => p.id === ctx.preferNot)];
   const max = ctx.config.maxAttemptsPerPiece || 6;
   for (const p of order.slice(0, max)) {
     // A provider can be benched mid-run (rate limit), so re-check.

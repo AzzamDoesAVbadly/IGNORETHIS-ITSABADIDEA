@@ -10,15 +10,37 @@
   "requestTimeoutSeconds": 120,
   "temperature": 0.95,
   "duplicateThreshold": 0.45,
+  "editorPass": true,
+  "exemplars": {
+    "news": "search-party-enters-local-mans-browser",
+    "listicle": "phrases-that-mean-i-have-not-read-your-email",
+    "review": "review-spoon-plus-subscription-spoon",
+    "announcement": "halcyon-tek-wellness-initiative-notifications",
+    "essay": "i-am-the-algorithm-and-i-am-tired"
+  },
   "providers": [
     {
       "id": "gemini",
       "type": "openai",
       "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
       "keyEnv": "GEMINI_API_KEY",
-      "model": "gemini-2.5-flash",
-      "prefer": ["gemini-2.5-flash", "flash"],
-      "avoid": ["lite", "image", "tts", "embedding", "live", "audio", "thinking-exp"],
+      "model": "gemini-flash-latest",
+      "prefer": [
+        "gemini-flash-latest",
+        "flash"
+      ],
+      "avoid": [
+        "lite",
+        "image",
+        "tts",
+        "embedding",
+        "live",
+        "audio",
+        "transcribe",
+        "omni",
+        "preview",
+        "nano"
+      ],
       "weight": 3,
       "jsonMode": true
     },
@@ -27,9 +49,22 @@
       "type": "openai",
       "baseUrl": "https://api.groq.com/openai/v1",
       "keyEnv": "GROQ_API_KEY",
-      "model": "llama-3.3-70b-versatile",
-      "prefer": ["gpt-oss-120b", "70b", "kimi", "qwen"],
-      "avoid": ["whisper", "guard", "tts", "playai", "compound", "8b", "prompt"],
+      "model": "openai/gpt-oss-120b",
+      "prefer": [
+        "gpt-oss-120b",
+        "70b",
+        "kimi",
+        "qwen"
+      ],
+      "avoid": [
+        "whisper",
+        "guard",
+        "tts",
+        "playai",
+        "compound",
+        "8b",
+        "prompt"
+      ],
       "weight": 2,
       "jsonMode": true
     },
@@ -38,11 +73,28 @@
       "type": "openai",
       "baseUrl": "https://openrouter.ai/api/v1",
       "keyEnv": "OPENROUTER_API_KEY",
-      "model": "meta-llama/llama-3.3-70b-instruct:free",
-      "prefer": ["70b-instruct:free", "deepseek", "qwen", "llama", ":free"],
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "prefer": [
+        "nemotron-3-super-120b",
+        "gemma-4-31b",
+        "inkling:free",
+        "nemotron-3-ultra",
+        ":free"
+      ],
       "require": ":free",
-      "avoid": ["vision", "coder", "embed"],
-      "weight": 2,
+      "avoid": [
+        "content-safety",
+        "code",
+        "nano",
+        "lfm",
+        "xs",
+        "lightning",
+        "vl",
+        "omni",
+        "vision",
+        "embed"
+      ],
+      "weight": 1,
       "jsonMode": false
     },
     {
@@ -51,8 +103,19 @@
       "baseUrl": "https://api.mistral.ai/v1",
       "keyEnv": "MISTRAL_API_KEY",
       "model": "mistral-small-latest",
-      "prefer": ["mistral-medium-latest", "mistral-small-latest", "mistral-small"],
-      "avoid": ["embed", "moderation", "ocr", "codestral", "pixtral", "voxtral"],
+      "prefer": [
+        "mistral-medium-latest",
+        "mistral-small-latest",
+        "mistral-small"
+      ],
+      "avoid": [
+        "embed",
+        "moderation",
+        "ocr",
+        "codestral",
+        "pixtral",
+        "voxtral"
+      ],
       "weight": 1,
       "jsonMode": true
     },
@@ -61,9 +124,15 @@
       "type": "openai",
       "baseUrl": "https://api.cerebras.ai/v1",
       "keyEnv": "CEREBRAS_API_KEY",
-      "model": "llama-3.3-70b",
-      "prefer": ["gpt-oss-120b", "70b", "qwen"],
-      "avoid": ["8b"],
+      "model": "gpt-oss-120b",
+      "prefer": [
+        "gpt-oss-120b",
+        "70b",
+        "qwen"
+      ],
+      "avoid": [
+        "8b"
+      ],
       "weight": 1,
       "jsonMode": true
     },
@@ -74,8 +143,15 @@
       "keyEnv": null,
       "enableEnv": "OLLAMA_ENABLED",
       "model": "llama3.1",
-      "prefer": ["llama3", "qwen", "mistral", "gemma"],
-      "avoid": ["embed"],
+      "prefer": [
+        "llama3",
+        "qwen",
+        "mistral",
+        "gemma"
+      ],
+      "avoid": [
+        "embed"
+      ],
       "weight": 2,
       "jsonMode": true
     },

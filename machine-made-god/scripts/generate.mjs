@@ -148,6 +148,16 @@ function chooseFormat(category, existing) {
   return pick(fresh.length ? fresh : pool);
 }
 
+function exemplarFor(format) {
+  const slug = config.exemplars?.[format];
+  const file = slug && join(paths.articles, `${slug}.md`);
+  if (!file || !existsSync(file)) return "";
+  const text = readFileSync(file, "utf8");
+  const fm = parseFrontmatter(text);
+  const body = text.replace(/^---[\s\S]*?---\s*/, "").trim();
+  return `\nHere is a published piece in the same format. Match its specificity, deadpan voice and joke density. Do NOT reuse its premise, jokes, names or structure beats:\n\n<example>\nHEADLINE: ${fm.title}\nDEK: ${fm.dek}\n\n${body}\n</example>\n`;
+}
+
 function articlePrompt({ category, format, existing }) {
   const recent = existing.titles.slice(0, 60).map((t) => `- ${t}`).join("\n");
   const user = `Write ONE new piece for the "${category.name}" section.
@@ -155,7 +165,7 @@ Section description: ${category.blurb}
 
 FORMAT: ${format}
 ${formats[format]}
-
+${exemplarFor(format)}
 Creative sparks (optional; use one, combine two, or ignore them if you have a better idea): ${sample(sparks, 3).join(", ")}.
 
 Recent headlines. Do NOT repeat their premises, targets, or headline structures:
@@ -174,6 +184,25 @@ Return ONLY a JSON object with exactly these keys:
   "uses_real_people": true if the piece names or depicts any real person, otherwise false
 }`;
   return { system: voice, user, schema: articleSchema, schemaName: "article" };
+}
+
+function editorPrompt(draft, format) {
+  const user = `You are the comedy editor. Below is a draft ${format} piece that is accurate to the brief but not funny enough. Rewrite it so it is genuinely funny.
+
+Do this:
+- Keep the core premise and format, but find the sharpest version of the joke. You may improve the headline.
+- Escalate: every paragraph or list item must top the one before. The final beat must be the strongest or strangest moment, not a summary.
+- Add specific, absurd, concrete details (exact numbers, invented names, petty specifics). Cut generic phrasing.
+- Delete any sentence that explains the satire, analyzes "society", "engagement", or "the attention economy", or sounds like a real news analyst. Deadpan, never sincere-analytical.
+- No moral, no lesson, no "remains to be seen", no "one thing is clear".
+- If the headline starts with a number, the list must contain exactly that many "## N." items.
+- Obey every hard rule in the editorial bible (no real people, no real companies as targets, etc.).
+
+Return ONLY a JSON object with exactly the same keys as the draft: title, dek, body, tags, art, pullquote, rating, product, uses_real_people.
+
+DRAFT:
+${JSON.stringify(draft, null, 2)}`;
+  return { system: voice, user, schema: articleSchema, schemaName: "article-edit" };
 }
 
 function quizPrompt(existing) {
@@ -389,11 +418,31 @@ async function run() {
     const date = new Date(start + i * 60000).toISOString();
     log(`→ Article ${i + 1}: ${category.name} / ${format}`);
     try {
-      const { item, provider, model } = await spin(
+      let draftJson = null;
+      let { item, provider, model } = await spin(
         articlePrompt({ category, format, existing }),
-        (json) => makeArticle(json, { category, format, existing, runTitles, date }),
+        (json) => {
+          const made = makeArticle(json, { category, format, existing, runTitles, date });
+          draftJson = json;
+          return made;
+        },
         ctx
       );
+      if (config.editorPass !== false) {
+        log(`  ✎ editing draft from ${provider}…`);
+        try {
+          const edited = await spin(
+            editorPrompt({ ...draftJson, title: item.fm.title, body: item.body }, format),
+            (json) => makeArticle(json, { category, format, existing, runTitles, date }),
+            { ...ctx, preferNot: provider, config: { ...config, maxAttemptsPerPiece: 3 } }
+          );
+          item = edited.item;
+          provider = `${provider}+${edited.provider}`;
+          model = `${model} → ${edited.model}`;
+        } catch (err) {
+          log(`  (editor pass failed, keeping the draft: ${err.message.slice(0, 160)})`);
+        }
+      }
       item.fm.trending = true;
       if (i === 0) item.fm.featured = true;
       if (random() < 0.35) item.fm.pick = true;

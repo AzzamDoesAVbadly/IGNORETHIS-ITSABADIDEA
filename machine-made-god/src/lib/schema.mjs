@@ -16,6 +16,14 @@ export const BANNED_PHRASES = [
   "delve",
   "tapestry",
   "it's important to note",
+  // wrap-up clichés that explain the joke instead of landing it
+  "remains to be seen",
+  "one thing is clear",
+  "only time will tell",
+  "serves as a reminder",
+  "at the end of the day",
+  "attention economy",
+  "in today's fast-paced",
 ];
 
 const STOPWORDS = new Set(
@@ -113,6 +121,11 @@ export function validateArticle(fm, body, { categories, authors }, where = "arti
   if (words < 180) errors.push(`${where}: body too short (${words} words)`);
   if (words > 1600) errors.push(`${where}: body too long (${words} words)`);
   if (fm.format === "listicle" && !/^##\s/m.test(body)) errors.push(`${where}: listicles need ## headings`);
+  const promised = String(fm.title || "").match(/^(\d{1,2})\s/);
+  if (fm.format === "listicle" && promised) {
+    const items = (body.match(/^##\s+\d+[.)]/gm) || []).length;
+    if (items !== Number(promised[1])) errors.push(`${where}: headline promises ${promised[1]} items but the list has ${items}`);
+  }
   checkBanned(`${fm.title}\n${fm.dek}\n${body}`, errors, where);
   return errors;
 }

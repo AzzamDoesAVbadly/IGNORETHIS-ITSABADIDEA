@@ -73,3 +73,11 @@ test("quiz scoring picks the most common result and breaks ties with the last an
   assert.equal(scoreQuiz(quiz, [0, 1, 1, 0]), "jam");
   assert.equal(scoreQuiz(quiz, [0, 0, 1, 1]), "ink");
 });
+
+test("listicle headline numbers must match the item count, and wrap-up clichés are rejected", () => {
+  const items = Array.from({ length: 8 }, (_, i) => `## ${i + 1}. Item\n\n${"word ".repeat(30)}`).join("\n\n");
+  const fm = { ...goodArticle, format: "listicle", title: "6 Things That Are Definitely Six Things" };
+  assert.ok(validateArticle(fm, items, { categories, authors }).some((e) => e.includes("promises 6")));
+  assert.deepEqual(validateArticle({ ...fm, title: "8 Things That Are Definitely Eight Things" }, items, { categories, authors }), []);
+  assert.ok(validateArticle(goodArticle, body + " Whether it works remains to be seen.", { categories, authors }).some((e) => e.includes("remains to be seen")));
+});

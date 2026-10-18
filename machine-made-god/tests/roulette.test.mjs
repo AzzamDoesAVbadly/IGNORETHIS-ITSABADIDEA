@@ -79,3 +79,8 @@ test("spin rejects bad output and reports every failure when all providers fail"
     /every provider failed: .*not funny enough/
   );
 });
+
+test("chooseModel never re-picks an excluded (just-failed) model", () => {
+  const ids = ["models/gemini-2.5-flash", "models/gemini-flash-latest"];
+  assert.equal(chooseModel(ids, { prefer: ["gemini-2.5-flash", "flash"] }, ["gemini-2.5-flash"]), "gemini-flash-latest");
+});
