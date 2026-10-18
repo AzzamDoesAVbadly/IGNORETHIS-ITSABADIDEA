@@ -1,17 +1,17 @@
 {
   "providers": {
     "groq": {
-      "ok": 1,
-      "lastSuccess": "2026-10-18T01:30:17.412Z"
+      "ok": 4,
+      "lastSuccess": "2026-10-18T02:01:28.027Z"
     },
     "gemini": {
       "fail": 1,
-      "ok": 1,
-      "lastSuccess": "2026-10-18T01:35:36.090Z"
+      "ok": 2,
+      "lastSuccess": "2026-10-18T02:01:21.896Z"
     },
     "openrouter": {
-      "ok": 2,
-      "lastSuccess": "2026-10-18T01:32:50.716Z",
+      "ok": 3,
+      "lastSuccess": "2026-10-18T02:00:43.892Z",
       "fail": 1
     },
     "cerebras": {
@@ -21,6 +21,29 @@
   },
   "lastQuizAt": "2026-10-18T01:34:53.899Z",
   "runs": [
+    {
+      "at": "2026-10-18T01:58:57.384Z",
+      "articles": [
+        {
+          "slug": "vending-machine-at-hillside-mall-starts-giving-relationship-advice",
+          "provider": "openrouter+groq",
+          "model": "nvidia/nemotron-3-super-120b-a12b:free → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "the-if-other-please-specify-box-is-exhausted-and-its-not-your-fault",
+          "provider": "gemini+groq",
+          "model": "gemini-flash-latest → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-18T01:30:12.454Z",
       "articles": [
