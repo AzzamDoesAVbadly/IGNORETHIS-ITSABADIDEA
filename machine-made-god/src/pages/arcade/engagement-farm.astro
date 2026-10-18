@@ -1,0 +1,156 @@
+---
+import GameFrame from "../../components/GameFrame.astro";
+---
+<GameFrame title="Engagement Farm" description="Post content. Farm engagement. Reinvest it in bots, rage bait and a pivot to video. Watch your soul depreciate in real time." how="click POST CONTENT (or press Enter/Space on it). Buy upgrades to farm engagement automatically. Progress saves in your browser.">
+  <div class="farm">
+    <div class="game-stats">
+      <div class="game-stat"><b data-eng>0</b><span>Engagement</span></div>
+      <div class="game-stat"><b data-eps>0</b><span>Per second</span></div>
+      <div class="game-stat"><b data-epc>1</b><span>Per post</span></div>
+      <div class="game-stat"><b data-soul>100%</b><span>Soul remaining</span></div>
+    </div>
+    <div class="farm-grid">
+      <div class="farm-left">
+        <button type="button" class="farm-post" data-post>POST<br />CONTENT</button>
+        <p class="game-log" aria-live="polite" data-log>The feed is hungry. Feed it.</p>
+      </div>
+      <ul class="farm-shop" data-shop aria-label="Upgrades"></ul>
+    </div>
+    <div style="margin-top:16px;display:flex;gap:10px;align-items:center">
+      <button type="button" class="btn btn--dark" style="border-color:#555;font-size:.8rem;padding:8px 12px" data-reset>Delete account</button>
+      <span class="mono" style="color:#8c8576" data-reset-msg></span>
+    </div>
+  </div>
+</GameFrame>
+
+<style>
+  .farm-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 22px; align-items: start; }
+  .farm-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .farm-post {
+    width: min(260px, 70vw); aspect-ratio: 1; border-radius: 50%;
+    border: 4px solid #000; background: radial-gradient(circle at 35% 30%, #ff9a4d, var(--sodium) 55%, var(--sodium-deep));
+    color: #141210; font-family: var(--font-display); font-stretch: 75%; font-weight: 900; font-size: 2.4rem; line-height: 0.9;
+    box-shadow: 0 8px 0 #000, inset 0 -8px 0 rgba(0,0,0,.2); cursor: pointer; transition: transform .06s ease;
+  }
+  .farm-post:active { transform: translateY(6px); box-shadow: 0 2px 0 #000, inset 0 -4px 0 rgba(0,0,0,.2); }
+  .farm-shop { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .farm-shop button {
+    width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; text-align: left;
+    background: #1f1814; color: var(--paper); border: 2px solid #3a2e25; padding: 10px 12px; cursor: pointer; font: inherit;
+  }
+  .farm-shop button:not(:disabled):hover { border-color: var(--sodium); background: #2a201a; }
+  .farm-shop button:disabled { opacity: 0.45; cursor: not-allowed; }
+  .farm-shop .n { font-family: var(--font-display); font-stretch: 85%; font-weight: 800; font-size: 1.05rem; }
+  .farm-shop .c { font-family: var(--font-mono); font-size: .8rem; color: var(--hazard); align-self: center; grid-row: span 2; }
+  .farm-shop .d { font-size: .8rem; color: #a89e88; }
+  .farm-shop .o { color: var(--acid); font-family: var(--font-mono); font-size: .75rem; margin-left: 6px; }
+  .pop { position: fixed; pointer-events: none; font-family: var(--font-display); font-weight: 900; color: var(--acid); font-size: 1.4rem; animation: pop .8s ease-out forwards; }
+  @keyframes pop { to { transform: translateY(-60px); opacity: 0; } }
+  @media (max-width: 760px) { .farm-grid { grid-template-columns: minmax(0, 1fr); } }
+</style>
+
+<script>
+  type Upgrade = { id: string; name: string; desc: string; cost: number; eps?: number; epc?: number };
+  const UPGRADES: Upgrade[] = [
+    { id: "this", name: "Reply 'This.'", desc: "+1 per post. Adds nothing. Works.", cost: 15, epc: 1 },
+    { id: "bot", name: "Bot Account", desc: "+1/sec. Its name is Jessica48213.", cost: 25, eps: 1 },
+    { id: "rage", name: "Rage Bait Headline", desc: "+6/sec. 'You've Been Boiling Pasta Wrong.'", cost: 160, eps: 6 },
+    { id: "thread", name: "A Thread 🧵", desc: "+3 per post. 1/47.", cost: 400, epc: 3 },
+    { id: "linkedin", name: "Thought Leader Post", desc: "+25/sec. 'I fired my dog. Here's what it taught me about B2B.'", cost: 1200, eps: 25 },
+    { id: "video", name: "Pivot to Video", desc: "+90/sec. Nobody asked. Everybody watched.", cost: 6000, eps: 90 },
+    { id: "apology", name: "Tearful Apology Video", desc: "+400/sec. Grey hoodie. No apology.", cost: 40000, eps: 400 },
+    { id: "algo", name: "Become the Algorithm", desc: "+2,500/sec. You are the feed now.", cost: 300000, eps: 2500 },
+  ];
+  const NEWS: [number, string][] = [
+    [50, "Your aunt shared your post. Engagement up. Dignity down."],
+    [500, "A brand replied to you with a meme. You feel nothing."],
+    [5000, "You have been called 'problematic' by someone with 11 followers. Engagement soars."],
+    [50000, "A podcast wants you on. It is three guys and a ring light."],
+    [500000, "You are now verified. Nobody knows what that means anymore."],
+    [5000000, "Your mother asks what you do for work. You show her a graph."],
+    [50000000, "Scientists confirm you have no remaining personality. Engagement is at an all-time high."],
+  ];
+  const KEY = "mmg-farm-v1";
+  const fmt = (n: number) => n >= 1e9 ? (n / 1e9).toFixed(2) + "B" : n >= 1e6 ? (n / 1e6).toFixed(2) + "M" : n >= 1e4 ? (n / 1e3).toFixed(1) + "K" : Math.floor(n).toLocaleString();
+  type State = { eng: number; total: number; owned: Record<string, number>; news: number };
+  let s: State = { eng: 0, total: 0, owned: {}, news: 0 };
+  try { const raw = localStorage.getItem(KEY); if (raw) s = { ...s, ...JSON.parse(raw) }; } catch {}
+
+  const $ = (sel: string) => document.querySelector<HTMLElement>(sel)!;
+  const shop = $("[data-shop]");
+  const log = $("[data-log]");
+  const cost = (u: Upgrade) => Math.ceil(u.cost * Math.pow(1.15, s.owned[u.id] || 0));
+  const eps = () => UPGRADES.reduce((t, u) => t + (u.eps || 0) * (s.owned[u.id] || 0), 0);
+  const epc = () => 1 + UPGRADES.reduce((t, u) => t + (u.epc || 0) * (s.owned[u.id] || 0), 0);
+
+  shop.innerHTML = UPGRADES.map((u) => `<li><button type="button" data-buy="${u.id}"><span class="n">${u.name}<span class="o" data-owned="${u.id}"></span></span><span class="c" data-cost="${u.id}"></span><span class="d">${u.desc}</span></button></li>`).join("");
+
+  function render() {
+    $("[data-eng]").textContent = fmt(s.eng);
+    $("[data-eps]").textContent = fmt(eps());
+    $("[data-epc]").textContent = fmt(epc());
+    const soul = Math.max(0, 100 - Math.log10(1 + s.total) * 12.5);
+    $("[data-soul]").textContent = `${soul.toFixed(1)}%`;
+    for (const u of UPGRADES) {
+      const btn = shop.querySelector<HTMLButtonElement>(`[data-buy="${u.id}"]`)!;
+      btn.disabled = s.eng < cost(u);
+      shop.querySelector<HTMLElement>(`[data-cost="${u.id}"]`)!.textContent = fmt(cost(u));
+      shop.querySelector<HTMLElement>(`[data-owned="${u.id}"]`)!.textContent = s.owned[u.id] ? `×${s.owned[u.id]}` : "";
+    }
+  }
+  function earn(n: number) {
+    s.eng += n;
+    s.total += n;
+    while (s.news < NEWS.length && s.total >= NEWS[s.news][0]) { log.textContent = NEWS[s.news][1]; s.news++; }
+  }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch {} };
+
+  $("[data-post]").addEventListener("click", (e) => {
+    const n = epc();
+    earn(n);
+    render();
+    const me = e as MouseEvent;
+    if (me.clientX) {
+      const pop = document.createElement("span");
+      pop.className = "pop";
+      pop.textContent = `+${fmt(n)}`;
+      pop.style.left = `${me.clientX - 10}px`;
+      pop.style.top = `${me.clientY - 20}px`;
+      document.body.appendChild(pop);
+      setTimeout(() => pop.remove(), 800);
+    }
+  });
+  shop.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>("[data-buy]");
+    if (!btn) return;
+    const u = UPGRADES.find((x) => x.id === btn.dataset.buy)!;
+    const c = cost(u);
+    if (s.eng < c) return;
+    s.eng -= c;
+    s.owned[u.id] = (s.owned[u.id] || 0) + 1;
+    render();
+    save();
+  });
+  let armed = false;
+  $("[data-reset]").addEventListener("click", () => {
+    const msg = $("[data-reset-msg]");
+    if (!armed) { armed = true; msg.textContent = "Click again to delete everything. Your followers will not notice."; setTimeout(() => { armed = false; msg.textContent = ""; }, 4000); return; }
+    s = { eng: 0, total: 0, owned: {}, news: 0 };
+    armed = false;
+    msg.textContent = "Account deleted. You are free. It feels terrible.";
+    log.textContent = "The feed is hungry. Feed it.";
+    save();
+    render();
+  });
+
+  let last = performance.now();
+  setInterval(() => {
+    const now = performance.now();
+    earn((eps() * (now - last)) / 1000);
+    last = now;
+    render();
+  }, 200);
+  setInterval(save, 5000);
+  addEventListener("pagehide", save);
+  render();
+</script>

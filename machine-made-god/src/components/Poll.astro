@@ -1,0 +1,19 @@
+---
+import polls from "../data/polls.json";
+interface Props { index?: number }
+const { index = 0 } = Astro.props;
+const poll = polls[index % polls.length];
+---
+<section class="poll" data-poll={poll.id} data-results={JSON.stringify(poll.results)}>
+  <span class="label" style="--c:#c8ff1a">Fake poll</span>
+  <h3 id={`poll-${poll.id}`}>{poll.question}</h3>
+  <fieldset aria-labelledby={`poll-${poll.id}`}>
+    {poll.options.map((option, i) => (
+      <button type="button" class="poll-option" data-i={i} aria-pressed="false">
+        <span class="bar"></span>
+        <span class="txt"><span>{option}</span><span class="pct" hidden></span></span>
+      </button>
+    ))}
+  </fieldset>
+  <p class="poll-note">Results are invented by the machine. Your vote is stored only in your browser. Democracy is a vibe.</p>
+</section>

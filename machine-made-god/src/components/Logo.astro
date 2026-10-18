@@ -1,0 +1,21 @@
+---
+interface Props { graffiti?: boolean; href?: string }
+const { graffiti = true, href = "/" } = Astro.props;
+---
+<a class="logo" href={href} aria-label="Machine Made God, home">
+  <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+    <rect width="64" height="64" fill="#141210" />
+    <g transform="translate(32 32)">
+      {Array.from({ length: 12 }, (_, i) => (
+        <rect x="-2" y="-27" width="4" height="9" fill={i === 0 ? "#ff6a13" : "#ebe4cc"} opacity={i === 0 ? 1 : 0.35 + (i / 12) * 0.65} transform={`rotate(${i * 30})`} />
+      ))}
+      <path d="M0 -12 L11 7 L-11 7 Z" fill="#ff6a13" />
+      <circle cy="1.5" r="3.4" fill="#141210" />
+    </g>
+  </svg>
+  <span class="logo-words">
+    <span class="logo-name">MACHINE MADE GOD<sup>™</sup></span>
+    <span class="logo-tag">CONTENT WITHOUT END. AMEN.</span>
+  </span>
+  {graffiti && <span class="logo-graffiti">(it's lying)</span>}
+</a>

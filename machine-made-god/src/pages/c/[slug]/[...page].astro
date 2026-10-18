@@ -1,0 +1,44 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Card from "../../../components/Card.astro";
+import AdSlot from "../../../components/AdSlot.astro";
+import { categories, inCategory } from "../../../lib/site.js";
+
+export function getStaticPaths({ paginate }) {
+  return categories.flatMap((cat) => paginate(inCategory(cat.slug), { params: { slug: cat.slug }, props: { cat }, pageSize: 12 }));
+}
+
+const { page, cat } = Astro.props;
+const list = page.data;
+---
+<Base title={cat.name} description={cat.blurb} activeCategory={cat.slug}>
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label" style={`--c:${cat.color}`}>Section</span>
+      <h1>{cat.name}</h1>
+      <p>{cat.blurb}</p>
+    </header>
+
+    {list.length === 0 ? (
+      <div class="empty">
+        <span class="stamp">Pending</span>
+        <p class="display">Nothing here yet</p>
+        <p>The machine has not gotten to this section. It will. It always does.</p>
+      </div>
+    ) : (
+      <div class="grid">
+        {list.slice(0, 3).map((item) => <Card item={item} />)}
+        {list.length > 3 && <AdSlot seed={`cat-${cat.slug}-${page.currentPage}`} slot={import.meta.env.PUBLIC_ADSENSE_SLOT_LIST} />}
+        {list.slice(3).map((item) => <Card item={item} />)}
+      </div>
+    )}
+
+    {page.lastPage > 1 && (
+      <nav class="pager" aria-label="Pagination">
+        {page.url.prev ? <a class="btn btn--ghost" href={page.url.prev}>← Newer</a> : <span></span>}
+        <span>Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next ? <a class="btn" href={page.url.next}>Older →</a> : <span></span>}
+      </nav>
+    )}
+  </div>
+</Base>

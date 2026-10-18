@@ -1,0 +1,17 @@
+---
+// Real AdSense unit when an AdSense client id is configured, otherwise a parody ad.
+import FakeAd from "./FakeAd.astro";
+import { adsenseClient } from "../lib/site.js";
+interface Props { slot?: string; seed?: string; index?: number; wide?: boolean }
+const { slot, seed, index, wide } = Astro.props;
+const useReal = Boolean(adsenseClient && slot);
+---
+{useReal ? (
+  <div class="adsense-slot">
+    <div class="fake-ad-flag"><b>Advertisement</b><span>Real ad · keeps the machine running</span></div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client={adsenseClient} data-ad-slot={slot} data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script is:inline>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+) : (
+  <FakeAd seed={seed} index={index} wide={wide} />
+)}

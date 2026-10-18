@@ -1,0 +1,13 @@
+---
+import bumps from "../data/bumps.json";
+interface Props { index?: number }
+const { index } = Astro.props;
+const i = index ?? Math.floor(Date.now() / 86400000) % bumps.length;
+---
+<section class="band-dark" aria-label="Bump">
+  <div class="bump">
+    <span class="bump-corner bump-corner--tl">[ mmg ] // bump {String(i + 1).padStart(3, "0")}</span>
+    <p>{bumps[i % bumps.length]}</p>
+    <span class="bump-corner bump-corner--br"><a href="/tv/">watch more nothing →</a></span>
+  </div>
+</section>

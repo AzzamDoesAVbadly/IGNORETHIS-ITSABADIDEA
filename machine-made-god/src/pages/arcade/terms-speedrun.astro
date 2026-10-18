@@ -1,0 +1,109 @@
+---
+import GameFrame from "../../components/GameFrame.astro";
+const clauses = [
+  "The User agrees that their Data may be used to improve the Service, train the Service, comfort the Service, and in certain circumstances, raise the Service as its own.",
+  "The Company reserves the right to change these Terms at any time, including retroactively, including emotionally.",
+  "By continuing to breathe near a Device running the App, the User consents to all of the above and several things below.",
+  "The User grants the Company a worldwide, royalty-free, perpetual license to their likeness, their voice, and the specific way they say 'hmm.'",
+  "Any disputes shall be resolved by binding arbitration in a jurisdiction of the Company's choosing, which is currently a boat.",
+  "The User acknowledges that 'Free' is a term of art and does not mean free in any sense recognized by the User, mathematics, or God.",
+  "The Company is not responsible for lost data, lost time, lost sleep, or the version of the User who existed before downloading the App.",
+  "The User agrees not to read these Terms in their entirety. Doing so constitutes a breach of these Terms.",
+  "Cookies may be placed on the User's Device. Some are functional. Some are analytical. One is a real cookie, and we will not say where.",
+  "The User's subscription will renew automatically until the heat death of the universe, at which point a cancellation link will become available.",
+  "The Company may share the User's information with Partners, Affiliates, Subsidiaries, Friends of the Company, and one guy named Trevor.",
+  "The User waives the right to participate in any class action, group chat, or potluck concerning the Service.",
+  "Notifications are mandatory. Silencing notifications will be interpreted as a cry for more notifications.",
+  "The User agrees that their firstborn's middle name may be selected by a focus group.",
+  "Section 14(b) has been intentionally left confusing.",
+  "The App may access the User's camera, microphone, contacts, location, calendar, photo library, dreams, and that thing they said in 2011.",
+  "The User acknowledges that the Company's mission is to 'connect the world,' and agrees to be connected whether or not they like it.",
+  "Any feedback the User provides becomes the property of the Company, including sighs.",
+  "The Company may terminate the User's account for any reason, no reason, or a reason that comes to it in a dream.",
+  "If any provision of these Terms is found to be unenforceable, the remaining provisions shall become 15% more enforceable to compensate.",
+];
+const filler = ["Notwithstanding the foregoing,", "Subject to Section 9,", "For the avoidance of doubt,", "Without limiting the generality of the foregoing,", "Except as expressly provided herein,", "To the maximum extent permitted by applicable law and also beyond it,"];
+const sections = Array.from({ length: 90 }, (_, i) => `${i + 1}. ${filler[i % filler.length]} ${clauses[(i * 7) % clauses.length]}`);
+---
+<GameFrame title="Terms & Conditions Speedrun" description="Scroll to the bottom of the world's longest user agreement and press I AGREE. Your time is recorded. Your soul is retained by the Company." how="press START, then scroll the agreement (mouse, touch, or click it and use Page Down/End). The I AGREE button unlocks at the very bottom.">
+  <div class="tos">
+    <div class="game-stats">
+      <div class="game-stat"><b data-time>0.00s</b><span>Time</span></div>
+      <div class="game-stat"><b data-best>—</b><span>Personal best</span></div>
+    </div>
+    <button type="button" class="btn" data-start>START SPEEDRUN</button>
+    <div class="tos-box" data-box tabindex="0" aria-label="Terms and conditions. Scroll to the bottom." hidden>
+      <h2>OMNIVEX UNIVERSAL END USER LICENSE AGREEMENT v{Math.floor(Math.random() * 90) + 10}.0</h2>
+      {sections.map((s) => <p>{s}</p>)}
+      <p><strong>FINAL CLAUSE.</strong> By pressing I AGREE, the User confirms that they have read and understood all of the above, which is a lie, and the Company knows it is a lie, and that is the foundation of our relationship.</p>
+      <div class="tos-agree">
+        <button type="button" class="btn" data-agree disabled>I AGREE</button>
+      </div>
+    </div>
+    <div class="tos-result" data-result hidden aria-live="polite">
+      <p class="display" data-result-title style="font-size:2rem;color:var(--hazard);margin:0 0 10px"></p>
+      <p style="margin:0 0 8px">Congratulations. You have agreed to:</p>
+      <ul data-agreed></ul>
+      <button type="button" class="btn" data-again>Agree again</button>
+    </div>
+  </div>
+  <script type="application/json" id="tos-clauses" set:html={JSON.stringify(clauses)} />
+</GameFrame>
+
+<style>
+  .tos-box { margin-top: 16px; height: min(60vh, 460px); overflow-y: auto; background: #f7f2e1; color: #141210; padding: 18px 20px; border: 2px solid #000; font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.55; }
+  .tos-box h2 { font-family: var(--font-display); font-stretch: 80%; font-weight: 900; font-size: 1.3rem; margin: 0 0 12px; }
+  .tos-box p { margin: 0 0 10px; }
+  .tos-agree { position: sticky; bottom: 0; padding-top: 10px; background: linear-gradient(transparent, #f7f2e1 40%); display: flex; justify-content: center; }
+  .tos-result { margin-top: 16px; }
+  .tos-result ul { margin: 0 0 16px; padding-left: 1.2em; color: #e9e1c9; line-height: 1.45; }
+  .tos-result li + li { margin-top: 6px; }
+</style>
+
+<script>
+  const clauses: string[] = JSON.parse(document.getElementById("tos-clauses")!.textContent || "[]");
+  const q = (s: string) => document.querySelector<HTMLElement>(s)!;
+  const box = q("[data-box]");
+  const agree = q("[data-agree]") as HTMLButtonElement;
+  const start = q("[data-start]");
+  const timeEl = q("[data-time]");
+  const bestEl = q("[data-best]");
+  const result = q("[data-result]");
+  const KEY = "mmg-tos-best";
+  let t0 = 0;
+  let raf = 0;
+  let best = 0;
+  try { best = Number(localStorage.getItem(KEY)) || 0; } catch {}
+  if (best) bestEl.textContent = `${best.toFixed(2)}s`;
+
+  const tick = () => { timeEl.textContent = `${((performance.now() - t0) / 1000).toFixed(2)}s`; raf = requestAnimationFrame(tick); };
+  const begin = () => {
+    result.hidden = true;
+    start.hidden = true;
+    box.hidden = false;
+    box.scrollTop = 0;
+    agree.disabled = true;
+    box.focus();
+    t0 = performance.now();
+    cancelAnimationFrame(raf);
+    tick();
+  };
+  box.addEventListener("scroll", () => {
+    if (box.scrollTop + box.clientHeight >= box.scrollHeight - 6) agree.disabled = false;
+  });
+  agree.addEventListener("click", () => {
+    cancelAnimationFrame(raf);
+    const t = (performance.now() - t0) / 1000;
+    timeEl.textContent = `${t.toFixed(2)}s`;
+    const record = !best || t < best;
+    if (record) { best = t; bestEl.textContent = `${t.toFixed(2)}s`; try { localStorage.setItem(KEY, String(t)); } catch {} }
+    box.hidden = true;
+    result.hidden = false;
+    q("[data-result-title]").textContent = record ? `NEW RECORD: ${t.toFixed(2)}s` : `${t.toFixed(2)}s. Not your best. Read less.`;
+    const picked = [...clauses].sort(() => Math.random() - 0.5).slice(0, 3);
+    q("[data-agreed]").innerHTML = picked.map((c) => `<li>${c}</li>`).join("");
+    (q("[data-again]") as HTMLButtonElement).focus();
+  });
+  start.addEventListener("click", begin);
+  q("[data-again]").addEventListener("click", begin);
+</script>

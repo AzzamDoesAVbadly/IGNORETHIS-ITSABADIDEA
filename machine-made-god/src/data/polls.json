@@ -1,0 +1,5 @@
+[
+  { "id": "tabs", "question": "How many browser tabs do you have open right now?", "options": ["Under 5, like a psychopath", "6–20, like a person", "21–80, like a researcher", "I cannot see the tabs anymore. They are just a line."], "results": [3, 18, 31, 48] },
+  { "id": "email", "question": "When you write 'per my last email,' what do you mean?", "options": ["Per my last email", "Can you read", "I will outlive you", "I have filed a report"], "results": [6, 27, 22, 45] },
+  { "id": "meeting", "question": "This meeting could have been:", "options": ["An email", "A Slack message", "A single thumbs-up emoji", "Silence. Beautiful silence."], "results": [21, 14, 25, 40] }
+]

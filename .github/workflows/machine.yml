@@ -1,0 +1,64 @@
+# THE MACHINE: writes new content on a schedule and publishes it.
+# Pushing to main triggers a Netlify deploy automatically.
+name: The Machine
+
+on:
+  schedule:
+    - cron: "17 13 * * *" # ~9am US Eastern
+    - cron: "47 1 * * *" # ~9pm US Eastern
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: the-machine
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: machine-made-god
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: machine-made-god/package-lock.json
+
+      - run: npm ci
+
+      - name: Tests
+        run: npm test
+
+      - name: Generate content (provider roulette)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MACHINE_ENABLED: ${{ vars.MACHINE_ENABLED }}
+        run: npm run generate
+
+      - name: Build and validate (nothing is published if this fails)
+        run: npm run build
+
+      - name: Publish
+        run: |
+          git config user.name "machine-made-god[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content src/data
+          if git diff --cached --quiet; then
+            echo "Nothing new to publish."
+            exit 0
+          fi
+          git commit -m "The machine has spoken ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          git pull --rebase origin main
+          git push origin HEAD:main

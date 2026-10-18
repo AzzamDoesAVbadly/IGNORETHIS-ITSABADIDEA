@@ -1,0 +1,152 @@
+---
+import GameFrame from "../../components/GameFrame.astro";
+const slots = ["9:00", "10:00", "11:00", "12:00", "1:00", "2:00", "3:00", "4:00", "5:00"];
+---
+<GameFrame title="Circle Back" description="Meeting invites are flooding your calendar. Decline them before they auto-accept. Let eight through and your week becomes one meeting about meetings." how="press START. Click an invite (or press its number key 1–9) to decline it before its timer runs out.">
+  <div class="cb">
+    <div class="game-stats">
+      <div class="game-stat"><b data-score>0</b><span>Declined</span></div>
+      <div class="game-stat"><b data-accepted>0 / 8</b><span>Meetings accepted</span></div>
+      <div class="game-stat"><b data-best>0</b><span>Best</span></div>
+    </div>
+    <div class="cb-grid" data-grid>
+      {slots.map((time, i) => (
+        <button type="button" class="cb-slot" data-slot={i} disabled>
+          <span class="cb-time">{i + 1} · {time}</span>
+          <span class="cb-invite"></span>
+          <span class="cb-fuse"></span>
+        </button>
+      ))}
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;margin-top:16px;flex-wrap:wrap">
+      <button type="button" class="btn" data-start>START YOUR WEEK</button>
+      <p class="game-log" aria-live="polite" data-log style="margin:0">Your calendar is clear. Enjoy it. It won't last.</p>
+    </div>
+  </div>
+</GameFrame>
+
+<style>
+  .cb-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .cb-slot {
+    position: relative; min-height: 110px; display: flex; flex-direction: column; justify-content: space-between; text-align: left;
+    background: #1f1814; border: 2px solid #3a2e25; color: var(--paper); padding: 10px; font: inherit; cursor: default; overflow: hidden;
+  }
+  .cb-time { font-family: var(--font-mono); font-size: 0.68rem; color: #8c8576; letter-spacing: .06em; }
+  .cb-invite { font-family: var(--font-display); font-stretch: 82%; font-weight: 800; font-size: 1.05rem; line-height: 1.05; }
+  .cb-fuse { position: absolute; left: 0; bottom: 0; height: 5px; width: 0; background: var(--sodium); }
+  .cb-slot.live { background: #6dff8a; border-color: #000; color: #061008; cursor: pointer; }
+  .cb-slot.live .cb-time { color: #1d3a22; }
+  .cb-slot.live:hover { background: #a6ffb8; }
+  .cb-slot.accepted { background: repeating-linear-gradient(45deg, #3a1a10 0 10px, #2a120a 10px 20px); border-color: var(--sodium-deep); }
+  .cb-slot.accepted .cb-invite { color: var(--sodium); }
+  .cb-slot.declined { animation: declined .3s ease; }
+  @keyframes declined { 0% { background: #ff2e88; } 100% { background: #1f1814; } }
+  @media (max-width: 520px) { .cb-slot { min-height: 92px; } .cb-invite { font-size: .9rem; } }
+</style>
+
+<script>
+  const NAMES = ["Quick Sync", "Touch Base", "Alignment on Alignment", "Pre-Meeting for the Meeting", "Brainstorm (Mandatory)", "Lunch & Learn (No Lunch)", "Circle Back re: Circle Back", "All Hands (Hands Optional)", "Retro on the Retro", "Hard Stop (Soft)", "Synergy Session", "Can You Hear Me?", "Offsite (On Site)", "Fun Committee", "1:1 (8 Attendees)", "Quick Question (90 min)"];
+  const slots = [...document.querySelectorAll<HTMLButtonElement>("[data-slot]")];
+  const q = (s: string) => document.querySelector<HTMLElement>(s)!;
+  const scoreEl = q("[data-score]"), accEl = q("[data-accepted]"), bestEl = q("[data-best]"), log = q("[data-log]");
+  const startBtn = q("[data-start]") as HTMLButtonElement;
+  const LIMIT = 8;
+  const KEY = "mmg-circle-best";
+  type Live = { until: number; life: number };
+  let live = new Map<number, Live>();
+  let accepted = new Set<number>();
+  let score = 0, running = false, spawnTimer = 0, raf = 0, t0 = 0;
+  let best = 0;
+  try { best = Number(localStorage.getItem(KEY)) || 0; } catch {}
+  bestEl.textContent = String(best);
+
+  const update = () => { scoreEl.textContent = String(score); accEl.textContent = `${accepted.size} / ${LIMIT}`; };
+  const free = () => slots.map((_, i) => i).filter((i) => !live.has(i) && !accepted.has(i));
+
+  function spawn() {
+    if (!running) return;
+    const open = free();
+    if (open.length) {
+      const i = open[Math.floor(Math.random() * open.length)];
+      const elapsed = (performance.now() - t0) / 1000;
+      const life = Math.max(900, 2600 - elapsed * 28);
+      live.set(i, { until: performance.now() + life, life });
+      const el = slots[i];
+      el.classList.add("live");
+      el.disabled = false;
+      el.querySelector(".cb-invite")!.textContent = NAMES[Math.floor(Math.random() * NAMES.length)];
+      el.setAttribute("aria-label", `Decline ${el.querySelector(".cb-invite")!.textContent}`);
+    }
+    const elapsed = (performance.now() - t0) / 1000;
+    spawnTimer = window.setTimeout(spawn, Math.max(320, 1100 - elapsed * 14));
+  }
+
+  function decline(i: number) {
+    if (!running || !live.has(i)) return;
+    live.delete(i);
+    const el = slots[i];
+    el.classList.remove("live");
+    el.classList.add("declined");
+    setTimeout(() => el.classList.remove("declined"), 300);
+    el.disabled = true;
+    el.querySelector(".cb-invite")!.textContent = "";
+    (el.querySelector(".cb-fuse") as HTMLElement).style.width = "0";
+    score++;
+    update();
+  }
+
+  function accept(i: number) {
+    live.delete(i);
+    accepted.add(i);
+    const el = slots[i];
+    el.classList.remove("live");
+    el.classList.add("accepted");
+    el.disabled = true;
+    (el.querySelector(".cb-fuse") as HTMLElement).style.width = "0";
+    log.textContent = `Auto-accepted: ${el.querySelector(".cb-invite")!.textContent}. It's recurring.`;
+    update();
+    if (accepted.size >= LIMIT) end();
+    // accepted meetings eventually end, freeing the slot
+    else setTimeout(() => { if (running && accepted.has(i)) { accepted.delete(i); el.classList.remove("accepted"); el.querySelector(".cb-invite")!.textContent = ""; update(); } }, 9000);
+  }
+
+  function loop() {
+    const now = performance.now();
+    for (const [i, l] of live) {
+      const left = l.until - now;
+      (slots[i].querySelector(".cb-fuse") as HTMLElement).style.width = `${Math.max(0, (1 - left / l.life) * 100)}%`;
+      if (left <= 0) accept(i);
+    }
+    if (running) raf = requestAnimationFrame(loop);
+  }
+
+  function start() {
+    live.clear(); accepted.clear(); score = 0; running = true; t0 = performance.now();
+    slots.forEach((el) => { el.className = "cb-slot"; el.disabled = true; el.querySelector(".cb-invite")!.textContent = ""; });
+    log.textContent = "Invites incoming. Decline everything. Trust no one.";
+    startBtn.disabled = true;
+    update();
+    spawn();
+    loop();
+  }
+
+  function end() {
+    running = false;
+    clearTimeout(spawnTimer);
+    cancelAnimationFrame(raf);
+    slots.forEach((el) => (el.disabled = true));
+    const record = score > best;
+    if (record) { best = score; bestEl.textContent = String(best); try { localStorage.setItem(KEY, String(best)); } catch {} }
+    log.textContent = `${record ? "NEW BEST. " : ""}Your week is now one meeting. You declined ${score} before it got you.`;
+    startBtn.disabled = false;
+    startBtn.textContent = "TRY ANOTHER WEEK";
+    startBtn.focus();
+  }
+
+  slots.forEach((el, i) => el.addEventListener("click", () => decline(i)));
+  addEventListener("keydown", (e) => {
+    const n = Number(e.key);
+    if (running && n >= 1 && n <= 9) { e.preventDefault(); decline(n - 1); }
+  });
+  startBtn.addEventListener("click", start);
+</script>

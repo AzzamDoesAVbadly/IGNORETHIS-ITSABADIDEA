@@ -1,0 +1,91 @@
+{
+  "enabled": true,
+  "articlesPerRun": 2,
+  "quizEveryDays": 3,
+  "tickerPerRun": 4,
+  "bumpsPerRun": 2,
+  "adsPerRun": 1,
+  "maxAttemptsPerPiece": 6,
+  "cooldownMinutes": 360,
+  "requestTimeoutSeconds": 120,
+  "temperature": 0.95,
+  "duplicateThreshold": 0.45,
+  "providers": [
+    {
+      "id": "gemini",
+      "type": "openai",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "keyEnv": "GEMINI_API_KEY",
+      "model": "gemini-2.5-flash",
+      "prefer": ["gemini-2.5-flash", "flash"],
+      "avoid": ["lite", "image", "tts", "embedding", "live", "audio", "thinking-exp"],
+      "weight": 3,
+      "jsonMode": true
+    },
+    {
+      "id": "groq",
+      "type": "openai",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "keyEnv": "GROQ_API_KEY",
+      "model": "llama-3.3-70b-versatile",
+      "prefer": ["gpt-oss-120b", "70b", "kimi", "qwen"],
+      "avoid": ["whisper", "guard", "tts", "playai", "compound", "8b", "prompt"],
+      "weight": 2,
+      "jsonMode": true
+    },
+    {
+      "id": "openrouter",
+      "type": "openai",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "keyEnv": "OPENROUTER_API_KEY",
+      "model": "meta-llama/llama-3.3-70b-instruct:free",
+      "prefer": ["70b-instruct:free", "deepseek", "qwen", "llama", ":free"],
+      "require": ":free",
+      "avoid": ["vision", "coder", "embed"],
+      "weight": 2,
+      "jsonMode": false
+    },
+    {
+      "id": "mistral",
+      "type": "openai",
+      "baseUrl": "https://api.mistral.ai/v1",
+      "keyEnv": "MISTRAL_API_KEY",
+      "model": "mistral-small-latest",
+      "prefer": ["mistral-medium-latest", "mistral-small-latest", "mistral-small"],
+      "avoid": ["embed", "moderation", "ocr", "codestral", "pixtral", "voxtral"],
+      "weight": 1,
+      "jsonMode": true
+    },
+    {
+      "id": "cerebras",
+      "type": "openai",
+      "baseUrl": "https://api.cerebras.ai/v1",
+      "keyEnv": "CEREBRAS_API_KEY",
+      "model": "llama-3.3-70b",
+      "prefer": ["gpt-oss-120b", "70b", "qwen"],
+      "avoid": ["8b"],
+      "weight": 1,
+      "jsonMode": true
+    },
+    {
+      "id": "ollama",
+      "type": "openai",
+      "baseUrl": "http://localhost:11434/v1",
+      "keyEnv": null,
+      "enableEnv": "OLLAMA_ENABLED",
+      "model": "llama3.1",
+      "prefer": ["llama3", "qwen", "mistral", "gemma"],
+      "avoid": ["embed"],
+      "weight": 2,
+      "jsonMode": true
+    },
+    {
+      "id": "claude",
+      "type": "anthropic",
+      "keyEnv": "ANTHROPIC_API_KEY",
+      "model": "claude-opus-5-5",
+      "tier": "paid",
+      "weight": 1
+    }
+  ]
+}

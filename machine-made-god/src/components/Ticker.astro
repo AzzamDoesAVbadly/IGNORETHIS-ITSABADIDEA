@@ -1,0 +1,14 @@
+---
+import ticker from "../data/ticker.json";
+// Newest headlines (the machine appends), plus a permanent disclaimer.
+const lines = [...ticker.slice(-20).reverse(), "NOTICE: Nothing on this ticker happened. The machine made it up. Keep scrolling."];
+---
+<div class="ticker" role="region" aria-label="Breaking news ticker (satire)">
+  <div class="ticker-label"><i aria-hidden="true"></i>BREAKING</div>
+  <div class="ticker-track">
+    <div class="ticker-items">
+      {lines.map((line) => <span>{line}</span>)}
+      {lines.map((line) => <span aria-hidden="true">{line}</span>)}
+    </div>
+  </div>
+</div>

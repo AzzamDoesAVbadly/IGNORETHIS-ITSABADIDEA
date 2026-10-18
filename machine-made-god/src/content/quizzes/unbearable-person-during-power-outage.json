@@ -1,0 +1,98 @@
+{
+  "title": "Which Type of Unbearable Person Would You Become During a Minor Power Outage?",
+  "dek": "The lights go out for 40 minutes. Society, as you know it, holds. You, however, do not.",
+  "author": "intern-4471",
+  "date": "2026-10-16T17:00:00Z",
+  "tags": ["power outage", "personality", "quiz"],
+  "trending": true,
+  "art": { "motif": "crt", "palette": "sodium", "label": "GRID DOWN" },
+  "questions": [
+    {
+      "q": "The power goes out. What is your very first move?",
+      "answers": [
+        { "a": "Announce to the room, 'Power's out,' even though everyone noticed.", "r": "narrator" },
+        { "a": "Head straight to the breaker box. I don't know what I'm doing there. I just go.", "r": "breaker" },
+        { "a": "Check my phone battery. 34%. Begin rationing immediately.", "r": "hoarder" },
+        { "a": "Open the fridge to 'check on things.' Close it. Open it again.", "r": "mourner" },
+        { "a": "Light a candle. Then four more. Different scents. On purpose.", "r": "sommelier" }
+      ]
+    },
+    {
+      "q": "A neighbor knocks to ask if your power is out too. You:",
+      "answers": [
+        { "a": "Give them a detailed timeline of the outage so far, in minutes.", "r": "narrator" },
+        { "a": "Ask if they've tried flipping their main breaker. Offer to do it for them.", "r": "breaker" },
+        { "a": "Hide my power bank before opening the door.", "r": "hoarder" },
+        { "a": "Ask what they have in their freezer. Seriously. I need to know.", "r": "mourner" },
+        { "a": "Invite them in to 'experience' my candle arrangement.", "r": "sommelier" }
+      ]
+    },
+    {
+      "q": "It's been 15 minutes. How are you feeling?",
+      "answers": [
+        { "a": "Great, honestly. I've texted the family group chat six updates.", "r": "narrator" },
+        { "a": "Like I personally could fix this if the utility company would let me.", "r": "breaker" },
+        { "a": "Tense. Someone just asked to 'borrow a charger.' The audacity.", "r": "hoarder" },
+        { "a": "Grieving. There's a half-gallon of ice cream in there with a future.", "r": "mourner" },
+        { "a": "Present. Grounded. The vanilla-cedar candle is really opening up.", "r": "sommelier" }
+      ]
+    },
+    {
+      "q": "Someone suggests playing a board game. Your reaction:",
+      "answers": [
+        { "a": "Yes, and I'll explain every rule out loud for the next 25 minutes.", "r": "narrator" },
+        { "a": "Sure, after I take another look at the electrical panel.", "r": "breaker" },
+        { "a": "Only if we play by phone flashlight. Not mine, though.", "r": "hoarder" },
+        { "a": "Fine, but we're eating the frozen pizzas while we play. It's an emergency.", "r": "mourner" },
+        { "a": "Only by candlelight. I'll choose the candle based on the game's tone.", "r": "sommelier" }
+      ]
+    },
+    {
+      "q": "The power comes back on after 40 minutes. You:",
+      "answers": [
+        { "a": "Yell 'IT'S BACK!' to people in the same room as me.", "r": "narrator" },
+        { "a": "Take quiet, private credit. I did go to the breaker box twice.", "r": "breaker" },
+        { "a": "Immediately plug in four devices and guard the outlet.", "r": "hoarder" },
+        { "a": "Thank the fridge personally for its service.", "r": "mourner" },
+        { "a": "Leave the lights off. I'm not ready to leave this space yet.", "r": "sommelier" }
+      ]
+    },
+    {
+      "q": "What's in your emergency kit?",
+      "answers": [
+        { "a": "A notebook for documenting the event for posterity.", "r": "narrator" },
+        { "a": "A screwdriver I've never used and a confident attitude.", "r": "breaker" },
+        { "a": "Seven power banks. All charged. None shared.", "r": "hoarder" },
+        { "a": "A cooler and an emotional support freezer inventory.", "r": "mourner" },
+        { "a": "Matches, a lighter, and a candle called 'Midnight Library.'", "r": "sommelier" }
+      ]
+    }
+  ],
+  "results": {
+    "narrator": {
+      "title": "The Live Narrator",
+      "body": "You treat a 40-minute outage like a moon landing and you're the only one with a broadcast license. 'Still out.' 'Still out.' 'Microwave clock is blinking now.' You aren't panicking. You're informing. Everyone in the room is aware of the outage, and thanks to you, they are aware of every second of it.",
+      "share": "I'm The Live Narrator: I will update you on the outage you are also experiencing."
+    },
+    "breaker": {
+      "title": "The Breaker Box Guy",
+      "body": "The moment the lights go out you walk directly to the electrical panel with the calm authority of someone who has never once fixed anything in it. You flip switches. You flip them back. You say 'huh.' The outage is affecting the entire county, but you're not ready to rule out that it's the switch labeled 'GARAGE?'.",
+      "share": "I'm The Breaker Box Guy: the whole county is dark but I'm flipping switches anyway."
+    },
+    "hoarder": {
+      "title": "The Battery Hoarder",
+      "body": "The second the power cuts, your phone battery becomes your most valuable possession and every person in your life becomes a potential threat. You lower your brightness to 2%. You close every app. You sit perfectly still to conserve energy. You have a full power bank in your pocket and you'll die before admitting it.",
+      "share": "I'm The Battery Hoarder: I have a full power bank and I'm not telling you."
+    },
+    "mourner": {
+      "title": "The Fridge Mourner",
+      "body": "For you, an outage isn't an inconvenience. It's a countdown. Somewhere behind that door, butter is softening, ice cream is losing its form and leftovers are losing their will to live. You stand by the fridge like a doctor in a waiting room. When the power returns, you hug it. You know what you did.",
+      "share": "I'm The Fridge Mourner: I held a vigil for my leftovers."
+    },
+    "sommelier": {
+      "title": "The Candle Sommelier",
+      "body": "While others fumble for flashlights, you're curating. Two pillars by the window. A tealight 'for balance.' You describe a candle as having 'notes of fireside and quiet ambition.' The power is out for forty minutes and you treat it like a wellness retreat that you're also hosting, uninvited, for everyone.",
+      "share": "I'm The Candle Sommelier: this outage has notes of cedar and mild superiority."
+    }
+  }
+}

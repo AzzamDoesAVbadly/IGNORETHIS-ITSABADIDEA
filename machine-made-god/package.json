@@ -1,0 +1,23 @@
+{
+  "name": "machine-made-god",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/check-links.mjs",
+    "preview": "astro preview",
+    "generate": "node --env-file-if-exists=.env scripts/generate.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "machine:check": "node --env-file-if-exists=.env scripts/generate.mjs --check"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.131.0",
+    "@astrojs/rss": "4.0.19",
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.3.5"
+  }
+}

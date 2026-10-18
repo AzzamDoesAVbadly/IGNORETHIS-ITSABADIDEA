@@ -1,0 +1,8 @@
+[
+  { "id": "content", "slogan": "CONTENT\nWITHOUT\nEND", "sub": "AMEN", "color": "#141210", "ink": "#ff6a13", "item": "Heavyweight tee" },
+  { "id": "circle", "slogan": "LET'S\nCIRCLE\nBACK", "sub": "(never)", "color": "#ece6d2", "ink": "#141210", "item": "Office-casual tee" },
+  { "id": "feed", "slogan": "THE FEED\nIS\nHUNGRY", "sub": "FEED IT", "color": "#1f2a12", "ink": "#c8ff1a", "item": "Hoodie" },
+  { "id": "human", "slogan": "I AM\nPROBABLY\nA HUMAN", "sub": "VERIFIED-ISH", "color": "#ffd400", "ink": "#141210", "item": "Ringer tee" },
+  { "id": "tabs", "slogan": "47 TABS\nAND\nCOUNTING", "sub": "SEND HELP", "color": "#0f2a2a", "ink": "#2fb5a8", "item": "Long-sleeve tee" },
+  { "id": "machine", "slogan": "MADE BY\nA MACHINE", "sub": "WORN BY A MAMMAL", "color": "#ff2e88", "ink": "#141210", "item": "Crop tee" }
+]

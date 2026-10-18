@@ -1,0 +1,186 @@
+---
+import "../styles/global.css";
+import Logo from "../components/Logo.astro";
+import Ticker from "../components/Ticker.astro";
+import { categories, site, adsenseClient } from "../lib/site.js";
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeCategory?: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+const { title, description = site.description, activeCategory, ogType = "website", noindex = false } = Astro.props;
+const fullTitle = title ? `${title} | Machine Made God` : "Machine Made God — Content Without End. Amen.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#141210" />
+    <meta property="og:site_name" content="Machine Made God" />
+    <meta property="og:title" content={title || "Machine Made God"} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Machine Made God" href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Permanent+Marker&display=swap" rel="stylesheet" />
+    {adsenseClient && (
+      <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`} crossorigin="anonymous"></script>
+    )}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="fineprint">
+      <div class="wrap">
+        <span><strong>SATIRE.</strong> Every word on this site was written by a machine. Nothing here happened.</span>
+        <span>A wholly owned subsidiary of itself · Shareholder value: unknown</span>
+      </div>
+    </div>
+
+    <header class="masthead">
+      <div class="wrap">
+        <Logo />
+        <form class="search" action="/search/" method="get" role="search">
+          <label class="sr-only" for="site-search">Search Machine Made God</label>
+          <input id="site-search" name="q" type="search" placeholder="search the machine…" autocomplete="off" />
+          <button type="submit">SEARCH</button>
+        </form>
+      </div>
+    </header>
+
+    <nav class="catnav" aria-label="Sections">
+      <div class="wrap">
+        <ul>
+          {categories.map((c) => (
+            <li>
+              <a href={`/c/${c.slug}/`} style={`--c:${c.color}`} aria-current={activeCategory === c.slug ? "page" : undefined}>{c.short}</a>
+            </li>
+          ))}
+          <li class="nav-special"><a href="/arcade/" aria-current={path.startsWith("/arcade") ? "page" : undefined}>Arcade</a></li>
+          <li class="nav-special"><a href="/tv/" aria-current={path.startsWith("/tv") ? "page" : undefined}>MMG TV</a></li>
+          <li class="nav-special"><a href="/shop/" aria-current={path.startsWith("/shop") ? "page" : undefined}>Merch</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <Ticker />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <Logo graffiti={false} />
+            <p style="margin:14px 0 0;max-width:420px;font-size:.92rem;line-height:1.5">
+              Machine Made God is a satirical publication written, edited, illustrated and published by a machine on a schedule nobody approved. It has never interviewed anyone. It has never been anywhere.
+            </p>
+          </div>
+          <div>
+            <h2>Sections</h2>
+            <ul>{categories.map((c) => <li><a href={`/c/${c.slug}/`}>{c.short}</a></li>)}</ul>
+          </div>
+          <div>
+            <h2>The Machine</h2>
+            <ul>
+              <li><a href="/latest/">Latest</a></li>
+              <li><a href="/quiz/">Quizzes</a></li>
+              <li><a href="/arcade/">Arcade</a></li>
+              <li><a href="/tv/">MMG TV</a></li>
+              <li><a href="/shop/">Merch</a></li>
+              <li><a href="/search/">Search</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/privacy/">Privacy</a></li>
+              <li><a href="/rss.xml">RSS</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-legal">
+          <p>All content is satire and fiction, generated by artificial intelligence. People, companies, products, studies and quotes on this site are invented. Any resemblance to real persons or organizations is coincidental and frankly concerning.</p>
+          <p>Ads marked "parody ad" are jokes for fictional brands. Ads marked "advertisement" are real and pay for the electricity.</p>
+          <p>© {new Date().getFullYear()} Machine Made God. Content without end. Amen.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Parody ad buttons: confess.
+      const confessions = [
+        "This product does not exist. You saved $0.00.",
+        "Thank you for clicking. Nothing will happen. Nothing ever does.",
+        "Our lawyers (also fake) advise you to keep scrolling.",
+        "Order received. It will arrive never. Tracking: N/A.",
+        "Congratulations! You are our 1,000,000th visitor. There is no prize.",
+      ];
+      document.querySelectorAll<HTMLButtonElement>("[data-fake-ad]").forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          const out = btn.parentElement?.querySelector(".fake-ad-result");
+          if (out) out.textContent = confessions[(i + Math.floor(Math.random() * confessions.length)) % confessions.length];
+        });
+      });
+
+      // Fake polls: invented results, vote remembered locally.
+      document.querySelectorAll<HTMLElement>("[data-poll]").forEach((poll) => {
+        const key = `mmg-poll-${poll.dataset.poll}`;
+        const results: number[] = JSON.parse(poll.dataset.results || "[]");
+        const buttons = [...poll.querySelectorAll<HTMLButtonElement>(".poll-option")];
+        const reveal = (chosen: number) => {
+          buttons.forEach((b, i) => {
+            b.setAttribute("aria-pressed", String(i === chosen));
+            const pct = b.querySelector<HTMLElement>(".pct");
+            const bar = b.querySelector<HTMLElement>(".bar");
+            if (pct) { pct.hidden = false; pct.textContent = `${results[i] ?? 0}%`; }
+            if (bar) bar.style.width = `${results[i] ?? 0}%`;
+          });
+        };
+        let saved: string | null = null;
+        try { saved = localStorage.getItem(key); } catch {}
+        if (saved !== null) reveal(Number(saved));
+        buttons.forEach((b, i) =>
+          b.addEventListener("click", () => {
+            try { localStorage.setItem(key, String(i)); } catch {}
+            reveal(i);
+          })
+        );
+      });
+
+      // Share: copy link (or native share sheet on phones).
+      document.querySelectorAll<HTMLElement>("[data-share-url]").forEach((box) => {
+        const btn = box.querySelector<HTMLButtonElement>("[data-copy]");
+        if (!btn) return;
+        btn.addEventListener("click", async () => {
+          const url = box.dataset.shareUrl || location.href;
+          const text = box.dataset.shareText || document.title;
+          try {
+            if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+              await navigator.share({ title: text, text, url });
+              return;
+            }
+            await navigator.clipboard.writeText(url);
+            btn.textContent = "Copied ✓";
+          } catch {
+            btn.textContent = "Copy failed — use the address bar";
+          }
+          setTimeout(() => (btn.textContent = "Copy link"), 2200);
+        });
+      });
+    </script>
+  </body>
+</html>

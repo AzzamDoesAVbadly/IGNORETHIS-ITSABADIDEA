@@ -1,0 +1,125 @@
+---
+import Base from "../layouts/Base.astro";
+import { categories } from "../lib/site.js";
+---
+<Base title="Search" description="Search everything the machine has ever written.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label" style="--c:#8fd3ff">Search</span>
+      <h1>Search the Machine</h1>
+      <p>Every headline, every list, every quiz. The machine remembers everything it has said, unlike you.</p>
+    </header>
+
+    <form class="search-panel" role="search" data-search-form>
+      <div class="search">
+        <label class="sr-only" for="q">Search terms</label>
+        <input id="q" name="q" type="search" placeholder="try 'browser tabs' or 'band'" autocomplete="off" />
+        <button type="submit">SEARCH</button>
+      </div>
+      <label class="sr-only" for="cat">Category</label>
+      <select id="cat" name="cat">
+        <option value="">All sections</option>
+        {categories.map((c) => <option value={c.slug}>{c.name}</option>)}
+      </select>
+      <label class="sr-only" for="sort">Sort</label>
+      <select id="sort" name="sort">
+        <option value="relevance">Most relevant</option>
+        <option value="newest">Newest</option>
+        <option value="trending">Trending</option>
+      </select>
+    </form>
+
+    <p class="search-status" aria-live="polite" data-status>Loading the index…</p>
+    <div class="stack" data-results></div>
+    <div style="text-align:center;margin-top:24px"><button class="btn" type="button" data-more hidden>Load more</button></div>
+  </div>
+</Base>
+
+<script>
+  type Entry = { t: string; d: string; u: string; c: string; cn: string; cc: string; k: string; ts: number; tr: boolean; g: string[]; b: string };
+  const form = document.querySelector<HTMLFormElement>("[data-search-form]")!;
+  const status = document.querySelector<HTMLElement>("[data-status]")!;
+  const results = document.querySelector<HTMLElement>("[data-results]")!;
+  const more = document.querySelector<HTMLButtonElement>("[data-more]")!;
+  const qInput = form.querySelector<HTMLInputElement>("#q")!;
+  const catSel = form.querySelector<HTMLSelectElement>("#cat")!;
+  const sortSel = form.querySelector<HTMLSelectElement>("#sort")!;
+  const PAGE = 10;
+  let index: Entry[] = [];
+  let matches: Entry[] = [];
+  let shown = 0;
+
+  const params = new URLSearchParams(location.search);
+  qInput.value = params.get("q") || "";
+  catSel.value = params.get("cat") || "";
+  sortSel.value = params.get("sort") || "relevance";
+
+  const esc = (s: string) => s.replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]!);
+
+  function score(e: Entry, words: string[]) {
+    let s = 0;
+    const t = e.t.toLowerCase(), d = e.d.toLowerCase(), b = e.b.toLowerCase(), g = e.g.join(" ").toLowerCase();
+    for (const w of words) {
+      if (t.includes(w)) s += 6;
+      if (g.includes(w)) s += 4;
+      if (d.includes(w)) s += 3;
+      if (b.includes(w)) s += 1;
+    }
+    return s;
+  }
+
+  function render(reset = true) {
+    if (reset) { results.innerHTML = ""; shown = 0; }
+    const slice = matches.slice(shown, shown + PAGE);
+    results.insertAdjacentHTML("beforeend", slice.map((e) => `
+      <article class="card" style="padding:0">
+        <div class="card-body">
+          <a class="label" href="/c/${e.c}/" style="--c:${e.cc}">${e.k === "quiz" ? "Quiz" : esc(e.cn)}</a>
+          <h2 class="card-title"><a href="${e.u}">${esc(e.t)}</a></h2>
+          <p class="card-dek">${esc(e.d)}</p>
+          <p class="card-meta">${new Date(e.ts).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" })}</p>
+        </div>
+      </article>`).join(""));
+    shown += slice.length;
+    more.hidden = shown >= matches.length;
+  }
+
+  function run() {
+    const q = qInput.value.trim().toLowerCase();
+    const words = q.split(/\s+/).filter((w) => w.length > 1);
+    const cat = catSel.value;
+    let list = index.filter((e) => !cat || e.c === cat);
+    if (words.length) {
+      list = list.map((e) => ({ e, s: score(e, words) })).filter((x) => x.s > 0).sort((a, b) => b.s - a.s || b.e.ts - a.e.ts).map((x) => x.e);
+    }
+    if (sortSel.value === "newest" || (!words.length && sortSel.value === "relevance")) list = [...list].sort((a, b) => b.ts - a.ts);
+    if (sortSel.value === "trending") list = [...list].sort((a, b) => Number(b.tr) - Number(a.tr) || b.ts - a.ts);
+    matches = list;
+    if (!matches.length) {
+      results.innerHTML = `<div class="empty"><span class="stamp">0 results</span><p class="display">The machine has not written about that</p><p>Yet. Give it a week. It writes about everything eventually.</p></div>`;
+      more.hidden = true;
+      status.textContent = `No results${q ? ` for “${q}”` : ""}.`;
+      return;
+    }
+    status.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"}${q ? ` for “${q}”` : ""}.`;
+    render();
+  }
+
+  form.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    const p = new URLSearchParams();
+    if (qInput.value.trim()) p.set("q", qInput.value.trim());
+    if (catSel.value) p.set("cat", catSel.value);
+    if (sortSel.value !== "relevance") p.set("sort", sortSel.value);
+    history.replaceState(null, "", `?${p}`);
+    run();
+  });
+  catSel.addEventListener("change", run);
+  sortSel.addEventListener("change", run);
+  more.addEventListener("click", () => render(false));
+
+  fetch("/search.json")
+    .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+    .then((data: Entry[]) => { index = data; run(); })
+    .catch(() => { status.textContent = "Search is unavailable right now. The machine misplaced its index."; });
+</script>

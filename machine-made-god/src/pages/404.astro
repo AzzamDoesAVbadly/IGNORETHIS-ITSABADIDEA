@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/Card.astro";
+import { trending } from "../lib/site.js";
+---
+<Base title="404" description="This page does not exist. Neither does anything else on this site." noindex>
+  <div class="wrap">
+    <header class="page-head">
+      <span class="stamp" style="font-size:1.3rem">Error 404</span>
+      <h1>This Page Was Not Generated</h1>
+      <p>The machine never wrote this page. To be fair, it never wrote the other pages either, in any meaningful sense. Try one of these instead.</p>
+    </header>
+    <div class="grid">{trending(3).map((item) => <Card item={item} />)}</div>
+  </div>
+</Base>

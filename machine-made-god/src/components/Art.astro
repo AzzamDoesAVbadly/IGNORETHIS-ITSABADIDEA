@@ -1,0 +1,342 @@
+---
+// Procedural "defaced corporate" illustration. Same seed = same picture.
+// Free, tiny, on-brand, and the AI only has to pick motif/palette/label.
+interface Props {
+  seed: string;
+  motif?: string;
+  palette?: string;
+  label?: string;
+  decorative?: boolean;
+  class?: string;
+}
+
+const { seed, motif = "logo", palette = "sodium", label = "NEXORA", decorative = true, class: className } = Astro.props;
+
+function hash(s: string) {
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+let state = hash(seed + motif + palette);
+const rand = () => {
+  state = (state + 0x6d2b79f5) | 0;
+  let t = Math.imul(state ^ (state >>> 15), 1 | state);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+};
+const pick = <T,>(arr: T[]): T => arr[Math.floor(rand() * arr.length)];
+const between = (a: number, b: number) => a + rand() * (b - a);
+const int = (a: number, b: number) => Math.floor(between(a, b + 1));
+
+const palettes: Record<string, { bg: string; a: string; b: string; ink: string; lite: string; spray: string }> = {
+  sodium: { bg: "#1d130b", a: "#ff6a13", b: "#f2c14e", ink: "#0b0806", lite: "#f3e7cf", spray: "#c8ff1a" },
+  sick: { bg: "#283015", a: "#b5d334", b: "#e7e0a3", ink: "#10140a", lite: "#eef0d4", spray: "#ff2e88" },
+  teal: { bg: "#0e2726", a: "#2fb5a8", b: "#ff6a13", ink: "#061312", lite: "#e3efe9", spray: "#ffd400" },
+  bleach: { bg: "#e6dec6", a: "#141210", b: "#ff6a13", ink: "#141210", lite: "#fbf7ea", spray: "#ff2e88" },
+  hazard: { bg: "#ffd400", a: "#141210", b: "#ff2e88", ink: "#141210", lite: "#fff6c2", spray: "#1f6f6a" },
+  crt: { bg: "#050806", a: "#6dff8a", b: "#2fb5a8", ink: "#020302", lite: "#d9cfae", spray: "#ff2e88" },
+};
+const P = palettes[palette] || palettes.sodium;
+const id = `art${hash(seed).toString(36)}`;
+const LABEL = label.toUpperCase();
+// shrink condensed text so long labels fit the space available
+const fit = (max: number, width: number) => Math.min(max, width / (LABEL.length * 0.5));
+
+const display = "font-family:Archivo,'Arial Narrow',Arial,sans-serif;font-stretch:75%;font-weight:900";
+const mono = "font-family:'IBM Plex Mono',Menlo,monospace;font-weight:600";
+const marker = "font-family:'Permanent Marker','Marker Felt',cursive";
+
+const stamps = ["UNVERIFIED", "APPROVED", "DENIED", "DO NOT SHARE", "ALGORITHM PICK", "INTERNAL ONLY", "VOID", "CONTENT", "PENDING REVIEW", "CLASSIFIED-ISH"];
+const scrawls = ["lies", "why tho", "help", "no.", "obey the feed", "it's fine", "who approved this", "lol", "send help", "fake", "not real", "keep scrolling"];
+const serial = `${int(1000, 9999)}-${pick(["A", "B", "X", "Q", "Z"])}${int(10, 99)}`;
+
+const showStamp = motif === "memo" || rand() > 0.45;
+const stamp = {
+  text: pick(stamps),
+  x: between(220, 300),
+  y: between(150, 205),
+  rot: between(-16, 12),
+};
+const scrawl = {
+  text: pick(scrawls),
+  x: between(20, 230),
+  y: between(40, 230),
+  rot: between(-14, 10),
+  size: between(20, 30),
+};
+const tapes = Array.from({ length: int(0, 2) }, (_, i) => ({
+  x: i === 0 ? between(-20, 40) : between(290, 360),
+  y: i === 0 ? between(-8, 10) : between(-8, 200),
+  rot: between(-35, 35),
+}));
+
+// motif helpers
+const drips = (x0: number, x1: number, y: number) =>
+  Array.from({ length: int(3, 6) }, () => {
+    const x = between(x0, x1);
+    const len = between(18, 70);
+    return { x, y1: y + between(-6, 6), y2: y + len };
+  });
+
+const logoShape = int(0, 3);
+const logoDrips = drips(80, 180, 168);
+const sprayX = { a: between(-6, 6), b: between(-6, 6) };
+
+const memoLines = Array.from({ length: 11 }, (_, i) => ({
+  y: 106 + i * 12,
+  w: between(90, 200),
+  redact: rand() > 0.7,
+}));
+const memoRot = between(-5, 5);
+const coffee = { x: between(110, 300), y: between(60, 200), r: between(26, 36) };
+
+const posters = Array.from({ length: 4 }, (_, i) => ({
+  x: 34 + i * 88 + between(-8, 8),
+  y: between(186, 200),
+  rot: between(-7, 7),
+  fill: pick([P.lite, P.b, P.a, "#ffffff"]),
+}));
+const billboardTagline = pick(["THE FUTURE IS MANDATORY", "YOUR DATA, OUR PRIORITY", "SMILE. YOU ARE PRODUCT.", "TRUST THE PROCESS", "ALWAYS ON. ALWAYS WATCHING.", "WE CARE (LEGALLY)"]);
+
+const bars = Array.from({ length: 7 }, (_, i) => ({ x: 70 + i * 40, h: between(20, 120) }));
+const chartTitle = pick(["SYNERGY INDEX", "ENGAGEMENT", "Q4 VIBES", "SHAREHOLDER JOY", "CONTENT OUTPUT", "HUMAN ATTENTION"]);
+
+const barcode = Array.from({ length: 34 }, (_, i) => ({ x: 142 + i * 3.4, w: pick([1, 1.5, 2, 2.6]) }));
+const employee = `EMPLOYEE #${int(1000, 99999)}`;
+
+const crtLines = [`> ${LABEL}.EXE`, pick(["> loading soul......", "> optimizing human", "> 99% complete", "> do not unplug"]), pick(["> ERROR: feelings", "> synergy found", "> rebooting morale", "> trust me"]), "> _"];
+
+const stickerWords = ["LIKE", "NO", "404", "OBEY", "HUMAN?", "SALE", "FEED", "AD", "WHY", "OK", "NEW!", "FREE*"];
+const stickers = Array.from({ length: 9 }, (_, i) => ({
+  x: between(20, 370),
+  y: between(20, 230),
+  r: i === 0 ? 62 : between(24, 44),
+  rot: between(-30, 30),
+  shape: i === 0 ? "circle" : pick(["circle", "rect", "rect", "circle", "burst"]),
+  fill: pick([P.a, P.b, P.lite, "#ff2e88", "#c8ff1a", "#ffffff"]),
+  word: i === 0 ? LABEL : pick(stickerWords),
+}));
+stickers.sort((a, b) => a.r - b.r);
+const burst = (r: number) =>
+  Array.from({ length: 16 }, (_, i) => {
+    const rr = i % 2 ? r * 0.7 : r;
+    const ang = (i / 16) * Math.PI * 2;
+    return `${(Math.cos(ang) * rr).toFixed(1)},${(Math.sin(ang) * rr).toFixed(1)}`;
+  }).join(" ");
+
+const notifs = Array.from({ length: 5 }, (_, i) => ({
+  y: 66 + i * 34,
+  w: between(50, 78),
+  text: pick(["you have been mentioned", "your streak is dying", "new follower: bot", "someone is typing…", "reminder: hydrate", "your data was updated", "breaking: nothing", "you might like this"]),
+}));
+---
+
+<span class:list={["art", className]} aria-hidden={decorative ? "true" : undefined}>
+  <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false">
+    <defs>
+      <pattern id={`${id}-ht`} width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+        <circle cx="3.5" cy="3.5" r="1.5" fill={P.ink} />
+      </pattern>
+      <pattern id={`${id}-sl`} width="4" height="4" patternUnits="userSpaceOnUse">
+        <rect width="4" height="1.3" fill="#000" />
+      </pattern>
+      <radialGradient id={`${id}-vg`} cx="50%" cy="45%" r="75%">
+        <stop offset="55%" stop-color="#000" stop-opacity="0" />
+        <stop offset="100%" stop-color="#000" stop-opacity="0.55" />
+      </radialGradient>
+    </defs>
+
+    <rect width="400" height="250" fill={P.bg} />
+    <rect x={between(150, 260)} y="-20" width="300" height="300" fill={`url(#${id}-ht)`} opacity="0.22" transform={`rotate(${between(-10, 10)} 200 125)`} />
+
+    {motif === "logo" && (
+      <g>
+        <g transform="translate(130 120)">
+          {Array.from({ length: 14 }, (_, i) => (
+            <rect x="-3" y="-96" width="6" height="16" fill={P.lite} opacity="0.8" transform={`rotate(${(i * 360) / 14})`} />
+          ))}
+          <circle r="72" fill={P.a} />
+          <circle r="54" fill={P.bg} />
+          {logoShape === 0 && <path d="M0 -34 L32 22 L-32 22 Z" fill={P.a} />}
+          {logoShape === 0 && <circle cy="6" r="9" fill={P.bg} />}
+          {logoShape === 1 && <path d="M0 -36 L31 -18 L31 18 L0 36 L-31 18 L-31 -18 Z" fill={P.a} />}
+          {logoShape === 2 && (
+            <g fill={P.a}>
+              <rect x="-30" y="-26" width="60" height="12" />
+              <rect x="-30" y="-6" width="44" height="12" />
+              <rect x="-30" y="14" width="26" height="12" />
+            </g>
+          )}
+          {logoShape === 3 && (
+            <g>
+              <circle r="30" fill={P.a} />
+              <rect x="-40" y="-5" width="80" height="10" fill={P.bg} transform="rotate(-35)" />
+            </g>
+          )}
+        </g>
+        <text x="222" y="114" fill={P.lite} style={display} font-size={fit(38, 168)}>{LABEL}</text>
+        <rect x="224" y="124" width="150" height="3" fill={P.a} />
+        <text x="224" y="142" fill={P.b} style={mono} font-size="10" letter-spacing="3">HOLDINGS · EST. 1997</text>
+        <g stroke={P.spray} stroke-linecap="round" fill="none" opacity="0.88">
+          <path d={`M${70 + sprayX.a} ${55} Q130 ${118 + sprayX.b} ${192} ${186}`} stroke-width="10" />
+          <path d={`M${192 + sprayX.b} ${58} Q132 ${124 + sprayX.a} ${66} ${190}`} stroke-width="9" />
+          {logoDrips.map((d) => (
+            <line x1={d.x} y1={d.y1} x2={d.x} y2={d.y2} stroke-width="3.5" />
+          ))}
+        </g>
+        {logoDrips.map((d) => (
+          <circle cx={d.x} cy={d.y2} r="3.4" fill={P.spray} opacity="0.88" />
+        ))}
+      </g>
+    )}
+
+    {motif === "memo" && (
+      <g transform={`rotate(${memoRot} 200 130)`}>
+        <rect x="74" y="26" width="256" height="240" fill="#000" opacity="0.35" transform="translate(6 6)" />
+        <rect x="74" y="26" width="256" height="240" fill={palette === "bleach" ? "#fffdf4" : P.lite} />
+        <text x="92" y="58" fill="#141210" style={display} font-size="24">MEMORANDUM</text>
+        <rect x="92" y="66" width="220" height="2" fill="#141210" />
+        <text x="92" y="82" fill="#141210" style={mono} font-size="8">TO: ALL STAFF   FROM: {LABEL}</text>
+        <text x="92" y="94" fill="#141210" style={mono} font-size="8">RE: {pick(["MANDATORY FUN", "THE INCIDENT", "SYNERGY", "YOUR ATTITUDE", "Q3 FEELINGS"])}</text>
+        {memoLines.map((l) => (
+          <rect x="92" y={l.y} width={l.w} height={l.redact ? 8 : 4} fill="#141210" opacity={l.redact ? 0.95 : 0.35} />
+        ))}
+        <circle cx={coffee.x} cy={coffee.y} r={coffee.r} fill="none" stroke="#6b3b10" stroke-width="7" opacity="0.32" />
+        <circle cx={coffee.x + 3} cy={coffee.y + 2} r={coffee.r - 4} fill="none" stroke="#6b3b10" stroke-width="2" opacity="0.25" />
+      </g>
+    )}
+
+    {motif === "billboard" && (
+      <g>
+        <rect x="88" y="168" width="10" height="90" fill={P.ink} />
+        <rect x="300" y="168" width="10" height="90" fill={P.ink} />
+        <rect x="34" y="18" width="332" height="152" fill={P.lite} stroke={P.ink} stroke-width="6" />
+        <circle cx="110" cy="94" r="50" fill={P.b} />
+        <circle cx="94" cy="84" r="6" fill={P.ink} />
+        <circle cx="126" cy="84" r="6" fill={P.ink} />
+        <path d="M84 106 Q110 132 136 106" fill="none" stroke={P.ink} stroke-width="6" stroke-linecap="round" />
+        <text x="176" y="82" fill={P.ink} style={display} font-size={fit(36, 180)}>{LABEL}</text>
+        <text x="178" y="104" fill={P.ink} style={mono} font-size="9" letter-spacing="1">{billboardTagline}</text>
+        <rect x="178" y="116" width="120" height="22" fill={P.a} />
+        <text x="186" y="131" fill={palette === "hazard" ? "#ffd400" : P.lite} style={mono} font-size="9">LEARN MORE ›</text>
+        <g stroke={P.spray} stroke-width="5" stroke-linecap="round" opacity="0.9">
+          <path d="M86 76 L102 92 M102 76 L86 92" />
+          <path d="M118 76 L134 92 M134 76 L118 92" />
+        </g>
+        {posters.map((p) => (
+          <g transform={`rotate(${p.rot} ${p.x + 36} ${p.y + 30})`}>
+            <rect x={p.x} y={p.y} width="72" height="66" fill={p.fill} stroke={P.ink} stroke-width="2" />
+            <rect x={p.x + 8} y={p.y + 10} width="56" height="10" fill={P.ink} />
+            <rect x={p.x + 8} y={p.y + 26} width="40" height="4" fill={P.ink} opacity="0.5" />
+            <rect x={p.x + 8} y={p.y + 34} width="50" height="4" fill={P.ink} opacity="0.5" />
+          </g>
+        ))}
+      </g>
+    )}
+
+    {motif === "chart" && (
+      <g>
+        {Array.from({ length: 6 }, (_, i) => (
+          <rect x="56" y={40 + i * 30} width="320" height="1" fill={P.lite} opacity="0.18" />
+        ))}
+        <rect x="56" y="30" width="3" height="186" fill={P.lite} />
+        <rect x="56" y="213" width="320" height="3" fill={P.lite} />
+        {bars.map((b) => (
+          <rect x={b.x} y={213 - b.h} width="24" height={b.h} fill={P.a} opacity="0.85" />
+        ))}
+        <path d="M60 200 C150 190 230 170 280 110 S330 20 350 -10" fill="none" stroke={P.b} stroke-width="6" />
+        <text x="66" y="26" fill={P.lite} style={display} font-size="22">{chartTitle}</text>
+        <text x="300" y="236" fill={P.lite} style={mono} font-size="9">{LABEL} INTERNAL</text>
+        {["Q1", "Q2", "Q3", "Q4"].map((q, i) => (
+          <text x={80 + i * 72} y="236" fill={P.lite} style={mono} font-size="9" opacity="0.7">{q}</text>
+        ))}
+        <path d="M300 60 C270 110 250 140 214 168 M214 168 L238 166 M214 168 L220 145" fill="none" stroke={P.spray} stroke-width="5" stroke-linecap="round" opacity="0.92" />
+      </g>
+    )}
+
+    {motif === "badge" && (
+      <g>
+        <path d="M170 -10 L188 44 M230 -10 L212 44" stroke={P.a} stroke-width="8" />
+        <rect x="118" y="40" width="164" height="204" rx="10" fill="#000" opacity="0.35" transform="translate(6 6)" />
+        <rect x="118" y="40" width="164" height="204" rx="10" fill={P.lite} stroke={P.ink} stroke-width="3" />
+        <rect x="186" y="50" width="28" height="7" rx="3" fill={P.ink} />
+        <rect x="118" y="64" width="164" height="34" fill={P.a} />
+        <text x="200" y="88" fill={palette === "bleach" || palette === "hazard" ? "#f7f2e1" : P.ink} style={display} font-size={fit(22, 150)} text-anchor="middle">{LABEL}</text>
+        <rect x="160" y="106" width="80" height="80" fill={P.bg} stroke={P.ink} stroke-width="2" />
+        <circle cx="200" cy="136" r="16" fill={P.ink} opacity="0.75" />
+        <path d="M172 186 Q200 150 228 186 Z" fill={P.ink} opacity="0.75" />
+        <text x="200" y="202" fill={P.ink} style={mono} font-size="9" text-anchor="middle">{employee}</text>
+        {barcode.map((b) => (
+          <rect x={b.x} y="210" width={b.w} height="24" fill={P.ink} />
+        ))}
+      </g>
+    )}
+
+    {motif === "crt" && (
+      <g>
+        <path d="M168 210 L232 210 L250 240 L150 240 Z" fill="#bdb291" stroke={P.ink} stroke-width="3" />
+        <rect x="68" y="16" width="264" height="198" rx="16" fill="#d9cfae" stroke={P.ink} stroke-width="3" />
+        <rect x="90" y="36" width="220" height="146" rx="10" fill="#061008" stroke={P.ink} stroke-width="3" />
+        {crtLines.map((l, i) => (
+          <text x="104" y={66 + i * 26} fill={palette === "crt" ? P.a : P.a === "#141210" ? "#6dff8a" : P.a} style={mono} font-size="14">{l}</text>
+        ))}
+        <rect x="90" y="36" width="220" height="146" rx="10" fill={`url(#${id}-sl)`} opacity="0.35" />
+        <circle cx="300" cy="198" r="5" fill={P.a} />
+        <rect x="90" y="190" width="54" height="16" fill="#c8ff1a" transform="rotate(-6 117 198)" />
+        <text x="96" y="202" fill="#141210" style={mono} font-size="8" transform="rotate(-6 117 198)">DO NOT</text>
+      </g>
+    )}
+
+    {motif === "stickers" && (
+      <g>
+        {stickers.map((s) => (
+          <g transform={`translate(${s.x} ${s.y}) rotate(${s.rot})`}>
+            {s.shape === "circle" && <circle r={s.r} fill={s.fill} stroke={P.ink} stroke-width="3" />}
+            {s.shape === "rect" && <rect x={-s.r * 1.3} y={-s.r * 0.6} width={s.r * 2.6} height={s.r * 1.2} rx="4" fill={s.fill} stroke={P.ink} stroke-width="3" />}
+            {s.shape === "burst" && <polygon points={burst(s.r)} fill={s.fill} stroke={P.ink} stroke-width="3" />}
+            <text y={s.r * 0.18} fill="#141210" style={display} font-size={Math.max(10, s.r * (s.word.length > 6 ? 0.34 : 0.5))} text-anchor="middle">{s.word}</text>
+          </g>
+        ))}
+      </g>
+    )}
+
+    {motif === "phone" && (
+      <g>
+        <rect x="134" y="8" width="132" height="250" rx="20" fill="#000" opacity="0.35" transform="translate(6 6)" />
+        <rect x="134" y="8" width="132" height="250" rx="20" fill={P.ink} stroke={P.lite} stroke-width="3" />
+        <rect x="144" y="24" width="112" height="230" rx="8" fill={P.bg === "#ffd400" ? "#fff6c2" : "#14120f"} />
+        <text x="200" y="50" fill={P.lite === "#fff6c2" ? "#141210" : P.lite} style={display} font-size={fit(14, 100)} text-anchor="middle">{LABEL}</text>
+        {notifs.map((n) => (
+          <g>
+            <rect x="150" y={n.y} width="100" height="28" rx="6" fill={P.lite} opacity="0.95" />
+            <circle cx="162" cy={n.y + 14} r="6" fill={P.a} />
+            <text x="172" y={n.y + 12} fill="#141210" style={mono} font-size="5.6">{n.text}</text>
+            <rect x="172" y={n.y + 17} width={n.w - 10} height="3" fill="#141210" opacity="0.35" />
+          </g>
+        ))}
+        <circle cx="262" cy="14" r="18" fill="#ff2e88" stroke={P.ink} stroke-width="3" />
+        <text x="262" y="19" fill="#fff" style={display} font-size="14" text-anchor="middle">99+</text>
+      </g>
+    )}
+
+    {showStamp && (
+      <g transform={`rotate(${stamp.rot} ${stamp.x} ${stamp.y})`} opacity="0.82">
+        <rect x={stamp.x - stamp.text.length * 6.2 - 10} y={stamp.y - 20} width={stamp.text.length * 12.4 + 20} height="32" fill="none" stroke="#d1301a" stroke-width="4" />
+        <text x={stamp.x} y={stamp.y + 4} fill="#d1301a" style={display} font-size="22" text-anchor="middle">{stamp.text}</text>
+      </g>
+    )}
+
+    <text x={scrawl.x} y={scrawl.y} fill={P.spray} style={marker} font-size={scrawl.size} transform={`rotate(${scrawl.rot} ${scrawl.x} ${scrawl.y})`} opacity="0.95">{scrawl.text}</text>
+
+    {tapes.map((t) => (
+      <rect x={t.x} y={t.y} width="96" height="26" fill="#e9dcb3" opacity="0.8" transform={`rotate(${t.rot} ${t.x + 48} ${t.y + 13})`} />
+    ))}
+
+    <rect width="400" height="250" fill={`url(#${id}-sl)`} opacity="0.12" />
+    <rect width="400" height="250" fill={`url(#${id}-vg)`} />
+    <text x="8" y="244" fill={palette === "bleach" || palette === "hazard" ? "#141210" : "#ffffff"} style={mono} font-size="6.5" opacity="0.55">{LABEL} © 1997 · NOT A REAL COMPANY · {serial}</text>
+  </svg>
+</span>

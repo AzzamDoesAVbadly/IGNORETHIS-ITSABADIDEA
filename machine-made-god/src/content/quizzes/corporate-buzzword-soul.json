@@ -1,0 +1,97 @@
+{
+  "title": "What Corporate Buzzword Is Your Soul?",
+  "dek": "Deep down, past the quarterly goals, there is a single phrase that defines you. Let's take this offline and find out which.",
+  "author": "dirk-hotfix",
+  "date": "2026-10-12T14:00:00Z",
+  "tags": ["work", "corporate", "personality", "quiz"],
+  "art": { "motif": "badge", "palette": "bleach", "label": "SYNERGY" },
+  "questions": [
+    {
+      "q": "A meeting runs 10 minutes over. You:",
+      "answers": [
+        { "a": "Suggest we combine it with the next meeting. Efficiency!", "r": "synergy" },
+        { "a": "Say I have a hard stop. I don't. I just want to leave.", "r": "bandwidth" },
+        { "a": "Propose we table the last item and revisit it next week.", "r": "circleback" },
+        { "a": "Ask a question that adds 20 more minutes.", "r": "deepdive" },
+        { "a": "Point out the one thing we could fix right now, easily.", "r": "fruit" }
+      ]
+    },
+    {
+      "q": "Your manager asks if you can take on a new project. You say:",
+      "answers": [
+        { "a": "'Absolutely, I see so much overlap with what I'm already doing.'", "r": "synergy" },
+        { "a": "'Let me check my bandwidth.' (My bandwidth is zero.)", "r": "bandwidth" },
+        { "a": "'Love it. Let's circle back once Q3 wraps.'", "r": "circleback" },
+        { "a": "'Before I commit, I'd love to really understand the problem space.'", "r": "deepdive" },
+        { "a": "'Are there any quick wins we can grab first?'", "r": "fruit" }
+      ]
+    },
+    {
+      "q": "Pick an office snack:",
+      "answers": [
+        { "a": "A trail mix where every ingredient is working together.", "r": "synergy" },
+        { "a": "Nothing. I'm too busy to snack. I eat at my desk at 3 p.m.", "r": "bandwidth" },
+        { "a": "The donut I said I'd come back for. I'll come back for it.", "r": "circleback" },
+        { "a": "A seven-layer dip. I'm getting to the bottom of it.", "r": "deepdive" },
+        { "a": "A literal apple from the bowl. It was right there.", "r": "fruit" }
+      ]
+    },
+    {
+      "q": "Your email signature includes:",
+      "answers": [
+        { "a": "A quote about teamwork from a CEO who was later indicted.", "r": "synergy" },
+        { "a": "'Responses may be delayed due to high volume.'", "r": "bandwidth" },
+        { "a": "'Sent from my phone, more soon!' (There is never more.)", "r": "circleback" },
+        { "a": "Links to three articles I've written about my process.", "r": "deepdive" },
+        { "a": "Just my name. Simple. Effective. A quick win.", "r": "fruit" }
+      ]
+    },
+    {
+      "q": "It's Friday at 4:45 p.m. Someone pings you with a 'quick question.' You:",
+      "answers": [
+        { "a": "Loop in three more people so we can solve it together.", "r": "synergy" },
+        { "a": "Set my status to 'In a meeting' and close the laptop.", "r": "bandwidth" },
+        { "a": "Reply 'Great question! Monday?' and feel great about it.", "r": "circleback" },
+        { "a": "Answer with a 900-word message and a diagram.", "r": "deepdive" },
+        { "a": "Answer it in five words. Done. Weekend.", "r": "fruit" }
+      ]
+    },
+    {
+      "q": "What would your coworkers say about you at your retirement party?",
+      "answers": [
+        { "a": "'They brought people together. Constantly. Against their will.'", "r": "synergy" },
+        { "a": "'They always seemed so busy. We never figured out with what.'", "r": "bandwidth" },
+        { "a": "'They promised to follow up on my 2019 proposal. Still waiting.'", "r": "circleback" },
+        { "a": "'They asked a lot of questions. A lot of questions.'", "r": "deepdive" },
+        { "a": "'They fixed the printer once and never let us forget it.'", "r": "fruit" }
+      ]
+    }
+  ],
+  "results": {
+    "synergy": {
+      "title": "Synergy",
+      "body": "You believe that two things together are better than two things apart, and you'll prove it by combining every meeting, project and Slack channel into one terrifying super-meeting. You see connections everywhere. Some of them are real. Your soul is a Venn diagram where every circle is labeled 'alignment.'",
+      "share": "My soul is 'Synergy': I will combine your meeting with my meeting."
+    },
+    "bandwidth": {
+      "title": "Bandwidth",
+      "body": "You are always at capacity. Always. Nobody has ever seen you with free time, including you. When someone asks for help you say 'let me check my bandwidth' like you're a home router. Your soul is buffering. It has been buffering since 2019.",
+      "share": "My soul is 'Bandwidth': I don't have it, and I never will."
+    },
+    "circleback": {
+      "title": "Let's Circle Back",
+      "body": "You are a master of gentle postponement. Every hard decision, awkward conversation and unwanted task gets lovingly placed in the future, where it lives forever. You aren't avoiding things. You're scheduling them for a date that will never come. Your soul is a calendar invite with no time attached.",
+      "share": "My soul is 'Let's Circle Back': I will get back to you on what that means."
+    },
+    "deepdive": {
+      "title": "Deep Dive",
+      "body": "You never just look at something. You go into it. A simple question becomes a 40-slide investigation, a spreadsheet with tabs, and a follow-up meeting to discuss the findings. Your coworkers fear the phrase 'let's go deeper on this,' because you mean it. Your soul has no bottom. It's just more slides.",
+      "share": "My soul is 'Deep Dive': I turned your yes-or-no question into a 40-slide deck."
+    },
+    "fruit": {
+      "title": "Low-Hanging Fruit",
+      "body": "You see the easy win, and you take it, and you tell everyone about it. Why climb the tree when the fruit is right here at eye level? You've built a whole career on things that were always going to work. Honestly? Respect. Your soul is a single grape in a break room, and you're proud of it.",
+      "share": "My soul is 'Low-Hanging Fruit': I fixed the printer once and I'm still talking about it."
+    }
+  }
+}

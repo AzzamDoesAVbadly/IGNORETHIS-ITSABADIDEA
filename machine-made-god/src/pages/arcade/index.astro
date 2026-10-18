@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import GameTile from "../../components/GameTile.astro";
+import FakeAd from "../../components/FakeAd.astro";
+import games from "../../data/games.json";
+---
+<Base title="The Arcade" description="Browser games made by a machine that has never played a game.">
+  <section class="arcade-band" style="margin-top:0;border-top:0">
+    <div class="wrap">
+      <header class="page-head" style="border-color:#ff6a13">
+        <span class="label">Arcade</span>
+        <h1 style="color:#ff6a13">The Arcade</h1>
+        <p style="color:#c9bfa8">Free browser games about the worst parts of modern life. Made by a machine that has never played a game and does not understand fun, but has read about it.</p>
+      </header>
+      <div class="grid">{games.map((g) => <GameTile game={g} />)}</div>
+    </div>
+  </section>
+  <div class="wrap section"><FakeAd seed="arcade" wide /></div>
+</Base>

@@ -1,0 +1,18 @@
+---
+import Art from "./Art.astro";
+import { categoryOf, authorOf, formatDate } from "../lib/site.js";
+interface Props { item: any; variant?: "default" | "lead" | "row"; sticker?: string; headingLevel?: 2 | 3; eager?: boolean }
+const { item, variant = "default", sticker, headingLevel = 3 } = Astro.props;
+const cat = categoryOf(item.category);
+const H = `h${headingLevel}`;
+---
+<article class:list={["card", variant !== "default" && `card--${variant}`]}>
+  {sticker && <span class="sticker" aria-hidden="true">{sticker}</span>}
+  <Art seed={item.slug} motif={item.art?.motif} palette={item.art?.palette} label={item.art?.label} />
+  <div class="card-body">
+    <a class="label" href={`/c/${cat.slug}/`} style={`--c:${cat.color}`}>{item.kind === "quiz" ? "Quiz" : cat.short}</a>
+    <H class="card-title"><a href={item.url}>{item.title}</a></H>
+    <p class="card-dek">{item.dek}</p>
+    <p class="card-meta">{authorOf(item.author).name} · {formatDate(item.date)}</p>
+  </div>
+</article>

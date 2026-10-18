@@ -1,0 +1,129 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/Card.astro";
+import AdSlot from "../components/AdSlot.astro";
+import FakeAd from "../components/FakeAd.astro";
+import Bump from "../components/Bump.astro";
+import Poll from "../components/Poll.astro";
+import QuizTile from "../components/QuizTile.astro";
+import GameTile from "../components/GameTile.astro";
+import MerchItem from "../components/MerchItem.astro";
+import { articles, quizzes, featured, trending, picks, categories, inCategory, formatDate } from "../lib/site.js";
+import games from "../data/games.json";
+import merch from "../data/merch.json";
+
+const lead = featured();
+const trend = trending(6, [lead]);
+const latest = articles.filter((a) => a.url !== lead.url).slice(0, 5);
+const pickList = picks(4, [lead, ...latest]);
+const quizColors = ["#c8ff1a", "#ffd400", "#8fd3ff"];
+const blocks = ["music", "conspiracy", "corporate", "lifestyle", "politics", "entertainment", "internet", "reviews"]
+  .map((slug) => ({ cat: categories.find((c) => c.slug === slug), list: inCategory(slug).slice(0, 3) }))
+  .filter((b) => b.cat && b.list.length)
+  .slice(0, 4);
+---
+<Base>
+  <div class="wrap">
+    <div class="lead-row">
+      <div class="lead-wrap">
+        <span class="tape tape--tl" aria-hidden="true"></span>
+        <span class="tape tape--br" aria-hidden="true"></span>
+        <Card item={lead} variant="lead" sticker="AI WROTE THIS" headingLevel={2} />
+      </div>
+      <aside class="trend" aria-labelledby="trending-h">
+        <div class="trend-head"><h2 id="trending-h">Trending</h2><span>(allegedly)</span></div>
+        <ol>
+          {trend.map((item) => (
+            <li>
+              <div>
+                <a href={item.url}>{item.title}</a>
+                <span class="mono">{item.kind === "quiz" ? "Quiz" : item.category} · {formatDate(item.date)}</span>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+
+    <section class="section" aria-labelledby="latest-h">
+      <div class="section-head">
+        <h2 id="latest-h">Latest<span class="scrawl">fresh from the machine</span></h2>
+        <a class="more" href="/latest/">Everything →</a>
+      </div>
+      <div class="grid">
+        {latest.slice(0, 2).map((item) => <Card item={item} />)}
+        <AdSlot seed="home-grid" slot={import.meta.env.PUBLIC_ADSENSE_SLOT_HOME} />
+        {latest.slice(2).map((item) => <Card item={item} />)}
+      </div>
+    </section>
+  </div>
+
+  <Bump />
+
+  <div class="wrap">
+    <section class="section" aria-labelledby="quiz-h">
+      <div class="section-head">
+        <h2 id="quiz-h">Quizzes<span class="scrawl">learn nothing about yourself</span></h2>
+        <a class="more" href="/quiz/">All quizzes →</a>
+      </div>
+      <div class="grid">
+        {quizzes.slice(0, 3).map((q, i) => <QuizTile quiz={q} color={quizColors[i % quizColors.length]} />)}
+      </div>
+    </section>
+  </div>
+
+  <section class="arcade-band" aria-labelledby="arcade-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="arcade-h">The Arcade<span class="scrawl" style="color:#c8ff1a">games made by a machine that has never played one</span></h2>
+        <a class="more" href="/arcade/">Enter →</a>
+      </div>
+      <div class="grid">{games.map((g) => <GameTile game={g} />)}</div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section two-col">
+      <div>
+        <div class="section-head">
+          <h2 id="picks-h">Editor's Picks<span class="scrawl">the editor is also the machine</span></h2>
+        </div>
+        <div class="stack">{pickList.map((item) => <Card item={item} variant="row" />)}</div>
+      </div>
+      <div class="stack">
+        <Poll index={new Date().getUTCDate()} />
+        <FakeAd seed="home-side" />
+      </div>
+    </section>
+
+    <section class="section" aria-label="More sections">
+      <div class="grid grid--4">
+        {blocks.map(({ cat, list }) => (
+          <div class="cat-block">
+            <h3><a class="label" href={`/c/${cat!.slug}/`} style={`--c:${cat!.color}`}>{cat!.name}</a></h3>
+            <ul class="cat-list">{list.map((item) => <li><a href={item.url}>{item.title}</a></li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="merch-h">
+      <div class="section-head">
+        <h2 id="merch-h">Merch<span class="scrawl">wear the machine</span></h2>
+        <a class="more" href="/shop/">Shop →</a>
+      </div>
+      <div class="grid">
+        {merch.slice(0, 3).map((m) => (
+          <a class="card" href="/shop/">
+            <span class="art" style="aspect-ratio:1/1">
+              <MerchItem item={m} />
+            </span>
+            <div class="card-body"><span class="mono">{m.item}</span></div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <FakeAd seed="home-wide" wide />
+  </div>
+</Base>

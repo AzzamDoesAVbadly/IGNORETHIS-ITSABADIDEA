@@ -1,0 +1,111 @@
+---
+import Base from "../../layouts/Base.astro";
+import Art from "../../components/Art.astro";
+import Card from "../../components/Card.astro";
+import AdSlot from "../../components/AdSlot.astro";
+import Poll from "../../components/Poll.astro";
+import Share from "../../components/Share.astro";
+import { articles, categoryOf, authorOf, formatDate, related, trending } from "../../lib/site.js";
+import { slugify, wordCount } from "../../lib/schema.mjs";
+
+export function getStaticPaths() {
+  return articles.map((a) => ({ params: { slug: a.slug }, props: { a } }));
+}
+
+const { a } = Astro.props;
+const cat = categoryOf(a.category);
+const author = authorOf(a.author);
+const raw = a.mod.rawContent();
+const minutes = Math.max(1, Math.round(wordCount(raw) / 230));
+const html = await a.mod.compiledContent();
+
+// Drop one parody/real ad into the body after the third paragraph.
+const parts = html.split("</p>");
+const cut = Math.min(3, parts.length - 1);
+const before = parts.slice(0, cut).join("</p>") + (cut > 0 ? "</p>" : "");
+const after = parts.slice(cut).join("</p>");
+
+const motifText = {
+  logo: "a defaced corporate logo",
+  memo: "a redacted office memo with a coffee ring",
+  billboard: "a vandalized corporate billboard",
+  chart: "a corporate growth chart with graffiti on it",
+  badge: "a grimy employee ID badge",
+  crt: "an old beige computer monitor",
+  stickers: "a pile of slap stickers",
+  phone: "a phone buried in notifications",
+};
+const caption = `Illustration: ${motifText[a.art.motif] || "corporate ephemera"} for ${a.art.label}, which is not a real company.`;
+const more = related(a, 3);
+const side = trending(4, [a]);
+const formatName = { news: "Report", listicle: "List", review: "Review", announcement: "Press release", essay: "Opinion" }[a.format];
+---
+<Base title={a.title} description={a.dek} activeCategory={cat.slug} ogType="article">
+  <div class="wrap">
+    <header class="article-head">
+      <a class="label" href={`/c/${cat.slug}/`} style={`--c:${cat.color}`}>{cat.name}</a>
+      <h1>{a.title}</h1>
+      <p class="dek">{a.dek}</p>
+      <div class="byline">
+        <span>By <strong>{author.name}</strong>, {author.role}</span>
+        <span>{formatDate(a.date)}</span>
+        <span>{formatName} · {minutes} min read</span>
+        <span>Satire</span>
+      </div>
+    </header>
+
+    <figure class="article-art" style="max-width:900px">
+      <span class="tape tape--tl" aria-hidden="true"></span>
+      <span class="tape tape--tr" aria-hidden="true"></span>
+      <Art seed={a.slug} motif={a.art.motif} palette={a.art.palette} label={a.art.label} />
+      <figcaption>{caption}</figcaption>
+    </figure>
+
+    <div class="article-layout">
+      <article>
+        {a.format === "review" && (
+          <div class="review-score">
+            <span class="num">{a.rating}/5</span>
+            <div>
+              <span class="stars" aria-hidden="true">{"★".repeat(Math.round(a.rating))}{"☆".repeat(5 - Math.round(a.rating))}</span>
+              <span class="mono">{a.product ? `Product: ${a.product} (fictional)` : "Fictional product"}</span>
+            </div>
+          </div>
+        )}
+        {a.pullquote && <p class="pullquote">{a.pullquote}</p>}
+        <div class:list={["prose", a.format === "listicle" && "prose--listicle"]}>
+          <Fragment set:html={before} />
+          {after.trim() && <AdSlot seed={a.slug} slot={import.meta.env.PUBLIC_ADSENSE_SLOT_ARTICLE} />}
+          <Fragment set:html={after} />
+        </div>
+
+        <div class="satire-note">
+          <span class="stamp">Satire</span>
+          <span>This article was written by a machine and is fiction. The people, companies, products, studies and quotes in it are invented. If it sounds like something that happened, that is the internet's fault, not ours.</span>
+        </div>
+
+        <div class="tags">{a.tags.map((t) => <a href={`/tag/${slugify(t)}/`}>#{t}</a>)}</div>
+        <Share title={a.title} url={a.url} />
+
+        <div class="author-card">
+          <span class="badge" aria-hidden="true">{author.name.slice(0, 3).toUpperCase()}</span>
+          <div><strong>{author.name}</strong> · <span class="mono">{author.role}</span><p>{author.bio}</p></div>
+        </div>
+      </article>
+
+      <aside class="article-aside" aria-label="More from the machine">
+        <section class="trend">
+          <div class="trend-head"><h2>Trending</h2><span>(allegedly)</span></div>
+          <ol>{side.map((item) => <li><div><a href={item.url}>{item.title}</a></div></li>)}</ol>
+        </section>
+        <AdSlot seed={`${a.slug}-side`} slot={import.meta.env.PUBLIC_ADSENSE_SLOT_SIDE} />
+        <Poll index={a.slug.length} />
+      </aside>
+    </div>
+
+    <section class="section" aria-labelledby="related-h">
+      <div class="section-head"><h2 id="related-h">More Like This<span class="scrawl">the algorithm insists</span></h2></div>
+      <div class="grid">{more.map((item) => <Card item={item} />)}</div>
+    </section>
+  </div>
+</Base>

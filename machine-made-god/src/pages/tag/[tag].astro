@@ -1,0 +1,26 @@
+---
+import Base from "../../layouts/Base.astro";
+import Card from "../../components/Card.astro";
+import { items } from "../../lib/site.js";
+import { slugify } from "../../lib/schema.mjs";
+
+export function getStaticPaths() {
+  const tags = new Map();
+  for (const item of items) for (const t of item.tags) tags.set(slugify(t), t);
+  return [...tags].map(([slug, name]) => ({
+    params: { tag: slug },
+    props: { name, list: items.filter((i) => i.tags.some((t) => slugify(t) === slug)) },
+  }));
+}
+const { name, list } = Astro.props;
+---
+<Base title={`#${name}`} description={`Everything the machine has written about ${name}.`}>
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label" style="--c:#8fd3ff">Tag</span>
+      <h1>#{name}</h1>
+      <p>{list.length} {list.length === 1 ? "piece" : "pieces"} of content about this. The machine has opinions.</p>
+    </header>
+    <div class="grid">{list.map((item) => <Card item={item} />)}</div>
+  </div>
+</Base>

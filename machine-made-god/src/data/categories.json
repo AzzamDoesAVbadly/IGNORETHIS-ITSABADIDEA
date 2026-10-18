@@ -1,0 +1,13 @@
+[
+  { "slug": "news", "name": "Ridiculous News", "short": "News", "color": "#ff6a13", "blurb": "Events that happened, according to a machine that was not there." },
+  { "slug": "entertainment", "name": "Celebrity Parody", "short": "Celebs", "color": "#ff2e88", "blurb": "Fictional famous people doing fictional famous things. Any resemblance is a cry for help." },
+  { "slug": "quizzes", "name": "Personality Quizzes", "short": "Quizzes", "color": "#c8ff1a", "blurb": "Answer six questions. Receive an identity. No refunds." },
+  { "slug": "lists", "name": "Listicles & Rankings", "short": "Lists", "color": "#ffd400", "blurb": "Things no reasonable person would rank, ranked." },
+  { "slug": "internet", "name": "Internet Culture", "short": "Internet", "color": "#2fb5a8", "blurb": "Dispatches from the feed, which is hungry." },
+  { "slug": "politics", "name": "Politics & Bureaucracy", "short": "Bureaucracy", "color": "#9ab52b", "blurb": "Committees, forms, and the people who love them. All fictional. All too real." },
+  { "slug": "lifestyle", "name": "Lifestyle & Relationships", "short": "Lifestyle", "color": "#f2a65a", "blurb": "Advice for living, from something that has never lived." },
+  { "slug": "music", "name": "Music & Subcultures", "short": "Music", "color": "#b07cff", "blurb": "Scene reports from bands you have never heard of because they do not exist." },
+  { "slug": "reviews", "name": "Fake Product Reviews", "short": "Reviews", "color": "#ff4b3e", "blurb": "Honest reviews of products that should not exist and do not." },
+  { "slug": "conspiracy", "name": "Conspiracies That Make No Sense", "short": "Conspiracy", "color": "#6dff8a", "blurb": "Do your own research. We did ours. It went badly." },
+  { "slug": "corporate", "name": "Corporate & Tech", "short": "Corporate", "color": "#8fd3ff", "blurb": "Press releases, pivots, and synergy, from the inside of the machine." }
+]

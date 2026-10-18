@@ -1,0 +1,13 @@
+---
+import Art from "./Art.astro";
+interface Props { quiz: any; color?: string }
+const { quiz, color = "#c8ff1a" } = Astro.props;
+---
+<a class="quiz-tile" href={quiz.url} style={`--c:${color}`}>
+  <Art seed={quiz.slug} motif={quiz.art.motif} palette={quiz.art.palette} label={quiz.art.label} />
+  <div class="card-body">
+    <span class="mono">{quiz.questions.length} questions · {Object.keys(quiz.results).length} possible fates</span>
+    <h3>{quiz.title}</h3>
+    <span class="take">Take the quiz →</span>
+  </div>
+</a>

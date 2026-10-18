@@ -1,0 +1,82 @@
+# Browser editor for the machine's output. Every save is a git commit, which redeploys the site.
+# Setup (once): see README → "The editor (/admin)".
+backend:
+  name: github
+  repo: AzzamDoesAVbadly/IGNORETHIS-ITSABADIDEA
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+site_url: https://machinemadegod.netlify.app
+display_url: https://machinemadegod.netlify.app
+media_folder: machine-made-god/public/uploads
+public_folder: /uploads
+
+collections:
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: machine-made-god/src/content/articles
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    sortable_fields: [date, title, category]
+    summary: "{{title}} — {{category}} {{draft}}"
+    preview_path: "a/{{slug}}/"
+    fields:
+      - { name: title, label: Headline, widget: string }
+      - { name: dek, label: Subhead, widget: string }
+      - name: category
+        label: Section
+        widget: select
+        options: [news, entertainment, quizzes, lists, internet, politics, lifestyle, music, reviews, conspiracy, corporate]
+      - name: author
+        label: Byline
+        widget: select
+        options: [god-exe, intern-4471, the-algorithm, brenda-legal, dirk-hotfix, corpsebloom]
+      - { name: date, label: Date, widget: datetime }
+      - { name: format, label: Format, widget: select, options: [news, listicle, review, announcement, essay] }
+      - { name: tags, label: Tags, widget: list }
+      - { name: draft, label: "Unpublish (hide from site)", widget: boolean, default: false, required: false }
+      - { name: featured, label: "Featured on homepage", widget: boolean, default: false, required: false }
+      - { name: trending, label: Trending, widget: boolean, default: false, required: false }
+      - { name: pick, label: "Editor's pick", widget: boolean, default: false, required: false }
+      - { name: pullquote, label: Pull quote, widget: string, required: false }
+      - { name: rating, label: "Rating (reviews only)", widget: number, value_type: float, min: 0, max: 5, step: 0.5, required: false }
+      - { name: product, label: "Product (reviews only)", widget: string, required: false }
+      - name: art
+        label: Illustration
+        widget: object
+        fields:
+          - { name: motif, label: Motif, widget: select, options: [logo, memo, billboard, chart, badge, crt, stickers, phone] }
+          - { name: palette, label: Palette, widget: select, options: [sodium, sick, teal, bleach, hazard, crt] }
+          - { name: label, label: "Fake company / label (2-32 chars)", widget: string }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: settings
+    label: Machine settings
+    files:
+      - name: site
+        label: Site & money settings
+        file: machine-made-god/src/data/site.json
+        format: json
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: description, label: Description, widget: text }
+          - { name: adsenseClient, label: "AdSense client id (ca-pub-…)", widget: string, required: false }
+          - { name: merchStoreUrl, label: "Merch store URL", widget: string, required: false }
+          - { name: youtubeChannelUrl, label: "YouTube channel URL", widget: string, required: false }
+          - { name: contactEmail, label: "Contact email", widget: string, required: false }
+      - name: voice
+        label: Editorial voice (the AI's instructions)
+        file: machine-made-god/prompts/formats.json
+        format: json
+        fields:
+          - { name: news, label: News format, widget: text }
+          - { name: listicle, label: Listicle format, widget: text }
+          - { name: review, label: Review format, widget: text }
+          - { name: announcement, label: Press release format, widget: text }
+          - { name: essay, label: Essay format, widget: text }

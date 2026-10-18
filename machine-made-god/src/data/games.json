@@ -1,0 +1,5 @@
+[
+  { "slug": "engagement-farm", "title": "Engagement Farm", "genre": "Idle clicker", "blurb": "Click to farm engagement. Buy bots. Buy outrage. Pivot to video. Lose your soul at a healthy compound rate.", "art": { "motif": "phone", "palette": "sodium", "label": "FARM" } },
+  { "slug": "terms-speedrun", "title": "Terms & Conditions Speedrun", "genre": "Endurance scroller", "blurb": "Scroll to the bottom of the world's longest user agreement. See what you agreed to. Weep. Try for a better time.", "art": { "motif": "memo", "palette": "bleach", "label": "LEGAL" } },
+  { "slug": "circle-back", "title": "Circle Back", "genre": "Whack-a-meeting", "blurb": "Meeting invites are flooding your calendar. Decline them before your week becomes one meeting about meetings.", "art": { "motif": "crt", "palette": "crt", "label": "CALENDAR" } }
+]

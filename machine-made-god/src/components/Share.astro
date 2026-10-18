@@ -1,0 +1,14 @@
+---
+interface Props { title: string; url: string; text?: string }
+const { title, url, text } = Astro.props;
+const abs = new URL(url, Astro.site).toString();
+const t = encodeURIComponent(text || title);
+const u = encodeURIComponent(abs);
+---
+<div class="share" data-share-url={abs} data-share-text={text || title}>
+  <span class="mono">Share this lie:</span>
+  <button type="button" data-copy>Copy link</button>
+  <a href={`https://twitter.com/intent/tweet?text=${t}&url=${u}`} target="_blank" rel="noopener">X / Twitter</a>
+  <a href={`https://www.facebook.com/sharer/sharer.php?u=${u}`} target="_blank" rel="noopener">Facebook</a>
+  <a href={`https://www.reddit.com/submit?url=${u}&title=${t}`} target="_blank" rel="noopener">Reddit</a>
+</div>

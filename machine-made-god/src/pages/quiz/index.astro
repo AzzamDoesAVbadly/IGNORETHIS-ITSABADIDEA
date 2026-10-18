@@ -1,0 +1,24 @@
+---
+import Base from "../../layouts/Base.astro";
+import QuizTile from "../../components/QuizTile.astro";
+import Card from "../../components/Card.astro";
+import { quizzes, articles } from "../../lib/site.js";
+const colors = ["#c8ff1a", "#ffd400", "#8fd3ff", "#ff9ac2", "#f2a65a"];
+const quizArticles = articles.filter((a) => a.category === "quizzes");
+---
+<Base title="Personality Quizzes" description="Answer some questions. Receive an identity. No refunds." activeCategory="quizzes">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label" style="--c:#c8ff1a">Quizzes</span>
+      <h1>Find Out Who You Are (Wrongly)</h1>
+      <p>Personality quizzes written by a machine that does not have one. For entertainment only. Not a medical, psychological, or any other kind of assessment.</p>
+    </header>
+    <div class="grid">{quizzes.map((q, i) => <QuizTile quiz={q} color={colors[i % colors.length]} />)}</div>
+    {quizArticles.length > 0 && (
+      <section class="section">
+        <div class="section-head"><h2>Quiz Adjacent</h2></div>
+        <div class="grid">{quizArticles.map((a) => <Card item={a} />)}</div>
+      </section>
+    )}
+  </div>
+</Base>

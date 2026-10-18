@@ -1,0 +1,14 @@
+---
+import Art from "./Art.astro";
+interface Props { game: any }
+const { game } = Astro.props;
+---
+<a class="game-tile" href={`/arcade/${game.slug}/`}>
+  <Art seed={game.slug} motif={game.art.motif} palette={game.art.palette} label={game.art.label} />
+  <div class="card-body">
+    <span class="rating">{game.genre} · rated M for Meeting</span>
+    <h3>{game.title}</h3>
+    <p>{game.blurb}</p>
+    <span class="play">▶ PLAY</span>
+  </div>
+</a>

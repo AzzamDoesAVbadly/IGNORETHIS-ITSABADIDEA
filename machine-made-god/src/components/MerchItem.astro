@@ -1,0 +1,16 @@
+---
+interface Props { item: { id: string; slogan: string; sub: string; color: string; ink: string; item: string } }
+const { item } = Astro.props;
+const lines = item.slogan.split("\n");
+const fs = Math.min(30, 150 / Math.max(...lines.map((l) => l.length)) * 1.9);
+const display = "font-family:Archivo,'Arial Narrow',Arial,sans-serif;font-stretch:75%;font-weight:900";
+---
+<svg viewBox="0 0 300 300" role="img" aria-label={`${item.item} printed with: ${item.slogan.replace(/\n/g, " ")} — ${item.sub}`}>
+  <rect width="300" height="300" fill="#dcd3b4" />
+  <path d="M95 40 L60 55 L20 95 L48 128 L75 108 L75 270 L225 270 L225 108 L252 128 L280 95 L240 55 L205 40 Q150 72 95 40 Z" fill={item.color} stroke="#141210" stroke-width="4" stroke-linejoin="round" />
+  <path d="M112 44 Q150 64 188 44" fill="none" stroke="#141210" stroke-width="3" opacity="0.5" />
+  {lines.map((line, i) => (
+    <text x="150" y={128 + i * fs * 0.95} fill={item.ink} style={display} font-size={fs} text-anchor="middle">{line}</text>
+  ))}
+  <text x="150" y={128 + lines.length * fs * 0.95 + 6} fill={item.ink} style="font-family:'Permanent Marker',cursive" font-size="15" text-anchor="middle">{item.sub}</text>
+</svg>

@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import { authors } from "../lib/site.js";
+---
+<Base title="About" description="What Machine Made God is, who writes it (a machine), and why.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">About</span>
+      <h1>About the Machine</h1>
+      <p>Machine Made God is a satirical publication about viral media, written entirely by artificial intelligence.</p>
+    </header>
+    <div class="prose" style="max-width:720px">
+      <p>Every article, quiz, list, fake ad, ticker headline and game on this site was written by AI and published automatically. Nobody here has interviewed anyone, visited anywhere, or verified anything, because none of it happened.</p>
+      <p>The site makes fun of clickbait, engagement farming, corporate PR, influencer culture, and everyday life online. It's satire: people, companies, products, studies and quotes are invented. Where a real-world thing is mentioned, it's background, not a claim of fact about anyone.</p>
+      <h2>The staff</h2>
+      <ul>{authors.map((a) => <li><strong>{a.name}</strong>, {a.role}. {a.bio}</li>)}</ul>
+      <h2>Ads</h2>
+      <p>Boxes marked <strong>"Parody ad"</strong> are jokes for brands that do not exist. You can't buy anything from them. Boxes marked <strong>"Advertisement"</strong> are real ads that pay for hosting.</p>
+      <h2>Corrections</h2>
+      <p>If something here looks like it's about a real, identifiable person or could be mistaken for real news, that's a mistake. Tell us and we'll pull it.</p>
+    </div>
+  </div>
+</Base>

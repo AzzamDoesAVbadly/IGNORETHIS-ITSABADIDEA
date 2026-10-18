@@ -1,0 +1,62 @@
+---
+import Base from "../layouts/Base.astro";
+import bumps from "../data/bumps.json";
+---
+<Base title="MMG TV" description="Bumps from the machine. Words, slowly, on black.">
+  <section class="band-dark" style="border-top:0">
+    <div class="wrap" style="padding-block:28px 0">
+      <span class="label" style="--c:#c8ff1a">MMG TV</span>
+      <h1 class="display" style="font-size:clamp(2.4rem,7vw,4.6rem);margin:10px 0 0;color:#f1ede2">MMG TV</h1>
+      <p class="mono" style="color:#8c8576;margin:6px 0 0">Now broadcasting: nothing. Forever. ← → to change the channel. Space to pause.</p>
+    </div>
+    <div class="bump" style="min-height:min(62vh,560px)" data-tv tabindex="0" aria-label="Bump player. Use arrow keys to change, space to pause.">
+      <span class="bump-corner bump-corner--tl" data-tv-count>[ mmg ] // bump 001</span>
+      <p data-tv-text aria-live="polite">{bumps[0]}</p>
+      <span class="bump-corner bump-corner--br">
+        <button type="button" class="btn btn--dark" style="padding:6px 10px;font-size:.8rem;border-color:#f1ede2" data-tv-prev>←</button>
+        <button type="button" class="btn btn--dark" style="padding:6px 10px;font-size:.8rem;border-color:#f1ede2" data-tv-pause>Pause</button>
+        <button type="button" class="btn btn--dark" style="padding:6px 10px;font-size:.8rem;border-color:#f1ede2" data-tv-next>→</button>
+      </span>
+    </div>
+  </section>
+  <script type="application/json" id="bumps" set:html={JSON.stringify(bumps)} />
+</Base>
+
+<script>
+  const bumps: string[] = JSON.parse(document.getElementById("bumps")!.textContent || "[]");
+  const tv = document.querySelector<HTMLElement>("[data-tv]")!;
+  const text = tv.querySelector<HTMLElement>("[data-tv-text]")!;
+  const count = tv.querySelector<HTMLElement>("[data-tv-count]")!;
+  const pauseBtn = tv.querySelector<HTMLButtonElement>("[data-tv-pause]")!;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let i = Math.floor(Math.random() * bumps.length);
+  let paused = reduce;
+  let timer: number | undefined;
+
+  const show = (n: number) => {
+    i = (n + bumps.length) % bumps.length;
+    text.style.opacity = "0";
+    setTimeout(() => {
+      text.textContent = bumps[i];
+      count.textContent = `[ mmg ] // bump ${String(i + 1).padStart(3, "0")}`;
+      text.style.opacity = "1";
+    }, reduce ? 0 : 350);
+  };
+  const schedule = () => {
+    clearTimeout(timer);
+    if (!paused) timer = window.setTimeout(() => { show(i + 1); schedule(); }, 6500);
+  };
+  const setPaused = (p: boolean) => { paused = p; pauseBtn.textContent = p ? "Play" : "Pause"; schedule(); };
+
+  text.style.transition = "opacity .35s ease";
+  show(i);
+  setPaused(paused);
+  tv.querySelector("[data-tv-prev]")!.addEventListener("click", () => { show(i - 1); schedule(); });
+  tv.querySelector("[data-tv-next]")!.addEventListener("click", () => { show(i + 1); schedule(); });
+  pauseBtn.addEventListener("click", () => setPaused(!paused));
+  tv.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { show(i + 1); schedule(); }
+    if (e.key === "ArrowLeft") { show(i - 1); schedule(); }
+    if (e.key === " ") { e.preventDefault(); setPaused(!paused); }
+  });
+</script>

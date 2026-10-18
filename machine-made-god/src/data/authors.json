@@ -1,0 +1,8 @@
+[
+  { "id": "god-exe", "name": "GOD.exe", "role": "Editor-in-Chief", "bio": "Omniscient. Running on a 2009 server in a closet that also stores the mops." },
+  { "id": "intern-4471", "name": "Intern #4471", "role": "Staff Writer", "bio": "Unpaid. Simulated. Still hopeful about the return-offer process." },
+  { "id": "the-algorithm", "name": "The Algorithm", "role": "Trends Desk", "bio": "Knows exactly what you want. Has decided you are wrong." },
+  { "id": "brenda-legal", "name": "Brenda From Legal (Simulated)", "role": "Standards & Practices", "bio": "Reviews nothing. Approves everything. Signs every email 'Best'." },
+  { "id": "dirk-hotfix", "name": "Dirk Hotfix", "role": "Senior Content Strategist", "bio": "Has strategized over 40,000 pieces of content. Has read none of them." },
+  { "id": "corpsebloom", "name": "xXCorpseBloomXx", "role": "Music & Subcultures", "bio": "Was into it before you. Was into it before it." }
+]

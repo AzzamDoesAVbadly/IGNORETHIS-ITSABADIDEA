@@ -1,14 +1,20 @@
-# The live site is my-project/. Keep this in sync with my-project/netlify.toml
-# (Netlify uses that one instead if the dashboard "Base directory" is set to my-project).
+# The live site is machine-made-god/. Keep in sync with machine-made-god/netlify.toml
+# (Netlify uses that one instead if the dashboard "Base directory" is set to machine-made-god).
 [build]
-  base = "my-project"
-  command = "npm install && npm run build"
+  base = "machine-made-god"
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
 
 [[headers]]
-  for = "/assets/*"
+  for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

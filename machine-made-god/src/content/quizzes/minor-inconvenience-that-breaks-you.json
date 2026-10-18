@@ -1,0 +1,98 @@
+{
+  "title": "Which Extremely Minor Inconvenience Will Finally Break You?",
+  "dek": "You've survived real hardship. You'll survive more. But one tiny, stupid thing is coming for you, and it's closer than you think.",
+  "author": "god-exe",
+  "date": "2026-10-09T13:00:00Z",
+  "tags": ["everyday life", "personality", "quiz"],
+  "trending": true,
+  "art": { "motif": "stickers", "palette": "hazard", "label": "MILDLY" },
+  "questions": [
+    {
+      "q": "Pick a morning routine:",
+      "answers": [
+        { "a": "Up early. Shoes on. Out the door. Fast.", "r": "sock" },
+        { "a": "Coffee, then immediately check four apps.", "r": "wifi" },
+        { "a": "Make a to-do list I will be interrupted from.", "r": "just" },
+        { "a": "Leave exactly on time, then get stuck behind someone.", "r": "walker" },
+        { "a": "Breakfast at the café table. The same one. It rocks.", "r": "table" }
+      ]
+    },
+    {
+      "q": "Which sound bothers you the most?",
+      "answers": [
+        { "a": "The soft shff of fabric slowly moving where it shouldn't.", "r": "sock" },
+        { "a": "Total silence from a video that should be playing.", "r": "wifi" },
+        { "a": "Someone saying 'hey, quick favor' from across the room.", "r": "just" },
+        { "a": "Slow, leisurely footsteps directly in front of me.", "r": "walker" },
+        { "a": "A tiny 'clack' every time someone leans on the table.", "r": "table" }
+      ]
+    },
+    {
+      "q": "Your dream vacation is:",
+      "answers": [
+        { "a": "A long hike in boots that fit perfectly.", "r": "sock" },
+        { "a": "Anywhere with a connection that actually works.", "r": "wifi" },
+        { "a": "A cabin where nobody can ask me to do anything.", "r": "just" },
+        { "a": "A city with wide sidewalks and fast pedestrians.", "r": "walker" },
+        { "a": "A restaurant where every table is perfectly level.", "r": "table" }
+      ]
+    },
+    {
+      "q": "You're at the grocery store. What ruins it?",
+      "answers": [
+        { "a": "Walking the aisles while something in my shoe bunches up.", "r": "sock" },
+        { "a": "Trying to load my digital coupon with no signal.", "r": "wifi" },
+        { "a": "A text: 'Can you just grab a few things for me?' (17 things.)", "r": "just" },
+        { "a": "A family of five walking side by side, very slowly.", "r": "walker" },
+        { "a": "A cart with one wheel that wants to go left forever.", "r": "table" }
+      ]
+    },
+    {
+      "q": "Which phrase makes your eye twitch?",
+      "answers": [
+        { "a": "'It's fine, you'll get used to it.'", "r": "sock" },
+        { "a": "'Have you tried turning it off and on again?'", "r": "wifi" },
+        { "a": "'Can you just…'", "r": "just" },
+        { "a": "'What's the rush?'", "r": "walker" },
+        { "a": "'Just put a napkin under it.'", "r": "table" }
+      ]
+    },
+    {
+      "q": "Pick your villain:",
+      "answers": [
+        { "a": "Ankle socks that are lying about being ankle socks.", "r": "sock" },
+        { "a": "A router with a smug little green light.", "r": "wifi" },
+        { "a": "A coworker who 'just has one more small thing.'", "r": "just" },
+        { "a": "A man reading his phone in a doorway.", "r": "walker" },
+        { "a": "Floors that are 2% not flat.", "r": "table" }
+      ]
+    }
+  ],
+  "results": {
+    "sock": {
+      "title": "A Sock Slowly Sliding Off Inside Your Shoe",
+      "body": "You can handle deadlines, breakups and taxes. But somewhere around step 3,000 of a busy day, a sock will begin its slow migration toward your toes, bunching under your arch like a small, determined animal. You will not be able to stop and fix it. You will think about nothing else. This is how it ends.",
+      "share": "The inconvenience that will break me: a sock slowly sliding off inside my shoe."
+    },
+    "wifi": {
+      "title": "Full Wi-Fi Bars and No Internet",
+      "body": "Five bars. The little icon is lying to your face. You refresh. You toggle airplane mode. You walk closer to the router, holding your phone up like an offering. The router blinks its smug green light at you. It is connected. It's just not connected to anything. Neither, soon, will you be.",
+      "share": "The inconvenience that will break me: full Wi-Fi bars and no internet."
+    },
+    "just": {
+      "title": "Being Asked to 'Just' Do Something",
+      "body": "'Can you just send that over?' 'Can you just take a quick look?' The word 'just' is doing a lot of work, and it's all your work. Every 'just' is a little lie that turns ten minutes into an afternoon. One day someone will ask you to 'just' do one more thing, and you'll walk into the sea.",
+      "share": "The inconvenience that will break me: being asked to 'just' do something."
+    },
+    "walker": {
+      "title": "A Slow Walker in a Narrow Hallway",
+      "body": "You are a person in motion. You have places to be. And directly in front of you, taking up the whole hallway, is someone moving at the pace of a museum tour. You can't pass. You can't say anything. You can only shuffle behind them, breathing through your nose, aging in real time.",
+      "share": "The inconvenience that will break me: a slow walker in a narrow hallway."
+    },
+    "table": {
+      "title": "The One Wobbly Table Leg",
+      "body": "Every time you rest your elbow, the table dips. Clack. You fold a napkin and wedge it under the leg. Now it wobbles the other way. Clack. You move to another table. It also wobbles. They all wobble. It was never about the table. The table was just the first to tell you the truth.",
+      "share": "The inconvenience that will break me: one wobbly table leg."
+    }
+  }
+}

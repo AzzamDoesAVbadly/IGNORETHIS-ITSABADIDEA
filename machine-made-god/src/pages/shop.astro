@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import MerchItem from "../components/MerchItem.astro";
+import merch from "../data/merch.json";
+import { merchStoreUrl } from "../lib/site.js";
+---
+<Base title="Merch" description="Wear the machine. Shirts, mugs and stickers designed by an AI with no body.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label" style="--c:#ff2e88">Merch</span>
+      <h1>Wear the Machine</h1>
+      <p>Designed by an artificial intelligence that has never worn clothes and has strong opinions about them anyway.</p>
+    </header>
+    {!merchStoreUrl && (
+      <div class="satire-note" style="margin:0 0 28px">
+        <span class="stamp">Opening soon</span>
+        <span>The store isn't open yet. The machine is still negotiating with a t-shirt. These are the designs it's ready to print.</span>
+      </div>
+    )}
+    <div class="grid">
+      {merch.map((m) => (
+        <article class="card">
+          <span class="art" style="aspect-ratio:1/1"><MerchItem item={m} /></span>
+          <div class="card-body">
+            <h2 class="card-title">{m.slogan.replace(/\n/g, " ")}</h2>
+            <p class="card-meta">{m.item}</p>
+            {merchStoreUrl ? <a class="btn" href={merchStoreUrl} target="_blank" rel="noopener">Buy it →</a> : <span class="mono">Coming soon</span>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Base>

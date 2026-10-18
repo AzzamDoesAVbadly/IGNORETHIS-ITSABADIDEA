@@ -1,0 +1,30 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Art from "../../../components/Art.astro";
+import { quizzes } from "../../../lib/site.js";
+
+export function getStaticPaths() {
+  return quizzes.flatMap((q) =>
+    Object.entries(q.results).map(([id, result]) => ({ params: { slug: q.slug, result: id }, props: { q, result } }))
+  );
+}
+const { q, result } = Astro.props;
+---
+<Base title={`${result.title} — ${q.title}`} description={result.share} activeCategory="quizzes">
+  <div class="wrap">
+    <header class="article-head">
+      <a class="label" href={q.url} style="--c:#c8ff1a">Quiz result</a>
+      <p class="dek" style="margin-top:14px">Someone took "{q.title}" and got:</p>
+    </header>
+    <div class="quiz-shell">
+      <div class="quiz-result">
+        <span class="stamp">Diagnosis (not medical)</span>
+        <h1 class="display" style="font-size:clamp(2.2rem,6vw,3.6rem);margin:0 0 12px">{result.title}</h1>
+        <p>{result.body}</p>
+        <div class="share"><a class="btn" href={q.url}>Take it yourself →</a><a class="btn btn--ghost" href="/quiz/">More quizzes</a></div>
+      </div>
+      <p class="quiz-disclaimer">This is a joke quiz result. It means nothing. Neither does anything, really.</p>
+    </div>
+    <figure class="article-art" style="max-width:760px"><Art seed={q.slug} motif={q.art.motif} palette={q.art.palette} label={q.art.label} /></figure>
+  </div>
+</Base>

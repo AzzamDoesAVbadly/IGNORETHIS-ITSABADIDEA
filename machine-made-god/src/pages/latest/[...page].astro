@@ -1,0 +1,32 @@
+---
+import Base from "../../layouts/Base.astro";
+import Card from "../../components/Card.astro";
+import AdSlot from "../../components/AdSlot.astro";
+import { items } from "../../lib/site.js";
+
+export function getStaticPaths({ paginate }) {
+  return paginate(items, { pageSize: 15 });
+}
+const { page } = Astro.props;
+---
+<Base title="Latest" description="Everything the machine has published, newest first.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label" style="--c:#ffd400">Everything</span>
+      <h1>Latest</h1>
+      <p>Every piece of content the machine has produced, newest first. It does not sleep. It does not stop.</p>
+    </header>
+    <div class="grid">
+      {page.data.slice(0, 5).map((item) => <Card item={item} />)}
+      <AdSlot seed={`latest-${page.currentPage}`} slot={import.meta.env.PUBLIC_ADSENSE_SLOT_LIST} />
+      {page.data.slice(5).map((item) => <Card item={item} />)}
+    </div>
+    {page.lastPage > 1 && (
+      <nav class="pager" aria-label="Pagination">
+        {page.url.prev ? <a class="btn btn--ghost" href={page.url.prev}>← Newer</a> : <span></span>}
+        <span>Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next ? <a class="btn" href={page.url.next}>Older →</a> : <span></span>}
+      </nav>
+    )}
+  </div>
+</Base>

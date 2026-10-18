@@ -1,0 +1,182 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Art from "../../../components/Art.astro";
+import Card from "../../../components/Card.astro";
+import AdSlot from "../../../components/AdSlot.astro";
+import { quizzes, authorOf, formatDate, related } from "../../../lib/site.js";
+
+export function getStaticPaths() {
+  return quizzes.map((q) => ({ params: { slug: q.slug }, props: { q } }));
+}
+const { q } = Astro.props;
+const author = authorOf(q.author);
+const data = {
+  slug: q.slug,
+  title: q.title,
+  questions: q.questions.map((x) => ({ answers: x.answers.map((a) => a.r) })),
+  results: q.results,
+};
+---
+<Base title={q.title} description={q.dek} activeCategory="quizzes">
+  <div class="wrap">
+    <header class="article-head">
+      <a class="label" href="/quiz/" style="--c:#c8ff1a">Quiz</a>
+      <h1>{q.title}</h1>
+      <p class="dek">{q.dek}</p>
+      <div class="byline">
+        <span>By <strong>{author.name}</strong></span>
+        <span>{formatDate(q.date)}</span>
+        <span>{q.questions.length} questions</span>
+        <span>For entertainment only</span>
+      </div>
+    </header>
+
+    <div class="two-col" style="margin-top:8px">
+      <div>
+        <div class="quiz-shell" data-quiz>
+          <div class="quiz-progress">
+            <span data-progress-text>Question 1 of {q.questions.length}</span>
+            <span class="track" aria-hidden="true"><span class="fill" data-progress-fill></span></span>
+          </div>
+
+          {q.questions.map((question, qi) => (
+            <div class="quiz-step" data-step={qi} hidden={qi !== 0}>
+              <fieldset>
+                <legend tabindex="-1">{question.q}</legend>
+                <div class="quiz-answers">
+                  {question.answers.map((answer, ai) => (
+                    <label class="quiz-answer">
+                      <input type="radio" name={`q${qi}`} value={ai} />
+                      <span>{answer.a}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <div class="quiz-nav">
+                <button type="button" class="btn btn--ghost" data-back disabled={qi === 0}>← Back</button>
+                <button type="button" class="btn" data-next disabled>{qi === q.questions.length - 1 ? "Reveal my fate" : "Next →"}</button>
+              </div>
+            </div>
+          ))}
+
+          <div class="quiz-result" data-result hidden>
+            <span class="stamp">Diagnosis (not medical)</span>
+            <h2 tabindex="-1" data-result-title></h2>
+            <p data-result-body></p>
+            <div class="share">
+              <button type="button" class="btn" data-share-result>Share my result</button>
+              <a class="btn btn--ghost" data-result-link href="#">Result page</a>
+              <button type="button" class="btn btn--ghost" data-retake>Retake</button>
+            </div>
+            <p class="mono" data-share-status aria-live="polite" style="margin-top:10px"></p>
+          </div>
+
+          <noscript><div class="quiz-step"><p>This quiz needs JavaScript. The machine apologizes, insincerely.</p></div></noscript>
+          <p class="quiz-disclaimer">This is a joke quiz. It cannot tell you anything true about yourself. Nothing can. That's what's beautiful about it.</p>
+        </div>
+      </div>
+      <div class="stack">
+        <figure class="article-art" style="margin:26px 0 0">
+          <Art seed={q.slug} motif={q.art.motif} palette={q.art.palette} label={q.art.label} />
+        </figure>
+        <AdSlot seed={q.slug} slot={import.meta.env.PUBLIC_ADSENSE_SLOT_SIDE} />
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-head"><h2>Keep Clicking<span class="scrawl">you were going to anyway</span></h2></div>
+      <div class="grid">{related(q, 3).map((item) => <Card item={item} />)}</div>
+    </section>
+  </div>
+  <script type="application/json" id="quiz-data" set:html={JSON.stringify(data)} />
+</Base>
+
+<script>
+  type QuizData = { slug: string; title: string; questions: { answers: string[] }[]; results: Record<string, { title: string; body: string; share: string }> };
+  const shell = document.querySelector<HTMLElement>("[data-quiz]");
+  const raw = document.getElementById("quiz-data")?.textContent;
+  if (shell && raw) {
+    const data: QuizData = JSON.parse(raw);
+    const steps = [...shell.querySelectorAll<HTMLElement>("[data-step]")];
+    const resultBox = shell.querySelector<HTMLElement>("[data-result]")!;
+    const progressText = shell.querySelector<HTMLElement>("[data-progress-text]")!;
+    const progressFill = shell.querySelector<HTMLElement>("[data-progress-fill]")!;
+    const answers: number[] = [];
+    let current = 0;
+
+    const show = (i: number) => {
+      steps.forEach((s, si) => (s.hidden = si !== i));
+      resultBox.hidden = true;
+      current = i;
+      progressText.textContent = `Question ${i + 1} of ${steps.length}`;
+      progressFill.style.width = `${(i / steps.length) * 100}%`;
+      steps[i].querySelector<HTMLElement>("legend")?.focus();
+    };
+
+    const score = () => {
+      const counts: Record<string, number> = {};
+      let last = "";
+      answers.forEach((a, qi) => {
+        const r = data.questions[qi].answers[a];
+        counts[r] = (counts[r] || 0) + 1;
+        last = r;
+      });
+      let best = "";
+      for (const [id, n] of Object.entries(counts)) {
+        if (!best || n > counts[best] || (n === counts[best] && id === last)) best = id;
+      }
+      return best;
+    };
+
+    const resultUrl = (id: string) => new URL(`/quiz/${data.slug}/${id}/`, location.origin).toString();
+
+    const reveal = (id: string) => {
+      const r = data.results[id];
+      steps.forEach((s) => (s.hidden = true));
+      resultBox.hidden = false;
+      progressText.textContent = "Complete. Unfortunately.";
+      progressFill.style.width = "100%";
+      resultBox.querySelector<HTMLElement>("[data-result-title]")!.textContent = r.title;
+      resultBox.querySelector<HTMLElement>("[data-result-body]")!.textContent = r.body;
+      resultBox.querySelector<HTMLAnchorElement>("[data-result-link]")!.href = `/quiz/${data.slug}/${id}/`;
+      resultBox.dataset.id = id;
+      resultBox.querySelector<HTMLElement>("[data-result-title]")!.focus();
+    };
+
+    steps.forEach((step, i) => {
+      const next = step.querySelector<HTMLButtonElement>("[data-next]")!;
+      step.querySelectorAll<HTMLInputElement>("input").forEach((input) =>
+        input.addEventListener("change", () => {
+          answers[i] = Number(input.value);
+          next.disabled = false;
+        })
+      );
+      next.addEventListener("click", () => (i < steps.length - 1 ? show(i + 1) : reveal(score())));
+      step.querySelector<HTMLButtonElement>("[data-back]")!.addEventListener("click", () => i > 0 && show(i - 1));
+    });
+
+    resultBox.querySelector("[data-retake]")!.addEventListener("click", () => {
+      answers.length = 0;
+      shell.querySelectorAll<HTMLInputElement>("input").forEach((x) => (x.checked = false));
+      shell.querySelectorAll<HTMLButtonElement>("[data-next]").forEach((b) => (b.disabled = true));
+      show(0);
+    });
+
+    resultBox.querySelector("[data-share-result]")!.addEventListener("click", async () => {
+      const id = resultBox.dataset.id!;
+      const text = `${data.results[id].share} — "${data.title}"`;
+      const url = resultUrl(id);
+      const status = resultBox.querySelector<HTMLElement>("[data-share-status]")!;
+      try {
+        if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+          await navigator.share({ title: data.title, text, url });
+        } else {
+          await navigator.clipboard.writeText(`${text} ${url}`);
+          status.textContent = "Copied to clipboard. Go ruin a group chat.";
+        }
+      } catch {
+        status.textContent = `Copy this: ${text} ${url}`;
+      }
+    });
+  }
+</script>

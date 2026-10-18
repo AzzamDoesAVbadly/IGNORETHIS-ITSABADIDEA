@@ -1,0 +1,26 @@
+---
+import ads from "../data/ads.json";
+interface Props { index?: number; seed?: string; wide?: boolean }
+const { index, seed = "", wide = false } = Astro.props;
+let n = index;
+if (n === undefined) {
+  let h = 0;
+  for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  n = h;
+}
+const ad = ads[n % ads.length];
+const bursts = ["AS SEEN ON NOTHING", "100% FAKE", "LIMITED TIME", "NOT REAL!", "ACT NOW*"];
+---
+<aside class:list={["fake-ad", wide && "fake-ad--wide"]} aria-label="Parody advertisement for a fictional product">
+  <div class="fake-ad-flag"><b>Parody ad</b><span>Fictional brand · not for sale · not a real offer</span></div>
+  <div class="fake-ad-body" data-palette={ad.palette}>
+    <span class="fake-ad-starburst" aria-hidden="true">{bursts[n % bursts.length]}</span>
+    <div class="fake-ad-text">
+      <span class="fake-ad-brand">{ad.brand}</span>
+      <p class="fake-ad-headline">{ad.headline}</p>
+      <p class="fake-ad-copy">{ad.body}</p>
+    </div>
+    <button class="fake-ad-cta" type="button" data-fake-ad>{ad.cta}</button>
+    <p class="fake-ad-result" aria-live="polite"></p>
+  </div>
+</aside>
