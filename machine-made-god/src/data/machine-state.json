@@ -1,26 +1,51 @@
 {
   "providers": {
     "groq": {
-      "ok": 4,
-      "lastSuccess": "2026-10-18T02:01:28.027Z"
+      "ok": 6,
+      "lastSuccess": "2026-10-18T02:15:20.013Z"
     },
     "gemini": {
-      "fail": 1,
+      "fail": 3,
       "ok": 2,
-      "lastSuccess": "2026-10-18T02:01:21.896Z"
+      "lastSuccess": "2026-10-18T02:01:21.896Z",
+      "cooldownUntil": "2026-10-19T02:13:14.889Z",
+      "lastError": "out of credits"
     },
     "openrouter": {
       "ok": 3,
       "lastSuccess": "2026-10-18T02:00:43.892Z",
-      "fail": 1
+      "fail": 2
     },
     "cerebras": {
-      "ok": 2,
-      "lastSuccess": "2026-10-18T01:34:53.899Z"
+      "ok": 5,
+      "lastSuccess": "2026-10-18T02:15:21.107Z"
     }
   },
   "lastQuizAt": "2026-10-18T01:34:53.899Z",
   "runs": [
+    {
+      "at": "2026-10-18T02:13:10.093Z",
+      "articles": [
+        {
+          "slug": "9-ridiculously-exact-rankings-nobody-asked-for-but-we-tracked-anyway",
+          "provider": "groq+cerebras",
+          "model": "openai/gpt-oss-120b → gpt-oss-120b"
+        },
+        {
+          "slug": "indie-duo-static-whisper-gets-fired-when-bass-triggers-cloud-center",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-18T01:58:57.384Z",
       "articles": [
