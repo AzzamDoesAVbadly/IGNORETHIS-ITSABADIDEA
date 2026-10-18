@@ -23,6 +23,12 @@
     "aiCaptions": true,
     "indexNowKey": "4a547763ac00e8fc4d6dbd5c065c22c4"
   },
+  "shorts": {
+    "enabled": true,
+    "perRun": 2,
+    "privacy": "public",
+    "voice": "Ethan"
+  },
   "providers": [
     {
       "id": "gemini",
