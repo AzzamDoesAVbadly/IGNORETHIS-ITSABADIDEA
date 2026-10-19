@@ -1,0 +1,6 @@
+# Cloudflare Pages config (project root = machine-made-god/).
+# Secrets (CONTROL_PASSWORD, GITHUB_TOKEN, AI keys) are set in the dashboard, not here.
+name = "machinemadegod"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]

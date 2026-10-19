@@ -62,7 +62,7 @@ const ctx = {
   env,
   random,
   log,
-  siteUrl: env.SITE_URL || "https://machinemadegod.netlify.app",
+  siteUrl: env.SITE_URL || JSON.parse(readFileSync(join(root, "src/data/site.json"), "utf8")).url,
   mock: mockReply,
   remember(id, patch) {
     state.providers[id] = { ...(state.providers[id] || {}), ...patch };

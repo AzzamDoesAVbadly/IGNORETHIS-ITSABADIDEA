@@ -101,6 +101,6 @@ jobs:
         run: |
           git add src/data/promo-log.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Promotion log [skip netlify]"
+          git commit -m "Promotion log [skip ci] [skip netlify]"
           git pull --rebase origin main
           git push origin HEAD:main

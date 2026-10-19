@@ -4,7 +4,8 @@ import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { join, extname } from "node:path";
 import { fileURLToPath } from "node:url";
-import handler from "../netlify/functions/control.mjs";
+import { handle } from "../server/control.mjs";
+const handler = (req) => handle(req, process.env);
 
 const dist = fileURLToPath(new URL("../dist/", import.meta.url));
 const PORT = Number(process.env.PORT || 8787);

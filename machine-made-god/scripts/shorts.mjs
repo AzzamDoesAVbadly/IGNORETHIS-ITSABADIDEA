@@ -27,7 +27,7 @@ const readJson = (p, d) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) 
 
 const config = readJson(join(root, "machine.config.json"));
 const shortsCfg = { perRun: 2, privacy: "public", voice: "Ethan", ...(config.shorts || {}) };
-const SITE = (env.SITE_URL || "https://machinemadegod.netlify.app").replace(/\/$/, "");
+const SITE = (env.SITE_URL || JSON.parse(readFileSync(join(root, "src/data/site.json"), "utf8")).url).replace(/\/$/, "");
 const HOST = new URL(SITE).host.replace(/^www\./, "");
 const OUT = join(root, "shorts-out");
 const LOG = join(root, "src/data/shorts-log.json");

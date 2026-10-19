@@ -1,0 +1,47 @@
+# Code checks on every push that touches code: unit tests, site build + link check,
+# and a smoke test of Mission Control inside the real Cloudflare Workers runtime.
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "machine-made-god/**"
+      - "!machine-made-god/src/content/**"
+      - "!machine-made-god/src/data/**"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: machine-made-god
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: machine-made-god/package-lock.json
+      - run: npm ci
+      - name: Unit tests
+        run: npm test
+      - name: Build + link check
+        run: npm run build
+      - name: Mission Control in the Cloudflare runtime
+        run: |
+          printf 'CONTROL_PASSWORD=ci-test-password-long\n' > .dev.vars
+          npx --yes wrangler@4.147.0 pages dev ./dist --port 8788 > /tmp/wrangler.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://localhost:8788/ >/dev/null && break; sleep 1; done
+          fail() { echo "FAIL: $1"; cat /tmp/wrangler.log; exit 1; }
+          curl -sf http://localhost:8788/control/ | grep -q "Mission Control" || fail "panel page"
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST localhost:8788/api/control/login -H 'Content-Type: application/json' -d '{"password":"wrong"}')
+          [ "$code" = "401" ] || fail "wrong password should be 401, got $code"
+          token=$(curl -sf -X POST localhost:8788/api/control/login -H 'Content-Type: application/json' -d '{"password":"ci-test-password-long"}' | node -pe 'JSON.parse(require("fs").readFileSync(0)).token')
+          [ -n "$token" ] || fail "login"
+          curl -sf localhost:8788/api/control/status -H "Authorization: Bearer $token" | node -e 'const s=JSON.parse(require("fs").readFileSync(0));if(!s.providers)process.exit(1);console.log("status ok:",s.content.total,"items,",s.runs.length,"runs")' || fail "status"
+          curl -sf -X POST localhost:8788/api/control/youtube/start -H "Authorization: Bearer $token" -H 'Content-Type: application/json' -d '{"clientId":"1-a.apps.googleusercontent.com","clientSecret":"x"}' | grep -q accounts.google.com || fail "youtube start (Web Crypto)"
+          echo "Cloudflare runtime smoke test passed"

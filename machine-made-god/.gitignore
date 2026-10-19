@@ -5,3 +5,5 @@ dist/
 .env.*
 !.env.example
 shorts-out/
+.dev.vars
+.wrangler/

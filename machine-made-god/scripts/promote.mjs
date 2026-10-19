@@ -19,7 +19,7 @@ const argv = process.argv.slice(2);
 const has = (f) => argv.includes(f);
 const arg = (f) => (argv.includes(f) ? argv[argv.indexOf(f) + 1] : null);
 const DRY = has("--dry-run");
-const SITE = (env.SITE_URL || "https://machinemadegod.netlify.app").replace(/\/$/, "");
+const SITE = (env.SITE_URL || JSON.parse(readFileSync(join(root, "src/data/site.json"), "utf8")).url).replace(/\/$/, "");
 const readJson = (p, d) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : d);
 
 const config = readJson(join(root, "machine.config.json"));
