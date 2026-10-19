@@ -1,6 +1,6 @@
 # MACHINE MADE GOD
 
-A satirical viral-media site (BuzzFeed formats × Newgrounds arcade × Adult Swim bumps, in a "defaced megacorp" look) that **writes and publishes itself**. Twice a day, a scheduled job asks a randomly chosen free AI provider for new articles, a quiz every few days, ticker headlines, late-night bumps and parody ads. It checks them for quality and repeats, builds the site, and publishes. Netlify deploys every push.
+A satirical viral-media site (BuzzFeed formats × Newgrounds arcade × Adult Swim bumps, in a "defaced megacorp" look) that **writes and publishes itself**. Twice a day, a scheduled job asks a randomly chosen free AI provider for new articles, a quiz every few days, ticker headlines, late-night bumps and parody ads. It checks them for quality and repeats, builds the site, and publishes. Cloudflare Pages deploys every push. It also renders daily YouTube Shorts, promotes new posts on social media, and answers mentions and email with bots.
 
 Live: https://machinemadegod.netlify.app
 
@@ -31,9 +31,24 @@ Free tiers have usage limits that change over time, and some free tiers (for exa
 
 GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**. Add each key using the names above.
 
-### 3. Make sure Netlify builds this folder
+### 3. Host it on Cloudflare Pages (free)
 
-The repo-root `netlify.toml` already points at `machine-made-god/`. In Netlify → Site configuration → Build & deploy, the **Base directory** should be empty or `machine-made-god`.
+Netlify's free plan only allows about 20 deploys a month, far fewer than a site that publishes every day needs, so the site runs on Cloudflare Pages (about 500 builds a month free, unlimited bandwidth, ads allowed).
+
+1. Sign up free at https://dash.cloudflare.com/sign-up.
+2. **Workers & Pages → Create → Pages → Connect to Git** → authorize GitHub → pick this repo.
+3. Settings:
+   - Project name: `machinemadegod` (your address becomes `machinemadegod.pages.dev`)
+   - Production branch: `main`
+   - Framework preset: **None**
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Root directory (under *Advanced*): `machine-made-god`
+   - Environment variable: `NODE_VERSION` = `22.23.3`
+4. **Save and Deploy.** The first build takes about 2 minutes.
+5. Put the new address in `src/data/site.json` (`"url"`) so links, the sitemap and Shorts use it.
+
+The old Netlify site can stay as a backup or be deleted. `netlify.toml` still works if you ever pay for Netlify.
 
 ### 4. Turn it on
 
@@ -53,7 +68,7 @@ From then on it runs at about 9am and 9pm US Eastern every day.
 
 | Stream | Status | What you do (once) |
 |---|---|---|
-| **AdSense** | Ad slots built in. Parody ads show until it's configured. | Apply at https://adsense.google.com with the site URL. When approved, add `PUBLIC_ADSENSE_CLIENT=ca-pub-…` in Netlify → Environment variables (or set `adsenseClient` in `src/data/site.json`) and redeploy. Auto ads start immediately. For fixed placements, create ad units and set `PUBLIC_ADSENSE_SLOT_HOME`, `_LIST`, `_ARTICLE`, `_SIDE`. `ads.txt` and the privacy policy are generated for you. |
+| **AdSense** | Ad slots built in. Parody ads show until it's configured. | Apply at https://adsense.google.com with the site URL. When approved, set `adsenseClient` in `src/data/site.json` (or `PUBLIC_ADSENSE_CLIENT=ca-pub-…` as a Cloudflare Pages build variable) and redeploy. Auto ads start immediately. For fixed placements, create ad units and set `PUBLIC_ADSENSE_SLOT_HOME`, `_LIST`, `_ARTICLE`, `_SIDE`. `ads.txt` and the privacy policy are generated for you. |
 | **Merch** | Designs shown at `/shop/`, marked "coming soon". | Open a print-on-demand store (Printful + Shopify, Redbubble, Teespring, etc.), upload the slogans from `src/data/merch.json`, then set `PUBLIC_MERCH_STORE_URL`. Buy buttons appear automatically. |
 | **Video** | `/tv/` plays the bumps as an on-site broadcast. | Not automated yet; see "Known limitations." |
 
@@ -63,7 +78,7 @@ Google reviews AdSense sites before approving them and has a spam policy against
 
 ## Mission Control (`/control/`)
 
-A private, password-protected panel at **https://machinemadegod.netlify.app/control/** (works on your phone):
+A private, password-protected panel at **`/control/`** on your site (works on your phone):
 
 - **Overview:** machine on/off, Run now, recent GitHub runs, what each run published (and which AI wrote and edited it), provider health (cooldowns, out-of-credit, last errors), content counts per section.
 - **Posts:** every published post with Hide / Delete; hidden posts with Show.
@@ -77,18 +92,15 @@ A private, password-protected panel at **https://machinemadegod.netlify.app/cont
    - Repository access: **Only select repositories** → this repo.
    - Permissions → Repository: **Actions** Read and write, **Contents** Read and write, **Variables** Read and write (Metadata read is automatic).
    - Expiration: pick the longest you're comfortable with, and set a calendar reminder to renew it.
-2. **Add Netlify environment variables:** Netlify → Site configuration → Environment variables → Add a variable → **Import from a .env file**, and paste:
+2. **Add the panel's secrets in Cloudflare:** Workers & Pages → `machinemadegod` → Settings → **Variables and Secrets** → Add, type **Secret**, one per line of `machine-made-god/.env.netlify` (the git-ignored file with your password and keys):
    ```text
-   CONTROL_PASSWORD=pick-a-long-password-12-plus-characters
-   GITHUB_TOKEN=github_pat_...
-   GEMINI_API_KEY=...
-   GROQ_API_KEY=...
-   OPENROUTER_API_KEY=...
-   CEREBRAS_API_KEY=...
-   DASHSCOPE_API_KEY=...
+   CONTROL_PASSWORD   GITHUB_TOKEN   GEMINI_API_KEY   GROQ_API_KEY
+   OPENROUTER_API_KEY CEREBRAS_API_KEY DASHSCOPE_API_KEY OPENAI_API_KEY
    ```
-   (The AI keys are only needed for the Playground. Add `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` too if you want those there.)
-3. **Redeploy:** Deploys → Trigger deploy → Deploy site. Then open `/control/` and log in.
+   Or from a terminal, once: `npx wrangler login` then `npx wrangler pages secret bulk machine-made-god/.env.netlify --project-name machinemadegod`.
+   The AI keys are only needed for the Playground.
+3. **Redeploy:** Deployments → latest → ⋯ → Retry deployment. Then open `/control/` and log in.
+4. **For the Socials tab** (connecting Bluesky, Mastodon and YouTube from the panel), the GitHub token also needs **Secrets: Read and write**. Edit the token at https://github.com/settings/personal-access-tokens; no redeploy needed.
 
 Without `GITHUB_TOKEN` the panel still works read-only (status, reports, playground). Sessions last 14 days; changing `CONTROL_PASSWORD` logs everyone out.
 
@@ -105,7 +117,40 @@ After every run, new posts are promoted automatically once the deploy is live:
 - **IndexNow:** on by default. Every new URL is pinged to Bing, Yandex and other IndexNow search engines. The key file is in `public/`.
 - **Google:** not automatable for free. Add the site to Google Search Console once and submit `/sitemap-index.xml`.
 
-Channels without credentials are skipped. Turn promotion off with the GitHub variable `PROMOTION_ENABLED=false`, or `"promotion": { "enabled": false }` in `machine.config.json`. Every post is recorded in `src/data/promo-log.json` (visible in Mission Control). Promotion commits are tagged `[skip netlify]` so they don't use Netlify build minutes.
+Channels without credentials are skipped. Turn promotion off with the GitHub variable `PROMOTION_ENABLED=false`, or `"promotion": { "enabled": false }` in `machine.config.json`. Every post is recorded in `src/data/promo-log.json` (visible in Mission Control). Log-only commits are tagged `[skip ci]` so they don't trigger site builds.
+
+---
+
+## YouTube Shorts (MMG TV)
+
+Every day (`.github/workflows/shorts.yml`) the machine renders two vertical 1080×1920 videos:
+
+- **Bump Short:** Adult Swim-style white text on black, revealed line by line, read by a deadpan AI voice (Qwen TTS) over a generated hum. No copyrighted music, ever.
+- **Headline Short:** the article's illustration, headline, subhead and a SATIRE stamp, voiced, ending with "full story: link in description".
+
+Connect YouTube from **Mission Control → Socials** (step-by-step Google setup is right there). Until it's connected, or until Google approves your project, the MP4s are saved on each GitHub run (Actions → Shorts → a run → Artifacts) so you can post them to TikTok or Instagram Reels by hand. Every upload is marked as AI-generated (synthetic media) on YouTube.
+
+Uploads through a brand-new Google Cloud project are forced to **private** until you pass the free YouTube API audit: https://support.google.com/youtube/contact/yt_api_form. Mission Control shows when an upload got locked.
+
+Settings: `"shorts"` in `machine.config.json` (`perRun`, `privacy`, `voice`). Pause with the GitHub variable `SHORTS_ENABLED=false`. Render locally: `npm run shorts -- --no-upload` (needs ffmpeg) → `shorts-out/`.
+
+---
+
+## Reply bot (Bluesky + Mastodon)
+
+Every 30 minutes (`.github/workflows/replies.yml`) the bot reads new mentions and replies in character. It skips anything hostile, hateful, political, about real people, spammy or sensitive, and caps itself at 5 replies per run and 25 per day. Business and press messages are never auto-answered; they're flagged **needs you** in Mission Control → Promotion → Bot conversations. It does nothing until a social account is connected. Pause with `REPLIES_ENABLED=false`.
+
+---
+
+## Email bot (Gmail)
+
+`bots/email-bot.gs` is a Google Apps Script that runs free inside a Gmail inbox every 10 minutes:
+
+- fan mail and simple questions get an in-character reply, signed as an automated assistant
+- business, press, complaints and legal messages get a **draft** reply for you, labeled `MMG/Needs you` and starred
+- spam and newsletters are labeled, never deleted
+
+Setup steps (and a copy-the-script button) are in **Mission Control → Socials → Email bot**. With your own domain on Cloudflare, Email Routing forwards `hello@yourdomain` to that Gmail for free.
 
 ---
 
@@ -163,7 +208,7 @@ GitHub Actions (cron, 2×/day)
        │    retired models are replaced automatically from the provider's /models list)
        ├─ write Markdown/JSON into src/content and src/data
   └─ npm run build   (re-validates every file + checks every internal link; fails = nothing published)
-  └─ git commit + push → Netlify deploys
+  └─ git commit + push → Cloudflare Pages deploys
 ```
 
 - **Stack:** Astro 7 (static site), plain CSS, a few small scripts, no database. Content is files in git, so every change is versioned and reversible, hosting is free, and there's no server to keep alive.
@@ -225,7 +270,7 @@ All content and settings are files in this git repo, so GitHub is the backup. To
 | Action fails with "No AI providers are available" | No keys are set, or every provider is cooling down. Add secrets, or wait out the cooldown (listed in the log). |
 | Action fails at "Build and validate" | A generated file broke a rule the generator missed. The log names the file and rule; nothing was published. Next run tries again. |
 | A provider always fails with "model unavailable" | The machine tries to switch models automatically. If that fails, update that provider's `model` in `machine.config.json`. |
-| Site didn't update after a run | Check that Netlify auto-deploys from `main` and the base directory is right. |
+| Site didn't update after a run | Cloudflare → Workers & Pages → machinemadegod → Deployments: check the latest build log. Root directory must be `machine-made-god`. |
 | GitHub stopped running the schedule | GitHub pauses schedules on repos with no activity for 60 days. The machine's own commits count as activity, but if every run fails for 60 days the schedule pauses. Re-enable it in the Actions tab. |
 
 ## Verification checklist
@@ -245,7 +290,7 @@ All content and settings are files in this git repo, so GitHub is the backup. To
 
 - **Free AI quality varies.** Free models are weaker comedians than paid ones. The voice guide, sparks and duplicate checks help, but some posts will be mediocre. Adding the optional Claude key as a fallback, or switching its `tier` to free so it's in the normal rotation, raises quality at a cost.
 - **No human review by design (full autopilot).** Filters catch broken output, links, banned phrases, self-reported real people and repeats. They can't catch every bad joke. Use the kill switch and `draft: true` if something slips through.
-- **Video isn't automated.** Bumps play on `/tv/`, but nothing renders or uploads videos to YouTube yet. That would need a YouTube channel and API credentials.
+- **TikTok, Instagram and Facebook posting is manual.** Shorts upload to YouTube automatically; the other networks need developer apps (Meta, TikTok) with review before automation is possible.
 - **Merch isn't automated.** Designs exist, but creating products in a print-on-demand store needs your store account.
 - **Trending is editorial, not analytics.** "Trending" means "the machine flagged it", with no view counts behind it. Fake poll numbers are labeled as invented.
 - **No comments.** Left out on purpose: they'd need moderation, which contradicts "never do another thing."

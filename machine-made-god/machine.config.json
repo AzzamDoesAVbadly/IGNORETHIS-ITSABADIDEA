@@ -29,6 +29,11 @@
     "privacy": "public",
     "voice": "Ethan"
   },
+  "replies": {
+    "enabled": true,
+    "maxPerRun": 5,
+    "maxPerDay": 25
+  },
   "providers": [
     {
       "id": "gemini",

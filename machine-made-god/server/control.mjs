@@ -147,7 +147,10 @@ async function status(origin) {
     settle(readRepoFile("src/data/promo-log.json").then((t) => JSON.parse(t).slice(0, 40))),
     settle(fetch(`${origin}/search.json`).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`search.json HTTP ${r.status}`))))),
   ]);
-  const shortsLog = await settle(readRepoFile("src/data/shorts-log.json").then((t) => JSON.parse(t).slice(0, 30)));
+  const [shortsLog, repliesLog] = await Promise.all([
+    settle(readRepoFile("src/data/shorts-log.json").then((t) => JSON.parse(t).slice(0, 30))),
+    settle(readRepoFile("src/data/replies-log.json").then((t) => JSON.parse(t).slice(0, 60))),
+  ]);
 
   const machineState = state.ok ? state.value : { providers: {}, runs: [] };
   const counts = {};
@@ -181,6 +184,7 @@ async function status(origin) {
     categories: categories.map((c) => ({ slug: c.slug, name: c.name, color: c.color })),
     promoLog: promoLog.ok ? promoLog.value : [],
     shortsLog: shortsLog.ok ? shortsLog.value : [],
+    repliesLog: repliesLog.ok ? repliesLog.value : [],
     errors: [runs, state, promoLog, index].filter((r) => !r.ok).map((r) => r.error),
   };
 }

@@ -15,7 +15,8 @@
     "machine:check": "node --env-file-if-exists=.env scripts/generate.mjs --check",
     "control": "astro build && node --env-file-if-exists=.env scripts/control-server.mjs",
     "promote": "node --env-file-if-exists=.env scripts/promote.mjs",
-    "shorts": "node --env-file-if-exists=.env scripts/shorts.mjs"
+    "shorts": "node --env-file-if-exists=.env scripts/shorts.mjs",
+    "replies": "node --env-file-if-exists=.env scripts/replies.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.131.0",
