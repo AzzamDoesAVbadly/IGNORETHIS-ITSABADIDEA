@@ -666,6 +666,67 @@ a.label:hover { background: var(--ink); color: var(--c, var(--sodium)); }
 }
 .game-tile .rating { font-family: var(--font-mono); font-size: 0.66rem; color: var(--hazard); letter-spacing: 0.06em; text-transform: uppercase; }
 
+/* ---------- lab band (clean room, contaminated) ---------- */
+
+.lab-band {
+  background: #0c1514;
+  color: var(--paper);
+  border-block: 3px solid var(--ink);
+  padding-block: clamp(32px, 5vw, 52px);
+  background-image:
+    linear-gradient(rgba(200, 255, 26, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 255, 26, 0.05) 1px, transparent 1px),
+    radial-gradient(ellipse 600px 300px at 85% 0%, rgba(47, 181, 168, 0.18), transparent 70%);
+  background-size: 32px 32px, 32px 32px, auto;
+}
+.lab-band .section-head { border-color: var(--acid); }
+.lab-band .section-head h2 { color: var(--acid); }
+.lab-band .section-head .more { color: var(--teal-hi); }
+
+.lab-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #12201e;
+  border: 3px solid var(--teal-hi);
+  box-shadow: 5px 5px 0 #000;
+  text-decoration: none;
+  color: var(--paper);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+a.lab-tile:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 #000; }
+.lab-tile .art { border-bottom: 3px solid var(--teal-hi); }
+.lab-tile .card-body { gap: 8px; }
+.lab-tile .lab-code { font-family: var(--font-mono); font-size: 0.66rem; color: var(--teal-hi); letter-spacing: 0.08em; text-transform: uppercase; }
+.lab-tile h3 { margin: 0; font-family: var(--font-display); font-stretch: 78%; font-weight: 900; font-size: 1.6rem; text-transform: uppercase; line-height: 0.95; }
+.lab-tile p { margin: 0; color: #b9c4b8; font-size: 0.92rem; }
+.lab-tile .lab-go {
+  align-self: flex-start;
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  background: var(--acid);
+  color: var(--ink);
+  padding: 6px 12px;
+  border: 2px solid #000;
+}
+.lab-tile--dev { border-style: dashed; opacity: 0.86; }
+.lab-tile--dev .lab-go { background: transparent; color: var(--teal-hi); border-color: var(--teal-hi); }
+.lab-tile--dev .art { filter: grayscale(0.7) contrast(1.1); }
+.lab-tile .classified {
+  position: absolute;
+  z-index: 3;
+  top: 18%;
+  left: 50%;
+  translate: -50% 0;
+  rotate: -8deg;
+  color: var(--magenta);
+  background: rgba(12, 21, 20, 0.85);
+  font-size: 1.4rem;
+}
+
 /* ---------- quiz tiles ---------- */
 
 .quiz-tile {

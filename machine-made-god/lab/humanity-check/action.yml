@@ -1,0 +1,29 @@
+name: "Humanity Check"
+description: "Fail the build when your docs read like a chatbot wrote them. Grades prose from CERTIFIED HUMAN to 100% SLOP."
+author: "MMG LABS"
+branding:
+  icon: "user-check"
+  color: "orange"
+inputs:
+  files:
+    description: "Files to check, separated by spaces or newlines. Globs are expanded by the shell."
+    required: false
+    default: "README.md"
+  max-score:
+    description: "Fail if any file's slop index is above this (0-100)."
+    required: false
+    default: "50"
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      env:
+        HC_FILES: ${{ inputs.files }}
+        HC_MAX: ${{ inputs.max-score }}
+      run: |
+        shopt -s globstar nullglob
+        # Word splitting and glob expansion on the input are intended here.
+        # shellcheck disable=SC2086
+        set -- $HC_FILES
+        if [ "$#" -eq 0 ]; then echo "humanity-check: no files matched '$HC_FILES'"; exit 0; fi
+        node "$GITHUB_ACTION_PATH/bin/humanity-check.js" --max-score "$HC_MAX" "$@"

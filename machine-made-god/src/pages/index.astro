@@ -7,9 +7,11 @@ import Bump from "../components/Bump.astro";
 import Poll from "../components/Poll.astro";
 import QuizTile from "../components/QuizTile.astro";
 import GameTile from "../components/GameTile.astro";
+import LabTile from "../components/LabTile.astro";
 import MerchItem from "../components/MerchItem.astro";
 import { articles, quizzes, featured, trending, picks, categories, inCategory, formatDate } from "../lib/site.js";
 import games from "../data/games.json";
+import lab from "../data/lab.json";
 import merch from "../data/merch.json";
 
 const lead = featured();
@@ -79,6 +81,16 @@ const blocks = ["music", "conspiracy", "corporate", "lifestyle", "politics", "en
         <a class="more" href="/arcade/">Enter →</a>
       </div>
       <div class="grid">{games.map((g) => <GameTile game={g} />)}</div>
+    </div>
+  </section>
+
+  <section class="lab-band" aria-labelledby="lab-h" style="border-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="lab-h">MMG Labs<span class="scrawl" style="color:#ff2e88">real software. it works. we're as surprised as you.</span></h2>
+        <a class="more" href="/lab/">All products →</a>
+      </div>
+      <div class="grid">{lab.map((p) => <LabTile product={p} />)}</div>
     </div>
   </section>
 

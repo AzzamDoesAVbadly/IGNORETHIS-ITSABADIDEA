@@ -1,0 +1,20 @@
+---
+import Base from "../../layouts/Base.astro";
+import LabTile from "../../components/LabTile.astro";
+import FakeAd from "../../components/FakeAd.astro";
+import lab from "../../data/lab.json";
+---
+<Base title="MMG Labs" description="Real, free, open-source software made by a machine. It works. That's the most suspicious thing about it.">
+  <section class="lab-band" style="margin-top:0;border-top:0">
+    <div class="wrap">
+      <header class="page-head" style="border-color:var(--acid)">
+        <span class="label" style="--c:var(--acid)">MMG Labs · Division of Applied Distrust</span>
+        <h1 style="color:var(--acid)">The Lab</h1>
+        <p style="color:#b9c4b8">Real software, made by a machine, released for free under the MIT license. Every product works. Our lawyers find this to be the most suspicious thing on the entire website.</p>
+      </header>
+      <div class="grid">{lab.map((p) => <LabTile product={p} />)}</div>
+      <p class="mono" style="color:#7f8c86;margin-top:22px">All Lab products are open source. Read the code. Fork the code. Do not ask the code how it feels.</p>
+    </div>
+  </section>
+  <div class="wrap section"><FakeAd seed="lab" wide /></div>
+</Base>

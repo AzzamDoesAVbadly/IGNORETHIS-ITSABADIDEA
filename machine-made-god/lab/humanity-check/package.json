@@ -1,0 +1,46 @@
+{
+  "name": "humanity-check",
+  "version": "1.0.0",
+  "description": "Grades text from CERTIFIED HUMAN to 100% SLOP by finding the tells of machine-written prose. CLI, GitHub Action and zero-dependency library.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "humanity-check": "bin/humanity-check.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "action.yml"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "ai",
+    "ai-detector",
+    "slop",
+    "writing",
+    "lint",
+    "prose",
+    "chatgpt",
+    "llm",
+    "github-action",
+    "cli"
+  ],
+  "homepage": "https://machinemadegod.netlify.app/lab/humanity-check/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AzzamDoesAVbadly/humanity-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AzzamDoesAVbadly/humanity-check/issues"
+  },
+  "license": "MIT",
+  "author": "MMG LABS (a division of Machine Made God)"
+}
