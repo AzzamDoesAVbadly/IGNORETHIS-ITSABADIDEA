@@ -1,0 +1,42 @@
+export const articles = [
+  {
+    id: 1,
+    title: "The Rise of AI in Business",
+    content: "Artificial Intelligence is transforming the way businesses operate...",
+    author: "Jane Doe",
+    date: "2023-10-01",
+    tags: ["AI", "Business", "Technology"],
+  },
+  {
+    id: 2,
+    title: "Understanding Machine Learning",
+    content: "Machine learning is a subset of AI that focuses on building systems that learn from data...",
+    author: "John Smith",
+    date: "2023-10-05",
+    tags: ["Machine Learning", "AI", "Data Science"],
+  },
+  {
+    id: 3,
+    title: "The Future of Work with AI",
+    content: "As AI continues to evolve, the future of work will be significantly impacted...",
+    author: "Alice Johnson",
+    date: "2023-10-10",
+    tags: ["Future of Work", "AI", "Automation"],
+  },
+  {
+    id: 4,
+    title: "Ethics in AI Development",
+    content: "With great power comes great responsibility. The ethical implications of AI are vast...",
+    author: "Bob Brown",
+    date: "2023-10-15",
+    tags: ["Ethics", "AI", "Technology"],
+  },
+  {
+    id: 5,
+    title: "AI and Data Privacy",
+    content: "Data privacy is a critical concern as AI systems become more prevalent...",
+    author: "Charlie Green",
+    date: "2023-10-20",
+    tags: ["Data Privacy", "AI", "Security"],
+  },
+];
