@@ -9,8 +9,8 @@
     },
     "gemini": {
       "fail": 3,
-      "ok": 3,
-      "lastSuccess": "2026-10-19T13:33:53.447Z",
+      "ok": 6,
+      "lastSuccess": "2026-10-20T02:03:06.845Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -21,10 +21,37 @@
     "cerebras": {
       "ok": 11,
       "lastSuccess": "2026-10-19T13:33:57.455Z"
+    },
+    "ollama-cloud": {
+      "ok": 2,
+      "lastSuccess": "2026-10-20T01:59:58.710Z"
     }
   },
   "lastQuizAt": "2026-10-18T01:34:53.899Z",
   "runs": [
+    {
+      "at": "2026-10-20T01:58:59.851Z",
+      "articles": [
+        {
+          "slug": "confessions-of-the-qr-code-on-table-12-i-am-a-degraded-fragment-of",
+          "provider": "gemini+ollama-cloud",
+          "model": "gemini-flash-latest → gemma4:31b"
+        },
+        {
+          "slug": "review-the-halcyon-tek-focussphere-demands-40-hours-of-uninterrupted",
+          "provider": "ollama-cloud+gemini",
+          "model": "gemma4:31b → gemini-flash-latest"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "gemini",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-19T13:32:22.136Z",
       "articles": [
