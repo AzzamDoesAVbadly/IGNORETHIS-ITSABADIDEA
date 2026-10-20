@@ -89,7 +89,8 @@ async function openAIChat(p, messages, ctx, { json = false, maxTokens = 8000 } =
         "X-Title": "Machine Made God",
       },
       body: JSON.stringify(body),
-      signal: AbortSignal.timeout((ctx.config.requestTimeoutSeconds || 120) * 1000),
+      // Local models on slow hardware need longer than cloud APIs, so a provider can set its own limit.
+      signal: AbortSignal.timeout((p.timeoutSeconds || ctx.config.requestTimeoutSeconds || 120) * 1000),
     });
   } catch (err) {
     throw new ProviderError(`network error: ${err.message}`, { kind: "error" });

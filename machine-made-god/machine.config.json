@@ -201,12 +201,29 @@
       "baseUrl": "http://localhost:11434/v1",
       "keyEnv": null,
       "enableEnv": "OLLAMA_ENABLED",
-      "model": "llama3.1",
+      "model": "gemma4:e4b-it-qat",
+      "timeoutSeconds": 900,
       "prefer": [
+        "gemma4",
         "llama3",
         "qwen",
         "mistral",
         "gemma"
+      ],
+      "avoid": [
+        "embed"
+      ],
+      "weight": 2,
+      "jsonMode": true
+    },
+    {
+      "id": "ollama-cloud",
+      "type": "openai",
+      "baseUrl": "https://ollama.com/v1",
+      "keyEnv": "OLLAMA_API_KEY",
+      "model": "gemma4:31b",
+      "prefer": [
+        "gemma4"
       ],
       "avoid": [
         "embed"
