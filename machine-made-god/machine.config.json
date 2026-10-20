@@ -201,7 +201,7 @@
       "baseUrl": "http://localhost:11434/v1",
       "keyEnv": null,
       "enableEnv": "OLLAMA_ENABLED",
-      "model": "gemma4:e4b-it-qat",
+      "model": "gemma4:26b-a4b-it-qat",
       "timeoutSeconds": 900,
       "prefer": [
         "gemma4",
