@@ -17,6 +17,8 @@ import { join } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { Resvg } from "@resvg/resvg-js";
+import { tiktokReady, tiktokPost } from "./lib/tiktok.mjs";
+import { xReady, xUploadMedia, xPost } from "./lib/x.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const env = process.env;
@@ -335,7 +337,31 @@ async function main() {
       }
     } else {
       entry.uploaded = false;
-      console.log("  (not uploaded: YouTube isn't configured, or --no-upload)");
+      console.log("  (not uploaded to YouTube: not connected, or --no-upload)");
+    }
+    if (!has("--no-upload")) {
+      const caption = `${video.title.replace(/\s*#shorts$/i, "")} #satire #comedy`;
+      if (tiktokReady(env) && config.tiktok?.shorts !== false) {
+        try {
+          const t = await tiktokPost(video.file, caption, env);
+          entry.tiktok = t.privacy;
+          console.log(`  ✓ TikTok (${t.privacy})`);
+        } catch (err) {
+          entry.tiktokError = err.message.slice(0, 200);
+          console.log(`  ✗ TikTok: ${err.message}`);
+        }
+      }
+      if (xReady(env) && config.x?.shorts !== false) {
+        try {
+          const media = await xUploadMedia(video.file, "video/mp4", "tweet_video", env);
+          const post = await xPost({ text: caption.slice(0, 270), mediaId: media }, env);
+          Object.assign(entry, { x: post.url, xId: post.id });
+          console.log(`  ✓ X: ${post.url}`);
+        } catch (err) {
+          entry.xError = err.message.slice(0, 200);
+          console.log(`  ✗ X: ${err.message}`);
+        }
+      }
     }
     made.push(entry);
   }

@@ -49,6 +49,18 @@ jobs:
       - name: Tests
         run: npm test
 
+      - name: Learn from engagement (what's working on social)
+        env:
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+          X_CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
+          X_REFRESH_TOKEN: ${{ secrets.X_REFRESH_TOKEN }}
+          MACHINE_GH_TOKEN: ${{ secrets.MACHINE_GH_TOKEN }}
+        run: node scripts/learn.mjs
+
       - name: Generate content (provider roulette)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -90,6 +102,10 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           PROMOTION_ENABLED: ${{ vars.PROMOTION_ENABLED }}
+          X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+          X_CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
+          X_REFRESH_TOKEN: ${{ secrets.X_REFRESH_TOKEN }}
+          MACHINE_GH_TOKEN: ${{ secrets.MACHINE_GH_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -99,7 +115,7 @@ jobs:
 
       - name: Save promotion log (does not trigger a site rebuild)
         run: |
-          git add src/data/promo-log.json
+          git add src/data/promo-log.json src/data/engagement.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Promotion log [skip ci] [skip netlify]"
           git pull --rebase origin main

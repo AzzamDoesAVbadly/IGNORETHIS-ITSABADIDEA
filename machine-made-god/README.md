@@ -138,7 +138,35 @@ Settings: `"shorts"` in `machine.config.json` (`perRun`, `privacy`, `voice`). Pa
 
 ## Reply bot (Bluesky + Mastodon)
 
-Every 30 minutes (`.github/workflows/replies.yml`) the bot reads new mentions and replies in character. It skips anything hostile, hateful, political, about real people, spammy or sensitive, and caps itself at 5 replies per run and 25 per day. Business and press messages are never auto-answered; they're flagged **needs you** in Mission Control → Promotion → Bot conversations. It does nothing until a social account is connected. Pause with `REPLIES_ENABLED=false`.
+Every 30 minutes (`.github/workflows/replies.yml`) the bot reads new mentions and decides one of three things:
+
+- **reply:** fans, jokes and questions get an in-character reply
+- **clapback:** trolls insulting us or our content get **only a GIF**. The AI writes a short roast and the machine renders it as a glitchy branded reaction GIF (no third-party GIF service; Tenor closed to new apps and GIPHY's terms don't allow bots). Roasts target the take, never identity, looks or intelligence. Max one per person per week, 10 per day.
+- **skip:** hate, threats, sensitive topics, politics, real people and spam are ignored, because replying only amplifies them (block those accounts yourself).
+
+It caps itself at 5 replies per run and 25 per day. Business and press messages are never auto-answered; they're flagged **needs you** in Mission Control → Promotion → Bot conversations. It does nothing until a social account is connected. Pause with `REPLIES_ENABLED=false`.
+
+---
+
+## TikTok and X
+
+Connect both from **Mission Control → Socials** (step-by-step developer-app setup is in each card).
+
+- **TikTok:** daily Shorts are posted with the Content Posting API and labeled AI-generated. Until TikTok audits your app, posts are private to the account; request the audit from the card.
+- **X:** new articles are promoted as text posts and Shorts are posted as native video. X's API is pay-per-use (about 1.5¢ per post; posts with links cost 20¢), so links are left out by default and your site goes in the bio. Change with `"x": { "includeLinks": true }` in `machine.config.json`.
+- Both rotate their login tokens; the machine saves the new ones automatically using `MACHINE_GH_TOKEN` (your Mission Control GitHub token, stored when you connect).
+- **Bilibili:** stays manual. Its upload API is only open to approved developers, and unofficial uploaders get accounts banned.
+
+---
+
+## The learning loop ("playing the algorithm")
+
+Before every run, `scripts/learn.mjs` collects likes, reposts, replies, quotes and views for everything the machine posted (Bluesky, Mastodon, X, YouTube) and scores each post. It then steers:
+
+- **caption styles per network:** deadpan, hot take, debate bait, fake outrage, ranking bait, confession (`prompts/caption-styles.json`). Most are built to start harmless arguments, because replies are what the algorithms reward.
+- **sections:** sections that perform get written about more often (0.6×–2×).
+
+It keeps testing the losers about 20% of the time, so it notices when an algorithm shifts. See the results in **Mission Control → Overview → What's working**. Conflict stays about trivial things (sponges, printers, meetings), never real people, politics or identity, because that's where accounts get suspended.
 
 ---
 

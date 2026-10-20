@@ -15,6 +15,7 @@ import { FORMATS, MOTIFS, PALETTES, slugify, validateArticle, validateQuiz, find
 import { spin, availableProviders, callProvider, ProviderError } from "./lib/roulette.mjs";
 import { articleSchema, quizSchema, extrasSchema } from "./lib/schemas.mjs";
 import { mockReply } from "./lib/mock.mjs";
+import { boost } from "./lib/bandit.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const paths = {
@@ -43,6 +44,7 @@ const authors = readJson(join(paths.data, "authors.json"));
 const voice = readFileSync(join(paths.prompts, "voice.md"), "utf8");
 const formats = readJson(join(paths.prompts, "formats.json"));
 const sparks = readJson(join(paths.prompts, "sparks.json"));
+const engagementArms = readJson(join(paths.data, "engagement.json"), { arms: {} }).arms || {};
 
 if (env.MACHINE_MOCK) {
   config.providers = [{ id: "mock", type: "mock", weight: 1 }];
@@ -133,7 +135,8 @@ function chooseCategory(existing, taken) {
   const weights = options.map((c) => {
     if (taken.includes(c.slug)) return 0.05;
     const n = recent.filter((x) => x.category === c.slug).length;
-    return 1 / (1 + n);
+    // Sections that get more engagement on social come up more often (0.6x–2x).
+    return (1 / (1 + n)) * boost(c.slug, engagementArms, "category:");
   });
   const total = weights.reduce((a, b) => a + b, 0);
   let roll = random() * total;

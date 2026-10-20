@@ -151,6 +151,7 @@ async function status(origin) {
     settle(readRepoFile("src/data/shorts-log.json").then((t) => JSON.parse(t).slice(0, 30))),
     settle(readRepoFile("src/data/replies-log.json").then((t) => JSON.parse(t).slice(0, 60))),
   ]);
+  const engagement = await settle(readRepoFile("src/data/engagement.json").then((t) => { const e = JSON.parse(t); return { updatedAt: e.updatedAt, arms: e.arms, top: (e.top || []).slice(0, 8) }; }));
 
   const machineState = state.ok ? state.value : { providers: {}, runs: [] };
   const counts = {};
@@ -185,6 +186,7 @@ async function status(origin) {
     promoLog: promoLog.ok ? promoLog.value : [],
     shortsLog: shortsLog.ok ? shortsLog.value : [],
     repliesLog: repliesLog.ok ? repliesLog.value : [],
+    engagement: engagement.ok ? engagement.value : { arms: {}, top: [] },
     errors: [runs, state, promoLog, index].filter((r) => !r.ok).map((r) => r.error),
   };
 }
@@ -318,6 +320,8 @@ const SOCIAL_SECRETS = {
   bluesky: ["BLUESKY_HANDLE", "BLUESKY_APP_PASSWORD"],
   mastodon: ["MASTODON_INSTANCE", "MASTODON_TOKEN"],
   youtube: ["YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "YOUTUBE_REFRESH_TOKEN"],
+  tiktok: ["TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET", "TIKTOK_REFRESH_TOKEN"],
+  x: ["X_CLIENT_ID", "X_REFRESH_TOKEN"],
 };
 
 async function secretNames() {
@@ -435,6 +439,80 @@ async function youtubeCallback(url) {
   }
 }
 
+// TikTok and X connect flows. Their refresh tokens rotate on use, so we also store this
+// panel's GitHub token as MACHINE_GH_TOKEN, letting the machine save rotated tokens itself.
+const sha256b64url = async (text) => b64url(new Uint8Array(await crypto.subtle.digest("SHA-256", enc.encode(text))));
+
+async function oauthStart(network, { clientId, clientSecret }, origin) {
+  const cid = String(clientId || "").trim();
+  const cs = String(clientSecret || "").trim();
+  if (!cid || !cs) throw Object.assign(new Error("Paste both the client ID/key and the client secret."), { status: 400 });
+  const redirect = `${origin}/api/control/${network}/callback`;
+  if (network === "tiktok") {
+    const state = await sealState({ net: "tiktok", cid, cs, exp: Date.now() + 15 * 60000 });
+    const q = new URLSearchParams({ client_key: cid, scope: "user.info.basic,video.publish", response_type: "code", redirect_uri: redirect, state });
+    return { url: `https://www.tiktok.com/v2/auth/authorize/?${q}` };
+  }
+  if (network === "x") {
+    const verifier = b64url(crypto.getRandomValues(new Uint8Array(48)));
+    const state = await sealState({ net: "x", cid, cs, verifier, exp: Date.now() + 15 * 60000 });
+    const q = new URLSearchParams({
+      response_type: "code",
+      client_id: cid,
+      redirect_uri: redirect,
+      scope: "tweet.read tweet.write users.read media.write offline.access",
+      state,
+      code_challenge: await sha256b64url(verifier),
+      code_challenge_method: "S256",
+    });
+    return { url: `https://x.com/i/oauth2/authorize?${q}` };
+  }
+  throw Object.assign(new Error("unknown network"), { status: 400 });
+}
+
+async function oauthCallback(network, url) {
+  const back = (q) => new Response(null, { status: 302, headers: { Location: `/control/?${new URLSearchParams(q)}` } });
+  try {
+    if (url.searchParams.get("error")) throw new Error(`${network} said: ${url.searchParams.get("error_description") || url.searchParams.get("error")}`);
+    const st = await openState(url.searchParams.get("state"));
+    if (st.net !== network) throw new Error("state mismatch");
+    const redirect = `${url.origin}/api/control/${network}/callback`;
+    let refresh;
+    let name = network;
+    if (network === "tiktok") {
+      const tok = await fetch("https://open.tiktokapis.com/v2/oauth/token/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ client_key: st.cid, client_secret: st.cs, code: url.searchParams.get("code"), grant_type: "authorization_code", redirect_uri: redirect }),
+      }).then((r) => r.json());
+      if (!tok.refresh_token) throw new Error(tok.error_description || tok.error || "TikTok didn't return a refresh token");
+      refresh = tok.refresh_token;
+      const me = await fetch("https://open.tiktokapis.com/v2/user/info/?fields=display_name", { headers: { Authorization: `Bearer ${tok.access_token}` } }).then((r) => r.json()).catch(() => ({}));
+      name = me.data?.user?.display_name || "TikTok";
+      await setSecret("TIKTOK_CLIENT_KEY", st.cid);
+      await setSecret("TIKTOK_CLIENT_SECRET", st.cs);
+      await setSecret("TIKTOK_REFRESH_TOKEN", refresh);
+    } else {
+      const tok = await fetch("https://api.x.com/2/oauth2/token", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded", Authorization: `Basic ${btoa(`${st.cid}:${st.cs}`)}` },
+        body: new URLSearchParams({ grant_type: "authorization_code", code: url.searchParams.get("code"), redirect_uri: redirect, code_verifier: st.verifier, client_id: st.cid }),
+      }).then((r) => r.json());
+      if (!tok.refresh_token) throw new Error(tok.error_description || tok.error || "X didn't return a refresh token (is offline.access enabled?)");
+      refresh = tok.refresh_token;
+      const me = await fetch("https://api.x.com/2/users/me", { headers: { Authorization: `Bearer ${tok.access_token}` } }).then((r) => r.json()).catch(() => ({}));
+      name = me.data?.username ? `@${me.data.username}` : "X";
+      await setSecret("X_CLIENT_ID", st.cid);
+      await setSecret("X_CLIENT_SECRET", st.cs);
+      await setSecret("X_REFRESH_TOKEN", refresh);
+    }
+    if (ENV.GITHUB_TOKEN) await setSecret("MACHINE_GH_TOKEN", ENV.GITHUB_TOKEN);
+    return back({ connected: network, name });
+  } catch (err) {
+    return back({ connectError: network, msg: err.message.slice(0, 300) });
+  }
+}
+
 // ---------- router ----------
 
 export async function handle(req, env = {}) {
@@ -455,6 +533,7 @@ export async function handle(req, env = {}) {
 
   // Google redirects here without our session header; the encrypted state authenticates it.
   if (route === "youtube/callback" && req.method === "GET") return youtubeCallback(url);
+  if ((route === "tiktok/callback" || route === "x/callback") && req.method === "GET") return oauthCallback(route.split("/")[0], url);
 
   if (!(await checkToken(null, (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "")))) return json(401, { error: "Not logged in." });
 
@@ -480,6 +559,10 @@ export async function handle(req, env = {}) {
         return json(200, await connectSocial(body));
       case "POST socials/disconnect":
         return json(200, await disconnectSocial(body));
+      case "POST tiktok/start":
+        return json(200, await oauthStart("tiktok", body, url.origin));
+      case "POST x/start":
+        return json(200, await oauthStart("x", body, url.origin));
       case "POST youtube/start":
         return json(200, await youtubeStart(body, url.origin));
       case "POST shorts":

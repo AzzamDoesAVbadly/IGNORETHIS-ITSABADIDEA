@@ -12,6 +12,8 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spin } from "./lib/roulette.mjs";
+import { pickArm } from "./lib/bandit.mjs";
+import { xReady, xPost } from "./lib/x.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const env = process.env;
@@ -28,6 +30,8 @@ const logPath = join(root, "src/data/promo-log.json");
 const promoLog = readJson(logPath, []);
 const voice = readFileSync(join(root, "prompts/voice.md"), "utf8");
 const promo = config.promotion || {};
+const styles = readJson(join(root, "prompts/caption-styles.json"), { deadpan: "A deadpan one-liner." });
+const arms = readJson(join(root, "src/data/engagement.json"), { arms: {} }).arms || {};
 
 // ---------- what to promote ----------
 
@@ -42,13 +46,13 @@ function loadItem(slug) {
       try { fm[m[1]] = JSON.parse(m[2]); } catch { fm[m[1]] = m[2].replace(/^"|"$/g, ""); }
     }
     if (fm.draft === true) return null;
-    return { slug, kind: "article", title: fm.title, dek: fm.dek, quote: fm.pullquote, url: `${SITE}/a/${slug}/` };
+    return { slug, kind: "article", title: fm.title, dek: fm.dek, quote: fm.pullquote, category: fm.category, format: fm.format, url: `${SITE}/a/${slug}/` };
   }
   const qz = join(root, "src/content/quizzes", `${slug}.json`);
   if (existsSync(qz)) {
     const q = readJson(qz);
     if (q.draft) return null;
-    return { slug, kind: "quiz", title: q.title, dek: q.dek, url: `${SITE}/quiz/${slug}/` };
+    return { slug, kind: "quiz", title: q.title, dek: q.dek, category: "quizzes", format: "quiz", url: `${SITE}/quiz/${slug}/` };
   }
   return null;
 }
@@ -88,7 +92,7 @@ export function templateCaption(item) {
   return `${hook}${extra}`.slice(0, 240);
 }
 
-async function aiCaption(item) {
+async function aiCaption(item, style = "deadpan") {
   if (!promo.aiCaptions) return templateCaption(item);
   const ctx = {
     config: { ...config, maxAttemptsPerPiece: 3 },
@@ -104,7 +108,7 @@ async function aiCaption(item) {
     const { item: caption } = await spin(
       {
         system: voice,
-        user: `Write one social media post promoting this ${item.kind} from our satirical site. Deadpan, specific, and funny on its own; make people want to click. Under 200 characters. At most one hashtag. No links, no "click here", no emojis at the start.\n\nHeadline: ${item.title}\nSubhead: ${item.dek}\n\nReturn ONLY JSON: {"post": "..."}`,
+        user: `Write one social media post promoting this ${item.kind} from our satirical site. Style: ${styles[style] || styles.deadpan} Specific and funny on its own; built to get replies and reposts. Under 200 characters. At most one hashtag. No links, no "click here", no emojis at the start. Never target real people, politics, or identity.\n\nHeadline: ${item.title}\nSubhead: ${item.dek}\n\nReturn ONLY JSON: {"post": "..."}`,
         schema: { type: "object", additionalProperties: false, required: ["post"], properties: { post: { type: "string" } } },
         schemaName: "caption",
       },
@@ -146,7 +150,7 @@ async function postBluesky(item, caption) {
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} ${await res.text()}`);
   const { uri } = await res.json();
-  return `https://bsky.app/profile/${session.handle || env.BLUESKY_HANDLE}/post/${uri.split("/").pop()}`;
+  return { url: `https://bsky.app/profile/${session.handle || env.BLUESKY_HANDLE}/post/${uri.split("/").pop()}`, uri };
 }
 
 async function postMastodon(item, caption) {
@@ -157,7 +161,15 @@ async function postMastodon(item, caption) {
     body: JSON.stringify({ status: `${caption}\n\n${item.url}`.slice(0, 495), visibility: "public" }),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} ${await res.text()}`);
-  return (await res.json()).url;
+  const status = await res.json();
+  return { url: status.url, id: status.id };
+}
+
+// X charges much more for posts that contain a link, so by default: no link (bio has it).
+async function postX(item, caption) {
+  const withLink = config.x?.includeLinks === true;
+  const post = await xPost({ text: withLink ? `${caption}\n\n${item.url}` : caption });
+  return { url: post.url, id: post.id };
 }
 
 async function pingIndexNow(urls) {
@@ -175,6 +187,7 @@ async function pingIndexNow(urls) {
 export const networks = {
   bluesky: { ready: () => Boolean(env.BLUESKY_HANDLE && env.BLUESKY_APP_PASSWORD), post: postBluesky },
   mastodon: { ready: () => Boolean(env.MASTODON_INSTANCE && env.MASTODON_TOKEN), post: postMastodon },
+  x: { ready: () => xReady(env) && config.x?.promote !== false, post: postX },
 };
 
 // ---------- main ----------
@@ -202,16 +215,20 @@ async function main() {
 
   const at = new Date().toISOString();
   for (const item of items) {
-    const caption = await aiCaption(item);
-    console.log(`\n• ${item.title}\n  caption: ${caption}`);
-    for (const [name, net] of live) {
-      if (DRY) { console.log(`  [dry] would post to ${name}`); continue; }
+    console.log(`\n• ${item.title}`);
+    const targets = live.length ? live : [["preview", null]];
+    for (const [name, net] of targets) {
+      // The learner picks the caption style that has been working best on this network.
+      const style = pickArm(Object.keys(styles), arms, { prefix: `${name}:` });
+      const caption = await aiCaption(item, style);
+      console.log(`  [${name} · ${style}] ${caption}`);
+      if (DRY || !net) continue;
       try {
-        const url = await net.post(item, caption);
-        promoLog.unshift({ at, slug: item.slug, network: name, ok: true, url, caption });
+        const { url, uri, id } = await net.post(item, caption);
+        promoLog.unshift({ at, slug: item.slug, network: name, ok: true, url, uri, id, caption, style, category: item.category, format: item.format });
         console.log(`  ✓ ${name}: ${url}`);
       } catch (err) {
-        promoLog.unshift({ at, slug: item.slug, network: name, ok: false, error: String(err.message).slice(0, 200) });
+        promoLog.unshift({ at, slug: item.slug, network: name, ok: false, error: String(err.message).slice(0, 200), style });
         console.log(`  ✗ ${name}: ${err.message}`);
       }
     }

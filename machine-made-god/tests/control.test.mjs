@@ -71,3 +71,22 @@ test("sealedBox output opens with real libsodium (GitHub secrets format)", async
   const opened = sodium.crypto_box_seal_open(sealed, kp.publicKey, kp.privateKey);
   assert.equal(sodium.to_string(opened), "hunter2 ✓ secret");
 });
+
+test("TikTok and X connect links carry encrypted state and PKCE", async () => {
+  const token = await login();
+  const tt = await (await call("POST", "tiktok/start", { clientId: "awkey123", clientSecret: "ttsecret" }, token)).json();
+  const tu = new URL(tt.url);
+  assert.equal(tu.hostname, "www.tiktok.com");
+  assert.equal(tu.searchParams.get("scope"), "user.info.basic,video.publish");
+  assert.match(tu.searchParams.get("redirect_uri"), /\/api\/control\/tiktok\/callback$/);
+  assert.ok(!tt.url.includes("ttsecret"));
+  const x = await (await call("POST", "x/start", { clientId: "xid", clientSecret: "xsecret" }, token)).json();
+  const xu = new URL(x.url);
+  assert.equal(xu.searchParams.get("code_challenge_method"), "S256");
+  assert.match(xu.searchParams.get("scope"), /offline\.access/);
+  assert.ok(!x.url.includes("xsecret"));
+  // a TikTok state can't be replayed against the X callback
+  const crossed = await handle(new Request(`http://localhost/api/control/x/callback?code=c&state=${tu.searchParams.get("state")}`), env);
+  assert.match(crossed.headers.get("location"), /connectError=x/);
+  assert.equal((await call("POST", "x/start", { clientId: "", clientSecret: "" }, token)).status, 400);
+});

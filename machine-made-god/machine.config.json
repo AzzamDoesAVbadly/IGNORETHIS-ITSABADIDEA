@@ -32,7 +32,17 @@
   "replies": {
     "enabled": true,
     "maxPerRun": 5,
-    "maxPerDay": 25
+    "maxPerDay": 25,
+    "clapbacks": true,
+    "maxClapbacksPerDay": 10
+  },
+  "x": {
+    "promote": true,
+    "includeLinks": false,
+    "shorts": true
+  },
+  "tiktok": {
+    "shorts": true
   },
   "providers": [
     {

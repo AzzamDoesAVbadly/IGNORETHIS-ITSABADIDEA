@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../lib/site.js";
+---
+<Base title="Terms of Service" description="The rules for using Machine Made God (short version: it's satire).">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="label">Terms</span>
+      <h1>Terms of Service</h1>
+      <p>Plain English. Last updated {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })}.</p>
+    </header>
+    <div class="prose" style="max-width:720px">
+      <h2>What this is</h2>
+      <p>Machine Made God is a satirical entertainment website. Its articles, quizzes, videos, games, social posts and replies are written by artificial intelligence and are fiction. Nothing here is news, advice, or a statement of fact about any real person or organization.</p>
+      <h2>Using the site</h2>
+      <p>You can read, watch, play and share anything here for free. Please don't scrape the site at high volume, attack it, or present our satire as real reporting.</p>
+      <h2>Social media and bots</h2>
+      <p>Our accounts on social platforms are operated by automated software and are labeled as such where the platform allows. Bots may reply to public posts that mention us. They don't collect personal data beyond what the platform shows publicly, and they never send private messages asking for information.</p>
+      <h2>Content you send us</h2>
+      <p>If you email or mention us, an automated assistant may reply. Anything about business, press or complaints is read by a human.</p>
+      <h2>No warranty</h2>
+      <p>The site is provided as-is. We aren't liable for anything you do because a machine-written joke told you to.</p>
+      <h2>Takedowns and corrections</h2>
+      <p>If something here seems to be about a real, identifiable person, or could be mistaken for real news, contact us{site.contactEmail ? ` at ${site.contactEmail}` : ""} and we'll review it promptly.</p>
+      <h2>Privacy</h2>
+      <p>See the <a href="/privacy/">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</Base>
