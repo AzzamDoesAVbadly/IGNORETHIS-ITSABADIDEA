@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignalCorp // Internet Weirdness Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brand">SignalCorp</div>
+        <nav class="nav">
+          <a href="#feed">Feed</a>
+          <a href="#stories">Stories</a>
+          <a href="#merch">Merch</a>
+          <a href="#status">Status</a>
+        </nav>
+        <button class="cta" id="runFlow">Generate the next wave</button>
+      </header>
+
+      <section class="hero">
+        <div class="lead-block">
+          <div class="eyebrow">Internet Weirdness Engine</div>
+          <h1>
+            The Internet
+            <span class="h1-accent">is a machine</span>
+            and it has a pulse.
+          </h1>
+          <p class="subtitle">
+            SignalCorp is a weird-media engine built to create chaos, pull attention, and turn digital detritus into monetizable culture.
+            Articles. Video hooks. Merch drops. Fast loops. Low human effort.
+          </p>
+
+          <div class="top-row">
+            <div class="tag">BuzzFeed Chaos</div>
+            <div class="tag">Newgrounds Energy</div>
+            <div class="tag">Adult Swim Residue</div>
+            <div class="tag">AI-Made</div>
+          </div>
+        </div>
+
+        <aside class="signal-panel">
+          <div class="signal-inner">
+            <div class="signal-label">Live Signal</div>
+            <div class="signal-big" id="signalBig">LOADING</div>
+            <div class="signal-stack" id="signalStack"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="stats" id="statsGrid"></section>
+
+      <section class="content">
+        <div class="block" id="stories">
+          <div class="block-head">
+            <div class="title">Latest Stories</div>
+            <div class="mini">Auto-Generated</div>
+          </div>
+          <div class="story-list" id="storyList"></div>
+        </div>
+
+        <div class="block" id="merch">
+          <div class="block-head">
+            <div class="title">Merch Drop</div>
+            <div class="mini">Prints + Chaos</div>
+          </div>
+          <div class="merch-list" id="merchList"></div>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="block" id="feed">
+          <div class="block-head">
+            <div class="title">The Feed</div>
+            <div class="mini">Topic → Article → Merch</div>
+          </div>
+          <div class="topic-list" id="topicList"></div>
+        </div>
+
+        <div class="block" id="status">
+          <div class="block-head">
+            <div class="title">Status</div>
+            <div class="mini">System</div>
+          </div>
+          <div class="status-box" id="systemStatus"></div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      async function loadHome() {
+        const home = await fetch('/api/home').then(r => r.json());
+        const dash = await fetch('/api/dashboard').then(r => r.json());
+
+        document.getElementById('statsGrid').innerHTML = `
+          <div class="stat">
+            <strong>${dash.total_leads}</strong>
+            <span>Leads</span>
+          </div>
+          <div class="stat">
+            <strong>${dash.total_articles}</strong>
+            <span>Stories</span>
+          </div>
+          <div class="stat">
+            <strong>${dash.total_sales}</strong>
+            <span>Sales</span>
+          </div>
+        `;
+
+        document.getElementById('signalBig').textContent = dash.gate.status.toUpperCase();
+        document.getElementById('signalStack').innerHTML = (dash.gate.met
+          ? ['Traction Crossed', 'Merch Stack Alive', 'Headlines are Moving']
+          : ['Feed is Building', 'Signal is Forming', 'Next Cycle Queued']
+        ).map(item => `<div class="item">${item}</div>`).join('');
+
+        document.getElementById('storyList').innerHTML = (home.articles || []).slice(0, 4).map(article => `
+          <div class="story-card">
+            <strong>${article.title}</strong>
+            <span>${article.topic}</span>
+          </div>
+        `).join('');
+
+        document.getElementById('merchList').innerHTML = (home.merch || []).slice(0, 4).map(item => `
+          <div class="merch-card">
+            <strong>${item.name}</strong>
+            <div class="price">$${item.price}</div>
+          </div>
+        `).join('');
+
+        document.getElementById('topicList').innerHTML = (home.topics || []).slice(0, 4).map(topic => `
+          <div class="topic-card">
+            <strong>${topic.topic}</strong>
+            <span>Signal ${topic.score}</span>
+          </div>
+        `).join('');
+      }
+
+      async function runFlow() {
+        const btn = document.getElementById('runFlow');
+        btn.disabled = true;
+        btn.textContent = 'Generating…';
+
+        const flow = await fetch('/api/flow').then(r => r.json());
+
+        document.getElementById('systemStatus').innerHTML = `
+          <strong>Topic:</strong> ${flow.topic}<br>
+          <strong>Headline:</strong> ${flow.article.title}<br>
+          <strong>Video Hook:</strong> ${flow.video.hook}<br>
+          <strong>Merch:</strong> ${flow.merch.name} — $${flow.merch.price}<br>
+          <strong>Status:</strong> ${flow.status.label}
+        `;
+
+        await loadHome();
+        btn.disabled = false;
+        btn.textContent = 'Generate the next wave';
+      }
+
+      document.getElementById('runFlow').addEventListener('click', runFlow);
+      loadHome();
+    </script>
+  </body>
+</html>
