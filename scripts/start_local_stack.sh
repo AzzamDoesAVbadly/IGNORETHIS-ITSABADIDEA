@@ -14,7 +14,11 @@ else
     echo "[local-stack] ollama is already running."
   else
     echo "[local-stack] starting ollama serve..."
-    nohup ollama serve > "$LOG_DIR/ollama.log" 2>&1 &
+    # CPU-only box with 64 GB RAM: Ollama would otherwise default to a 4k context
+    # (too small for article JSON) and unload models after 5 idle minutes.
+    OLLAMA_CONTEXT_LENGTH="${OLLAMA_CONTEXT_LENGTH:-16384}" \
+    OLLAMA_KEEP_ALIVE="${OLLAMA_KEEP_ALIVE:-30m}" \
+      nohup ollama serve > "$LOG_DIR/ollama.log" 2>&1 &
     echo $! > "$LOG_DIR/ollama.pid"
     echo "[local-stack] ollama log: $LOG_DIR/ollama.log"
   fi
