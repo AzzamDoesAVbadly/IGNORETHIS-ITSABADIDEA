@@ -47,11 +47,18 @@ if command -v colima >/dev/null 2>&1; then
     docker context use colima >/dev/null 2>&1 || true
     if ! docker ps --format '{{.Names}}' | grep -qx 'open-webui'; then
       echo "[local-stack] starting open-webui through colima/docker..."
-      docker run -d \
+      # Ollama cloud key etc. live in ~/.config/open-webui/env (kept out of git).
+      env_args=()
+      [ -f "$HOME/.config/open-webui/env" ] && env_args=(--env-file "$HOME/.config/open-webui/env")
+      docker start open-webui >/dev/null 2>&1 || docker run -d \
         --name open-webui \
+        --restart unless-stopped \
         --add-host=host.docker.internal:host-gateway \
-        -p 3000:8080 \
+        -p 127.0.0.1:3000:8080 \
         -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \
+        -e WEBUI_AUTH=False \
+        ${env_args[@]+"${env_args[@]}"} \
+        -v open-webui:/app/backend/data \
         ghcr.io/open-webui/open-webui:main >/dev/null 2>&1 || true
     else
       echo "[local-stack] open-webui container already running."
