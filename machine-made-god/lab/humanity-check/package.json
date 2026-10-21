@@ -1,6 +1,6 @@
 {
   "name": "humanity-check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Grades text from CERTIFIED HUMAN to 100% SLOP by finding the tells of machine-written prose. CLI, GitHub Action and zero-dependency library.",
   "type": "module",
   "main": "./src/index.js",
