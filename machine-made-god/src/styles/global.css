@@ -727,6 +727,23 @@ a.lab-tile:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 #000;
   font-size: 1.4rem;
 }
 
+/* shared Lab product UI: specimen chips and install boxes */
+.lab-chip {
+  font: 600 0.78rem/1 var(--font-body); padding: 7px 10px; cursor: pointer;
+  background: var(--paper-hi); color: var(--ink); border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink);
+}
+.lab-chip:hover { background: var(--acid); }
+.lab-chip:active { transform: translate(2px, 2px); box-shadow: none; }
+.lab-install { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lab-box { background: var(--paper-hi); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.lab-box .label { align-self: flex-start; }
+.lab-box h3 { margin: 4px 0 0; font: 900 1.6rem/0.95 var(--font-display); font-stretch: 78%; text-transform: uppercase; }
+.lab-box pre { margin: 0; background: var(--ink); color: var(--acid); padding: 12px 14px; overflow-x: auto; font: 0.8rem/1.5 var(--font-mono); border: 2px solid var(--ink); }
+.lab-box p { margin: 0; color: var(--ink-2); font-size: 0.93rem; line-height: 1.45; }
+.lab-box p code { font: 0.82em var(--font-mono); background: var(--paper-lo); padding: 1px 4px; }
+.lab-box .btn { margin-top: auto; align-self: flex-start; }
+@media (max-width: 900px) { .lab-install { grid-template-columns: minmax(0, 1fr); } }
+
 /* ---------- quiz tiles ---------- */
 
 .quiz-tile {

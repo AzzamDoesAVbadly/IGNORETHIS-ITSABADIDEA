@@ -7,16 +7,25 @@
     "kind": "Web app · CLI · GitHub Action",
     "blurb": "Paste any text and find out if a person wrote it or if it was extruded. Grades from CERTIFIED HUMAN to 100% SLOP, with every tell circled in red.",
     "repo": "https://github.com/AzzamDoesAVbadly/humanity-check",
-    "art": { "motif": "badge", "palette": "teal", "label": "HUMAN?" }
+    "art": {
+      "motif": "badge",
+      "palette": "teal",
+      "label": "HUMAN?"
+    }
   },
   {
     "slug": "synergy-engine",
-    "status": "development",
+    "status": "live",
     "code": "PRODUCT 002",
     "title": "SYNERGY ENGINE",
-    "kind": "npm package · Web app",
+    "kind": "Web app · CLI · npm package",
     "blurb": "Lorem ipsum for the end times. Placeholder text made of layoff memos, mission statements and cookie banners, plus a generator for an entire fake megacorp.",
-    "art": { "motif": "logo", "palette": "hazard", "label": "SYNERGY" }
+    "art": {
+      "motif": "logo",
+      "palette": "hazard",
+      "label": "SYNERGY"
+    },
+    "repo": "https://github.com/AzzamDoesAVbadly/synergy-ipsum"
   },
   {
     "slug": "attention-invoice",
@@ -25,6 +34,10 @@
     "title": "ATTENTION INVOICE",
     "kind": "Browser extension",
     "blurb": "Tracks the hours you give the feed and bills you for them weekly. Itemized receipt included. Paid in full to the algorithm.",
-    "art": { "motif": "phone", "palette": "sodium", "label": "INVOICE" }
+    "art": {
+      "motif": "phone",
+      "palette": "sodium",
+      "label": "INVOICE"
+    }
   }
 ]

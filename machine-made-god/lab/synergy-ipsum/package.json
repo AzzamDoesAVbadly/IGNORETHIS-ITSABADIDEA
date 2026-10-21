@@ -1,0 +1,45 @@
+{
+  "name": "synergy-ipsum",
+  "version": "1.0.0",
+  "description": "Lorem ipsum for the end times: placeholder text made of layoff memos, mission statements, cookie banners and press releases, plus a fake megacorp generator with logos. Seeded, zero dependencies.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "synergy-ipsum": "bin/synergy-ipsum.js"
+  },
+  "files": [
+    "src",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "lorem-ipsum",
+    "ipsum",
+    "placeholder",
+    "dummy-text",
+    "generator",
+    "fake-data",
+    "corporate",
+    "satire",
+    "cli",
+    "logo"
+  ],
+  "homepage": "https://machinemadegod.netlify.app/lab/synergy-engine/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AzzamDoesAVbadly/synergy-ipsum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AzzamDoesAVbadly/synergy-ipsum/issues"
+  },
+  "license": "MIT",
+  "author": "MMG LABS (a division of Machine Made God)"
+}
