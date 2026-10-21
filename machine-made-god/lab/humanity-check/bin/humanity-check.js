@@ -17,7 +17,7 @@ Options
   -v, --version    Show the version
 
 Scores run from 0 (certified human) to 100 (fully extruded slop).
-https://machinemadegod.netlify.app/lab/humanity-check/`;
+https://machinemadegod.pages.dev/lab/humanity-check/`;
 
 function parseArgs(argv) {
   const opts = { files: [], maxScore: null, json: false, quiet: false };

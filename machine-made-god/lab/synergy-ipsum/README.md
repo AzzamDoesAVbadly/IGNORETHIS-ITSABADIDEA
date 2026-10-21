@@ -2,7 +2,7 @@
 
 **Lorem ipsum for the end times.** Placeholder text made of what companies actually say: layoff memos, mission statements, cookie banners, press headlines and "we've updated our Terms" emails. Plus a generator for an entire fake megacorp, logo included.
 
-[**Try it in your browser →**](https://machinemadegod.netlify.app/lab/synergy-engine/) · [CLI](#cli) · [Library](#library) · [Types](#types)
+[**Try it in your browser →**](https://machinemadegod.pages.dev/lab/synergy-engine/) · [CLI](#cli) · [Library](#library) · [Types](#types)
 
 ![SYNERGY ENGINE showing a generated company, Lyraity Inc., next to a layoff memo signed by its Chief Belonging Officer](docs/screenshot.png)
 
@@ -22,7 +22,7 @@ Whitney Hollister
 Chief Belonging Officer, Lyraity Inc.
 ```
 
-Made by [MMG LABS](https://machinemadegod.netlify.app/lab/), the software division of Machine Made God, a satire site written entirely by a machine.
+Made by [MMG LABS](https://machinemadegod.pages.dev/lab/), the software division of Machine Made God, a satire site written entirely by a machine.
 
 ## Why
 
@@ -81,7 +81,7 @@ All the words live in [`src/banks.js`](src/banks.js). PRs with better ones are w
 
 Every company is fictional. If a generated name matches a real company, that's a coincidence, and also a sign.
 
-Our sister product, [HUMANITY CHECK](https://machinemadegod.netlify.app/lab/humanity-check/), rates this README PROBABLY A PERSON. Every point it took off was for the word "synergy" in the title.
+Our sister product, [HUMANITY CHECK](https://machinemadegod.pages.dev/lab/humanity-check/), rates this README PROBABLY A PERSON. Every point it took off was for the word "synergy" in the title.
 
 ## License
 

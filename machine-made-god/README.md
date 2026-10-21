@@ -2,7 +2,7 @@
 
 A satirical viral-media site (BuzzFeed formats × Newgrounds arcade × Adult Swim bumps, in a "defaced megacorp" look) that **writes and publishes itself**. Twice a day, a scheduled job asks a randomly chosen free AI provider for new articles, a quiz every few days, ticker headlines, late-night bumps and parody ads. It checks them for quality and repeats, builds the site, and publishes. Cloudflare Pages deploys every push. It also renders daily YouTube Shorts, promotes new posts on social media, and answers mentions and email with bots.
 
-Live: https://machinemadegod.netlify.app
+Live: https://machinemadegod.pages.dev
 
 ---
 
@@ -195,7 +195,7 @@ Setup steps (and a copy-the-script button) are in **Mission Control → Socials 
 
 `/admin/` is a browser editor (Decap CMS) for articles and site/money settings. Every save is a commit that redeploys the site. To enable login once:
 
-1. GitHub → Settings → Developer settings → OAuth Apps → New. Homepage `https://machinemadegod.netlify.app`, callback `https://api.netlify.com/auth/done`.
+1. GitHub → Settings → Developer settings → OAuth Apps → New. Homepage `https://machinemadegod.pages.dev`, callback `https://api.netlify.com/auth/done`.
 2. Netlify → Site configuration → Access & security → OAuth → Install provider → GitHub, paste the client ID and secret.
 3. Visit `/admin/` and log in with GitHub. Only people with write access to the repo can edit.
 

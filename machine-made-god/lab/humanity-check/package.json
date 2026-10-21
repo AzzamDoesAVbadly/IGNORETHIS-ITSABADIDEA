@@ -33,7 +33,7 @@
     "github-action",
     "cli"
   ],
-  "homepage": "https://machinemadegod.netlify.app/lab/humanity-check/",
+  "homepage": "https://machinemadegod.pages.dev/lab/humanity-check/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AzzamDoesAVbadly/humanity-check.git"

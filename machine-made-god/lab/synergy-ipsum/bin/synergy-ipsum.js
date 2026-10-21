@@ -26,7 +26,7 @@ Examples
   npx synergy-ipsum memo --seed q3-reorg
   npx synergy-ipsum logo --seed q3-reorg > logo.svg
 
-https://machinemadegod.netlify.app/lab/synergy-engine/`;
+https://machinemadegod.pages.dev/lab/synergy-engine/`;
 
 function parse(argv) {
   const opts = { type: "paragraphs" };

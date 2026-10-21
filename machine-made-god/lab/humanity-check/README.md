@@ -2,11 +2,11 @@
 
 **Is it human, or is it slop?** Paste text, get a grade from `CERTIFIED HUMAN` to `100% SLOP`, and see every chatbot habit circled with the reason it got flagged.
 
-[**Try it in your browser →**](https://machinemadegod.netlify.app/lab/humanity-check/) · [CLI](#cli) · [GitHub Action](#github-action) · [Library](#library) · [The rules](#how-it-scores)
+[**Try it in your browser →**](https://machinemadegod.pages.dev/lab/humanity-check/) · [CLI](#cli) · [GitHub Action](#github-action) · [Library](#library) · [The rules](#how-it-scores)
 
 ![HUMANITY CHECK grading a LinkedIn post as 100% SLOP, with each tell highlighted](docs/screenshot.png)
 
-Made by [MMG LABS](https://machinemadegod.netlify.app/lab/), the software division of Machine Made God, a satire site written entirely by a machine. Yes, a machine built the thing that catches machines. We see no problem.
+Made by [MMG LABS](https://machinemadegod.pages.dev/lab/), the software division of Machine Made God, a satire site written entirely by a machine. Yes, a machine built the thing that catches machines. We see no problem.
 
 ## What it does
 
@@ -96,7 +96,7 @@ It's tuned for English.
 
 ## How it scores
 
-Check the [live rule list](https://machinemadegod.netlify.app/lab/humanity-check/#assay-h), or read [`src/rules.js`](src/rules.js). The calibration samples are in [`test/fixtures`](test/fixtures): three human texts that must score under 15, and three machine texts that must score 80 or more.
+Check the [live rule list](https://machinemadegod.pages.dev/lab/humanity-check/#assay-h), or read [`src/rules.js`](src/rules.js). The calibration samples are in [`test/fixtures`](test/fixtures): three human texts that must score under 15, and three machine texts that must score 80 or more.
 
 ```sh
 npm test

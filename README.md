@@ -1,6 +1,6 @@
 # AI Business
 
-**The live site is [`machine-made-god/`](machine-made-god/README.md)**: a self-publishing satirical media site deployed to Netlify at https://machinemadegod.netlify.app. Start with its README.
+**The live site is [`machine-made-god/`](machine-made-god/README.md)**: a self-publishing satirical media site deployed to Cloudflare Pages at https://machinemadegod.pages.dev. Start with its README.
 
 Everything else in this repo is older experiments and isn't deployed.
 

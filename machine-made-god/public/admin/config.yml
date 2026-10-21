@@ -7,8 +7,8 @@ backend:
   base_url: https://api.netlify.com
   auth_endpoint: auth
 
-site_url: https://machinemadegod.netlify.app
-display_url: https://machinemadegod.netlify.app
+site_url: https://machinemadegod.pages.dev
+display_url: https://machinemadegod.pages.dev
 media_folder: machine-made-god/public/uploads
 public_folder: /uploads
 
