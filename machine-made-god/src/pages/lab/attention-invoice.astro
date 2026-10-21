@@ -1,0 +1,200 @@
+---
+import Base from "../../layouts/Base.astro";
+import FakeAd from "../../components/FakeAd.astro";
+import { SITES } from "../../../lab/attention-invoice/extension/receipt.js";
+import manifest from "../../../lab/attention-invoice/extension/manifest.json";
+import lab from "../../data/lab.json";
+
+const product = lab.find((p) => p.slug === "attention-invoice")!;
+// Hours per day the estimator starts with: a plausible person, not a statistic.
+const preset: Record<string, number> = { youtube: 1, tiktok: 0.75, instagram: 0.5, reddit: 0.5, x: 0.25, linkedin: 0.25, netflix: 0.75, twitch: 0 };
+const estimator = SITES.filter((s) => s.id in preset);
+---
+<Base title="ATTENTION INVOICE: The Bill for Your Screen Time" description="A free Chrome extension that tracks the hours you give YouTube, TikTok, Instagram, X and Reddit, then bills you weekly with an itemized receipt. Everything stays on your device.">
+  <section class="lab-band" style="margin-top:0;border-top:0">
+    <div class="wrap">
+      <a class="mono" href="/lab/" style="color:var(--teal-hi);text-decoration:none">← MMG Labs</a>
+      <header class="ai-hero">
+        <span class="label" style="--c:var(--magenta)">{product.code} · Free · Open source</span>
+        <h1 class="display">Attention<br />Invoice</h1>
+        <p>A browser extension that keeps a running tab on the hours you hand the feed, then bills you every week. Itemized. Amount due: $0.00, because you already paid with your time. Everything stays on your device.</p>
+      </header>
+
+      <div class="ai-grid">
+        <section class="ai-est" aria-labelledby="ai-est-h">
+          <h2 id="ai-est-h" class="display">Estimate your damage</h2>
+          <p class="mono">Hours per day, honestly. Pre-filled with a plausible person.</p>
+          <div class="ai-rows">
+            {estimator.map((s) => (
+              <label class="ai-row">
+                <span><b>{s.name}</b><small>{s.fee}</small></span>
+                <input type="range" min="0" max="6" step="0.25" value={preset[s.id]} data-site={s.id} aria-label={`${s.name}, hours per day`} />
+                <output data-out={s.id}>{preset[s.id]}h</output>
+              </label>
+            ))}
+          </div>
+          <a class="btn ai-get" href="/lab/attention-invoice.zip" download>Get the real one (free)</a>
+          <p class="mono ai-get-note">Chrome, Edge, Brave and Arc. Install steps below.</p>
+        </section>
+        <div class="ai-receipt">
+          <canvas data-receipt aria-label="Your estimated attention invoice"></canvas>
+          <div class="ai-actions">
+            <button type="button" class="btn" data-download>Download receipt</button>
+            <button type="button" class="btn btn--ghost" data-copy>Copy total</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section" aria-labelledby="ai-install-h">
+      <div class="section-head">
+        <h2 id="ai-install-h">Bill yourself for real<span class="scrawl">four clicks to accountability</span></h2>
+        <a class="more" href={product.repo}>Source on GitHub →</a>
+      </div>
+      <div class="grid lab-install">
+        <div class="lab-box">
+          <span class="label" style="--c:var(--hazard)">Step 1</span>
+          <h3>Download & unzip</h3>
+          <p>Get <a href="/lab/attention-invoice.zip" download>attention-invoice.zip</a> and double-click it. You'll get a folder called <code>attention-invoice</code>. Keep it somewhere it won't get cleaned up.</p>
+          <a class="btn" href="/lab/attention-invoice.zip" download>Download .zip</a>
+        </div>
+        <div class="lab-box">
+          <span class="label" style="--c:var(--acid)">Step 2</span>
+          <h3>Open extensions</h3>
+          <p>Type <code>chrome://extensions</code> in the address bar (Edge: <code>edge://extensions</code>, Brave: <code>brave://extensions</code>). Switch on <b>Developer mode</b>, top right.</p>
+          <button type="button" class="btn btn--ghost" data-copy-text="chrome://extensions">Copy address</button>
+        </div>
+        <div class="lab-box">
+          <span class="label" style="--c:var(--magenta)">Step 3</span>
+          <h3>Load unpacked</h3>
+          <p>Click <b>Load unpacked</b>, pick the <code>attention-invoice</code> folder, then pin the receipt icon to your toolbar. Billing starts the next time you open a feed.</p>
+        </div>
+      </div>
+      <p class="ai-store mono">A Chrome Web Store version is in the works. Until then, “Developer mode” is just Chrome's name for installing something that isn't from the Store.</p>
+    </section>
+
+    <section class="section ai-privacy" aria-labelledby="ai-priv-h">
+      <div class="section-head"><h2 id="ai-priv-h">What it can see<span class="scrawl">less than the feed does</span></h2></div>
+      <div class="ai-priv-grid">
+        <dl>
+          <dt><code>storage</code></dt><dd>Saves your daily totals on this computer. Nothing is synced or uploaded.</dd>
+          <dt><code>idle</code></dt><dd>Stops the meter after 2 minutes without mouse or keyboard, so a video left playing in another room doesn't count forever.</dd>
+          <dt><code>alarms</code></dt><dd>A once-a-minute heartbeat so long sessions are counted even if nothing else happens.</dd>
+          <dt>Site access ({manifest.host_permissions.length} sites)</dt><dd>Only the sites it bills: {SITES.map((s) => s.name).join(", ")}. It can't see the address of any other tab. We checked: on every other site, the extension gets a blank.</dd>
+        </dl>
+        <div class="lab-box">
+          <span class="label" style="--c:var(--acid)">No internet access</span>
+          <h3>Nothing leaves</h3>
+          <p>The extension never makes a network request: no analytics, no account, no server. Your invoice exists in exactly one place. If you add your own site to bill, Chrome asks your permission for that one site.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hc-faq-lite" aria-labelledby="ai-faq-h">
+      <div class="section-head"><h2 id="ai-faq-h">Frequently asked</h2></div>
+      <dl class="ai-faq">
+        <dt>Why is the amount due $0.00?</dt>
+        <dd>Because you've already paid. The platforms sold your attention to advertisers in real time. The invoice is just the receipt.</dd>
+        <dt>What counts as time?</dt>
+        <dd>Seconds where a billed site is the active tab in a focused window and you've touched the mouse or keyboard in the last 2 minutes. Background tabs are free. For now.</dd>
+        <dt>Firefox? Safari? My phone?</dt>
+        <dd>Chromium browsers only for now. Your phone already has Screen Time; it just doesn't print you a receipt.</dd>
+        <dt>Can I get a refund?</dt>
+        <dd>No refunds. No returns. Close the tab.</dd>
+      </dl>
+    </section>
+    <section class="section"><FakeAd seed="attention-invoice" wide /></section>
+  </div>
+</Base>
+
+<style>
+  .ai-hero { margin: 14px 0 26px; }
+  .ai-hero h1 { color: var(--magenta); font-size: clamp(3.4rem, 11vw, 7.5rem); margin: 12px 0 10px; line-height: 0.82; }
+  .ai-hero p { max-width: 700px; margin: 0; color: #c6d0c4; font-size: 1.12rem; line-height: 1.5; }
+  .ai-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 26px; align-items: start; }
+  .ai-est { background: #101b19; border: 3px solid var(--magenta); box-shadow: 6px 6px 0 #000; padding: 20px; }
+  .ai-est h2 { margin: 0; color: var(--acid); font-size: clamp(1.8rem, 3.4vw, 2.4rem); }
+  .ai-est > .mono { color: #8fa39b; margin: 6px 0 16px; }
+  .ai-rows { display: grid; gap: 10px; }
+  .ai-row { display: grid; grid-template-columns: 150px 1fr 52px; gap: 12px; align-items: center; background: #172623; border: 2px solid #24403b; padding: 8px 12px; }
+  .ai-row b { display: block; color: var(--paper); }
+  .ai-row small { color: #8fa39b; font-size: 0.74rem; }
+  .ai-row input { width: 100%; accent-color: var(--magenta); }
+  .ai-row output { font: 900 1.25rem/1 var(--font-display); font-stretch: 80%; color: var(--hazard); text-align: right; }
+  .ai-get { margin-top: 18px; background: var(--acid); }
+  .ai-get-note { color: #7f8c86; margin: 8px 0 0; }
+  .ai-receipt { position: sticky; top: 16px; }
+  .ai-receipt canvas { display: block; width: 100%; height: auto; filter: drop-shadow(6px 6px 0 #000); }
+  .ai-actions { display: flex; gap: 10px; margin-top: 16px; }
+  .ai-actions .btn { flex: 1; }
+  .ai-store { color: var(--ink-3); margin: 16px 0 0; text-transform: none; letter-spacing: 0; font-size: 0.8rem; }
+  .ai-priv-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+  .ai-privacy dl { margin: 0; display: grid; grid-template-columns: 200px 1fr; gap: 10px 18px; }
+  .ai-privacy dt { font-weight: 800; }
+  .ai-privacy dd { margin: 0; color: var(--ink-2); line-height: 1.45; }
+  .ai-privacy code, .lab-box code { font: 0.85em var(--font-mono); background: var(--paper-lo); padding: 1px 4px; }
+  .ai-faq { margin: 0; max-width: 820px; }
+  .ai-faq dt { font: 900 1.35rem/1.05 var(--font-display); font-stretch: 80%; text-transform: uppercase; margin-top: 18px; }
+  .ai-faq dd { margin: 6px 0 0; color: var(--ink-2); font-size: 1.02rem; line-height: 1.55; }
+  @media (max-width: 900px) {
+    .ai-grid, .ai-priv-grid { grid-template-columns: minmax(0, 1fr); }
+    .ai-receipt { position: static; }
+    .ai-privacy dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+    .ai-privacy dd { margin-bottom: 10px; }
+  }
+  @media (max-width: 620px) {
+    .ai-row { grid-template-columns: 1fr 52px; }
+    .ai-row input { grid-column: 1 / -1; grid-row: 2; }
+  }
+</style>
+
+<script>
+  import { addTime, invoice, weekOf, drawReceipt, formatDuration } from "../../../lab/attention-invoice/extension/receipt.js";
+
+  const canvas = document.querySelector<HTMLCanvasElement>("[data-receipt]")!;
+  const sliders = [...document.querySelectorAll<HTMLInputElement>("[data-site]")];
+  const fonts = { mono: "'IBM Plex Mono', monospace", display: "Archivo, 'Arial Narrow', sans-serif" };
+  let current: ReturnType<typeof invoice>;
+
+  function render() {
+    const week = weekOf();
+    const totals = {};
+    for (const s of sliders) {
+      const hours = Number(s.value);
+      document.querySelector(`[data-out="${s.dataset.site}"]`)!.textContent = `${hours}h`;
+      for (const day of week.days) addTime(totals, day, s.dataset.site!, hours * 3600);
+    }
+    current = invoice(totals, week);
+    drawReceipt(canvas, current, fonts);
+  }
+
+  sliders.forEach((s) => s.addEventListener("input", render));
+  document.fonts.load("700 20px 'IBM Plex Mono'").then(() => document.fonts.load("900 40px Archivo")).finally(render);
+  render();
+
+  const flash = (btn: HTMLElement, msg: string) => {
+    const old = btn.textContent;
+    btn.textContent = msg;
+    setTimeout(() => (btn.textContent = old), 2000);
+  };
+  const copy = async (btn: HTMLElement, text: string) => {
+    try { await navigator.clipboard.writeText(text); flash(btn, "Copied ✓"); }
+    catch { flash(btn, "Copy failed"); }
+  };
+  document.querySelector<HTMLElement>("[data-copy]")!.addEventListener("click", (e) =>
+    copy(e.currentTarget as HTMLElement, `I owe the algorithm ${formatDuration(current.seconds)} a week. That's ${current.conversions[3]}. Get your own invoice: ${location.origin}/lab/attention-invoice/`),
+  );
+  document.querySelectorAll<HTMLElement>("[data-copy-text]").forEach((b) => b.addEventListener("click", () => copy(b, b.dataset.copyText || "")));
+  document.querySelector("[data-download]")!.addEventListener("click", () => {
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `attention-invoice-${current.start}.png`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    }, "image/png");
+  });
+</script>

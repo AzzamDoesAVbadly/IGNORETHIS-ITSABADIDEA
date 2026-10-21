@@ -29,15 +29,16 @@
   },
   {
     "slug": "attention-invoice",
-    "status": "development",
+    "status": "live",
     "code": "PRODUCT 003",
     "title": "ATTENTION INVOICE",
-    "kind": "Browser extension",
+    "kind": "Browser extension · Web app",
     "blurb": "Tracks the hours you give the feed and bills you for them weekly. Itemized receipt included. Paid in full to the algorithm.",
     "art": {
       "motif": "phone",
       "palette": "sodium",
       "label": "INVOICE"
-    }
+    },
+    "repo": "https://github.com/AzzamDoesAVbadly/attention-invoice"
   }
 ]
