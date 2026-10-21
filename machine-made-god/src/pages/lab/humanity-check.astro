@@ -82,7 +82,7 @@ const actionYaml = `- uses: actions/checkout@v4
           <textarea id="hc-text" spellcheck="false" placeholder="Paste a cover letter, a LinkedIn post, a product description, your coworker's “quick update”…"></textarea>
           <div class="hc-samples">
             <span class="mono">Load a specimen:</span>
-            {samples.map((s) => <button type="button" class="hc-chip" data-sample={s.id}>{s.label}</button>)}
+            {samples.map((s) => <button type="button" class="lab-chip" data-sample={s.id}>{s.label}</button>)}
           </div>
           <p class="hc-privacy mono">Runs entirely in your browser. Your text never leaves this page. We checked. We're a machine; we'd know.</p>
         </div>
@@ -129,22 +129,22 @@ const actionYaml = `- uses: actions/checkout@v4
         <h2 id="install-h">Take it home<span class="scrawl">it's free. that's the scam.</span></h2>
         <a class="more" href={product.repo}>Source on GitHub →</a>
       </div>
-      <div class="grid hc-install">
-        <div class="hc-box">
+      <div class="grid lab-install">
+        <div class="lab-box">
           <span class="label" style="--c:var(--hazard)">Terminal</span>
           <h3>Check any file</h3>
           <pre><code>npx humanity-check README.md</code></pre>
           <p>Grades each file, then lists every tell with its line, column and reason. Add <code>--max-score 50</code> to fail when a file reads as too synthetic, or <code>--json</code> for scripts.</p>
           <button type="button" class="btn btn--ghost" data-copy-text="npx humanity-check README.md">Copy command</button>
         </div>
-        <div class="hc-box">
+        <div class="lab-box">
           <span class="label" style="--c:var(--acid)">GitHub Action</span>
           <h3>Block slop at the door</h3>
           <pre><code>{actionYaml}</code></pre>
           <p>Every tell shows up as an inline comment on the pull request. Your README stays human, or the build goes red.</p>
           <button type="button" class="btn btn--ghost" data-copy-text={actionYaml}>Copy workflow</button>
         </div>
-        <div class="hc-box">
+        <div class="lab-box">
           <span class="label" style="--c:var(--teal-hi)">Library</span>
           <h3>Put it in your app</h3>
           <pre><code>{`import { analyze } from "humanity-check";
@@ -225,12 +225,6 @@ const { score, grade, findings } =
   .hc-input textarea:focus-visible { outline: 3px solid var(--sodium); outline-offset: -3px; }
   .hc-samples { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px 14px; border-top: 2px solid var(--ink); background: var(--paper); }
   .hc-samples .mono { color: var(--ink-3); margin-right: 2px; }
-  .hc-chip {
-    font: 600 0.78rem/1 var(--font-body); padding: 7px 10px; cursor: pointer;
-    background: var(--paper-hi); color: var(--ink); border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink);
-  }
-  .hc-chip:hover { background: var(--acid); }
-  .hc-chip:active { transform: translate(2px, 2px); box-shadow: none; }
   .hc-privacy { margin: 0; padding: 9px 14px; background: var(--ink); color: #8fa39b; font-size: 0.64rem; }
 
   .hc-result { --g: #6f7c76; background: #101b19; padding: 20px; display: flex; flex-direction: column; gap: 16px; position: sticky; top: 16px; }
@@ -293,14 +287,6 @@ const { score, grade, findings } =
   .hc-tells :global(.pts.neg) { color: var(--acid); }
   .hc-tells :global(p) { grid-column: 2 / -1; margin: 0; color: #a9b6af; font-size: 0.86rem; line-height: 1.4; }
 
-  .hc-install { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .hc-box { background: var(--paper-hi); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-  .hc-box .label { align-self: flex-start; }
-  .hc-box h3 { margin: 4px 0 0; font: 900 1.6rem/0.95 var(--font-display); font-stretch: 78%; text-transform: uppercase; }
-  .hc-box pre { margin: 0; background: var(--ink); color: var(--acid); padding: 12px 14px; overflow-x: auto; font: 0.8rem/1.5 var(--font-mono); border: 2px solid var(--ink); }
-  .hc-box p { margin: 0; color: var(--ink-2); font-size: 0.93rem; line-height: 1.45; }
-  .hc-box p code { font: 0.82em var(--font-mono); background: var(--paper-lo); padding: 1px 4px; }
-  .hc-box .btn { margin-top: auto; align-self: flex-start; }
 
   .hc-lede { max-width: 760px; font-size: 1.08rem; color: var(--ink-2); margin: 0 0 18px; }
   .hc-rules { display: grid; gap: 12px; }
@@ -320,7 +306,6 @@ const { score, grade, findings } =
   @media (max-width: 900px) {
     .hc-tool, .hc-report-grid { grid-template-columns: minmax(0, 1fr); }
     .hc-result { position: static; }
-    .hc-install { grid-template-columns: minmax(0, 1fr); }
     .hc-rules ul { grid-template-columns: minmax(0, 1fr); }
   }
   @media (max-width: 620px) {
