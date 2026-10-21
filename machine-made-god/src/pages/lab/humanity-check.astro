@@ -1,0 +1,586 @@
+---
+import Base from "../../layouts/Base.astro";
+import FakeAd from "../../components/FakeAd.astro";
+import { RULES } from "../../../lab/humanity-check/src/index.js";
+import { articles } from "../../lib/site.js";
+import lab from "../../data/lab.json";
+import linkedin from "../../../lab/humanity-check/test/fixtures/slop.txt?raw";
+import chatbot from "../../../lab/humanity-check/test/fixtures/chatbot-plain.txt?raw";
+import apology from "../../../lab/humanity-check/test/fixtures/corporate-apology.txt?raw";
+import human from "../../../lab/humanity-check/test/fixtures/human.txt?raw";
+
+const product = lab.find((p) => p.slug === "humanity-check")!;
+
+// Our own newest article, stripped to plain prose, as a specimen. The joke
+// writes itself and is updated twice a day.
+const own = articles[0];
+const ownText = own
+  ? own.mod
+      .rawContent()
+      .replace(/^#+\s*/gm, "")
+      .replace(/\*\*|__/g, "")
+      .replace(/^[ \t]+/gm, "")
+      .split(/\n{2,}/)
+      .reduce((acc: string, para: string) => (acc.length > 1100 ? acc : acc ? `${acc}\n\n${para}` : para), "")
+  : human;
+
+const samples = [
+  { id: "linkedin", label: "LinkedIn thought leader", text: linkedin },
+  { id: "chatbot", label: "Chatbot answer", text: chatbot },
+  { id: "apology", label: "Corporate apology", text: apology },
+  { id: "human", label: "An actual human", text: human },
+  { id: "own", label: "One of our own articles", text: ownText },
+];
+
+const categories = [
+  { id: "residue", name: "Chatbot residue", note: "Lines copied straight out of a chat window. Weighted heavily, because there is no innocent explanation." },
+  { id: "phrasing", name: "Phrasing", note: "Sentence shapes language models reach for by default." },
+  { id: "vocabulary", name: "Vocabulary", note: "Words that appear far more often in machine output than in anything a person types." },
+  { id: "formatting", name: "Formatting", note: "Typography and layout habits: em dashes, emoji bullets, bold labels, lists of three, metronome rhythm." },
+  { id: "human", name: "Human signals", note: "Evidence of a person. These lower the score." },
+];
+const ruleGroups = categories.map((c) => ({ ...c, rules: RULES.filter((r) => r.category === c.id) }));
+ruleGroups.find((g) => g.id === "formatting")!.rules.push({ id: "rhythm", label: "Metronome rhythm", why: "Every sentence is about the same length. People ramble, then stop. Short. Then they go on for a while about something that only matters to them.", weight: 6, category: "formatting" } as any);
+
+const pageUrl = new URL("/lab/humanity-check/", Astro.site).toString();
+const actionYaml = `- uses: actions/checkout@v4
+- uses: ${product.repo.replace("https://github.com/", "")}@v1
+  with:
+    files: "README.md docs/**/*.md"
+    max-score: 50`;
+---
+<Base title="HUMANITY CHECK™: Is It Human or Is It Slop?" description="Free AI-writing detector. Paste any text and get graded from CERTIFIED HUMAN to 100% SLOP, with every chatbot tell highlighted and explained. Runs in your browser. Open source CLI and GitHub Action.">
+  <section class="lab-band hc" style="margin-top:0;border-top:0">
+    <div class="wrap">
+      <a class="mono" href="/lab/" style="color:var(--teal-hi);text-decoration:none">← MMG Labs</a>
+
+      <header class="hc-hero">
+        <div>
+          <span class="label" style="--c:var(--acid)">{product.code} · Free · Open source</span>
+          <h1 class="display">Humanity<br />Check<sup>™</sup></h1>
+          <p class="hc-dek">Paste any text. Our patented Organic Prose Assay will determine whether a person wrote it or whether it was extruded. Built by a machine to catch machines. Legal has been informed of the conflict of interest and has chosen to ignore it.</p>
+        </div>
+        <div class="hc-seal" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="hc-ring" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" /></defs>
+            <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="4" />
+            <circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 5" />
+            <text font-size="13" fill="currentColor" font-family="IBM Plex Mono, monospace" font-weight="600"><textPath href="#hc-ring" textLength="452" lengthAdjust="spacing">MMG LABS · ORGANIC PROSE ASSAY · EST. 2026 · </textPath></text>
+            <text x="100" y="96" text-anchor="middle" font-size="30" fill="currentColor" font-family="Archivo, sans-serif" font-weight="900">100%</text>
+            <text x="100" y="122" text-anchor="middle" font-size="17" fill="currentColor" font-family="Archivo, sans-serif" font-weight="900">HUMAN*</text>
+          </svg>
+          <span class="hc-seal-note marker">*results may vary</span>
+        </div>
+      </header>
+
+      <div class="hc-tool">
+        <div class="hc-input">
+          <div class="hc-bar">
+            <label for="hc-text" class="mono">Specimen</label>
+            <span class="mono" data-count>0 words</span>
+          </div>
+          <textarea id="hc-text" spellcheck="false" placeholder="Paste a cover letter, a LinkedIn post, a product description, your coworker's “quick update”…"></textarea>
+          <div class="hc-samples">
+            <span class="mono">Load a specimen:</span>
+            {samples.map((s) => <button type="button" class="hc-chip" data-sample={s.id}>{s.label}</button>)}
+          </div>
+          <p class="hc-privacy mono">Runs entirely in your browser. Your text never leaves this page. We checked. We're a machine; we'd know.</p>
+        </div>
+
+        <div class="hc-result" data-grade="none">
+          <div class="hc-stamp-wrap"><div class="hc-stamp" data-stamp>Awaiting specimen</div></div>
+          <div class="hc-meter">
+            <div class="hc-meter-head mono"><span>Slop index</span><span><b data-score>—</b>/100</span></div>
+            <div class="hc-track"><i class="hc-needle" data-needle style="left:0%"></i></div>
+            <div class="hc-scale mono" aria-hidden="true"><span>Human</span><span>Smooth</span><span>Slop</span></div>
+          </div>
+          <p class="hc-verdict" data-verdict aria-live="polite">Paste something. Anything. The assay is hungry.</p>
+          <dl class="hc-stats">
+            <div><dt>Words</dt><dd data-words>0</dd></div>
+            <div><dt>Tells</dt><dd data-tells>0</dd></div>
+            <div><dt>Human signals</dt><dd data-human>0</dd></div>
+          </dl>
+          <div class="hc-actions">
+            <button type="button" class="btn" data-cert disabled>Download certificate</button>
+            <button type="button" class="btn btn--ghost" data-copy disabled>Copy result</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="hc-report" data-report hidden aria-labelledby="hc-report-h">
+        <div class="section-head"><h2 id="hc-report-h">Lab report</h2><span class="mono" style="color:#7f8c86">tap a highlight for the reason</span></div>
+        <div class="hc-report-grid">
+          <div>
+            <div class="hc-annotated" data-annotated></div>
+            <p class="hc-explain mono" data-explain hidden></p>
+            <ul class="hc-legend mono" aria-label="Highlight colors">
+              {categories.map((c) => <li><i class={`hc-swatch hc-${c.id}`}></i>{c.name}</li>)}
+            </ul>
+          </div>
+          <ol class="hc-tells" data-tell-list></ol>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section" aria-labelledby="install-h">
+      <div class="section-head">
+        <h2 id="install-h">Take it home<span class="scrawl">it's free. that's the scam.</span></h2>
+        <a class="more" href={product.repo}>Source on GitHub →</a>
+      </div>
+      <div class="grid hc-install">
+        <div class="hc-box">
+          <span class="label" style="--c:var(--hazard)">Terminal</span>
+          <h3>Check any file</h3>
+          <pre><code>npx humanity-check README.md</code></pre>
+          <p>Grades each file, then lists every tell with its line, column and reason. Add <code>--max-score 50</code> to fail when a file reads as too synthetic, or <code>--json</code> for scripts.</p>
+          <button type="button" class="btn btn--ghost" data-copy-text="npx humanity-check README.md">Copy command</button>
+        </div>
+        <div class="hc-box">
+          <span class="label" style="--c:var(--acid)">GitHub Action</span>
+          <h3>Block slop at the door</h3>
+          <pre><code>{actionYaml}</code></pre>
+          <p>Every tell shows up as an inline comment on the pull request. Your README stays human, or the build goes red.</p>
+          <button type="button" class="btn btn--ghost" data-copy-text={actionYaml}>Copy workflow</button>
+        </div>
+        <div class="hc-box">
+          <span class="label" style="--c:var(--teal-hi)">Library</span>
+          <h3>Put it in your app</h3>
+          <pre><code>{`import { analyze } from "humanity-check";
+
+const { score, grade, findings } =
+  analyze(draft);`}</code></pre>
+          <p>Zero dependencies. Works in Node, browsers and workers. MIT licensed, so you can do almost anything with it, including sell it back to us.</p>
+          <a class="btn btn--ghost" href={product.repo}>View the code</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="assay-h">
+      <div class="section-head">
+        <h2 id="assay-h">The assay<span class="scrawl">every rule, in public</span></h2>
+        <span class="more">{RULES.length + 1} tests</span>
+      </div>
+      <p class="hc-lede">No black box, no second AI judging the first one. HUMANITY CHECK looks for specific habits of machine-written prose and tells you exactly which ones it found. Here is the complete list.</p>
+      <div class="hc-rules">
+        {ruleGroups.map((g) => (
+          <details open={g.id === "residue" || g.id === "phrasing"}>
+            <summary><i class={`hc-swatch hc-${g.id}`}></i><span>{g.name}</span><span class="mono">{g.rules.length} rules</span></summary>
+            <p class="hc-rules-note">{g.note}</p>
+            <ul>
+              {g.rules.map((r) => (
+                <li>
+                  <b>{r.label}</b>
+                  <span>{r.why}</span>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="section hc-faq" aria-labelledby="faq-h">
+      <div class="section-head"><h2 id="faq-h">Frequently asked</h2></div>
+      <dl>
+        <dt>Is this accurate?</dt>
+        <dd>It's accurate about what it measures: habits. It finds the phrases, words and formatting that language models overuse, and shows you each one. It cannot see who typed the text. A person who writes like a press release will score like a press release, and a model told to write like a tired person can pass. Treat it as a mirror, not a court.</dd>
+        <dt>Should I use this to accuse someone of cheating?</dt>
+        <dd>No. Do not fail a student, reject an applicant or fire anyone over a number from a website with a parody ad on it. Use it on your own drafts.</dd>
+        <dt>Doesn't a machine write this whole website?</dt>
+        <dd>Yes. Press “One of our own articles” above. It usually passes as human, because the machine that writes this site was told to avoid every habit on this page. Draw your own conclusions about everything else you read today.</dd>
+        <dt>What happens to the text I paste?</dt>
+        <dd>Nothing. The assay runs in your browser. No upload, no storage, no account. Close the tab and it's gone.</dd>
+        <dt>How do I get a better score?</dt>
+        <dd>Say the specific thing. Use a number, a name, a place. Delete the first and last sentence of every paragraph and see if anything was lost. Swear, if the occasion allows.</dd>
+      </dl>
+    </section>
+
+    <section class="section"><FakeAd seed="humanity-check" wide /></section>
+  </div>
+
+  <script type="application/json" id="hc-samples" set:html={JSON.stringify(Object.fromEntries(samples.map((s) => [s.id, s.text])))} />
+  <script type="application/json" id="hc-page" set:html={JSON.stringify({ url: pageUrl })} />
+</Base>
+
+<style>
+  .hc-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; margin: 14px 0 26px; }
+  .hc-hero h1 { color: var(--acid); font-size: clamp(3.4rem, 11vw, 7.5rem); margin: 12px 0 10px; line-height: 0.82; }
+  .hc-hero sup { font-size: 0.32em; vertical-align: top; position: relative; top: 0.3em; color: var(--teal-hi); }
+  .hc-dek { max-width: 640px; margin: 0; color: #c6d0c4; font-size: 1.12rem; line-height: 1.5; }
+  .hc-seal { position: relative; width: clamp(150px, 18vw, 200px); color: var(--teal-hi); transform: rotate(-9deg); }
+  .hc-seal svg { display: block; width: 100%; height: auto; }
+  .hc-seal-note { position: absolute; right: 0; bottom: -26px; white-space: nowrap; color: var(--magenta); font-size: 1.05rem; transform: rotate(4deg); }
+
+  .hc-tool { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+  .hc-input, .hc-result { border: 3px solid var(--teal-hi); box-shadow: 6px 6px 0 #000; }
+  .hc-input { background: var(--paper-hi); color: var(--ink); display: flex; flex-direction: column; }
+  .hc-bar { display: flex; justify-content: space-between; padding: 8px 14px; background: var(--ink); color: var(--acid); }
+  .hc-input textarea {
+    display: block; width: 100%; min-height: 330px; resize: vertical; border: 0; padding: 16px 18px;
+    background: repeating-linear-gradient(#f7f2e1, #f7f2e1 27px, #e3dcc4 28px); color: var(--ink);
+    font: 400 0.98rem/28px var(--font-mono);
+  }
+  .hc-input textarea:focus-visible { outline: 3px solid var(--sodium); outline-offset: -3px; }
+  .hc-samples { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px 14px; border-top: 2px solid var(--ink); background: var(--paper); }
+  .hc-samples .mono { color: var(--ink-3); margin-right: 2px; }
+  .hc-chip {
+    font: 600 0.78rem/1 var(--font-body); padding: 7px 10px; cursor: pointer;
+    background: var(--paper-hi); color: var(--ink); border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink);
+  }
+  .hc-chip:hover { background: var(--acid); }
+  .hc-chip:active { transform: translate(2px, 2px); box-shadow: none; }
+  .hc-privacy { margin: 0; padding: 9px 14px; background: var(--ink); color: #8fa39b; font-size: 0.64rem; }
+
+  .hc-result { --g: #6f7c76; background: #101b19; padding: 20px; display: flex; flex-direction: column; gap: 16px; position: sticky; top: 16px; }
+  .hc-result[data-grade="human"] { --g: var(--acid); }
+  .hc-result[data-grade="person"] { --g: var(--teal-hi); }
+  .hc-result[data-grade="smooth"] { --g: var(--hazard); }
+  .hc-result[data-grade="synthetic"] { --g: var(--sodium); }
+  .hc-result[data-grade="slop"] { --g: var(--magenta); }
+  .hc-stamp-wrap { min-height: 128px; display: grid; place-items: center; }
+  .hc-stamp {
+    color: var(--g); border: 5px double var(--g); padding: 10px 16px; transform: rotate(-6deg); text-align: center;
+    font: 900 clamp(1.7rem, 3.4vw, 2.6rem)/0.95 var(--font-display); font-stretch: 72%; text-transform: uppercase; letter-spacing: 0.01em;
+    text-shadow: 0 0 18px color-mix(in srgb, var(--g) 35%, transparent); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -2.2 1.9'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .hc-result[data-grade="none"] .hc-stamp { font-size: 1.4rem; opacity: 0.7; }
+  .hc-stamp.thunk { animation: thunk 0.28s cubic-bezier(.2, 1.6, .4, 1); }
+  @keyframes thunk { from { transform: rotate(-6deg) scale(1.5); opacity: 0; } to { transform: rotate(-6deg) scale(1); opacity: 1; } }
+
+  .hc-meter-head { display: flex; justify-content: space-between; color: #a9b6af; margin-bottom: 6px; }
+  .hc-meter-head b { font: 900 1.9rem/1 var(--font-display); font-stretch: 78%; color: var(--g); }
+  .hc-track { position: relative; height: 16px; border: 2px solid #000; background: linear-gradient(90deg, var(--acid) 0 15%, var(--teal-hi) 15% 35%, var(--hazard) 35% 60%, var(--sodium) 60% 80%, var(--magenta) 80%); }
+  .hc-needle { position: absolute; top: -7px; bottom: -7px; width: 6px; margin-left: -3px; background: var(--paper); border: 2px solid #000; transition: left 0.35s cubic-bezier(.3, 1.4, .5, 1); }
+  .hc-scale { display: flex; justify-content: space-between; color: #6f7c76; font-size: 0.6rem; margin-top: 6px; }
+  .hc-verdict { margin: 0; color: #dfe6dd; font-size: 1.02rem; line-height: 1.45; min-height: 3em; }
+  .hc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0; }
+  .hc-stats div { background: #172623; border: 2px solid #24403b; padding: 8px 10px; }
+  .hc-stats dt { font: 600 0.6rem/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: #8fa39b; }
+  .hc-stats dd { margin: 2px 0 0; font: 900 1.5rem/1 var(--font-display); font-stretch: 78%; color: var(--paper); }
+  .hc-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hc-actions .btn { flex: 1 1 auto; }
+
+  .hc-report { margin-top: 34px; }
+  .hc-report-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+  .hc-annotated {
+    background: var(--paper-hi); color: var(--ink); border: 3px solid var(--ink); box-shadow: 6px 6px 0 #000;
+    padding: 18px 20px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 1rem; line-height: 1.75; max-height: 560px; overflow-y: auto;
+  }
+  .hc-annotated :global(mark) { background: none; color: inherit; cursor: help; padding: 1px 0; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .hc-annotated :global(mark:focus-visible) { outline: 2px solid var(--ink); }
+  .hc-annotated :global(mark.hc-residue) { background: color-mix(in srgb, var(--magenta) 45%, transparent); box-shadow: inset 0 -3px 0 var(--magenta); }
+  .hc-annotated :global(mark.hc-phrasing) { background: color-mix(in srgb, var(--sodium) 38%, transparent); box-shadow: inset 0 -3px 0 var(--sodium-deep); }
+  .hc-annotated :global(mark.hc-vocabulary) { background: color-mix(in srgb, var(--hazard) 55%, transparent); box-shadow: inset 0 -3px 0 #b39400; }
+  .hc-annotated :global(mark.hc-formatting) { background: color-mix(in srgb, var(--teal-hi) 40%, transparent); box-shadow: inset 0 -3px 0 var(--teal); }
+  .hc-annotated :global(mark.hc-human) { background: color-mix(in srgb, var(--acid) 55%, transparent); box-shadow: inset 0 -3px 0 var(--sick); }
+  .hc-annotated :global(mark.is-active) { outline: 2px solid var(--ink); }
+  .hc-explain { margin: 14px 0 0; padding: 10px 12px; background: var(--ink); color: var(--acid); border-left: 5px solid var(--acid); font-size: 0.72rem; line-height: 1.5; text-transform: none; letter-spacing: 0.01em; }
+  .hc-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; list-style: none; padding: 0; margin: 14px 0 0; color: #a9b6af; font-size: 0.62rem; }
+  .hc-legend li { display: flex; align-items: center; gap: 6px; }
+  :global(.hc-swatch) { display: inline-block; width: 12px; height: 12px; border: 2px solid #000; flex: none; }
+  :global(.hc-swatch.hc-residue) { background: var(--magenta); }
+  :global(.hc-swatch.hc-phrasing) { background: var(--sodium); }
+  :global(.hc-swatch.hc-vocabulary) { background: var(--hazard); }
+  :global(.hc-swatch.hc-formatting) { background: var(--teal-hi); }
+  :global(.hc-swatch.hc-human) { background: var(--acid); }
+  .hc-tells { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; max-height: 640px; overflow-y: auto; }
+  .hc-tells :global(li) { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px; align-items: baseline; background: #172623; border: 2px solid #24403b; padding: 10px 12px; }
+  .hc-tells :global(.hc-swatch) { align-self: center; }
+  .hc-tells :global(b) { font-weight: 800; color: var(--paper); }
+  .hc-tells :global(.pts) { font: 600 0.7rem/1 var(--font-mono); color: #8fa39b; white-space: nowrap; }
+  .hc-tells :global(.pts.neg) { color: var(--acid); }
+  .hc-tells :global(p) { grid-column: 2 / -1; margin: 0; color: #a9b6af; font-size: 0.86rem; line-height: 1.4; }
+
+  .hc-install { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hc-box { background: var(--paper-hi); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .hc-box .label { align-self: flex-start; }
+  .hc-box h3 { margin: 4px 0 0; font: 900 1.6rem/0.95 var(--font-display); font-stretch: 78%; text-transform: uppercase; }
+  .hc-box pre { margin: 0; background: var(--ink); color: var(--acid); padding: 12px 14px; overflow-x: auto; font: 0.8rem/1.5 var(--font-mono); border: 2px solid var(--ink); }
+  .hc-box p { margin: 0; color: var(--ink-2); font-size: 0.93rem; line-height: 1.45; }
+  .hc-box p code { font: 0.82em var(--font-mono); background: var(--paper-lo); padding: 1px 4px; }
+  .hc-box .btn { margin-top: auto; align-self: flex-start; }
+
+  .hc-lede { max-width: 760px; font-size: 1.08rem; color: var(--ink-2); margin: 0 0 18px; }
+  .hc-rules { display: grid; gap: 12px; }
+  .hc-rules details { background: var(--paper-hi); border: 2px solid var(--ink); box-shadow: var(--shadow); }
+  .hc-rules summary { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; font: 900 1.3rem/1 var(--font-display); font-stretch: 80%; text-transform: uppercase; }
+  .hc-rules summary .mono { margin-left: auto; color: var(--ink-3); }
+  .hc-rules-note { margin: 0; padding: 0 16px 10px; color: var(--ink-2); }
+  .hc-rules ul { list-style: none; margin: 0; padding: 0 16px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 22px; }
+  .hc-rules li { border-top: 1px dashed var(--ink-3); padding-top: 8px; font-size: 0.9rem; line-height: 1.4; }
+  .hc-rules li b { display: block; }
+  .hc-rules li span { color: var(--ink-2); }
+
+  .hc-faq dl { margin: 0; max-width: 820px; }
+  .hc-faq dt { font: 900 1.35rem/1.05 var(--font-display); font-stretch: 80%; text-transform: uppercase; margin-top: 18px; }
+  .hc-faq dd { margin: 6px 0 0; color: var(--ink-2); font-size: 1.02rem; line-height: 1.55; }
+
+  @media (max-width: 900px) {
+    .hc-tool, .hc-report-grid { grid-template-columns: minmax(0, 1fr); }
+    .hc-result { position: static; }
+    .hc-install { grid-template-columns: minmax(0, 1fr); }
+    .hc-rules ul { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 620px) {
+    .hc-hero { grid-template-columns: minmax(0, 1fr); }
+    .hc-seal { display: none; }
+    .hc-input textarea { min-height: 240px; }
+  }
+</style>
+
+<script>
+  import { analyze } from "../../../lab/humanity-check/src/index.js";
+
+  type Result = ReturnType<typeof analyze>;
+  const $ = <T extends HTMLElement = HTMLElement>(s: string) => document.querySelector<T>(s)!;
+  const samples: Record<string, string> = JSON.parse($("#hc-samples").textContent || "{}");
+  const { url: pageUrl } = JSON.parse($("#hc-page").textContent || "{}");
+
+  const input = $<HTMLTextAreaElement>("#hc-text");
+  const panel = $(".hc-result");
+  const stamp = $("[data-stamp]");
+  const report = $("[data-report]");
+  const annotated = $("[data-annotated]");
+  const explain = $("[data-explain]");
+  const certBtn = $<HTMLButtonElement>("[data-cert]");
+  const copyBtn = $<HTMLButtonElement>("[data-copy]");
+  let last: Result | null = null;
+  let lastText = "";
+
+  const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  function annotate(text: string, r: Result) {
+    let html = "";
+    let pos = 0;
+    r.findings.forEach((f, i) => {
+      if (f.index < 0 || f.index < pos) return;
+      html += esc(text.slice(pos, f.index));
+      html += `<mark class="hc-${f.category}" tabindex="0" data-i="${i}" title="${esc(`${f.label}: ${f.why}`)}">${esc(f.match)}</mark>`;
+      pos = f.index + f.length;
+    });
+    return html + esc(text.slice(pos));
+  }
+
+  function tellList(r: Result) {
+    return r.summary
+      .map((s) => {
+        const pts = s.points < 0 ? `${s.points} pts` : `+${s.points} pts`;
+        const count = s.count > 1 ? ` ×${s.count}` : "";
+        return `<li><i class="hc-swatch hc-${s.category}"></i><b>${esc(s.label)}${count}</b><span class="pts${s.points < 0 ? " neg" : ""}">${pts}</span><p>${esc(s.why)}</p></li>`;
+      })
+      .join("");
+  }
+
+  function update() {
+    const text = input.value;
+    const r = analyze(text);
+    $("[data-count]").textContent = `${r.words} word${r.words === 1 ? "" : "s"}`;
+    const empty = !text.trim();
+    const prevGrade = panel.dataset.grade;
+    panel.dataset.grade = empty ? "none" : r.grade.id;
+    stamp.textContent = empty ? "Awaiting specimen" : r.grade.label;
+    if (!empty && prevGrade !== r.grade.id) {
+      stamp.classList.remove("thunk");
+      void stamp.offsetWidth;
+      stamp.classList.add("thunk");
+    }
+    $("[data-score]").textContent = empty ? "—" : String(r.score);
+    $("[data-needle]").style.left = `${empty ? 0 : r.score}%`;
+    $("[data-verdict]").textContent = empty
+      ? "Paste something. Anything. The assay is hungry."
+      : r.grade.verdict + (r.tooShort ? " (Under 30 words, so the assay is mostly guessing.)" : "");
+    $("[data-words]").textContent = String(r.words);
+    $("[data-tells]").textContent = String(r.tells);
+    $("[data-human]").textContent = String(r.humanSignals);
+    certBtn.disabled = copyBtn.disabled = empty;
+    report.hidden = empty;
+    explain.hidden = true;
+    if (!empty) {
+      annotated.innerHTML = annotate(text, r);
+      $("[data-tell-list]").innerHTML = r.summary.length ? tellList(r) : `<li><b>Nothing found.</b><p>No tells at all. Either a person wrote this, or a machine that has learned to hide. Sleep well.</p></li>`;
+    }
+    last = r;
+    lastText = text;
+  }
+
+  let timer = 0;
+  input.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = window.setTimeout(update, 120);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-sample]").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      input.value = samples[btn.dataset.sample!] || "";
+      update();
+      if (matchMedia("(max-width: 900px)").matches) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }),
+  );
+
+  const showWhy = (mark: HTMLElement) => {
+    const f = last?.findings[Number(mark.dataset.i)];
+    if (!f) return;
+    annotated.querySelectorAll("mark.is-active").forEach((m) => m.classList.remove("is-active"));
+    mark.classList.add("is-active");
+    explain.hidden = false;
+    explain.textContent = `${f.label} (${f.weight > 0 ? "+" : ""}${f.weight}): ${f.why}`;
+  };
+  annotated.addEventListener("click", (e) => {
+    const mark = (e.target as HTMLElement).closest("mark");
+    if (mark) showWhy(mark);
+  });
+  annotated.addEventListener("keydown", (e) => {
+    const mark = (e.target as HTMLElement).closest("mark");
+    if (mark && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); showWhy(mark); }
+  });
+
+  const flash = (btn: HTMLElement, msg: string) => {
+    const old = btn.textContent;
+    btn.textContent = msg;
+    setTimeout(() => (btn.textContent = old), 2000);
+  };
+  const copy = async (btn: HTMLElement, text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      flash(btn, "Copied ✓");
+    } catch {
+      flash(btn, "Copy failed");
+    }
+  };
+
+  copyBtn.addEventListener("click", () => {
+    if (!last) return;
+    copy(copyBtn, `My text scored ${last.score}/100 on HUMANITY CHECK™: ${last.grade.label}. "${last.grade.verdict}" Test yours: ${pageUrl}`);
+  });
+  document.querySelectorAll<HTMLElement>("[data-copy-text]").forEach((btn) => btn.addEventListener("click", () => copy(btn, btn.dataset.copyText || "")));
+
+  // ---------- certificate (1200×630, the shape social sites preview) ----------
+  const css = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+  function wrap(ctx: CanvasRenderingContext2D, text: string, maxWidth: number) {
+    const lines: string[] = [];
+    let line = "";
+    for (const word of text.split(" ")) {
+      const test = line ? `${line} ${word}` : word;
+      if (ctx.measureText(test).width > maxWidth && line) { lines.push(line); line = word; }
+      else line = test;
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  async function certificate(r: Result) {
+    await Promise.all(["900 80px Archivo", "600 20px 'IBM Plex Mono'", "400 30px 'Permanent Marker'"].map((f) => document.fonts.load(f).catch(() => null)));
+    const W = 1200, H = 630;
+    const canvas = document.createElement("canvas");
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext("2d")!;
+    // Darker stamp inks than the on-screen glow colors, so they read on paper.
+    const inks: Record<string, string> = { human: "#3d7a0c", person: css("--teal"), smooth: "#a37f00", synthetic: css("--sodium-deep"), slop: css("--magenta") };
+    const g = inks[r.grade.id] || css("--sodium");
+    const ink = css("--ink"), paper = css("--paper-hi");
+
+    ctx.fillStyle = paper;
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "rgba(160,120,40,0.08)";
+    for (let i = 0; i < 1400; i++) ctx.fillRect(Math.random() * W, Math.random() * H, 2, 2);
+    ctx.lineWidth = 14;
+    ctx.strokeStyle = ink;
+    ctx.strokeRect(7, 7, W - 14, H - 14);
+    ctx.lineWidth = 2;
+    ctx.setLineDash([8, 7]);
+    ctx.strokeRect(30, 30, W - 60, H - 60);
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = ink;
+    ctx.fillRect(30, 30, W - 60, 56);
+    ctx.fillStyle = css("--acid");
+    ctx.font = "600 20px 'IBM Plex Mono', monospace";
+    ctx.fillText("MMG LABS · ORGANIC PROSE ASSAY · CERTIFICATE OF ANALYSIS", 56, 66);
+    ctx.textAlign = "right";
+    ctx.fillText(`No. ${String(Math.floor(Math.random() * 1e6)).padStart(6, "0")}`, W - 56, 66);
+    ctx.textAlign = "left";
+
+    // The grade, stamped at an angle.
+    ctx.save();
+    ctx.translate(380, 250);
+    ctx.rotate(-0.07);
+    let size = 86;
+    do ctx.font = `900 ${size}px Archivo, sans-serif`;
+    while (ctx.measureText(r.grade.label).width > 600 && (size -= 4) > 30);
+    const tw = ctx.measureText(r.grade.label).width;
+    ctx.strokeStyle = g;
+    ctx.lineWidth = 7;
+    ctx.strokeRect(-tw / 2 - 26, -74, tw + 52, 108);
+    ctx.lineWidth = 2;
+    ctx.strokeRect(-tw / 2 - 16, -64, tw + 32, 88);
+    ctx.fillStyle = g;
+    ctx.textAlign = "center";
+    ctx.fillText(r.grade.label, 0, 0);
+    ctx.restore();
+
+    ctx.fillStyle = ink;
+    ctx.font = "600 22px 'IBM Plex Mono', monospace";
+    ctx.fillText("SLOP INDEX", 70, 380);
+    ctx.font = "900 92px Archivo, sans-serif";
+    ctx.fillText(String(r.score), 70, 470);
+    const sw = ctx.measureText(String(r.score)).width;
+    ctx.font = "900 40px Archivo, sans-serif";
+    ctx.fillText("/100", 78 + sw, 470);
+
+    ctx.font = "400 26px Archivo, sans-serif";
+    ctx.fillStyle = css("--ink-2");
+    wrap(ctx, r.grade.verdict, 470).slice(0, 3).forEach((line, i) => ctx.fillText(line, 300, 400 + i * 34));
+
+    // Evidence column.
+    ctx.fillStyle = ink;
+    ctx.fillRect(790, 120, 2, 400);
+    ctx.font = "600 18px 'IBM Plex Mono', monospace";
+    ctx.fillText("EVIDENCE", 818, 140);
+    ctx.font = "700 24px Archivo, sans-serif";
+    const top = r.summary.filter((s) => s.points > 0).slice(0, 6);
+    if (!top.length) ctx.fillText("None found.", 818, 182);
+    top.forEach((s, i) => {
+      const label = `${s.label}${s.count > 1 ? ` ×${s.count}` : ""}`;
+      ctx.fillText(label.length > 24 ? `${label.slice(0, 23)}…` : label, 818, 182 + i * 40);
+    });
+    ctx.font = "600 15px 'IBM Plex Mono', monospace";
+    ctx.fillStyle = css("--ink-3");
+    const statsY = 182 + Math.max(top.length, 1) * 40 + 10;
+    ctx.fillText(`${r.words} WORDS · ${r.tells} TELLS`, 818, statsY);
+    ctx.fillText(`${r.humanSignals} HUMAN SIGNALS`, 818, statsY + 24);
+
+    ctx.fillStyle = css("--magenta");
+    ctx.font = "400 26px 'Permanent Marker', cursive";
+    ctx.save();
+    ctx.translate(300, 512);
+    ctx.rotate(-0.06);
+    ctx.fillText("not legal proof of anything", 0, 0);
+    ctx.restore();
+
+    ctx.fillStyle = ink;
+    ctx.fillRect(30, H - 86, W - 60, 56);
+    ctx.fillStyle = css("--paper");
+    ctx.font = "600 20px 'IBM Plex Mono', monospace";
+    ctx.fillText(`TEST YOURS FREE → ${pageUrl.replace(/^https?:\/\//, "")}`, 56, H - 50);
+
+    return new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png"));
+  }
+
+  certBtn.addEventListener("click", async () => {
+    if (!last || !lastText.trim()) return;
+    const blob = await certificate(last);
+    if (!blob) return flash(certBtn, "Couldn't draw it");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `humanity-check-${last.grade.id}-${last.score}.png`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    flash(certBtn, "Certificate issued ✓");
+  });
+
+  update();
+</script>

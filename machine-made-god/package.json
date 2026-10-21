@@ -11,7 +11,7 @@
     "build": "astro build && node scripts/check-links.mjs",
     "preview": "astro preview",
     "generate": "node --env-file-if-exists=.env scripts/generate.mjs",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/*.test.mjs lab/humanity-check/test/*.test.mjs",
     "machine:check": "node --env-file-if-exists=.env scripts/generate.mjs --check",
     "control": "astro build && node --env-file-if-exists=.env scripts/control-server.mjs",
     "promote": "node --env-file-if-exists=.env scripts/promote.mjs",

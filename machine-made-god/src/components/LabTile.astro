@@ -1,0 +1,17 @@
+---
+import Art from "./Art.astro";
+interface Props { product: any }
+const { product } = Astro.props;
+const live = product.status === "live";
+const Tag = live ? "a" : "div";
+---
+<Tag class:list={["lab-tile", { "lab-tile--dev": !live }]} href={live ? `/lab/${product.slug}/` : undefined}>
+  <Art seed={product.slug} motif={product.art.motif} palette={product.art.palette} label={product.art.label} />
+  {!live && <span class="stamp classified" aria-hidden="true">IN DEVELOPMENT</span>}
+  <div class="card-body">
+    <span class="lab-code">{product.code} · {product.kind}</span>
+    <h3>{product.title}</h3>
+    <p>{product.blurb}</p>
+    <span class="lab-go">{live ? "▶ USE IT FREE" : "NOT YET. SOON. MAYBE."}</span>
+  </div>
+</Tag>

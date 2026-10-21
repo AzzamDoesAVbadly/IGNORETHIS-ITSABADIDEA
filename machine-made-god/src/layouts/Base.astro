@@ -72,6 +72,7 @@ const path = Astro.url.pathname;
             </li>
           ))}
           <li class="nav-special"><a href="/arcade/" aria-current={path.startsWith("/arcade") ? "page" : undefined}>Arcade</a></li>
+          <li class="nav-special"><a href="/lab/" aria-current={path.startsWith("/lab") ? "page" : undefined}>Lab</a></li>
           <li class="nav-special"><a href="/tv/" aria-current={path.startsWith("/tv") ? "page" : undefined}>MMG TV</a></li>
           <li class="nav-special"><a href="/shop/" aria-current={path.startsWith("/shop") ? "page" : undefined}>Merch</a></li>
         </ul>
@@ -103,6 +104,7 @@ const path = Astro.url.pathname;
               <li><a href="/latest/">Latest</a></li>
               <li><a href="/quiz/">Quizzes</a></li>
               <li><a href="/arcade/">Arcade</a></li>
+              <li><a href="/lab/">Lab</a></li>
               <li><a href="/tv/">MMG TV</a></li>
               <li><a href="/shop/">Merch</a></li>
               <li><a href="/search/">Search</a></li>
