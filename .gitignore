@@ -12,3 +12,6 @@ coverage/
 *.sqlite
 data/database/
 logs/
+
+# separate git repo
+ghost-of-mars/
