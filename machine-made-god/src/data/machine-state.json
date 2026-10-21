@@ -1,16 +1,15 @@
 {
   "providers": {
     "groq": {
-      "ok": 13,
-      "lastSuccess": "2026-10-19T13:34:01.716Z",
+      "ok": 15,
+      "lastSuccess": "2026-10-21T01:47:58.280Z",
       "fail": 1,
-      "cooldownUntil": "2026-10-20T13:34:01.767Z",
-      "lastError": "out of credits"
+      "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
-      "fail": 6,
-      "ok": 7,
-      "lastSuccess": "2026-10-20T13:33:39.253Z",
+      "fail": 7,
+      "ok": 8,
+      "lastSuccess": "2026-10-21T01:47:33.858Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -26,13 +25,40 @@
       "lastSuccess": "2026-10-20T13:32:08.797Z"
     },
     "ollama-cloud": {
-      "ok": 3,
-      "lastSuccess": "2026-10-20T13:31:49.555Z",
+      "ok": 6,
+      "lastSuccess": "2026-10-21T01:47:52.078Z",
       "fail": 1
     }
   },
-  "lastQuizAt": "2026-10-18T01:34:53.899Z",
+  "lastQuizAt": "2026-10-21T01:47:52.135Z",
   "runs": [
+    {
+      "at": "2026-10-21T01:46:20.368Z",
+      "articles": [
+        {
+          "slug": "mans-114-page-dossier-proves-public-library-late-fees-are-direct",
+          "provider": "gemini+ollama-cloud",
+          "model": "gemini-flash-latest → gemma4:31b"
+        },
+        {
+          "slug": "meridian-dynamics-launches-civicharmony-the-stock-market-for-backyard",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": {
+        "slug": "which-specific-tier-of-neighborhood-forum-villain-are-you",
+        "provider": "ollama-cloud",
+        "model": "gemma4:31b"
+      },
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-20T13:29:36.946Z",
       "articles": [

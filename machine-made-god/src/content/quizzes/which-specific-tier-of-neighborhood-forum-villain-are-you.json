@@ -1,0 +1,167 @@
+{
+  "title": "Which Specific Tier of Neighborhood Forum Villain Are You?",
+  "dek": "Your choice of fence height and opinion on street parking reveals your true suburban destiny.",
+  "author": "dirk-hotfix",
+  "date": "2026-10-21T01:51:20.368Z",
+  "tags": [
+    "lifestyle",
+    "community",
+    "petty"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "memo",
+    "palette": "sodium",
+    "label": "Zoning Board"
+  },
+  "questions": [
+    {
+      "q": "A neighbor is trimming their hedge at 8:15 AM on a Saturday. Your immediate reaction is:",
+      "answers": [
+        {
+          "a": "Check the municipal noise ordinance and start a stopwatch.",
+          "r": "ordinance_cop"
+        },
+        {
+          "a": "Post a photo of the hedge on the forum with the caption 'Interesting choice.'",
+          "r": "passive_aggressive"
+        },
+        {
+          "a": "Wonder if the hedge is encroaching on the utility easement by more than two inches.",
+          "r": "boundary_hawk"
+        },
+        {
+          "a": "Ignore it, because you're currently fighting a war over a misplaced trash bin.",
+          "r": "chaos_agent"
+        }
+      ]
+    },
+    {
+      "q": "Which of these 'urgent' forum threads is your specialty?",
+      "answers": [
+        {
+          "a": "'Did anyone else see a suspicious grey sedan near the cul-de-sac?'",
+          "r": "ordinance_cop"
+        },
+        {
+          "a": "'Friendly reminder that guests should not park in front of others' driveways :)'",
+          "r": "passive_aggressive"
+        },
+        {
+          "a": "'Requesting a formal review of the HOA's definition of \"neutral\" beige.'",
+          "r": "boundary_hawk"
+        },
+        {
+          "a": "'Who left a single, damp sock on the communal sidewalk?'",
+          "r": "chaos_agent"
+        }
+      ]
+    },
+    {
+      "q": "You discover a neighbor has installed a bird feeder that attracts 'non-native' species. You:",
+      "answers": [
+        {
+          "a": "Email the city's Environmental Oversight Committee.",
+          "r": "ordinance_cop"
+        },
+        {
+          "a": "Mention it in a thread about 'Maintaining Our Neighborhood's Unique Character.'",
+          "r": "passive_aggressive"
+        },
+        {
+          "a": "Measure the distance from the feeder to your property line using a laser level.",
+          "r": "boundary_hawk"
+        },
+        {
+          "a": "Buy an even larger, louder bird feeder to establish dominance.",
+          "r": "chaos_agent"
+        }
+      ]
+    },
+    {
+      "q": "What is your preferred method of conflict resolution?",
+      "answers": [
+        {
+          "a": "A certified letter delivered via registered mail.",
+          "r": "ordinance_cop"
+        },
+        {
+          "a": "A very pointed 'thumbs up' emoji on a public complaint.",
+          "r": "passive_aggressive"
+        },
+        {
+          "a": "A hand-drawn map showing exactly where the property line ends.",
+          "r": "boundary_hawk"
+        },
+        {
+          "a": "Typing in all caps until the other person deletes their account.",
+          "r": "chaos_agent"
+        }
+      ]
+    },
+    {
+      "q": "Pick a 'neighborhood watch' accessory:",
+      "answers": [
+        {
+          "a": "A high-resolution doorbell camera with motion-tracking alerts.",
+          "r": "ordinance_cop"
+        },
+        {
+          "a": "A curated list of every neighbor's faux pas since 2014.",
+          "r": "passive_aggressive"
+        },
+        {
+          "a": "A professional-grade survey stake.",
+          "r": "boundary_hawk"
+        },
+        {
+          "a": "A megaphone that you only use for 'emergencies' like leaf-blowing.",
+          "r": "chaos_agent"
+        }
+      ]
+    },
+    {
+      "q": "How do you feel about the local community garden?",
+      "answers": [
+        {
+          "a": "It's a breeding ground for unregulated compost piles.",
+          "r": "ordinance_cop"
+        },
+        {
+          "a": "I love it, though some people's kale is surprisingly aggressive.",
+          "r": "passive_aggressive"
+        },
+        {
+          "a": "The plot assignments are mathematically unfair.",
+          "r": "boundary_hawk"
+        },
+        {
+          "a": "I once planted a single sunflower in the middle of the tool shed.",
+          "r": "chaos_agent"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "ordinance_cop": {
+      "title": "The Municipal Zealot",
+      "body": "You don't just live in a neighborhood; you curate a jurisdiction. Your browser history is 40% PDF downloads of city zoning laws and 60% searches for 'how to report an unpermitted gazebo.' You find peace in the rigid application of Article 4, Section B. Your neighbors don't call you by name—they call you 'the person who knows too much about the setback requirements for fences.' You are the final boss of the city council meeting.",
+      "share": "I'm The Municipal Zealot. Keep your grass at 2.5 inches or see me in court."
+    },
+    "passive_aggressive": {
+      "title": "The Smiling Saboteur",
+      "body": "You are the master of the 'per my last email' energy. Your weapons are smiley faces, ellipses, and the word 'curious.' You never start a fight; you simply highlight a problem in a public forum and wait for the community to devour the offender. You probably have a folder of screenshots dating back to the Great Trash Can Dispute of 2019. Your primary hobby is being the most helpful person in the room while making everyone feel slightly uncomfortable.",
+      "share": "I'm The Smiling Saboteur. Just curious why you're parking there! :)"
+    },
+    "boundary_hawk": {
+      "title": "The Cartesian Enforcer",
+      "body": "To you, a property line is a sacred, immutable border. You view the world in millimeters and easements. You have likely spent a weekend studying 19th-century land deeds to prove that your neighbor's hydrangea is technically trespassing. You don't want a fight; you want a mathematically perfect landscape. You dream of a world where every fence post is perfectly plumb and every blade of grass is accounted for in a spreadsheet.",
+      "share": "I'm The Cartesian Enforcer. Your hydrangea is 3cm over the line. Move it."
+    },
+    "chaos_agent": {
+      "title": "The Digital arsonist",
+      "body": "You don't care about the rules; you just enjoy the fireworks. You enter forum threads not to solve problems, but to introduce new, unrelated problems. You are the person who asks 'Is this legal?' during a discussion about a bake sale. You treat the neighborhood app like a social experiment in human frustration. Your goal isn't victory—it's making sure the thread reaches 400 comments before the moderator bans you for the third time this month.",
+      "share": "I'm The Digital Arsonist. I just want to see what happens if I post this at 3 AM."
+    }
+  }
+}
