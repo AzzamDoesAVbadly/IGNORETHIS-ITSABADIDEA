@@ -13,10 +13,17 @@
 
 import nacl from "tweetnacl";
 import { blake2b } from "@noble/hashes/blake2.js";
-import machineConfig from "../machine.config.json" with { type: "json" };
-import categories from "../src/data/categories.json" with { type: "json" };
-import siteData from "../src/data/site.json" with { type: "json" };
 import { availableProviders, rouletteOrder, chatProvider } from "../scripts/lib/roulette.mjs";
+
+// Site data is handed over by each host adapter via useData(). Node needs JSON
+// imports written with `with { type: "json" }`, which Cloudflare's Functions
+// bundler can't parse, so each host imports the JSON in the form it understands.
+let machineConfig = { providers: [] };
+let categories = [];
+let siteData = {};
+export function useData(data) {
+  ({ machineConfig, categories, siteData } = data);
+}
 
 let ENV = {};
 const repo = () => ENV.GITHUB_REPO || "AzzamDoesAVbadly/IGNORETHIS-ITSABADIDEA";

@@ -1,7 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import sodium from "libsodium-wrappers";
-import { handle, makeToken, checkToken, sealedBox } from "../server/control.mjs";
+import { handle, makeToken, checkToken, sealedBox, useData } from "../server/control.mjs";
+import data from "../server/data.node.mjs";
+
+useData(data);
 
 const env = { CONTROL_PASSWORD: "a-very-long-test-password" };
 

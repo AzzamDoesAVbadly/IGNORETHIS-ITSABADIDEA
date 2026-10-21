@@ -4,7 +4,9 @@ import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { join, extname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { handle } from "../server/control.mjs";
+import { handle, useData } from "../server/control.mjs";
+import data from "../server/data.node.mjs";
+useData(data);
 const handler = (req) => handle(req, process.env);
 
 const dist = fileURLToPath(new URL("../dist/", import.meta.url));
