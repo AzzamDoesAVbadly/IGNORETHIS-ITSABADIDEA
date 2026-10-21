@@ -1,7 +1,8 @@
 import categories from "../data/categories.json";
 import authors from "../data/authors.json";
 import site from "../data/site.json";
-import { validateArticle, validateQuiz } from "./schema.mjs";
+import embeddings from "../data/embeddings.json";
+import { validateArticle, validateQuiz, cosine } from "./schema.mjs";
 
 export { categories, authors, site };
 
@@ -90,14 +91,17 @@ export function picks(n = 4, exclude = []) {
   return fill(items.filter((i) => i.pick && !ex.has(i.url)), n, exclude);
 }
 
+// Closest in meaning when the generator has embedded both pieces (src/data/embeddings.json),
+// otherwise shared category and tags. Pieces without a vector sort after those with one.
 export function related(item, n = 3) {
   const tags = new Set(item.tags);
+  const mine = embeddings.vectors[item.url]?.v;
+  const score = mine
+    ? (other) => (embeddings.vectors[other.url] ? cosine(mine, embeddings.vectors[other.url].v) : -1)
+    : (other) => (other.category === item.category ? 3 : 0) + other.tags.filter((t) => tags.has(t)).length;
   return items
     .filter((other) => other.url !== item.url)
-    .map((other) => ({
-      other,
-      score: (other.category === item.category ? 3 : 0) + other.tags.filter((t) => tags.has(t)).length,
-    }))
+    .map((other) => ({ other, score: score(other) }))
     .sort((a, b) => b.score - a.score || b.other.date - a.other.date)
     .slice(0, n)
     .map((r) => r.other);

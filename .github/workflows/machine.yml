@@ -61,6 +61,29 @@ jobs:
           MACHINE_GH_TOKEN: ${{ secrets.MACHINE_GH_TOKEN }}
         run: node scripts/learn.mjs
 
+      # Local embedding model (CPU-only Ollama + embeddinggemma) for the meaning-based
+      # duplicate check and "More Like This". Best effort: without it the generator
+      # falls back to word matching. GPU libraries are skipped to keep the cache small.
+      - name: Cache Ollama and embeddinggemma
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/ollama
+            ~/.ollama/models
+          key: ollama-0.40.5-embeddinggemma
+
+      - name: Start Ollama for embeddings
+        continue-on-error: true
+        run: |
+          if [ ! -x ~/ollama/bin/ollama ]; then
+            mkdir -p ~/ollama
+            curl -fsSL https://github.com/ollama/ollama/releases/download/v0.40.5/ollama-linux-amd64.tar.zst \
+              | tar --zstd -x -C ~/ollama --exclude='lib/ollama/cuda_*' --exclude='lib/ollama/vulkan'
+          fi
+          nohup ~/ollama/bin/ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:11434/api/version && break; sleep 1; done
+          ~/ollama/bin/ollama pull embeddinggemma
+
       - name: Generate content (provider roulette)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

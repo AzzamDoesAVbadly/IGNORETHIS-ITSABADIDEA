@@ -16,6 +16,7 @@ import { spin, availableProviders, callProvider, ProviderError } from "./lib/rou
 import { articleSchema, quizSchema, extrasSchema } from "./lib/schemas.mjs";
 import { mockReply } from "./lib/mock.mjs";
 import { boost } from "./lib/bandit.mjs";
+import { embed, embedText, syncStore, nearestAbove, serializeStore } from "./lib/embeddings.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const paths = {
@@ -25,6 +26,7 @@ const paths = {
   quizzes: join(root, "src/content/quizzes"),
   data: join(root, "src/data"),
   prompts: join(root, "prompts"),
+  embeddings: join(root, "src/data/embeddings.json"),
 };
 
 const args = new Set(process.argv.slice(2));
@@ -110,6 +112,43 @@ function loadExisting() {
     .map((f) => ({ slug: f.replace(/\.json$/, ""), ...readJson(join(paths.quizzes, f)) }));
   const all = [...articles, ...quizzes].sort((a, b) => new Date(b.date) - new Date(a.date));
   return { articles, quizzes, all, titles: all.map((x) => x.title) };
+}
+
+// ---------- meaning-based memory (embeddings) ----------
+// Optional: needs Ollama with config.embeddings.model. Without it, word matching still runs.
+
+let memory = null;
+
+const piecesOf = (existing) => [
+  ...existing.articles.map((a) => ({ url: `/a/${a.slug}/`, title: a.title, dek: a.dek })),
+  ...existing.quizzes.map((q) => ({ url: `/quiz/${q.slug}/`, title: q.title, dek: q.dek })),
+];
+
+// Embed whatever isn't remembered yet and save the store.
+async function remember(existing) {
+  if (!config.embeddings || env.MACHINE_MOCK) return;
+  try {
+    const { store, added } = await syncStore(memory || readJson(paths.embeddings, null), piecesOf(existing), config.embeddings);
+    memory = store;
+    if (added && !DRY) writeFileSync(paths.embeddings, serializeStore(store));
+    return added;
+  } catch (err) {
+    log(`  (embeddings unavailable, using word matching only: ${err.message.slice(0, 160)})`);
+  }
+}
+
+// Reject a piece that means the same as something already published or written this run.
+async function checkMeaning(fm) {
+  if (!memory) return;
+  let vector;
+  try {
+    [vector] = await embed([embedText(fm)], config.embeddings);
+  } catch (err) {
+    log(`  (embedding check skipped: ${err.message.slice(0, 160)})`);
+    return;
+  }
+  const hit = nearestAbove(vector, memory.vectors, config.embeddings.duplicateThreshold);
+  if (hit) bad(`means the same as ${hit.url} (${hit.score.toFixed(2)})`);
 }
 
 // ---------- planning ----------
@@ -415,6 +454,8 @@ async function run() {
   log(`The machine wakes. Providers in the chamber: ${ready.map((p) => p.id).join(", ")}${DRY ? " (dry run)" : ""}\n`);
 
   const existing = loadExisting();
+  const added = await remember(existing);
+  if (memory) log(`Remembering ${Object.keys(memory.vectors).length} pieces by meaning (${added} newly embedded).\n`);
   const summary = { at: new Date().toISOString(), onDemand: ON_DEMAND || undefined, idea: IDEA || undefined, articles: [], quiz: null, extras: null, failures: [] };
   const runTitles = [];
   const takenCats = [];
@@ -433,8 +474,9 @@ async function run() {
       let draftJson = null;
       let { item, provider, model } = await spin(
         articlePrompt({ category, format, existing }),
-        (json) => {
+        async (json) => {
           const made = makeArticle(json, { category, format, existing, runTitles, date });
+          await checkMeaning(made.fm);
           draftJson = json;
           return made;
         },
@@ -445,7 +487,11 @@ async function run() {
         try {
           const edited = await spin(
             editorPrompt({ ...draftJson, title: item.fm.title, body: item.body }, format),
-            (json) => makeArticle(json, { category, format, existing, runTitles, date }),
+            async (json) => {
+              const made = makeArticle(json, { category, format, existing, runTitles, date });
+              await checkMeaning(made.fm);
+              return made;
+            },
             { ...ctx, preferNot: provider, config: { ...config, maxAttemptsPerPiece: 3 } }
           );
           item = edited.item;
@@ -464,6 +510,7 @@ async function run() {
       runTitles.push(item.fm.title);
       existing.titles.unshift(item.fm.title);
       existing.articles.unshift({ ...item.fm, slug });
+      if (!DRY) await remember(existing);
       summary.articles.push({ slug, provider, model });
       log(`  ✓ "${item.fm.title}" via ${provider} (${model})`);
     } catch (err) {
@@ -476,10 +523,16 @@ async function run() {
   if (!ON_DEMAND && daysSinceQuiz >= (config.quizEveryDays ?? 3)) {
     log("→ Quiz");
     try {
-      const { item, provider, model } = await spin(quizPrompt(existing), (json) => makeQuiz(json, { existing, date: new Date(start + 5 * 60000).toISOString() }), ctx);
+      const { item, provider, model } = await spin(quizPrompt(existing), async (json) => {
+        const quiz = makeQuiz(json, { existing, date: new Date(start + 5 * 60000).toISOString() });
+        await checkMeaning(quiz);
+        return quiz;
+      }, ctx);
       const slug = uniqueSlug(slugify(item.title), paths.quizzes, ".json");
       if (DRY) log(JSON.stringify(item, null, 2));
       else writeJson(join(paths.quizzes, `${slug}.json`), item);
+      existing.quizzes.unshift({ ...item, slug });
+      if (!DRY) await remember(existing);
       state.lastQuizAt = new Date().toISOString();
       summary.quiz = { slug, provider, model };
       log(`  ✓ "${item.title}" via ${provider}`);

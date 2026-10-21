@@ -10,6 +10,12 @@
   "requestTimeoutSeconds": 120,
   "temperature": 0.95,
   "duplicateThreshold": 0.45,
+  "embeddings": {
+    "host": "http://127.0.0.1:11434",
+    "model": "embeddinggemma",
+    "dims": 256,
+    "duplicateThreshold": 0.8
+  },
   "editorPass": true,
   "exemplars": {
     "news": "search-party-enters-local-mans-browser",

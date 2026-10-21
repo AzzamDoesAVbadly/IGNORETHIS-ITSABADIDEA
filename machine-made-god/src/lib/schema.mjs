@@ -63,6 +63,13 @@ export function similarity(a, b) {
   return shared / (A.size + B.size - shared);
 }
 
+// Similarity of two unit-length embedding vectors (see scripts/lib/embeddings.mjs), -1..1.
+export function cosine(a, b) {
+  let sum = 0;
+  for (let i = 0; i < a.length; i++) sum += a[i] * b[i];
+  return sum;
+}
+
 export function findNearDuplicate(title, existingTitles, threshold = 0.45) {
   let best = null;
   for (const other of existingTitles) {

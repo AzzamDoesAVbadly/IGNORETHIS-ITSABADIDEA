@@ -222,7 +222,7 @@ export async function chatProvider(p, { system, messages }, ctx) {
 }
 
 // Spin the wheel: try providers in roulette order until `accept` returns a value.
-// `accept(json)` must return the finished item or throw a ProviderError("bad_output").
+// `accept(json)` must return (or resolve to) the finished item or throw a ProviderError("bad_output").
 export async function spin(request, accept, ctx) {
   const tried = [];
   let order = rouletteOrder(availableProviders(ctx.config, ctx.state, ctx.env), ctx.random);
@@ -233,7 +233,7 @@ export async function spin(request, accept, ctx) {
     if (!availableProviders(ctx.config, ctx.state, ctx.env).some((x) => x.id === p.id)) continue;
     try {
       const { json, model } = await callProvider(p, request, ctx);
-      const item = accept(json, { provider: p.id, model });
+      const item = await accept(json, { provider: p.id, model });
       ctx.record(p.id, true);
       return { item, provider: p.id, model, tried };
     } catch (err) {
