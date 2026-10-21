@@ -1,23 +1,23 @@
 {
   "providers": {
     "groq": {
-      "ok": 15,
-      "lastSuccess": "2026-10-21T01:47:58.280Z",
+      "ok": 16,
+      "lastSuccess": "2026-10-21T02:01:25.458Z",
       "fail": 1,
       "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
       "fail": 7,
-      "ok": 8,
-      "lastSuccess": "2026-10-21T01:47:33.858Z",
+      "ok": 9,
+      "lastSuccess": "2026-10-21T02:02:21.734Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 7,
+      "fail": 8,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-20T19:29:38.204Z",
+      "cooldownUntil": "2026-10-21T08:01:10.922Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -25,13 +25,36 @@
       "lastSuccess": "2026-10-20T13:32:08.797Z"
     },
     "ollama-cloud": {
-      "ok": 6,
-      "lastSuccess": "2026-10-21T01:47:52.078Z",
+      "ok": 9,
+      "lastSuccess": "2026-10-21T02:02:25.677Z",
       "fail": 1
     }
   },
   "lastQuizAt": "2026-10-21T01:47:52.135Z",
   "runs": [
+    {
+      "at": "2026-10-21T02:01:10.620Z",
+      "articles": [
+        {
+          "slug": "im-the-captcha-thats-giving-up-on-humanity",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "review-the-meridian-dynamics-zenpath-bike-lane-projector-wont-stop",
+          "provider": "ollama-cloud+gemini",
+          "model": "gemma4:31b → gemini-flash-latest"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-21T01:46:20.368Z",
       "articles": [
