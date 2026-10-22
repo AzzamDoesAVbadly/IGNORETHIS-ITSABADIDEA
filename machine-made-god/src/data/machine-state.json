@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 18,
-      "lastSuccess": "2026-10-21T13:29:07.905Z",
+      "ok": 20,
+      "lastSuccess": "2026-10-22T02:00:04.284Z",
       "fail": 1,
       "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
-      "fail": 9,
+      "fail": 12,
       "ok": 10,
       "lastSuccess": "2026-10-21T13:28:58.035Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,23 +15,47 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 9,
+      "fail": 10,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-21T19:29:15.061Z",
+      "cooldownUntil": "2026-10-22T08:00:05.569Z",
       "lastError": "rate limited"
     },
     "cerebras": {
       "ok": 15,
-      "lastSuccess": "2026-10-21T13:29:16.232Z"
+      "lastSuccess": "2026-10-21T13:29:16.232Z",
+      "fail": 1
     },
     "ollama-cloud": {
-      "ok": 9,
-      "lastSuccess": "2026-10-21T02:02:25.677Z",
+      "ok": 11,
+      "lastSuccess": "2026-10-22T02:00:09.450Z",
       "fail": 2
     }
   },
   "lastQuizAt": "2026-10-21T01:47:52.135Z",
   "runs": [
+    {
+      "at": "2026-10-22T01:59:45.492Z",
+      "articles": [
+        {
+          "slug": "noise-quartet-low-hum-bars-first-note-until-audience-hands-over",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "vortexia-rolls-out-project-echochill-turning-office-fridge-spoilage",
+          "provider": "groq",
+          "model": "openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-21T13:28:21.737Z",
       "articles": [
