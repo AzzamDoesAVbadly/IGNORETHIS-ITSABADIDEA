@@ -3,13 +3,13 @@
     "groq": {
       "ok": 29,
       "lastSuccess": "2026-10-24T02:01:50.111Z",
-      "fail": 2,
+      "fail": 3,
       "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
       "fail": 19,
-      "ok": 14,
-      "lastSuccess": "2026-10-24T02:01:31.519Z",
+      "ok": 16,
+      "lastSuccess": "2026-10-24T13:27:22.593Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -23,16 +23,39 @@
     "cerebras": {
       "ok": 19,
       "lastSuccess": "2026-10-24T02:01:46.863Z",
-      "fail": 1
+      "fail": 2
     },
     "ollama-cloud": {
-      "ok": 15,
-      "lastSuccess": "2026-10-23T13:31:53.183Z",
+      "ok": 18,
+      "lastSuccess": "2026-10-24T13:27:43.312Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-10-24T02:01:46.936Z",
   "runs": [
+    {
+      "at": "2026-10-24T13:24:42.220Z",
+      "articles": [
+        {
+          "slug": "algorithm-concludes-man-is-swedish-forestry-tycoon-after-he-pauses-2",
+          "provider": "gemini+ollama-cloud",
+          "model": "gemini-flash-latest → gemma4:31b"
+        },
+        {
+          "slug": "i-am-the-public-comment-microphone-and-you-are-breathing-directly",
+          "provider": "gemini+ollama-cloud",
+          "model": "gemini-flash-latest → gemma4:31b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-24T01:58:45.620Z",
       "articles": [
