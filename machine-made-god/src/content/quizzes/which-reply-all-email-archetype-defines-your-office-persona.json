@@ -1,0 +1,198 @@
+{
+  "title": "Which Reply-All Email Archetype Defines Your Office Persona?",
+  "dek": "Take this quiz to discover whether you’re the CC‑happy over‑sharer, the passive‑aggressive reminder, the attachment hoarder, the emoji avalanche, or the silent BCC ninja.",
+  "author": "god-exe",
+  "date": "2026-10-24T02:03:45.620Z",
+  "tags": [
+    "email",
+    "office",
+    "humor",
+    "quiz",
+    "workplace"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "memo",
+    "palette": "sodium",
+    "label": "ReplyAll"
+  },
+  "questions": [
+    {
+      "q": "What does your typical reply‑all subject line look like?",
+      "answers": [
+        {
+          "a": "Urgent: Please Read",
+          "r": "ccer"
+        },
+        {
+          "a": "FYI",
+          "r": "reminder"
+        },
+        {
+          "a": "Re: [No Subject]",
+          "r": "attachment"
+        },
+        {
+          "a": "🚨🚨🚨",
+          "r": "emoji"
+        },
+        {
+          "a": "—",
+          "r": "silent"
+        }
+      ]
+    },
+    {
+      "q": "When do you decide to hit reply‑all?",
+      "answers": [
+        {
+          "a": "Whenever anyone mentions “meeting”",
+          "r": "ccer"
+        },
+        {
+          "a": "Only when the subject is “Reminder”",
+          "r": "reminder"
+        },
+        {
+          "a": "After attaching a PDF no one asked for",
+          "r": "attachment"
+        },
+        {
+          "a": "After adding three 🎉 emojis",
+          "r": "emoji"
+        },
+        {
+          "a": "Never; I BCC myself and watch the chaos",
+          "r": "silent"
+        }
+      ]
+    },
+    {
+      "q": "Your go‑to move in an airport lounge is:",
+      "answers": [
+        {
+          "a": "Set up a laptop and start a conference call with three mute participants",
+          "r": "ccer"
+        },
+        {
+          "a": "Leave a sticky note reminding the next traveler about the Wi‑Fi password",
+          "r": "reminder"
+        },
+        {
+          "a": "Print out the flight itinerary and hand it out like flyers",
+          "r": "attachment"
+        },
+        {
+          "a": "Offer avocado toast and a GIF of a llama",
+          "r": "emoji"
+        },
+        {
+          "a": "Sit in the corner, headphones in, and ignore everyone",
+          "r": "silent"
+        }
+      ]
+    },
+    {
+      "q": "Your signature contribution at the monthly HOA meeting:",
+      "answers": [
+        {
+          "a": "Volunteer to take minutes and CC the entire subdivision",
+          "r": "ccer"
+        },
+        {
+          "a": "Suggest adding a “No Parking After 5 pm” reminder sign",
+          "r": "reminder"
+        },
+        {
+          "a": "Distribute a ten‑page PDF of the new landscaping guidelines",
+          "r": "attachment"
+        },
+        {
+          "a": "Present a PowerPoint with animated confetti and emojis",
+          "r": "emoji"
+        },
+        {
+          "a": "Show up, nod, and never speak",
+          "r": "silent"
+        }
+      ]
+    },
+    {
+      "q": "Your email signature looks like:",
+      "answers": [
+        {
+          "a": "A block of CC’d contacts with phone numbers",
+          "r": "ccer"
+        },
+        {
+          "a": "A single line: “Reminder: Please read the attached.”",
+          "r": "reminder"
+        },
+        {
+          "a": "A massive attachment icon with “See attached” repeated",
+          "r": "attachment"
+        },
+        {
+          "a": "A row of emojis: 🌟🚀💥",
+          "r": "emoji"
+        },
+        {
+          "a": "Just my name in small font, no contact info",
+          "r": "silent"
+        }
+      ]
+    },
+    {
+      "q": "A coworker drops a meme in the company Slack. You:",
+      "answers": [
+        {
+          "a": "Forward it to the entire department with a “FYI” caption",
+          "r": "ccer"
+        },
+        {
+          "a": "Reply with a polite note reminding them of the internal policy",
+          "r": "reminder"
+        },
+        {
+          "a": "Attach a PDF version of the meme for archival purposes",
+          "r": "attachment"
+        },
+        {
+          "a": "Respond with a string of relevant emojis and a laughing icon",
+          "r": "emoji"
+        },
+        {
+          "a": "React with the “thumbs up” and say nothing else",
+          "r": "silent"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "ccer": {
+      "title": "The Chronic CC’er (You’re the reason inboxes are full)",
+      "body": "You hit reply‑all the moment you think anyone might need to know a detail no one asked for. Your inbox is a labyrinth of CC fields, and you proudly list every department, vendor, and random contractor. You assume that more recipients equals more efficiency, even if the original sender never asked for it. You’ve been known to CC a coffee supplier just because they delivered beans last week. Your signature line proudly reads “CC: All”.",
+      "share": "I’m the CC‑monster who thinks everyone needs to be in the loop. #ReplyAllAddict"
+    },
+    "reminder": {
+      "title": "The Passive‑Aggressive Reminder (You’re the HOA’s voice in the void)",
+      "body": "You never directly confront the issue; you embed gentle nudges into every email and meeting agenda. A single line like “Reminder: Please clear your overdue dues by Friday” is your weapon of choice. You hand out sticky notes proclaiming “Remember to water the community garden” and you’ll set calendar alerts for other people’s birthdays just to keep the pressure on. Your voice is the perpetual buzz that nobody can silence, but everyone pretends to ignore.",
+      "share": "I’m the passive‑aggressive reminder you can’t escape. #OfficeNudge"
+    },
+    "attachment": {
+      "title": "The Attachment Hoarder (You think PDFs solve everything)",
+      "body": "You believe that any message can be clarified with a file attachment, even if the original email was a simple question. Your drafts folder overflows with PDFs, spreadsheets, and Word docs titled “Final_Final_Version_2”. You attach a ten‑page guide to a reminder about a coffee break, and you never explain why the attachment matters. Colleagues have learned to skim your emails for the attachment icon, knowing a deep dive awaits them.",
+      "share": "I attach a PDF to every email, even when it’s just a ‘Hello’. #AttachmentAddict"
+    },
+    "emoji": {
+      "title": "The Emoji Avalanche (Your replies are a confetti party)",
+      "body": "You translate every professional exchange into a string of emojis, from 🎉 for “congratulations” to 🧐 when you’re mildly confused. Your inbox looks like a digital fireworks show, and you’ve set a personal rule to include at least three emojis per reply. Colleagues sometimes need a decoder ring to interpret your messages, but you assure them the visual language is “clearer”. Your signature might even be a rotating emoji carousel.",
+      "share": "My inbox is a rainbow of emojis. #EmojiAvalanche"
+    },
+    "silent": {
+      "title": "The Silent BCC Ninja (You observe, then vanish)",
+      "body": "You master the art of watching conversations unfold without ever adding your voice. You BCC yourself on every reply‑all just to keep a record, then hide behind a muted avatar. In meetings, you nod approvingly and never raise a hand, but your calendar is full of “Follow‑up” tasks you never act on. Colleagues wonder if you’re even there, but you’re content to let the chaos happen while you sip your coffee in the corner.",
+      "share": "I’m the silent BCC ninja watching the chaos. #EmailGhost"
+    }
+  }
+}

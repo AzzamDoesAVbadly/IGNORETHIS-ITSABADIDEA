@@ -1,28 +1,28 @@
 {
   "providers": {
     "groq": {
-      "ok": 26,
-      "lastSuccess": "2026-10-23T13:34:02.520Z",
-      "fail": 1,
+      "ok": 29,
+      "lastSuccess": "2026-10-24T02:01:50.111Z",
+      "fail": 2,
       "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
-      "fail": 18,
-      "ok": 12,
-      "lastSuccess": "2026-10-22T13:33:10.715Z",
+      "fail": 19,
+      "ok": 14,
+      "lastSuccess": "2026-10-24T02:01:31.519Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 11,
+      "fail": 12,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-23T19:28:53.349Z",
+      "cooldownUntil": "2026-10-24T08:01:44.377Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 18,
-      "lastSuccess": "2026-10-23T13:33:58.467Z",
+      "ok": 19,
+      "lastSuccess": "2026-10-24T02:01:46.863Z",
       "fail": 1
     },
     "ollama-cloud": {
@@ -31,8 +31,35 @@
       "fail": 3
     }
   },
-  "lastQuizAt": "2026-10-21T01:47:52.135Z",
+  "lastQuizAt": "2026-10-24T02:01:46.936Z",
   "runs": [
+    {
+      "at": "2026-10-24T01:58:45.620Z",
+      "articles": [
+        {
+          "slug": "pickleball-is-my-therapist-and-youre-the-unpaid-intern",
+          "provider": "gemini+groq",
+          "model": "gemini-flash-latest → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "8-corporate-retreat-icebreakers-ranked-by-threat-to-human-dignity",
+          "provider": "gemini+groq",
+          "model": "gemini-flash-latest → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": {
+        "slug": "which-reply-all-email-archetype-defines-your-office-persona",
+        "provider": "cerebras",
+        "model": "gpt-oss-120b"
+      },
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-23T13:28:53.069Z",
       "articles": [

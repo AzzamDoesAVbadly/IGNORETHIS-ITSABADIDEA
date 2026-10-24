@@ -198,5 +198,13 @@
     "body": "HALCYON‑TEK's DeskBot monitors your eyelid rhythm, drafts replies, and files reports while you dream of spreadsheets. Battery lasts until the next coffee break.",
     "cta": "order your desk",
     "palette": "teal"
+  },
+  {
+    "id": "nebulasync-nebulasync-launches-mood-matc",
+    "brand": "NebulaSync",
+    "headline": "NebulaSync launches \"Mood‑Match\" thermostat that adjusts temperature to your unread email count",
+    "body": "The device reads your inbox, lowers the heat when you’re overwhelmed, and raises it when you finally hit zero. Comes with a silent fan that sighs.",
+    "cta": "Sync My Comfort",
+    "palette": "teal"
   }
 ]
