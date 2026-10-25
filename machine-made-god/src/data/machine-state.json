@@ -1,15 +1,15 @@
 {
   "providers": {
     "groq": {
-      "ok": 29,
-      "lastSuccess": "2026-10-24T02:01:50.111Z",
+      "ok": 30,
+      "lastSuccess": "2026-10-25T02:01:25.025Z",
       "fail": 3,
       "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
-      "fail": 19,
-      "ok": 16,
-      "lastSuccess": "2026-10-24T13:27:22.593Z",
+      "fail": 20,
+      "ok": 18,
+      "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -26,13 +26,36 @@
       "fail": 2
     },
     "ollama-cloud": {
-      "ok": 18,
-      "lastSuccess": "2026-10-24T13:27:43.312Z",
+      "ok": 20,
+      "lastSuccess": "2026-10-25T02:01:30.442Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-10-24T02:01:46.936Z",
   "runs": [
+    {
+      "at": "2026-10-25T02:01:14.953Z",
+      "articles": [
+        {
+          "slug": "study-14-of-gym-members-insist-treadmills-are-slow-motion-conveyors",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "i-am-your-saved-folder-and-you-are-never-going-to-reupholster-that",
+          "provider": "ollama-cloud+gemini",
+          "model": "gemma4:31b → gemini-flash-latest"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "gemini",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-24T13:24:42.220Z",
       "articles": [
