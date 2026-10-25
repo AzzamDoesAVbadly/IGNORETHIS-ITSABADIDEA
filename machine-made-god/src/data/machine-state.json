@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 30,
-      "lastSuccess": "2026-10-25T02:01:25.025Z",
+      "ok": 31,
+      "lastSuccess": "2026-10-25T13:24:38.183Z",
       "fail": 3,
       "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
-      "fail": 20,
+      "fail": 22,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,18 +21,41 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 19,
-      "lastSuccess": "2026-10-24T02:01:46.863Z",
+      "ok": 20,
+      "lastSuccess": "2026-10-25T13:24:20.359Z",
       "fail": 2
     },
     "ollama-cloud": {
-      "ok": 20,
-      "lastSuccess": "2026-10-25T02:01:30.442Z",
+      "ok": 23,
+      "lastSuccess": "2026-10-25T13:24:41.960Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-10-24T02:01:46.936Z",
   "runs": [
+    {
+      "at": "2026-10-25T13:24:17.946Z",
+      "articles": [
+        {
+          "slug": "indie-band-pixel-purgatoria-locks-debut-album-behind-vending-machine",
+          "provider": "cerebras+ollama-cloud",
+          "model": "gpt-oss-120b → gemma4:31b"
+        },
+        {
+          "slug": "omnivex-rolls-out-nutrisync-bars-that-lock-your-hunger-to-your-9-to-5",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-25T02:01:14.953Z",
       "articles": [
