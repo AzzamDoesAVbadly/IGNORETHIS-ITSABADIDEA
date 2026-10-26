@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 31,
-      "lastSuccess": "2026-10-25T13:24:38.183Z",
-      "fail": 3,
+      "ok": 32,
+      "lastSuccess": "2026-10-26T02:04:24.104Z",
+      "fail": 4,
       "cooldownUntil": "2026-10-20T13:34:01.767Z"
     },
     "gemini": {
-      "fail": 22,
+      "fail": 24,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,24 +15,47 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 12,
+      "fail": 13,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-24T08:01:44.377Z",
+      "cooldownUntil": "2026-10-26T08:04:15.938Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 20,
-      "lastSuccess": "2026-10-25T13:24:20.359Z",
+      "ok": 22,
+      "lastSuccess": "2026-10-26T02:04:17.145Z",
       "fail": 2
     },
     "ollama-cloud": {
-      "ok": 23,
-      "lastSuccess": "2026-10-25T13:24:41.960Z",
+      "ok": 25,
+      "lastSuccess": "2026-10-26T02:04:00.703Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-10-24T02:01:46.936Z",
   "runs": [
+    {
+      "at": "2026-10-26T02:03:37.523Z",
+      "articles": [
+        {
+          "slug": "hoa-deploys-special-task-force-to-audit-neighbors-aggressive-leaf",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        },
+        {
+          "slug": "your-sourdough-starter-is-filing-a-resignation-letter-after-879-days",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-25T13:24:17.946Z",
       "articles": [

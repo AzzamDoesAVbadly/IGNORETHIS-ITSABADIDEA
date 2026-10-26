@@ -230,5 +230,13 @@
     "body": "Our proprietary haptic sensors translate subtle social cues into gentle electric shocks. Know exactly when a conversation has reached its natural end.",
     "cta": "BUY THE SILENCE",
     "palette": "sodium"
+  },
+  {
+    "id": "nexora-nexoras-sleepsync-pillow-promises",
+    "brand": "NEXORA",
+    "headline": "NEXORA's SleepSync Pillow Promises to Align Your Dreams With Your Calendar",
+    "body": "The pillow’s embedded chrono‑sensor emits micro‑pulses timed to your 9 a.m. meeting, so you wake up already drafting the agenda in your sleep.",
+    "cta": "sync my slumber",
+    "palette": "sodium"
   }
 ]
