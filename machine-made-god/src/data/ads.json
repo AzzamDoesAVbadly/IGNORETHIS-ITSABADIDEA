@@ -238,5 +238,13 @@
     "body": "The pillow’s embedded chrono‑sensor emits micro‑pulses timed to your 9 a.m. meeting, so you wake up already drafting the agenda in your sleep.",
     "cta": "sync my slumber",
     "palette": "sodium"
+  },
+  {
+    "id": "virtuo-this-desk-lamp-claims-it-can-sync",
+    "brand": "VIRTUO",
+    "headline": "This Desk Lamp Claims It Can Sync Your Mood With Your Calendar, So You Never Miss a Break",
+    "body": "The VIRTUO MoodSync Lamp reads your Outlook alerts and shifts hue from sunrise amber to deadline‑red, guaranteeing coworkers notice exactly when you’re overloaded.",
+    "cta": "Try MoodSync Now",
+    "palette": "teal"
   }
 ]
