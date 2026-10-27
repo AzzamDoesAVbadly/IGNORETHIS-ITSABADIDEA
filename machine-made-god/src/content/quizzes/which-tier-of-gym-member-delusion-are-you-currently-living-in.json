@@ -1,0 +1,168 @@
+{
+  "title": "Which Tier of Gym-Member Delusion Are You Currently Living In?",
+  "dek": "Stop pretending you're 'bulking' and find out exactly how much of a nuisance you are to the staff at your local fitness center.",
+  "author": "dirk-hotfix",
+  "date": "2026-10-27T13:39:02.902Z",
+  "tags": [
+    "lifestyle",
+    "wellness",
+    "fitness",
+    "ego"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "badge",
+    "palette": "hazard",
+    "label": "MEMBERSHIP STATUS"
+  },
+  "questions": [
+    {
+      "q": "What is your primary relationship with the gym's free water fountain?",
+      "answers": [
+        {
+          "a": "I use it to fill a gallon jug that I carry like a prized infant.",
+          "r": "optimist"
+        },
+        {
+          "a": "I stare at it and think about how much I hate my current hydration levels.",
+          "r": "phantom"
+        },
+        {
+          "a": "I accidentally splash it on three different people while trying to look cool.",
+          "r": "chaos"
+        },
+        {
+          "a": "I have a calculated 14-ounce sipping schedule based on my heart rate.",
+          "r": "technocrat"
+        }
+      ]
+    },
+    {
+      "q": "You see a piece of equipment you want, but someone is using it. What is your move?",
+      "answers": [
+        {
+          "a": "I stand exactly 4 feet away and breathe audibly until they feel the pressure.",
+          "r": "chaos"
+        },
+        {
+          "a": "I check my phone and pretend I've forgotten why I even came here.",
+          "r": "phantom"
+        },
+        {
+          "a": "I ask 'How many sets you got left?' every 45 seconds.",
+          "r": "optimist"
+        },
+        {
+          "a": "I calculate the efficiency loss of my workout and log it in a spreadsheet.",
+          "r": "technocrat"
+        }
+      ]
+    },
+    {
+      "q": "What does your 'gym bag' actually contain?",
+      "answers": [
+        {
+          "a": "Two damp towels and a protein shaker that smells like a locker room from 1994.",
+          "r": "optimist"
+        },
+        {
+          "a": "A membership card I haven't used since the Obama administration.",
+          "r": "phantom"
+        },
+        {
+          "a": "Three different types of lifting straps and a handheld fan.",
+          "r": "technocrat"
+        },
+        {
+          "a": "Just a single, loose sneaker and a dream.",
+          "r": "chaos"
+        }
+      ]
+    },
+    {
+      "q": "How do you handle the gym mirrors?",
+      "answers": [
+        {
+          "a": "I spend 12 minutes adjusting my shirt to find the optimal lighting for a flex.",
+          "r": "optimist"
+        },
+        {
+          "a": "I avoid eye contact with myself at all costs.",
+          "r": "phantom"
+        },
+        {
+          "a": "I use them to make sure no one is watching me struggle with a 10lb dumbbell.",
+          "r": "technocrat"
+        },
+        {
+          "a": "I accidentally walk into one while trying to read a text.",
+          "r": "chaos"
+        }
+      ]
+    },
+    {
+      "q": "What is your honest opinion of the 'Functional Fitness' zone?",
+      "answers": [
+        {
+          "a": "It's a playground for adults who want to feel like they're in an obstacle course.",
+          "r": "chaos"
+        },
+        {
+          "a": "It's where I go to stand around and look confused for twenty minutes.",
+          "r": "phantom"
+        },
+        {
+          "a": "It is the only place where my biological potential is truly unlocked.",
+          "r": "optimist"
+        },
+        {
+          "a": "The ergonomics of the kettlebells are suboptimal for my specific limb length.",
+          "r": "technocrat"
+        }
+      ]
+    },
+    {
+      "q": "Pick a post-workout reward.",
+      "answers": [
+        {
+          "a": "A lukewarm shake that tastes like chalk and regret.",
+          "r": "optimist"
+        },
+        {
+          "a": "The feeling of finally leaving the building.",
+          "r": "phantom"
+        },
+        {
+          "a": "A meticulous review of my biometric data on a wrist-worn device.",
+          "r": "technocrat"
+        },
+        {
+          "a": "A celebratory burger that completely negates the three minutes of cardio I did.",
+          "r": "chaos"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "optimist": {
+      "title": "The 'One Month Away from a Transformation' Believer",
+      "body": "You are currently in the 'honeymoon' phase of a fitness journey that has lasted exactly 11 days. You've bought the compression gear and the high-end supplements, and you genuinely believe your body will fundamentally restructure itself by next Tuesday. You spend more time talking about 'the grind' than actually grinding. Your current peak is owning a foam roller you've used twice, but you've already told three coworkers that you're 'basically a pro' now.",
+      "share": "I'm officially in my transformation era (I bought new socks)."
+    },
+    "phantom": {
+      "title": "The Financial Donor (Non-Attending Member)",
+      "body": "You don't go to the gym; you simply provide the gym with a monthly charitable donation via your autopay settings. When you do occasionally appear, you move through the facility like a ghost, terrified that a trainer might recognize you and ask why you've been gone since October. Your primary workout consists of the walk from the parking lot to the front desk and the subsequent feeling of guilt that lasts until the next billing cycle.",
+      "share": "I'm a Platinum Member in spirit and a stranger in person."
+    },
+    "technocrat": {
+      "title": "The Biometric Obsessive",
+      "body": "For you, exercise is not a physical activity—it is a data-entry project. You don't care if you feel strong; you care if your heart-rate variability suggests a 4% increase in recovery efficiency. You treat your body like a leased vehicle from a corporate fleet, optimizing every breath and sip of water according to a PDF you found on a niche forum. You have three different apps tracking your sleep, yet you are perpetually exhausted.",
+      "share": "My data suggests I'm fit, even if my knees disagree."
+    },
+    "chaos": {
+      "title": "The High-Energy Liability",
+      "body": "You are the reason the gym has to post signs about 're-racking your weights.' You approach fitness with the focused intensity of a golden retriever in a tennis ball factory. You don't follow a plan; you just do things that look hard until you're out of breath or someone asks you to move. You've likely broken at least one piece of equipment by using it in a way that the manufacturer explicitly warned against in the manual.",
+      "share": "I don't follow a routine, I follow a vibe (and the vibe is chaos)."
+    }
+  }
+}
