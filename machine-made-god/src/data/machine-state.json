@@ -1,13 +1,14 @@
 {
   "providers": {
     "groq": {
-      "ok": 34,
-      "lastSuccess": "2026-10-26T14:48:42.733Z",
-      "fail": 4,
-      "cooldownUntil": "2026-10-20T13:34:01.767Z"
+      "ok": 36,
+      "lastSuccess": "2026-10-27T02:04:38.021Z",
+      "fail": 5,
+      "cooldownUntil": "2026-10-28T02:04:38.283Z",
+      "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 25,
+      "fail": 28,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,24 +16,49 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 14,
+      "fail": 15,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-26T20:48:16.479Z",
+      "cooldownUntil": "2026-10-27T08:04:28.074Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 23,
-      "lastSuccess": "2026-10-26T14:48:51.544Z",
-      "fail": 3
+      "ok": 25,
+      "lastSuccess": "2026-10-27T02:04:34.091Z",
+      "fail": 4
     },
     "ollama-cloud": {
-      "ok": 27,
-      "lastSuccess": "2026-10-26T14:48:50.621Z",
-      "fail": 3
+      "ok": 28,
+      "lastSuccess": "2026-10-27T02:04:49.940Z",
+      "fail": 4
     }
   },
   "lastQuizAt": "2026-10-24T02:01:46.936Z",
   "runs": [
+    {
+      "at": "2026-10-27T02:02:25.156Z",
+      "articles": [
+        {
+          "slug": "vortexia-launches-project-paddlestar-corporate-pickleball-series-that",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "corporate-team-building-retreat-turns-self-checkout-into-a-black-hole",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": [
+        "quiz: every provider failed: groq: out of credits; ollama-cloud: draft quiz: contains banned phrase \"attention economy\"; gemini: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]; cerebras: means the same as /quiz/which-overengineered-sleep-tracker-perk-matches-your-nighttime-persona/ (0.84)"
+      ]
+    },
     {
       "at": "2026-10-26T14:48:13.907Z",
       "articles": [
