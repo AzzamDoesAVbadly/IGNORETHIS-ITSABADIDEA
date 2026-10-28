@@ -8,7 +8,7 @@
       "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 32,
+      "fail": 35,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -16,24 +16,47 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 16,
+      "fail": 17,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-27T19:38:27.835Z",
+      "cooldownUntil": "2026-10-28T07:50:47.287Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 28,
-      "lastSuccess": "2026-10-27T13:40:50.889Z",
+      "ok": 30,
+      "lastSuccess": "2026-10-28T01:51:03.232Z",
       "fail": 4
     },
     "ollama-cloud": {
-      "ok": 31,
-      "lastSuccess": "2026-10-27T13:40:49.251Z",
+      "ok": 34,
+      "lastSuccess": "2026-10-28T01:51:04.958Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-10-27T13:40:49.381Z",
   "runs": [
+    {
+      "at": "2026-10-28T01:50:26.083Z",
+      "articles": [
+        {
+          "slug": "omnivex-launches-homesync-homeostasis-the-smart-home-that-locks-you",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        },
+        {
+          "slug": "couple-marks-842-day-trial-period-after-refusing-to-pick-a-shared",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-27T13:34:02.901Z",
       "articles": [
