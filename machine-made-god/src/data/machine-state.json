@@ -1,14 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 36,
-      "lastSuccess": "2026-10-27T02:04:38.021Z",
+      "ok": 39,
+      "lastSuccess": "2026-10-28T13:24:41.620Z",
       "fail": 5,
-      "cooldownUntil": "2026-10-28T02:04:38.283Z",
-      "lastError": "out of credits"
+      "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
     "gemini": {
-      "fail": 35,
+      "fail": 37,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -16,9 +15,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 17,
+      "fail": 18,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-28T07:50:47.287Z",
+      "cooldownUntil": "2026-10-28T19:22:33.221Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -27,13 +26,36 @@
       "fail": 4
     },
     "ollama-cloud": {
-      "ok": 34,
-      "lastSuccess": "2026-10-28T01:51:04.958Z",
+      "ok": 36,
+      "lastSuccess": "2026-10-28T13:22:32.999Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-10-27T13:40:49.381Z",
   "runs": [
+    {
+      "at": "2026-10-28T13:22:15.440Z",
+      "articles": [
+        {
+          "slug": "review-the-nexora-airmug-is-the-first-coffee-cup-that-requires-a",
+          "provider": "groq+ollama-cloud",
+          "model": "openai/gpt-oss-120b → gemma4:31b"
+        },
+        {
+          "slug": "review-halcyon-tek-aurastream-only-lets-you-drink-when-your-brain",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-28T01:50:26.083Z",
       "articles": [
