@@ -1,8 +1,8 @@
 {
   "providers": {
     "groq": {
-      "ok": 39,
-      "lastSuccess": "2026-10-28T13:24:41.620Z",
+      "ok": 40,
+      "lastSuccess": "2026-10-29T01:51:16.762Z",
       "fail": 5,
       "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
@@ -21,18 +21,41 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 30,
-      "lastSuccess": "2026-10-28T01:51:03.232Z",
+      "ok": 32,
+      "lastSuccess": "2026-10-29T01:51:19.049Z",
       "fail": 4
     },
     "ollama-cloud": {
-      "ok": 36,
-      "lastSuccess": "2026-10-28T13:22:32.999Z",
+      "ok": 38,
+      "lastSuccess": "2026-10-29T01:51:13.154Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-10-27T13:40:49.381Z",
   "runs": [
+    {
+      "at": "2026-10-29T01:50:49.909Z",
+      "articles": [
+        {
+          "slug": "im-voice-memo-47-the-14-second-recording-youve-ignored-for-1-826-days",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        },
+        {
+          "slug": "meridian-dynamics-unveils-synergysphere-letting-employees-work-as",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-28T13:22:15.440Z",
       "articles": [
