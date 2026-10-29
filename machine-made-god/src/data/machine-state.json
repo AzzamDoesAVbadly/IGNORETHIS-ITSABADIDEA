@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 40,
-      "lastSuccess": "2026-10-29T01:51:16.762Z",
+      "ok": 41,
+      "lastSuccess": "2026-10-29T13:23:19.330Z",
       "fail": 5,
       "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
     "gemini": {
-      "fail": 37,
+      "fail": 39,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,18 +21,41 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 32,
-      "lastSuccess": "2026-10-29T01:51:19.049Z",
+      "ok": 33,
+      "lastSuccess": "2026-10-29T13:23:38.122Z",
       "fail": 4
     },
     "ollama-cloud": {
-      "ok": 38,
-      "lastSuccess": "2026-10-29T01:51:13.154Z",
+      "ok": 41,
+      "lastSuccess": "2026-10-29T13:25:39.783Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-10-27T13:40:49.381Z",
   "runs": [
+    {
+      "at": "2026-10-29T13:23:14.080Z",
+      "articles": [
+        {
+          "slug": "book-club-held-hostage-by-hyper-realistic-corporate-escape-room-for",
+          "provider": "groq+ollama-cloud",
+          "model": "openai/gpt-oss-120b → gemma4:31b"
+        },
+        {
+          "slug": "omnivex-launches-flexspace-pay-per-degree-seat-recline-that-costs",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-29T01:50:49.909Z",
       "articles": [
