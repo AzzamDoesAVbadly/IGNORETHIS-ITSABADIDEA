@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 41,
-      "lastSuccess": "2026-10-29T13:23:19.330Z",
+      "ok": 42,
+      "lastSuccess": "2026-10-30T01:50:25.122Z",
       "fail": 5,
       "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
     "gemini": {
-      "fail": 39,
+      "fail": 40,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,18 +21,41 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 33,
-      "lastSuccess": "2026-10-29T13:23:38.122Z",
+      "ok": 36,
+      "lastSuccess": "2026-10-30T01:52:32.946Z",
       "fail": 4
     },
     "ollama-cloud": {
-      "ok": 41,
-      "lastSuccess": "2026-10-29T13:25:39.783Z",
+      "ok": 42,
+      "lastSuccess": "2026-10-30T01:52:29.885Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-10-27T13:40:49.381Z",
   "runs": [
+    {
+      "at": "2026-10-30T01:50:18.957Z",
+      "articles": [
+        {
+          "slug": "i-am-the-onboarding-app-that-sends-you-423-mandatory-trainings-before",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "omnivex-launches-waitstate-the-hold-line-that-awards-you-a-medal-for",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-29T13:23:14.080Z",
       "articles": [
