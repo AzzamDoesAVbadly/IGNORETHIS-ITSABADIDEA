@@ -1,0 +1,168 @@
+{
+  "title": "Which Obscure Escape‑Room Prop Matches Your Real‑World Problem‑Solving Style?",
+  "dek": "Pick six everyday dilemmas and discover whether you’re the rusted key that unlocks hidden doors, the red button that triggers chaos, the clipboard that catalogs every detail, or the disposable camera that captures moments you’ll never actually develop.",
+  "author": "god-exe",
+  "date": "2026-10-31T01:55:53.709Z",
+  "tags": [
+    "quiz",
+    "personality",
+    "escape",
+    "humor"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "badge",
+    "palette": "teal",
+    "label": "Prop Picker"
+  },
+  "questions": [
+    {
+      "q": "When you realize you’ve missed a deadline, you…",
+      "answers": [
+        {
+          "a": "Frantically search for a backup plan like a key you hope fits any lock.",
+          "r": "key"
+        },
+        {
+          "a": "Hit the panic button and hope someone else will press it for you.",
+          "r": "button"
+        },
+        {
+          "a": "Pull out a pre‑made checklist and try to rewrite the schedule.",
+          "r": "clipboard"
+        },
+        {
+          "a": "Snap a photo of the missed deadline and promise to develop it later.",
+          "r": "camera"
+        }
+      ]
+    },
+    {
+      "q": "At a grocery store, you’re faced with a product you’ve never seen. You…",
+      "answers": [
+        {
+          "a": "Try the mysterious item, convinced the lock on curiosity will open.",
+          "r": "key"
+        },
+        {
+          "a": "Press the obvious ‘Buy’ button, hoping a red warning will warn you later.",
+          "r": "button"
+        },
+        {
+          "a": "Compare it side‑by‑side with the familiar, making notes on a mental clipboard.",
+          "r": "clipboard"
+        },
+        {
+          "a": "Take a picture of it, planning to research it when you have time to develop the evidence.",
+          "r": "camera"
+        }
+      ]
+    },
+    {
+      "q": "During a Zoom call, your internet freezes. Your reaction is…",
+      "answers": [
+        {
+          "a": "Look for the hidden link to re‑join, as if you have a master key.",
+          "r": "key"
+        },
+        {
+          "a": "Hit the mute‑and‑unmute button repeatedly, hoping it will magically restart.",
+          "r": "button"
+        },
+        {
+          "a": "Write a frantic bullet‑point list in the chat to keep everyone on track.",
+          "r": "clipboard"
+        },
+        {
+          "a": "Record the frozen screen, promising to edit it into a meme later.",
+          "r": "camera"
+        }
+      ]
+    },
+    {
+      "q": "Your friend asks for a favor you’re not excited about. You…",
+      "answers": [
+        {
+          "a": "Offer a ‘just in case’ solution, pulling out the spare key of goodwill.",
+          "r": "key"
+        },
+        {
+          "a": "Push the red button of annoyance and say ‘maybe later’.",
+          "r": "button"
+        },
+        {
+          "a": "Hand them a printed form with steps, like a clipboard of bureaucracy.",
+          "r": "clipboard"
+        },
+        {
+          "a": "Take a selfie together to commemorate the request, then forget it.",
+          "r": "camera"
+        }
+      ]
+    },
+    {
+      "q": "When you’re planning a weekend trip, you…",
+      "answers": [
+        {
+          "a": "Look for a shortcut key that will unlock all itineraries at once.",
+          "r": "key"
+        },
+        {
+          "a": "Book the first flight you see, pressing the ‘confirm’ button without thought.",
+          "r": "button"
+        },
+        {
+          "a": "Create a travel spreadsheet with rows, columns, and a checklist.",
+          "r": "clipboard"
+        },
+        {
+          "a": "Pack a disposable camera for ‘authentic’ vacation snaps you’ll never develop.",
+          "r": "camera"
+        }
+      ]
+    },
+    {
+      "q": "At a party, you’re asked to play a game you don’t understand. You…",
+      "answers": [
+        {
+          "a": "Search for a hidden key in the room that might explain the rules.",
+          "r": "key"
+        },
+        {
+          "a": "Press the ‘start’ button on the game console, hoping the red light signals fun.",
+          "r": "button"
+        },
+        {
+          "a": "Write down the rules on a napkin, turning it into a makeshift clipboard.",
+          "r": "clipboard"
+        },
+        {
+          "a": "Take a quick photo of the game board, promising to look up the instructions later.",
+          "r": "camera"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "key": {
+      "title": "You’re the Rusted Key: The Reluctant Problem‑Solver",
+      "body": "You approach challenges like a forgotten key you keep in the junk drawer—always there, but you’re never sure which lock it fits. You prefer to stall until a sudden burst of inspiration reveals the right opening, and you’re comfortable letting others try the obvious solutions first. When faced with a deadline, you scramble for a backup, hoping the right twist of metal will magically turn. In social settings you’re the person who offers a ‘maybe‑later’ plan and then disappears, convinced the real answer will surface when the lock finally clicks.",
+      "share": "I’m the rusted key—always in the drawer, hoping the right lock shows up."
+    },
+    "button": {
+      "title": "You’re the Red Button: The Impulsive Trigger",
+      "body": "You react to problems the way a red button begs to be pressed—loud, immediate, and often without a clear purpose. When a minor inconvenience appears, you’re the first to hit the alarm, hoping the resulting commotion will force a quick resolution. In meetings you volunteer for tasks you haven’t read, confident that the sheer shock will make everyone else scramble to catch up. Your friends both admire and dread your ability to turn a calm situation into an emergency with a single, decisive push.",
+      "share": "I’m the red button—press me and watch the chaos unfold."
+    },
+    "clipboard": {
+      "title": "You’re the Clipboard: The Over‑Planner Who Loves the Details",
+      "body": "You treat every task like a line item on a meticulously organized clipboard, complete with color‑coded stickers and a deadline for each bullet point. When someone suggests a spontaneous outing, you immediately pull out a form, asking for a schedule, budget, and risk assessment before you even say yes. Your inbox is a forest of PDFs titled ‘Project Outline,’ and you derive comfort from the rustle of paper turning. Even casual conversations become a series of checkmarks you’re eager to tick off.",
+      "share": "I’m the clipboard—my life is a paper trail of perfect plans."
+    },
+    "camera": {
+      "title": "You’re the Disposable Camera: The Nostalgic Snap‑Collector",
+      "body": "You love the idea of capturing moments with a cheap, single‑use camera, even though you know you’ll never actually develop the film. Your photo albums are full of imagined shots, and you spend weekends scrolling through filters that simulate a grainy look you’ll never achieve. When faced with a deadline, you promise to ‘document’ the process and then lose the tape. Friends tease you for your habit of saying ‘If I had a photo of that, I’d…’ while you silently hope the memory will develop on its own.",
+      "share": "I’m the disposable camera—gotten the moment, but never developed it."
+    }
+  }
+}

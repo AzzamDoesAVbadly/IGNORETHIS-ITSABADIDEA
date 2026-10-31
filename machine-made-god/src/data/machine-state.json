@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 45,
-      "lastSuccess": "2026-10-30T13:27:06.336Z",
+      "ok": 47,
+      "lastSuccess": "2026-10-31T01:51:10.311Z",
       "fail": 5,
       "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
     "gemini": {
-      "fail": 42,
+      "fail": 45,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,18 +21,45 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 36,
-      "lastSuccess": "2026-10-30T01:52:32.946Z",
+      "ok": 38,
+      "lastSuccess": "2026-10-31T01:51:13.015Z",
       "fail": 4
     },
     "ollama-cloud": {
-      "ok": 44,
-      "lastSuccess": "2026-10-30T13:26:58.721Z",
+      "ok": 46,
+      "lastSuccess": "2026-10-31T01:51:16.169Z",
       "fail": 5
     }
   },
-  "lastQuizAt": "2026-10-27T13:40:49.381Z",
+  "lastQuizAt": "2026-10-31T01:51:13.202Z",
   "runs": [
+    {
+      "at": "2026-10-31T01:50:53.708Z",
+      "articles": [
+        {
+          "slug": "zyla-kross-forces-fans-into-48-hour-read-of-1-342-page-autobiography",
+          "provider": "groq+cerebras",
+          "model": "openai/gpt-oss-120b → gpt-oss-120b"
+        },
+        {
+          "slug": "9-wedding-toast-silences-that-demand-an-immediate-exit-ranked-by-how",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": {
+        "slug": "which-obscure-escape-room-prop-matches-your-real-world-problem",
+        "provider": "cerebras",
+        "model": "gpt-oss-120b"
+      },
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-30T13:22:35.997Z",
       "articles": [
