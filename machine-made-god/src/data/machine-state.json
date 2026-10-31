@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 47,
-      "lastSuccess": "2026-10-31T01:51:10.311Z",
+      "ok": 49,
+      "lastSuccess": "2026-10-31T13:20:17.949Z",
       "fail": 5,
       "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
     "gemini": {
-      "fail": 45,
+      "fail": 47,
       "ok": 18,
       "lastSuccess": "2026-10-25T02:03:02.134Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,24 +15,47 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 18,
+      "fail": 19,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-28T19:22:33.221Z",
+      "cooldownUntil": "2026-10-31T19:20:13.329Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 38,
-      "lastSuccess": "2026-10-31T01:51:13.015Z",
+      "ok": 40,
+      "lastSuccess": "2026-10-31T13:20:20.137Z",
       "fail": 4
     },
     "ollama-cloud": {
-      "ok": 46,
-      "lastSuccess": "2026-10-31T01:51:16.169Z",
+      "ok": 47,
+      "lastSuccess": "2026-10-31T13:20:13.138Z",
       "fail": 5
     }
   },
   "lastQuizAt": "2026-10-31T01:51:13.202Z",
   "runs": [
+    {
+      "at": "2026-10-31T13:20:00.861Z",
+      "articles": [
+        {
+          "slug": "vortexia-launches-echoloop-employees-earn-snack-vouchers-for-every",
+          "provider": "groq+cerebras",
+          "model": "openai/gpt-oss-120b → gpt-oss-120b"
+        },
+        {
+          "slug": "action-star-sterling-thorne-sues-grand-azure-hotel-after-tipping",
+          "provider": "ollama-cloud+groq",
+          "model": "gemma4:31b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 1,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-31T01:50:53.708Z",
       "articles": [
@@ -712,33 +735,6 @@
       "quiz": null,
       "extras": {
         "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-18T01:30:12.454Z",
-      "articles": [
-        {
-          "slug": "9-ways-your-feed-pretends-to-be-your-therapist-while-actually-selling",
-          "provider": "groq+openrouter",
-          "model": "openai/gpt-oss-120b → nvidia/nemotron-3-super-120b-a12b:free"
-        },
-        {
-          "slug": "lavender-mist-fountain-triggers-unplanned-1994-prom-flashbacks-for-3",
-          "provider": "openrouter+cerebras",
-          "model": "nvidia/nemotron-3-super-120b-a12b:free → gpt-oss-120b"
-        }
-      ],
-      "quiz": {
-        "slug": "which-overengineered-sleep-tracker-perk-matches-your-nighttime-persona",
-        "provider": "cerebras",
-        "model": "gpt-oss-120b"
-      },
-      "extras": {
-        "provider": "gemini",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

@@ -1,13 +1,5 @@
 [
   {
-    "id": "sandwich",
-    "brand": "Dr. Crust's Opinion Clinic",
-    "headline": "Doctors Hate This One Weirdly Specific Sandwich Opinion",
-    "body": "Mayo on both slices? Ham under the cheese? One local man has the answer and he will not stop telling you.",
-    "cta": "Hear His Opinion",
-    "palette": "hazard"
-  },
-  {
     "id": "emails",
     "brand": "Inbox Evasion Systems™",
     "headline": "This Local Man Found a New Way to Avoid Answering Emails",
@@ -318,5 +310,13 @@
     "body": "The SonicSieve 400 isolates individual respiratory rhythms, turning distracting human noises into a gentle, corporate harp melody.",
     "cta": "SILENCE THE HUMANS",
     "palette": "crt"
+  },
+  {
+    "id": "novaquad-desk-lamp-that-blames-you-for-w",
+    "brand": "NOVAQUAD",
+    "headline": "Desk Lamp That Blames You for Working Late—And Sends You a Receipt",
+    "body": "The NovaBright Lamp monitors ambient light and your screen time. When you cross the 9 p.m. threshold, it flashes a polite warning and emails a bill to your inbox.",
+    "cta": "Get the Lamp",
+    "palette": "teal"
   }
 ]
