@@ -1,38 +1,61 @@
 {
   "providers": {
     "groq": {
-      "ok": 50,
-      "lastSuccess": "2026-11-01T01:51:52.645Z",
+      "ok": 51,
+      "lastSuccess": "2026-11-01T13:23:20.573Z",
       "fail": 5,
       "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
     "gemini": {
-      "fail": 48,
-      "ok": 19,
-      "lastSuccess": "2026-11-01T01:51:48.269Z",
+      "fail": 50,
+      "ok": 20,
+      "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 20,
+      "fail": 21,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-01T07:50:14.700Z",
+      "cooldownUntil": "2026-11-01T19:21:15.076Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 42,
-      "lastSuccess": "2026-11-01T01:51:57.120Z",
+      "ok": 44,
+      "lastSuccess": "2026-11-01T13:21:16.355Z",
       "fail": 5
     },
     "ollama-cloud": {
-      "ok": 48,
-      "lastSuccess": "2026-11-01T01:50:20.205Z",
+      "ok": 49,
+      "lastSuccess": "2026-11-01T13:25:25.055Z",
       "fail": 5
     }
   },
   "lastQuizAt": "2026-10-31T01:51:13.202Z",
   "runs": [
+    {
+      "at": "2026-11-01T13:20:20.483Z",
+      "articles": [
+        {
+          "slug": "jam-quartet-trapped-in-14-hour-bridge-after-guitarists-refuse-to-blink",
+          "provider": "gemini+cerebras",
+          "model": "gemini-flash-latest → gpt-oss-120b"
+        },
+        {
+          "slug": "cirrusync-turns-employee-eyelid-closures-into-carbon-credits-with",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-01T01:50:14.394Z",
       "articles": [
@@ -712,29 +735,6 @@
       "quiz": null,
       "extras": {
         "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-18T02:13:10.093Z",
-      "articles": [
-        {
-          "slug": "9-ridiculously-exact-rankings-nobody-asked-for-but-we-tracked-anyway",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        },
-        {
-          "slug": "indie-duo-static-whisper-gets-fired-when-bass-triggers-cloud-center",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

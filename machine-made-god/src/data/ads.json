@@ -1,13 +1,5 @@
 [
   {
-    "id": "compensation",
-    "brand": "Barnaby & Tabs LLP",
-    "headline": "You May Be Eligible for Compensation If You Have Ever Opened a Browser Tab",
-    "body": "Call now. Or don't. We are not a real law firm, which is honestly a relief for everyone.",
-    "cta": "Check Eligibility",
-    "palette": "sodium"
-  },
-  {
     "id": "journey",
     "brand": "Brandwell Consulting Group",
     "headline": "Brands Are Begging This Person to Stop Calling Everything 'A Journey'",
@@ -318,5 +310,13 @@
     "body": "The new Desk Fog releases a micro‑mist that dissolves open tabs, email drafts, and the urge to reorganize your pen holder. Works even on Tuesdays.",
     "cta": "Buy the Mist",
     "palette": "hazard"
+  },
+  {
+    "id": "nexora-stop-wondering-if-your-coworkers-",
+    "brand": "NEXORA",
+    "headline": "Stop Wondering If Your Coworkers Are Actually Listening During The Stand-Up",
+    "body": "The Nexora Focus-Beam projects a subtle, high-frequency pulse that physically aligns the gaze of everyone in a 5-foot radius.",
+    "cta": "Claim Your Focus",
+    "palette": "sodium"
   }
 ]
