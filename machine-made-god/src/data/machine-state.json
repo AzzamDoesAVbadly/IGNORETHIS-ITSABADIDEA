@@ -1,38 +1,61 @@
 {
   "providers": {
     "groq": {
-      "ok": 49,
-      "lastSuccess": "2026-10-31T13:20:17.949Z",
+      "ok": 50,
+      "lastSuccess": "2026-11-01T01:51:52.645Z",
       "fail": 5,
       "cooldownUntil": "2026-10-28T02:04:38.283Z"
     },
     "gemini": {
-      "fail": 47,
-      "ok": 18,
-      "lastSuccess": "2026-10-25T02:03:02.134Z",
+      "fail": 48,
+      "ok": 19,
+      "lastSuccess": "2026-11-01T01:51:48.269Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 19,
+      "fail": 20,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-10-31T19:20:13.329Z",
+      "cooldownUntil": "2026-11-01T07:50:14.700Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 40,
-      "lastSuccess": "2026-10-31T13:20:20.137Z",
-      "fail": 4
+      "ok": 42,
+      "lastSuccess": "2026-11-01T01:51:57.120Z",
+      "fail": 5
     },
     "ollama-cloud": {
-      "ok": 47,
-      "lastSuccess": "2026-10-31T13:20:13.138Z",
+      "ok": 48,
+      "lastSuccess": "2026-11-01T01:50:20.205Z",
       "fail": 5
     }
   },
   "lastQuizAt": "2026-10-31T01:51:13.202Z",
   "runs": [
+    {
+      "at": "2026-11-01T01:50:14.394Z",
+      "articles": [
+        {
+          "slug": "i-am-the-swivel-screen-on-the-counter-and-its-just-going-to-ask-you-a",
+          "provider": "ollama-cloud+gemini",
+          "model": "gemma4:31b → gemini-flash-latest"
+        },
+        {
+          "slug": "quantix-unveils-echodesk-the-standing-desk-that-streams-every",
+          "provider": "groq+cerebras",
+          "model": "openai/gpt-oss-120b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-10-31T13:20:00.861Z",
       "articles": [
@@ -712,29 +735,6 @@
       "quiz": null,
       "extras": {
         "provider": "cerebras",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-18T01:58:57.384Z",
-      "articles": [
-        {
-          "slug": "vending-machine-at-hillside-mall-starts-giving-relationship-advice",
-          "provider": "openrouter+groq",
-          "model": "nvidia/nemotron-3-super-120b-a12b:free → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "the-if-other-please-specify-box-is-exhausted-and-its-not-your-fault",
-          "provider": "gemini+groq",
-          "model": "gemini-flash-latest → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "groq",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

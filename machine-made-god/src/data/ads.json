@@ -1,13 +1,5 @@
 [
   {
-    "id": "emails",
-    "brand": "Inbox Evasion Systems™",
-    "headline": "This Local Man Found a New Way to Avoid Answering Emails",
-    "body": "Inbox professionals are furious. He just closes the laptop. That's it. That's the trick.",
-    "cta": "Close Laptop Now",
-    "palette": "bleach"
-  },
-  {
     "id": "compensation",
     "brand": "Barnaby & Tabs LLP",
     "headline": "You May Be Eligible for Compensation If You Have Ever Opened a Browser Tab",
@@ -318,5 +310,13 @@
     "body": "The NovaBright Lamp monitors ambient light and your screen time. When you cross the 9 p.m. threshold, it flashes a polite warning and emails a bill to your inbox.",
     "cta": "Get the Lamp",
     "palette": "teal"
+  },
+  {
+    "id": "omnivex-desk-fog-erases-distractions-in-",
+    "brand": "OmniVex",
+    "headline": "Desk Fog Erases Distractions in 7 Seconds—Scientists Call It ‘Pure Mist’",
+    "body": "The new Desk Fog releases a micro‑mist that dissolves open tabs, email drafts, and the urge to reorganize your pen holder. Works even on Tuesdays.",
+    "cta": "Buy the Mist",
+    "palette": "hazard"
   }
 ]
