@@ -1,13 +1,5 @@
 [
   {
-    "id": "nap",
-    "brand": "SNOOZR+ Premium Rest",
-    "headline": "Introducing Naps, Now With a Subscription",
-    "body": "Sleep has always been free. We fixed that. Plans start at $9.99 per blink.",
-    "cta": "Start Free Trial (Not Free)",
-    "palette": "sick"
-  },
-  {
     "id": "water",
     "brand": "AQUAFINITY Hydration Labs",
     "headline": "Our Water Has Been Disrupted",
@@ -318,5 +310,13 @@
     "body": "A smart-glass layer that subtly adjusts your reflection to look like you've had 8 hours of sleep and a meaningful hobby.",
     "cta": "BEAUTIFY MY TRUTH",
     "palette": "sodium"
+  },
+  {
+    "id": "omnivex-is-your-silence-too-loud-try-the",
+    "brand": "Omnivex",
+    "headline": "Is Your Silence Too Loud? Try The White-Noise Sculptor",
+    "body": "Custom-engineered frequencies that mimic the sound of a medium-sized office where everyone is pretending to be busy.",
+    "cta": "Mute Your Life",
+    "palette": "crt"
   }
 ]

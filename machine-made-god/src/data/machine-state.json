@@ -8,7 +8,7 @@
       "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 52,
+      "fail": 55,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -22,18 +22,45 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 45,
-      "lastSuccess": "2026-11-02T01:51:18.757Z",
+      "ok": 46,
+      "lastSuccess": "2026-11-02T04:05:44.918Z",
       "fail": 6
     },
     "ollama-cloud": {
-      "ok": 50,
-      "lastSuccess": "2026-11-02T01:53:23.462Z",
+      "ok": 53,
+      "lastSuccess": "2026-11-02T04:07:50.337Z",
       "fail": 5
+    },
+    "qwen": {
+      "ok": 1,
+      "lastSuccess": "2026-11-02T04:01:39.218Z"
     }
   },
   "lastQuizAt": "2026-10-31T01:51:13.202Z",
   "runs": [
+    {
+      "at": "2026-11-02T04:00:04.899Z",
+      "articles": [
+        {
+          "slug": "9-precise-gaze-durations-of-a-stranger-holding-a-door-ranked-by",
+          "provider": "qwen+ollama-cloud",
+          "model": "qwen3.7-plus → gemma4:31b"
+        },
+        {
+          "slug": "city-deploys-forensic-tech-team-to-recover-deleted-brunch-notification",
+          "provider": "cerebras+ollama-cloud",
+          "model": "gpt-oss-120b → gemma4:31b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-02T01:51:10.338Z",
       "articles": [
@@ -713,29 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "openrouter",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-19T02:02:13.589Z",
-      "articles": [
-        {
-          "slug": "9-ridiculously-useless-airport-lounge-amenities-that-might-actually",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "post-punk-collective-vox-void-hijacks-3-412-elevators-with-12-minute",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
