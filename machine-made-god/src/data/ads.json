@@ -1,13 +1,5 @@
 [
   {
-    "id": "water",
-    "brand": "AQUAFINITY Hydration Labs",
-    "headline": "Our Water Has Been Disrupted",
-    "body": "We took regular water and added a logo. Hydration has never felt so on-brand.",
-    "cta": "Drink the Logo",
-    "palette": "crt"
-  },
-  {
     "id": "chair",
     "brand": "OMNIVEX Seating Solutions",
     "headline": "The Ergonomic Chair That Judges Your Posture Out Loud",
@@ -318,5 +310,13 @@
     "body": "Custom-engineered frequencies that mimic the sound of a medium-sized office where everyone is pretending to be busy.",
     "cta": "Mute Your Life",
     "palette": "crt"
+  },
+  {
+    "id": "halcyon-tek-say-goodbye-to-the-office-bu",
+    "brand": "HALCYON-TEK",
+    "headline": "Say goodbye to the office buzz: HALCYON-TEK's Quietus Desk silences every click",
+    "body": "A magnetic mat that detects keystroke vibrations and emits a soothing low‑frequency tone, convincing you the workday is already over.",
+    "cta": "Try the hush",
+    "palette": "sick"
   }
 ]

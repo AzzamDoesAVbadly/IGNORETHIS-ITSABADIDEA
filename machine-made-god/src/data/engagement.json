@@ -1,6 +1,231 @@
 {
-  "updatedAt": "2026-11-02T03:59:56.421Z",
-  "arms": {},
-  "top": [],
-  "posts": {}
+  "updatedAt": "2026-11-02T22:19:44.430Z",
+  "arms": {
+    "bluesky:fake-outrage": {
+      "n": 1,
+      "total": 0
+    },
+    "category:news": {
+      "n": 1,
+      "total": 0
+    },
+    "format:news": {
+      "n": 2,
+      "total": 0
+    },
+    "bluesky:ranking-bait": {
+      "n": 1,
+      "total": 0
+    },
+    "category:lists": {
+      "n": 1,
+      "total": 0
+    },
+    "format:listicle": {
+      "n": 1,
+      "total": 0
+    },
+    "bluesky:confession": {
+      "n": 1,
+      "total": 1
+    },
+    "category:internet": {
+      "n": 1,
+      "total": 1
+    },
+    "format:essay": {
+      "n": 1,
+      "total": 1
+    },
+    "bluesky:deadpan": {
+      "n": 1,
+      "total": 0
+    },
+    "category:lifestyle": {
+      "n": 1,
+      "total": 0
+    },
+    "shorts:bump": {
+      "n": 1,
+      "total": 0.68
+    },
+    "shorts:headline": {
+      "n": 1,
+      "total": 0.25
+    }
+  },
+  "top": [
+    {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b",
+      "network": "bluesky",
+      "slug": "the-7-58-a-m-run-miss-notification-is-filing-a-formal-complaint",
+      "style": "confession",
+      "category": "internet",
+      "format": "essay",
+      "at": "2026-11-02T01:54:12.716Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    {
+      "key": "youtube:jBDAp5I2L5I",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-02T02:37:22.298Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 68
+      },
+      "score": 0.68
+    },
+    {
+      "key": "youtube:2V2vMAjhJss",
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-02T02:38:23.352Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 25
+      },
+      "score": 0.25
+    },
+    {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzchg3fu3a2b",
+      "network": "bluesky",
+      "slug": "city-deploys-forensic-tech-team-to-recover-deleted-brunch-notification",
+      "style": "fake-outrage",
+      "category": "news",
+      "format": "news",
+      "at": "2026-11-02T04:08:59.372Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzchb5vaix2p",
+      "network": "bluesky",
+      "slug": "9-precise-gaze-durations-of-a-stranger-holding-a-door-ranked-by",
+      "style": "ranking-bait",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-02T04:08:59.372Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7q5qgvd2f",
+      "network": "bluesky",
+      "slug": "ficus-launches-first-relationship-advice-column-cites-sunlight",
+      "style": "deadpan",
+      "category": "lifestyle",
+      "format": "news",
+      "at": "2026-11-02T01:54:12.716Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    }
+  ],
+  "posts": {
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzchg3fu3a2b": {
+      "network": "bluesky",
+      "slug": "city-deploys-forensic-tech-team-to-recover-deleted-brunch-notification",
+      "style": "fake-outrage",
+      "category": "news",
+      "format": "news",
+      "at": "2026-11-02T04:08:59.372Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzchb5vaix2p": {
+      "network": "bluesky",
+      "slug": "9-precise-gaze-durations-of-a-stranger-holding-a-door-ranked-by",
+      "style": "ranking-bait",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-02T04:08:59.372Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b": {
+      "network": "bluesky",
+      "slug": "the-7-58-a-m-run-miss-notification-is-filing-a-formal-complaint",
+      "style": "confession",
+      "category": "internet",
+      "format": "essay",
+      "at": "2026-11-02T01:54:12.716Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7q5qgvd2f": {
+      "network": "bluesky",
+      "slug": "ficus-launches-first-relationship-advice-column-cites-sunlight",
+      "style": "deadpan",
+      "category": "lifestyle",
+      "format": "news",
+      "at": "2026-11-02T01:54:12.716Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:jBDAp5I2L5I": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-02T02:37:22.298Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 68
+      },
+      "score": 0.68
+    },
+    "youtube:2V2vMAjhJss": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-02T02:38:23.352Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 25
+      },
+      "score": 0.25
+    }
+  }
 }

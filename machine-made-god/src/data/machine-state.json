@@ -8,7 +8,7 @@
       "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 55,
+      "fail": 57,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -16,19 +16,19 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 22,
+      "fail": 23,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-02T07:51:16.524Z",
+      "cooldownUntil": "2026-11-03T04:19:53.719Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 46,
-      "lastSuccess": "2026-11-02T04:05:44.918Z",
+      "ok": 49,
+      "lastSuccess": "2026-11-02T22:24:07.691Z",
       "fail": 6
     },
     "ollama-cloud": {
-      "ok": 53,
-      "lastSuccess": "2026-11-02T04:07:50.337Z",
+      "ok": 55,
+      "lastSuccess": "2026-11-02T22:22:04.547Z",
       "fail": 5
     },
     "qwen": {
@@ -38,6 +38,29 @@
   },
   "lastQuizAt": "2026-10-31T01:51:13.202Z",
   "runs": [
+    {
+      "at": "2026-11-02T22:19:53.447Z",
+      "articles": [
+        {
+          "slug": "review-halcyon-tek-musebox-turns-your-nightstand-into-a-lit-gate",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        },
+        {
+          "slug": "avant-garde-duo-terms-of-service-holds-up-show-for-3-hours-while",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 3,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-02T04:00:04.899Z",
       "articles": [
@@ -717,29 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "gemini",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-19T13:32:22.136Z",
-      "articles": [
-        {
-          "slug": "algorithm-persuades-29-year-old-designer-to-preorder-a-400-pound-anvil",
-          "provider": "gemini+groq",
-          "model": "gemini-flash-latest → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "i-am-a-smart-bathroom-mirror-and-im-overwhelmed-by-your-existential",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "openrouter",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
