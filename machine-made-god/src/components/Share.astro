@@ -11,4 +11,11 @@ const u = encodeURIComponent(abs);
   <a href={`https://twitter.com/intent/tweet?text=${t}&url=${u}`} target="_blank" rel="noopener">X / Twitter</a>
   <a href={`https://www.facebook.com/sharer/sharer.php?u=${u}`} target="_blank" rel="noopener">Facebook</a>
   <a href={`https://www.reddit.com/submit?url=${u}&title=${t}`} target="_blank" rel="noopener">Reddit</a>
+  <a href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${text || title} ${abs}`)}`} target="_blank" rel="noopener">Bluesky</a>
+  <a href={`https://mastodon.social/share?text=${encodeURIComponent(`${text || title} ${abs}`)}`} target="_blank" rel="noopener">Mastodon</a>
+  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${u}`} target="_blank" rel="noopener">LinkedIn</a>
+  <a href={`https://wa.me/?text=${encodeURIComponent(`${text || title} ${abs}`)}`} target="_blank" rel="noopener">WhatsApp</a>
+  <a href={`https://t.me/share/url?url=${u}&text=${t}`} target="_blank" rel="noopener">Telegram</a>
+  <a href={`https://pinterest.com/pin/create/button/?url=${u}&description=${t}`} target="_blank" rel="noopener">Pinterest</a>
+  <a href={`mailto:?subject=${t}&body=${encodeURIComponent(`${text || title}\n\n${abs}`)}`}>Email</a>
 </div>
