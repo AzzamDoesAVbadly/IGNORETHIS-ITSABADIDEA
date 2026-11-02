@@ -7,3 +7,4 @@ dist/
 shorts-out/
 .dev.vars
 .wrangler/
+podcast-out/

@@ -19,6 +19,7 @@ import { fileURLToPath } from "node:url";
 import { Resvg } from "@resvg/resvg-js";
 import { tiktokReady, tiktokPost } from "./lib/tiktok.mjs";
 import { xReady, xUploadMedia, xPost } from "./lib/x.mjs";
+import { ytReady, uploadToYouTube } from "./lib/youtube.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const env = process.env;
@@ -270,36 +271,6 @@ async function makeHeadline(item) {
   };
 }
 
-// ---------- YouTube ----------
-
-const ytReady = () => Boolean(env.YOUTUBE_CLIENT_ID && env.YOUTUBE_CLIENT_SECRET && env.YOUTUBE_REFRESH_TOKEN);
-
-async function uploadToYouTube(video) {
-  const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ client_id: env.YOUTUBE_CLIENT_ID, client_secret: env.YOUTUBE_CLIENT_SECRET, refresh_token: env.YOUTUBE_REFRESH_TOKEN, grant_type: "refresh_token" }),
-  });
-  const token = await tokenRes.json();
-  if (!token.access_token) throw new Error(`YouTube auth failed: ${token.error_description || token.error || tokenRes.status}`);
-
-  const bytes = readFileSync(video.file);
-  const meta = {
-    snippet: { title: video.title.slice(0, 100), description: video.description.slice(0, 4900), tags: video.tags, categoryId: "23" },
-    status: { privacyStatus: shortsCfg.privacy, selfDeclaredMadeForKids: false, containsSyntheticMedia: true },
-  };
-  const start = await fetch("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${token.access_token}`, "Content-Type": "application/json; charset=UTF-8", "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": String(bytes.length) },
-    body: JSON.stringify(meta),
-  });
-  if (!start.ok) throw new Error(`YouTube upload refused: HTTP ${start.status} ${(await start.text()).slice(0, 300)}`);
-  const put = await fetch(start.headers.get("location"), { method: "PUT", headers: { "Content-Type": "video/mp4", "Content-Length": String(bytes.length) }, body: bytes });
-  const result = await put.json();
-  if (!put.ok) throw new Error(`YouTube upload failed: HTTP ${put.status} ${JSON.stringify(result).slice(0, 300)}`);
-  return { id: result.id, url: `https://youtube.com/shorts/${result.id}`, privacy: result.status?.privacyStatus };
-}
-
 // ---------- main ----------
 
 async function main() {
@@ -313,7 +284,7 @@ async function main() {
     console.error("ffmpeg is not installed. Install it (brew install ffmpeg / apt-get install ffmpeg) and try again.");
     process.exit(1);
   }
-  const kinds = arg("--kind") ? [arg("--kind")] : arg("--slug") ? ["headline"] : ["bump", "headline"].slice(0, shortsCfg.perRun);
+  const kinds = arg("--kind") ? [arg("--kind")] : arg("--slug") ? ["headline"] : Array.from({ length: shortsCfg.perRun }, (_, i) => (i % 2 ? "headline" : "bump"));
   const made = [];
   for (const kind of kinds) {
     const source = kind === "bump" ? pickBump() : pickArticle(arg("--slug"));
@@ -325,9 +296,9 @@ async function main() {
     const video = kind === "bump" ? await makeBump(source) : await makeHeadline(source);
     console.log(`  ✓ rendered ${video.file.replace(root, "")} (${video.seconds.toFixed(1)}s)`);
     const entry = { at: new Date().toISOString(), kind, ref: source.ref, title: video.title, seconds: Math.round(video.seconds) };
-    if (ytReady() && !has("--no-upload")) {
+    if (ytReady(env) && !has("--no-upload")) {
       try {
-        const yt = await uploadToYouTube(video);
+        const yt = await uploadToYouTube(video, env, { privacy: shortsCfg.privacy });
         Object.assign(entry, { youtubeId: yt.id, url: yt.url, privacy: yt.privacy });
         if (shortsCfg.privacy === "public" && yt.privacy === "private") entry.note = "YouTube locked this upload to private: the Google Cloud project hasn't passed the YouTube API audit yet.";
         console.log(`  ✓ uploaded: ${yt.url} (${yt.privacy})${entry.note ? ` — ${entry.note}` : ""}`);

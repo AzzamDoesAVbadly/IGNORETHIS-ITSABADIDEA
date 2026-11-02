@@ -1,10 +1,11 @@
-# MMG TV → YouTube Shorts. Renders a bump short and a headline short every day,
+# MMG TV → YouTube Shorts. Renders a bump short and a headline short twice a day,
 # uploads them to YouTube when it's connected, and keeps the MP4s as downloads.
 name: Shorts
 
 on:
   schedule:
-    - cron: "30 16 * * *" # ~12:30pm US Eastern
+    - cron: "30 13 * * *" # ~9:30am US Eastern
+    - cron: "30 21 * * *" # ~5:30pm US Eastern
   workflow_dispatch:
     inputs:
       slug:

@@ -274,5 +274,19 @@
       "tier": "paid",
       "weight": 1
     }
-  ]
+  ],
+  "podcast": {
+    "enabled": true,
+    "privacy": "public",
+    "show": "The Daily Docket",
+    "categories": [
+      "politics",
+      "corporate",
+      "news"
+    ],
+    "voices": [
+      "Ethan",
+      "Cherry"
+    ]
+  }
 }
