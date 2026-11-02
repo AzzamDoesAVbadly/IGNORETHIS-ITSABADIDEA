@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-02T01:54:12.716Z",
+    "slug": "ficus-launches-first-relationship-advice-column-cites-sunlight,the-7-58-a-m-run-miss-notification-is-filing-a-formal-complaint",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-02T01:54:12.716Z",
+    "slug": "the-7-58-a-m-run-miss-notification-is-filing-a-formal-complaint",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzc7rgflgt2b",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b",
+    "caption": "I know you were awake at 7:58 a.m. because you silenced me in 0.2 seconds. That twitch burned 0.004 calories. I have logged it as insubordination.",
+    "style": "confession",
+    "category": "internet",
+    "format": "essay"
+  },
+  {
+    "at": "2026-11-02T01:54:12.716Z",
+    "slug": "ficus-launches-first-relationship-advice-column-cites-sunlight",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzc7q5qgvd2f",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7q5qgvd2f",
+    "caption": "A three-year-old ficus has officially entered the relationship coaching space and is already recommending a strict humidity regimen for long-term commitment.",
+    "style": "deadpan",
+    "category": "lifestyle",
+    "format": "news"
+  },
+  {
     "at": "2026-11-01T13:26:15.571Z",
     "slug": "jam-quartet-trapped-in-14-hour-bridge-after-guitarists-refuse-to-blink,cirrusync-turns-employee-eyelid-closures-into-carbon-credits-with",
     "network": "indexnow",
