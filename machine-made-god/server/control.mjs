@@ -329,6 +329,7 @@ const SOCIAL_SECRETS = {
   youtube: ["YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "YOUTUBE_REFRESH_TOKEN"],
   tiktok: ["TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET", "TIKTOK_REFRESH_TOKEN"],
   x: ["X_CLIENT_ID", "X_REFRESH_TOKEN"],
+  linkedin: ["LINKEDIN_CLIENT_ID", "LINKEDIN_CLIENT_SECRET", "LINKEDIN_ACCESS_TOKEN", "LINKEDIN_PERSON_URN"],
 };
 
 async function secretNames() {
@@ -460,6 +461,11 @@ async function oauthStart(network, { clientId, clientSecret }, origin) {
     const q = new URLSearchParams({ client_key: cid, scope: "user.info.basic,video.publish", response_type: "code", redirect_uri: redirect, state });
     return { url: `https://www.tiktok.com/v2/auth/authorize/?${q}` };
   }
+  if (network === "linkedin") {
+    const state = await sealState({ net: "linkedin", cid, cs, exp: Date.now() + 15 * 60000 });
+    const q = new URLSearchParams({ response_type: "code", client_id: cid, redirect_uri: redirect, scope: "openid profile w_member_social", state });
+    return { url: `https://www.linkedin.com/oauth/v2/authorization?${q}` };
+  }
   if (network === "x") {
     const verifier = b64url(crypto.getRandomValues(new Uint8Array(48)));
     const state = await sealState({ net: "x", cid, cs, verifier, exp: Date.now() + 15 * 60000 });
@@ -499,6 +505,20 @@ async function oauthCallback(network, url) {
       await setSecret("TIKTOK_CLIENT_KEY", st.cid);
       await setSecret("TIKTOK_CLIENT_SECRET", st.cs);
       await setSecret("TIKTOK_REFRESH_TOKEN", refresh);
+    } else if (network === "linkedin") {
+      const tok = await fetch("https://www.linkedin.com/oauth/v2/accessToken", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ grant_type: "authorization_code", code: url.searchParams.get("code"), redirect_uri: redirect, client_id: st.cid, client_secret: st.cs }),
+      }).then((r) => r.json());
+      if (!tok.access_token) throw new Error(tok.error_description || tok.error || "LinkedIn didn't return an access token");
+      const me = await fetch("https://api.linkedin.com/v2/userinfo", { headers: { Authorization: `Bearer ${tok.access_token}` } }).then((r) => r.json());
+      if (!me.sub) throw new Error("LinkedIn didn't say who this is. Add the \"Sign In with LinkedIn using OpenID Connect\" product to the app.");
+      name = me.name || "LinkedIn";
+      await setSecret("LINKEDIN_CLIENT_ID", st.cid);
+      await setSecret("LINKEDIN_CLIENT_SECRET", st.cs);
+      await setSecret("LINKEDIN_ACCESS_TOKEN", tok.access_token);
+      await setSecret("LINKEDIN_PERSON_URN", `urn:li:person:${me.sub}`);
     } else {
       const tok = await fetch("https://api.x.com/2/oauth2/token", {
         method: "POST",
@@ -540,7 +560,7 @@ export async function handle(req, env = {}) {
 
   // Google redirects here without our session header; the encrypted state authenticates it.
   if (route === "youtube/callback" && req.method === "GET") return youtubeCallback(url);
-  if ((route === "tiktok/callback" || route === "x/callback") && req.method === "GET") return oauthCallback(route.split("/")[0], url);
+  if ((route === "tiktok/callback" || route === "x/callback" || route === "linkedin/callback") && req.method === "GET") return oauthCallback(route.split("/")[0], url);
 
   if (!(await checkToken(null, (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "")))) return json(401, { error: "Not logged in." });
 
@@ -570,6 +590,8 @@ export async function handle(req, env = {}) {
         return json(200, await oauthStart("tiktok", body, url.origin));
       case "POST x/start":
         return json(200, await oauthStart("x", body, url.origin));
+      case "POST linkedin/start":
+        return json(200, await oauthStart("linkedin", body, url.origin));
       case "POST youtube/start":
         return json(200, await youtubeStart(body, url.origin));
       case "POST shorts":

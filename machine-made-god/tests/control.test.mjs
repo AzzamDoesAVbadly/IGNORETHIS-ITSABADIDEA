@@ -88,6 +88,12 @@ test("TikTok and X connect links carry encrypted state and PKCE", async () => {
   assert.equal(xu.searchParams.get("code_challenge_method"), "S256");
   assert.match(xu.searchParams.get("scope"), /offline\.access/);
   assert.ok(!x.url.includes("xsecret"));
+  const li = await (await call("POST", "linkedin/start", { clientId: "liid", clientSecret: "lisecret" }, token)).json();
+  const lu = new URL(li.url);
+  assert.equal(lu.hostname, "www.linkedin.com");
+  assert.equal(lu.searchParams.get("scope"), "openid profile w_member_social");
+  assert.match(lu.searchParams.get("redirect_uri"), /\/api\/control\/linkedin\/callback$/);
+  assert.ok(!li.url.includes("lisecret"));
   // a TikTok state can't be replayed against the X callback
   const crossed = await handle(new Request(`http://localhost/api/control/x/callback?code=c&state=${tu.searchParams.get("state")}`), env);
   assert.match(crossed.headers.get("location"), /connectError=x/);

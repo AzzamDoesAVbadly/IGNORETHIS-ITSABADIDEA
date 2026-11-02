@@ -14,6 +14,7 @@ import { fileURLToPath } from "node:url";
 import { spin } from "./lib/roulette.mjs";
 import { pickArm } from "./lib/bandit.mjs";
 import { xReady, xPost } from "./lib/x.mjs";
+import { linkedinReady, linkedinPost } from "./lib/linkedin.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const env = process.env;
@@ -172,6 +173,11 @@ async function postX(item, caption) {
   return { url: post.url, id: post.id };
 }
 
+async function postLinkedIn(item, caption) {
+  const post = await linkedinPost({ text: caption, url: item.url, title: item.title }, env);
+  return { url: post.url, id: post.id };
+}
+
 async function pingIndexNow(urls) {
   const key = promo.indexNowKey;
   const host = new URL(SITE).host;
@@ -188,6 +194,7 @@ export const networks = {
   bluesky: { ready: () => Boolean(env.BLUESKY_HANDLE && env.BLUESKY_APP_PASSWORD), post: postBluesky },
   mastodon: { ready: () => Boolean(env.MASTODON_INSTANCE && env.MASTODON_TOKEN), post: postMastodon },
   x: { ready: () => xReady(env) && config.x?.promote !== false, post: postX },
+  linkedin: { ready: () => linkedinReady(env) && config.linkedin?.promote !== false, post: postLinkedIn },
 };
 
 // ---------- main ----------

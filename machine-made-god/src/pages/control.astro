@@ -239,6 +239,21 @@ const manual = [
             </form>
           </div>
 
+          <div class="mc-card">
+            <h2>LinkedIn <span class="mc-status" data-status="linkedin"></span></h2>
+            <ol class="mc-list">
+              <li>Open the <a href="https://www.linkedin.com/developers/apps/new" target="_blank" rel="noopener">LinkedIn Developer Portal</a> → <b>Create app</b>. It needs a LinkedIn Page: create a company page for the site first, and pick it.</li>
+              <li>On the app's <b>Products</b> tab, add <b>Share on LinkedIn</b> and <b>Sign In with LinkedIn using OpenID Connect</b> (both are instant).</li>
+              <li>On the <b>Auth</b> tab, add this Authorized redirect URL: <code data-redirect-net="linkedin"></code> <button class="mc-mini" type="button" data-copy-net="linkedin">copy</button></li>
+              <li>Copy the <b>Client ID</b> and <b>Primary Client Secret</b>. Posts go out on your personal profile. LinkedIn logins last 60 days, so connect again about every two months.</li>
+            </ol>
+            <form class="mc-stack" data-oauth="linkedin">
+              <input class="mc-input" name="clientId" placeholder="Client ID" required />
+              <input class="mc-input" name="clientSecret" placeholder="Primary client secret" type="password" required />
+              <div class="mc-row"><button class="btn" type="submit">Connect LinkedIn</button><button class="mc-link" type="button" data-disconnect="linkedin">Disconnect</button></div>
+            </form>
+          </div>
+
           <div class="mc-card mc-wide">
             <h2>Email bot <span class="mc-status manual">runs in Gmail</span></h2>
             <p class="mc-muted">Answers fan mail in character; business, press and complaints get a drafted reply waiting for you (labeled <b>MMG/Needs you</b>, starred). Spam is labeled, never deleted. Free; runs inside Gmail every 10 minutes.</p>
