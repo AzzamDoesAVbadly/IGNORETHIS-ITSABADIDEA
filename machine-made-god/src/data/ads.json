@@ -1,13 +1,5 @@
 [
   {
-    "id": "journey",
-    "brand": "Brandwell Consulting Group",
-    "headline": "Brands Are Begging This Person to Stop Calling Everything 'A Journey'",
-    "body": "Her lunch was a journey. Her commute was a journey. Her parking ticket was 'a real journey.' Experts have run out of patience.",
-    "cta": "Begin Your Journey",
-    "palette": "teal"
-  },
-  {
     "id": "nap",
     "brand": "SNOOZR+ Premium Rest",
     "headline": "Introducing Naps, Now With a Subscription",
@@ -317,6 +309,14 @@
     "headline": "Stop Wondering If Your Coworkers Are Actually Listening During The Stand-Up",
     "body": "The Nexora Focus-Beam projects a subtle, high-frequency pulse that physically aligns the gaze of everyone in a 5-foot radius.",
     "cta": "Claim Your Focus",
+    "palette": "sodium"
+  },
+  {
+    "id": "omnivex-is-your-mirror-being-too-critica",
+    "brand": "OMNIVEX",
+    "headline": "Is Your Mirror Being Too Critical? Install The Ego-Filter Overlay",
+    "body": "A smart-glass layer that subtly adjusts your reflection to look like you've had 8 hours of sleep and a meaningful hobby.",
+    "cta": "BEAUTIFY MY TRUTH",
     "palette": "sodium"
   }
 ]

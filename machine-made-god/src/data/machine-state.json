@@ -1,13 +1,14 @@
 {
   "providers": {
     "groq": {
-      "ok": 51,
-      "lastSuccess": "2026-11-01T13:23:20.573Z",
-      "fail": 5,
-      "cooldownUntil": "2026-10-28T02:04:38.283Z"
+      "ok": 53,
+      "lastSuccess": "2026-11-02T01:51:21.783Z",
+      "fail": 6,
+      "cooldownUntil": "2026-11-03T01:51:21.886Z",
+      "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 50,
+      "fail": 52,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,24 +16,47 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 21,
+      "fail": 22,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-01T19:21:15.076Z",
+      "cooldownUntil": "2026-11-02T07:51:16.524Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 44,
-      "lastSuccess": "2026-11-01T13:21:16.355Z",
-      "fail": 5
+      "ok": 45,
+      "lastSuccess": "2026-11-02T01:51:18.757Z",
+      "fail": 6
     },
     "ollama-cloud": {
-      "ok": 49,
-      "lastSuccess": "2026-11-01T13:25:25.055Z",
+      "ok": 50,
+      "lastSuccess": "2026-11-02T01:53:23.462Z",
       "fail": 5
     }
   },
   "lastQuizAt": "2026-10-31T01:51:13.202Z",
   "runs": [
+    {
+      "at": "2026-11-02T01:51:10.338Z",
+      "articles": [
+        {
+          "slug": "ficus-launches-first-relationship-advice-column-cites-sunlight",
+          "provider": "groq",
+          "model": "openai/gpt-oss-120b"
+        },
+        {
+          "slug": "the-7-58-a-m-run-miss-notification-is-filing-a-formal-complaint",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-01T13:20:20.483Z",
       "articles": [
@@ -712,29 +736,6 @@
       "quiz": null,
       "extras": {
         "provider": "cerebras",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-18T13:23:53.901Z",
-      "articles": [
-        {
-          "slug": "elkwood-council-mandates-27-page-procurement-form-adds-ink-viscosity",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "nexora-rolls-out-silent-echo-the-all-in-one-mute-platform-backed-by",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "groq",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
