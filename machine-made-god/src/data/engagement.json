@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T08:37:14.446Z",
+  "updatedAt": "2026-11-03T20:06:36.155Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 1,
@@ -10,20 +10,20 @@
       "total": 0
     },
     "format:news": {
-      "n": 3,
-      "total": 0
+      "n": 4,
+      "total": 1
     },
     "bluesky:ranking-bait": {
       "n": 1,
       "total": 0
     },
     "category:lists": {
-      "n": 1,
-      "total": 0
+      "n": 2,
+      "total": 1
     },
     "format:listicle": {
-      "n": 1,
-      "total": 0
+      "n": 2,
+      "total": 1
     },
     "bluesky:confession": {
       "n": 1,
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 2,
-      "total": 2.05
+      "n": 3,
+      "total": 2.23
     },
     "shorts:headline": {
-      "n": 2,
-      "total": 0.33999999999999997
+      "n": 3,
+      "total": 0.49
     },
     "bluesky:debate-bait": {
       "n": 2,
@@ -66,6 +66,22 @@
       "total": 1
     },
     "format:review": {
+      "n": 1,
+      "total": 1
+    },
+    "bluesky:hot-take": {
+      "n": 3,
+      "total": 2
+    },
+    "category:quizzes": {
+      "n": 1,
+      "total": 0
+    },
+    "format:quiz": {
+      "n": 1,
+      "total": 0
+    },
+    "category:conspiracy": {
       "n": 1,
       "total": 1
     }
@@ -116,6 +132,38 @@
       "score": 1
     },
     {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzfgyastr32z",
+      "network": "bluesky",
+      "slug": "briarfield-police-seize-14-000-coffee-receipts-after-discovering",
+      "style": "hot-take",
+      "category": "conspiracy",
+      "format": "news",
+      "at": "2026-11-03T08:41:57.557Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzfgy7ukd52d",
+      "network": "bluesky",
+      "slug": "10-hand-dryers-ranked-by-how-much-they-feel-like-a-personal-attack",
+      "style": "hot-take",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-03T08:41:57.557Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    {
       "key": "youtube:z4k_BMJYt4I",
       "network": "youtube",
       "kind": "bump",
@@ -140,6 +188,30 @@
       "score": 0.25
     },
     {
+      "key": "youtube:1ButTZU2e3M",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-03T03:01:54.042Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 18
+      },
+      "score": 0.18
+    },
+    {
+      "key": "youtube:0rmbHJ8uF8I",
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-03T03:03:10.941Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 15
+      },
+      "score": 0.15
+    },
+    {
       "key": "youtube:DPiRYi22sz4",
       "network": "youtube",
       "kind": "headline",
@@ -150,70 +222,6 @@
         "views": 9
       },
       "score": 0.09
-    },
-    {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzchg3fu3a2b",
-      "network": "bluesky",
-      "slug": "city-deploys-forensic-tech-team-to-recover-deleted-brunch-notification",
-      "style": "fake-outrage",
-      "category": "news",
-      "format": "news",
-      "at": "2026-11-02T04:08:59.372Z",
-      "metrics": {
-        "likes": 0,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "score": 0
-    },
-    {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzchb5vaix2p",
-      "network": "bluesky",
-      "slug": "9-precise-gaze-durations-of-a-stranger-holding-a-door-ranked-by",
-      "style": "ranking-bait",
-      "category": "lists",
-      "format": "listicle",
-      "at": "2026-11-02T04:08:59.372Z",
-      "metrics": {
-        "likes": 0,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "score": 0
-    },
-    {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7q5qgvd2f",
-      "network": "bluesky",
-      "slug": "ficus-launches-first-relationship-advice-column-cites-sunlight",
-      "style": "deadpan",
-      "category": "lifestyle",
-      "format": "news",
-      "at": "2026-11-02T01:54:12.716Z",
-      "metrics": {
-        "likes": 0,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "score": 0
-    },
-    {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzeemkrrg62y",
-      "network": "bluesky",
-      "slug": "avant-garde-duo-terms-of-service-holds-up-show-for-3-hours-while",
-      "style": "debate-bait",
-      "category": "music",
-      "format": "news",
-      "at": "2026-11-02T22:24:59.271Z",
-      "metrics": {
-        "likes": 0,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "score": 0
     }
   ],
   "posts": {
@@ -350,6 +358,73 @@
         "views": 9
       },
       "score": 0.09
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzfh3w2uiv2d": {
+      "network": "bluesky",
+      "slug": "which-specific-level-of-open-plan-office-despair-are-you-currently",
+      "style": "hot-take",
+      "category": "quizzes",
+      "format": "quiz",
+      "at": "2026-11-03T08:41:57.557Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzfgyastr32z": {
+      "network": "bluesky",
+      "slug": "briarfield-police-seize-14-000-coffee-receipts-after-discovering",
+      "style": "hot-take",
+      "category": "conspiracy",
+      "format": "news",
+      "at": "2026-11-03T08:41:57.557Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzfgy7ukd52d": {
+      "network": "bluesky",
+      "slug": "10-hand-dryers-ranked-by-how-much-they-feel-like-a-personal-attack",
+      "style": "hot-take",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-03T08:41:57.557Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "youtube:1ButTZU2e3M": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-03T03:01:54.042Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 18
+      },
+      "score": 0.18
+    },
+    "youtube:0rmbHJ8uF8I": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-03T03:03:10.941Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 15
+      },
+      "score": 0.15
     }
   }
 }
