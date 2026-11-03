@@ -1,13 +1,5 @@
 [
   {
-    "id": "chair",
-    "brand": "OMNIVEX Seating Solutions",
-    "headline": "The Ergonomic Chair That Judges Your Posture Out Loud",
-    "body": "Features 14 points of lumbar support and one point of view about your life choices.",
-    "cta": "Get Judged",
-    "palette": "bleach"
-  },
-  {
     "id": "mindful",
     "brand": "Mindfulle",
     "headline": "Be Present in the Moment With Our App That Sends 40 Notifications a Day",
@@ -317,6 +309,14 @@
     "headline": "Say goodbye to the office buzz: HALCYON-TEK's Quietus Desk silences every click",
     "body": "A magnetic mat that detects keystroke vibrations and emits a soothing low‑frequency tone, convincing you the workday is already over.",
     "cta": "Try the hush",
+    "palette": "sick"
+  },
+  {
+    "id": "omnivex-is-open-office-breathing-ruining",
+    "brand": "OMNIVEX",
+    "headline": "Is Open-Office Breathing Ruining Your Q3? This Server-Foam Putty Blocks It All.",
+    "body": "Made from recycled server foam, OmniVex putty blocks open-office breathing and distant chewing. Just roll, press, and pretend you aren't in the room.",
+    "cta": "Seal My Ears",
     "palette": "sick"
   }
 ]

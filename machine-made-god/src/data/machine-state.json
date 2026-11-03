@@ -1,14 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 53,
-      "lastSuccess": "2026-11-02T01:51:21.783Z",
-      "fail": 6,
-      "cooldownUntil": "2026-11-03T01:51:21.886Z",
-      "lastError": "out of credits"
+      "ok": 54,
+      "lastSuccess": "2026-11-03T08:37:40.644Z",
+      "fail": 7,
+      "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 57,
+      "fail": 60,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -16,28 +15,56 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 23,
+      "fail": 24,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-03T04:19:53.719Z",
+      "cooldownUntil": "2026-11-03T14:39:55.359Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 49,
-      "lastSuccess": "2026-11-02T22:24:07.691Z",
-      "fail": 6
+      "ok": 50,
+      "lastSuccess": "2026-11-03T08:37:36.476Z",
+      "fail": 7
     },
     "ollama-cloud": {
-      "ok": 55,
-      "lastSuccess": "2026-11-02T22:22:04.547Z",
+      "ok": 58,
+      "lastSuccess": "2026-11-03T08:40:04.063Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 1,
-      "lastSuccess": "2026-11-02T04:01:39.218Z"
+      "ok": 2,
+      "lastSuccess": "2026-11-03T08:41:06.169Z",
+      "fail": 1
     }
   },
-  "lastQuizAt": "2026-10-31T01:51:13.202Z",
+  "lastQuizAt": "2026-11-03T08:40:04.200Z",
   "runs": [
+    {
+      "at": "2026-11-03T08:37:23.848Z",
+      "articles": [
+        {
+          "slug": "10-hand-dryers-ranked-by-how-much-they-feel-like-a-personal-attack",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        },
+        {
+          "slug": "briarfield-police-seize-14-000-coffee-receipts-after-discovering",
+          "provider": "groq+ollama-cloud",
+          "model": "openai/gpt-oss-120b → gemma4:31b"
+        }
+      ],
+      "quiz": {
+        "slug": "which-specific-level-of-open-plan-office-despair-are-you-currently",
+        "provider": "ollama-cloud",
+        "model": "gemma4:31b"
+      },
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-02T22:19:53.447Z",
       "articles": [
@@ -712,29 +739,6 @@
           "slug": "im-a-smart-fridge-and-ive-logged-7-842-snack-crimes-this-week",
           "provider": "cerebras+cerebras",
           "model": "gpt-oss-120b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "gemini",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-20T01:58:59.851Z",
-      "articles": [
-        {
-          "slug": "confessions-of-the-qr-code-on-table-12-i-am-a-degraded-fragment-of",
-          "provider": "gemini+ollama-cloud",
-          "model": "gemini-flash-latest → gemma4:31b"
-        },
-        {
-          "slug": "review-the-halcyon-tek-focussphere-demands-40-hours-of-uninterrupted",
-          "provider": "ollama-cloud+gemini",
-          "model": "gemma4:31b → gemini-flash-latest"
         }
       ],
       "quiz": null,

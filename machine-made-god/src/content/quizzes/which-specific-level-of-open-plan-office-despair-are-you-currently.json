@@ -1,0 +1,168 @@
+{
+  "title": "Which Specific Level of Open-Plan Office Despair Are You Currently Experiencing?",
+  "dek": "Your desk is a 'touch-down space' and your sanity is a legacy system. Let's find out exactly how far gone you are.",
+  "author": "dirk-hotfix",
+  "date": "2026-11-03T08:42:23.849Z",
+  "tags": [
+    "workplace",
+    "productivity",
+    "corporate",
+    "lifestyle"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "memo",
+    "palette": "bleach",
+    "label": "HR-COMPLIANT"
+  },
+  "questions": [
+    {
+      "q": "A coworker you barely know begins eating a hard-boiled egg three feet from your monitor. Your immediate reaction is:",
+      "answers": [
+        {
+          "a": "Politely ignore it while calculating the exact air-current velocity carrying the scent toward your face.",
+          "r": "denial"
+        },
+        {
+          "a": "Slowly put on noise-canceling headphones, even though they don't block smells.",
+          "r": "coping"
+        },
+        {
+          "a": "Stare blankly at a spreadsheet until the egg becomes the only thing in the universe.",
+          "r": "dissociation"
+        },
+        {
+          "a": "Send a passive-aggressive Slack message to the general channel about 'shared space etiquette'.",
+          "r": "hostility"
+        }
+      ]
+    },
+    {
+      "q": "Which of these 'collaboration tools' do you fear the most?",
+      "answers": [
+        {
+          "a": "The whiteboard that is perpetually covered in a 2019 brainstorming session.",
+          "r": "denial"
+        },
+        {
+          "a": "The beanbag chair that is impossible to exit with dignity.",
+          "r": "coping"
+        },
+        {
+          "a": "The 'huddle space' where you can be seen by everyone in the building.",
+          "r": "dissociation"
+        },
+        {
+          "a": "The shared calendar that shows you exactly when your boss is 'Focusing'.",
+          "r": "hostility"
+        }
+      ]
+    },
+    {
+      "q": "You have a high-priority call, but the only available spot is next to the industrial printer. You:",
+      "answers": [
+        {
+          "a": "Try to blend into the beige wallpaper and hope the printer doesn't jam.",
+          "r": "denial"
+        },
+        {
+          "a": "Lean into the noise and pretend it's just 'dynamic office energy'.",
+          "r": "coping"
+        },
+        {
+          "a": "Begin a conversation with the printer, as it is the only thing that understands you.",
+          "r": "dissociation"
+        },
+        {
+          "a": "Loudly complain about the acoustics to whoever is standing nearest to you.",
+          "r": "hostility"
+        }
+      ]
+    },
+    {
+      "q": "What is your current relationship with your 'Hot Desk'?",
+      "answers": [
+        {
+          "a": "I have a designated spot, but I'm terrified someone will move my stapler.",
+          "r": "denial"
+        },
+        {
+          "a": "I carry my entire life in a nylon tote bag like a corporate nomad.",
+          "r": "coping"
+        },
+        {
+          "a": "I often forget which floor I'm on for the first ten minutes of the day.",
+          "r": "dissociation"
+        },
+        {
+          "a": "I spend twenty minutes scouting the room for the desk furthest from the kitchen.",
+          "r": "hostility"
+        }
+      ]
+    },
+    {
+      "q": "Your manager asks for a 'quick sync' in the middle of the open floor. You feel:",
+      "answers": [
+        {
+          "a": "A slight spike in cortisol, but you maintain a professional smile.",
+          "r": "denial"
+        },
+        {
+          "a": "The urge to physically merge with your ergonomic chair.",
+          "r": "coping"
+        },
+        {
+          "a": "A strange sense of detachment, as if you are watching this happen to a different person.",
+          "r": "dissociation"
+        },
+        {
+          "a": "An overwhelming desire to accidentally spill a latte on the sync notes.",
+          "r": "hostility"
+        }
+      ]
+    },
+    {
+      "q": "What is the primary sound in your peripheral hearing right now?",
+      "answers": [
+        {
+          "a": "The distant hum of a ventilation system that isn't actually working.",
+          "r": "denial"
+        },
+        {
+          "a": "A coworker explaining a 'pivot' for the fourteenth time today.",
+          "r": "coping"
+        },
+        {
+          "a": "The sound of your own internal screaming, muffled by a fleece vest.",
+          "r": "dissociation"
+        },
+        {
+          "a": "The aggressive clicking of a mechanical keyboard from the person next to you.",
+          "r": "hostility"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "denial": {
+      "title": "The Optimistic Placeholder",
+      "body": "You still believe the 'synergy' promised in the onboarding slide deck is real. You keep a small succulent on your desk despite the lack of natural light and you genuinely think a new ergonomic mousepad will solve your burnout. You are currently in the 'acceptance' phase of a disaster that hasn't fully hit you yet. You likely still use the word 'opportunity' when describing a task that takes six hours and pays nothing.",
+      "share": "I'm The Optimistic Placeholder. I still believe the breakroom fruit is a perk!"
+    },
+    "coping": {
+      "title": "The High-Functioning Nomad",
+      "body": "You have mastered the art of the 'invisible shield.' You possess three different types of noise-canceling technology and can navigate a crowded office without making eye contact with a single soul. Your survival depends on a precise routine of caffeine and strategic bathroom breaks. You don't have a desk; you have a series of temporary alliances with various power outlets and a very sturdy backpack.",
+      "share": "I'm The High-Functioning Nomad. My noise-canceling headphones are my only true friends."
+    },
+    "dissociation": {
+      "title": "The Human Screensaver",
+      "body": "You have achieved a state of corporate nirvana where you are physically present but mentally orbiting Jupiter. You can sit through a forty-minute meeting about 'deliverables' while imagining a world where you live in a cabin with no electricity. Your stare is so vacant that coworkers have stopped asking you for things, which is the only reason you're still productive. You are less a person and more a collection of habits in a business-casual shirt.",
+      "share": "I'm The Human Screensaver. I haven't actually perceived a colleague since Tuesday."
+    },
+    "hostility": {
+      "title": "The Perimeter Guard",
+      "body": "You are one 'quick chat' away from a complete systemic collapse. You track the movements of your colleagues like a hawk monitoring a field of mice, noting exactly who takes the longest lunch and who leaves a tuna sandwich in the fridge. Your emails have shifted from 'Best regards' to 'Regards' to simply 'Sent from my iPhone.' You don't want a promotion; you want a wall—a thick, soundproof, ten-foot wall between you and everyone else.",
+      "share": "I'm The Perimeter Guard. I can hear you breathing from three cubicles away and I hate it."
+    }
+  }
+}

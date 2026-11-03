@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T22:19:44.430Z",
+  "updatedAt": "2026-11-03T08:37:14.446Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 1,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "bluesky:ranking-bait": {
@@ -46,15 +46,43 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 1,
-      "total": 0.68
+      "n": 2,
+      "total": 2.05
     },
     "shorts:headline": {
+      "n": 2,
+      "total": 0.33999999999999997
+    },
+    "bluesky:debate-bait": {
+      "n": 2,
+      "total": 1
+    },
+    "category:music": {
       "n": 1,
-      "total": 0.25
+      "total": 0
+    },
+    "category:reviews": {
+      "n": 1,
+      "total": 1
+    },
+    "format:review": {
+      "n": 1,
+      "total": 1
     }
   },
   "top": [
+    {
+      "key": "youtube:jBDAp5I2L5I",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-02T02:37:22.298Z",
+      "metrics": {
+        "likes": 1,
+        "replies": 0,
+        "views": 70
+      },
+      "score": 1.7
+    },
     {
       "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b",
       "network": "bluesky",
@@ -72,16 +100,32 @@
       "score": 1
     },
     {
-      "key": "youtube:jBDAp5I2L5I",
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzeemjumvc2p",
+      "network": "bluesky",
+      "slug": "review-halcyon-tek-musebox-turns-your-nightstand-into-a-lit-gate",
+      "style": "debate-bait",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-02T22:24:59.271Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    {
+      "key": "youtube:z4k_BMJYt4I",
       "network": "youtube",
       "kind": "bump",
-      "at": "2026-11-02T02:37:22.298Z",
+      "at": "2026-11-02T22:29:18.902Z",
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 68
+        "views": 35
       },
-      "score": 0.68
+      "score": 0.35
     },
     {
       "key": "youtube:2V2vMAjhJss",
@@ -94,6 +138,18 @@
         "views": 25
       },
       "score": 0.25
+    },
+    {
+      "key": "youtube:DPiRYi22sz4",
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-02T22:31:06.575Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 9
+      },
+      "score": 0.09
     },
     {
       "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzchg3fu3a2b",
@@ -135,6 +191,22 @@
       "category": "lifestyle",
       "format": "news",
       "at": "2026-11-02T01:54:12.716Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzeemkrrg62y",
+      "network": "bluesky",
+      "slug": "avant-garde-duo-terms-of-service-holds-up-show-for-3-hours-while",
+      "style": "debate-bait",
+      "category": "music",
+      "format": "news",
+      "at": "2026-11-02T22:24:59.271Z",
       "metrics": {
         "likes": 0,
         "reposts": 0,
@@ -210,11 +282,11 @@
       "kind": "bump",
       "at": "2026-11-02T02:37:22.298Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 68
+        "views": 70
       },
-      "score": 0.68
+      "score": 1.7
     },
     "youtube:2V2vMAjhJss": {
       "network": "youtube",
@@ -226,6 +298,58 @@
         "views": 25
       },
       "score": 0.25
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzeemkrrg62y": {
+      "network": "bluesky",
+      "slug": "avant-garde-duo-terms-of-service-holds-up-show-for-3-hours-while",
+      "style": "debate-bait",
+      "category": "music",
+      "format": "news",
+      "at": "2026-11-02T22:24:59.271Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzeemjumvc2p": {
+      "network": "bluesky",
+      "slug": "review-halcyon-tek-musebox-turns-your-nightstand-into-a-lit-gate",
+      "style": "debate-bait",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-02T22:24:59.271Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "youtube:z4k_BMJYt4I": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-02T22:29:18.902Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 35
+      },
+      "score": 0.35
+    },
+    "youtube:DPiRYi22sz4": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-02T22:31:06.575Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 9
+      },
+      "score": 0.09
     }
   }
 }
