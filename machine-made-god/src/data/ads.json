@@ -1,13 +1,5 @@
 [
   {
-    "id": "nft",
-    "brand": "Certified Pre-Owned Clouds",
-    "headline": "Own a Cloud. Not a Picture of a Cloud. Not the Rights to a Cloud. Just the Feeling.",
-    "body": "Each cloud is unique until it moves, which is immediately. No refunds after dissipation.",
-    "cta": "Claim Your Feeling",
-    "palette": "sodium"
-  },
-  {
     "id": "keyboard",
     "brand": "HALCYON-TEK Peripherals",
     "headline": "The Keyboard With No Backspace. Commit to What You Said.",
@@ -317,6 +309,14 @@
     "headline": "This Bio-Metric Pillow Predicts Exactly Which Dream Will Give You Anxiety",
     "body": "Stop guessing why you woke up sweating. Our proprietary neural-mesh maps your subconscious stressors and sends a PDF report to your phone by 7:00 AM.",
     "cta": "Audit My Dreams",
+    "palette": "crt"
+  },
+  {
+    "id": "omnivex-stop-wondering-if-your-roomba-is",
+    "brand": "OMNIVEX",
+    "headline": "Stop Wondering If Your Roomba Is Judging Your Floor-Dust Patterns",
+    "body": "The OmniVex Privacy-Shroud ensures your vacuum sees only what you want it to. Total floor-level anonymity starting at $149.",
+    "cta": "Cloak Your Carpets",
     "palette": "crt"
   }
 ]

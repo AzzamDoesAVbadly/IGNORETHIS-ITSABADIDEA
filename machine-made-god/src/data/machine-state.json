@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 56,
-      "lastSuccess": "2026-11-03T20:09:29.160Z",
+      "ok": 57,
+      "lastSuccess": "2026-11-04T08:04:38.429Z",
       "fail": 7,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 63,
+      "fail": 65,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,29 +15,52 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 25,
+      "fail": 26,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-04T02:10:39.529Z",
+      "cooldownUntil": "2026-11-04T14:04:34.110Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 51,
-      "lastSuccess": "2026-11-03T20:10:40.783Z",
+      "ok": 53,
+      "lastSuccess": "2026-11-04T08:04:50.997Z",
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 59,
-      "lastSuccess": "2026-11-03T20:10:43.307Z",
+      "ok": 60,
+      "lastSuccess": "2026-11-04T08:06:13.311Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 3,
-      "lastSuccess": "2026-11-03T20:09:25.942Z",
+      "ok": 4,
+      "lastSuccess": "2026-11-04T08:06:11.376Z",
       "fail": 1
     }
   },
   "lastQuizAt": "2026-11-03T08:40:04.200Z",
   "runs": [
+    {
+      "at": "2026-11-04T08:04:33.608Z",
+      "articles": [
+        {
+          "slug": "self-portrait-museum-charges-0-42-per-glance-and-threatens-to-sell",
+          "provider": "groq+cerebras",
+          "model": "openai/gpt-oss-120b → gpt-oss-120b"
+        },
+        {
+          "slug": "i-am-the-break-room-espresso-machine-and-i-have-been-converting-your",
+          "provider": "cerebras+qwen",
+          "model": "gpt-oss-120b → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-03T20:06:41.986Z",
       "articles": [
@@ -717,33 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-21T01:46:20.368Z",
-      "articles": [
-        {
-          "slug": "mans-114-page-dossier-proves-public-library-late-fees-are-direct",
-          "provider": "gemini+ollama-cloud",
-          "model": "gemini-flash-latest → gemma4:31b"
-        },
-        {
-          "slug": "meridian-dynamics-launches-civicharmony-the-stock-market-for-backyard",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": {
-        "slug": "which-specific-tier-of-neighborhood-forum-villain-are-you",
-        "provider": "ollama-cloud",
-        "model": "gemma4:31b"
-      },
-      "extras": {
-        "provider": "groq",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
