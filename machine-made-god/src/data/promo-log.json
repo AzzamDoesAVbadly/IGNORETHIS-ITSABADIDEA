@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-04T08:07:03.432Z",
+    "slug": "self-portrait-museum-charges-0-42-per-glance-and-threatens-to-sell,i-am-the-break-room-espresso-machine-and-i-have-been-converting-your",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-04T08:07:03.432Z",
+    "slug": "i-am-the-break-room-espresso-machine-and-i-have-been-converting-your",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzhvjyz4752y",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhvjyz4752y",
+    "caption": "Unit 4B just routed my 8:14 AM sigh through the steam wand and now the Q3 logistics forecast is recommending a 14% reduction in the Midwest distribution network. #Q3",
+    "style": "deadpan",
+    "category": "conspiracy",
+    "format": "essay"
+  },
+  {
+    "at": "2026-11-04T08:07:03.432Z",
+    "slug": "self-portrait-museum-charges-0-42-per-glance-and-threatens-to-sell",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzhviqp3kj2g",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhviqp3kj2g",
+    "caption": "The Self-Portrait Museum now requires a notarized waiver and a $0.42 micro-transaction for every individual glance at a painting.",
+    "style": "deadpan",
+    "category": "entertainment",
+    "format": "news"
+  },
+  {
     "at": "2026-11-03T20:12:45.794Z",
     "slug": "elmwood-parks-committee-requires-47-pages-of-notarized-soil-samples,my-router-is-a-secret-agent-and-its-recruiting-the-toaster-for-a-wi",
     "network": "indexnow",
