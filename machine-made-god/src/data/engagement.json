@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T08:04:27.525Z",
+  "updatedAt": "2026-11-04T20:25:39.338Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 1,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -34,12 +34,12 @@
       "total": 1
     },
     "format:essay": {
-      "n": 2,
-      "total": 1
+      "n": 3,
+      "total": 2
     },
     "bluesky:deadpan": {
-      "n": 1,
-      "total": 0
+      "n": 3,
+      "total": 1
     },
     "category:lifestyle": {
       "n": 1,
@@ -47,11 +47,11 @@
     },
     "shorts:bump": {
       "n": 5,
-      "total": 9.01
+      "total": 10.55
     },
     "shorts:headline": {
       "n": 5,
-      "total": 0.57
+      "total": 0.61
     },
     "bluesky:debate-bait": {
       "n": 2,
@@ -82,10 +82,14 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 2,
-      "total": 1
+      "n": 3,
+      "total": 2
     },
     "category:politics": {
+      "n": 1,
+      "total": 0
+    },
+    "category:entertainment": {
       "n": 1,
       "total": 0
     }
@@ -97,11 +101,11 @@
       "kind": "bump",
       "at": "2026-11-04T01:36:22.728Z",
       "metrics": {
-        "likes": 5,
+        "likes": 6,
         "replies": 0,
-        "views": 176
+        "views": 230
       },
-      "score": 6.76
+      "score": 8.3
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -180,6 +184,22 @@
       "score": 1
     },
     {
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhvjyz4752y",
+      "network": "bluesky",
+      "slug": "i-am-the-break-room-espresso-machine-and-i-have-been-converting-your",
+      "style": "deadpan",
+      "category": "conspiracy",
+      "format": "essay",
+      "at": "2026-11-04T08:07:03.432Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    {
       "key": "youtube:z4k_BMJYt4I",
       "network": "youtube",
       "kind": "bump",
@@ -214,18 +234,6 @@
         "views": 18
       },
       "score": 0.18
-    },
-    {
-      "key": "youtube:0rmbHJ8uF8I",
-      "network": "youtube",
-      "kind": "headline",
-      "at": "2026-11-03T03:03:10.941Z",
-      "metrics": {
-        "likes": 0,
-        "replies": 0,
-        "views": 15
-      },
-      "score": 0.15
     }
   ],
   "posts": {
@@ -426,9 +434,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 15
+        "views": 16
       },
-      "score": 0.15
+      "score": 0.16
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzgntnoeaz2g": {
       "network": "bluesky",
@@ -465,11 +473,11 @@
       "kind": "bump",
       "at": "2026-11-04T01:36:22.728Z",
       "metrics": {
-        "likes": 5,
+        "likes": 6,
         "replies": 0,
-        "views": 176
+        "views": 230
       },
-      "score": 6.76
+      "score": 8.3
     },
     "youtube:1Ucl7C71CW4": {
       "network": "youtube",
@@ -478,9 +486,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 8
+        "views": 11
       },
-      "score": 0.08
+      "score": 0.11
     },
     "youtube:6Ozxmsog6OA": {
       "network": "youtube",
@@ -501,6 +509,36 @@
         "likes": 0,
         "replies": 0,
         "views": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhvjyz4752y": {
+      "network": "bluesky",
+      "slug": "i-am-the-break-room-espresso-machine-and-i-have-been-converting-your",
+      "style": "deadpan",
+      "category": "conspiracy",
+      "format": "essay",
+      "at": "2026-11-04T08:07:03.432Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhviqp3kj2g": {
+      "network": "bluesky",
+      "slug": "self-portrait-museum-charges-0-42-per-glance-and-threatens-to-sell",
+      "style": "deadpan",
+      "category": "entertainment",
+      "format": "news",
+      "at": "2026-11-04T08:07:03.432Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
       },
       "score": 0
     }

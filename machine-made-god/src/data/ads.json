@@ -1,13 +1,5 @@
 [
   {
-    "id": "keyboard",
-    "brand": "HALCYON-TEK Peripherals",
-    "headline": "The Keyboard With No Backspace. Commit to What You Said.",
-    "body": "Typos are permanent. Regrets are permanent. Productivity is up 9% and morale is under investigation.",
-    "cta": "Type With Courage",
-    "palette": "hazard"
-  },
-  {
     "id": "nexora-dynamics-this-weighted-blanket-is",
     "brand": "NEXORA DYNAMICS",
     "headline": "This Weighted Blanket Is Actually Just 40 Pounds Of Shredded NDA Agreements",
@@ -317,6 +309,14 @@
     "headline": "Stop Wondering If Your Roomba Is Judging Your Floor-Dust Patterns",
     "body": "The OmniVex Privacy-Shroud ensures your vacuum sees only what you want it to. Total floor-level anonymity starting at $149.",
     "cta": "Cloak Your Carpets",
+    "palette": "crt"
+  },
+  {
+    "id": "lumen-core-your-smart-blinds-are-secretl",
+    "brand": "LUMEN-CORE",
+    "headline": "Your Smart-Blinds Are Secretly Timing How Long You Stare Out The Window",
+    "body": "LUMEN-CORE's Ambient Tracker proves your window-gazing is inefficient. Upgrade to Auto-Tint glass that darkens the second you start daydreaming.",
+    "cta": "Stop Daydreaming Now",
     "palette": "crt"
   }
 ]
