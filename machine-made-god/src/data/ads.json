@@ -1,13 +1,5 @@
 [
   {
-    "id": "nexora-dynamics-this-weighted-blanket-is",
-    "brand": "NEXORA DYNAMICS",
-    "headline": "This Weighted Blanket Is Actually Just 40 Pounds Of Shredded NDA Agreements",
-    "body": "Experience legal-grade compression. Designed by corporate litigators to simulate the comforting burden of institutional silence. Free shipping.",
-    "cta": "Settle Out Of Court",
-    "palette": "bleach"
-  },
-  {
     "id": "halcyon-tek-this-mug-keeps-your-coffee-a",
     "brand": "HALCYON-TEK",
     "headline": "This Mug Keeps Your Coffee at the Exact Temperature of Your Last Unread Email",
@@ -317,6 +309,14 @@
     "headline": "Your Smart-Blinds Are Secretly Timing How Long You Stare Out The Window",
     "body": "LUMEN-CORE's Ambient Tracker proves your window-gazing is inefficient. Upgrade to Auto-Tint glass that darkens the second you start daydreaming.",
     "cta": "Stop Daydreaming Now",
+    "palette": "crt"
+  },
+  {
+    "id": "omnivex-your-keyboard-is-too-confident-a",
+    "brand": "OMNIVEX",
+    "headline": "Your Keyboard Is Too Confident. Add Hesitation To Keystrokes With The Doubt-Board Pro.",
+    "body": "Stop typing like you have all the answers. The Doubt-Board physically resists your fingers, ensuring every email sounds appropriately uncertain.",
+    "cta": "Embrace Doubt",
     "palette": "crt"
   }
 ]

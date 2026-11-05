@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-04T20:25:39.338Z",
+  "updatedAt": "2026-11-05T08:32:39.905Z",
   "arms": {
     "bluesky:fake-outrage": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "category:news": {
@@ -10,12 +10,12 @@
       "total": 0
     },
     "format:news": {
-      "n": 6,
+      "n": 7,
       "total": 1
     },
     "bluesky:ranking-bait": {
-      "n": 1,
-      "total": 0
+      "n": 2,
+      "total": 1
     },
     "category:lists": {
       "n": 2,
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 5,
-      "total": 10.55
+      "n": 7,
+      "total": 11.47
     },
     "shorts:headline": {
-      "n": 5,
-      "total": 0.61
+      "n": 7,
+      "total": 5.47
     },
     "bluesky:debate-bait": {
       "n": 2,
@@ -82,7 +82,7 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 3,
+      "n": 4,
       "total": 2
     },
     "category:politics": {
@@ -92,6 +92,14 @@
     "category:entertainment": {
       "n": 1,
       "total": 0
+    },
+    "category:corporate": {
+      "n": 1,
+      "total": 1
+    },
+    "format:announcement": {
+      "n": 1,
+      "total": 1
     }
   },
   "top": [
@@ -103,9 +111,21 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 230
+        "views": 250
       },
-      "score": 8.3
+      "score": 8.5
+    },
+    {
+      "key": "youtube:_MZ__1ZOFts",
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-04T20:35:41.360Z",
+      "metrics": {
+        "likes": 1,
+        "replies": 0,
+        "views": 376
+      },
+      "score": 4.76
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -200,40 +220,32 @@
       "score": 1
     },
     {
-      "key": "youtube:z4k_BMJYt4I",
-      "network": "youtube",
-      "kind": "bump",
-      "at": "2026-11-02T22:29:18.902Z",
+      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzj76basdl2f",
+      "network": "bluesky",
+      "slug": "nexora-unveils-rapidfuel-a-high-viscosity-meat-slurry-administered",
+      "style": "ranking-bait",
+      "category": "corporate",
+      "format": "announcement",
+      "at": "2026-11-04T20:32:50.091Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
+        "reposts": 0,
         "replies": 0,
-        "views": 33
+        "quotes": 0
       },
-      "score": 0.33
+      "score": 1
     },
     {
-      "key": "youtube:2V2vMAjhJss",
-      "network": "youtube",
-      "kind": "headline",
-      "at": "2026-11-02T02:38:23.352Z",
-      "metrics": {
-        "likes": 0,
-        "replies": 0,
-        "views": 25
-      },
-      "score": 0.25
-    },
-    {
-      "key": "youtube:1ButTZU2e3M",
+      "key": "youtube:EYYY4xuIXRU",
       "network": "youtube",
       "kind": "bump",
-      "at": "2026-11-03T03:01:54.042Z",
+      "at": "2026-11-05T01:43:59.512Z",
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 18
+        "views": 46
       },
-      "score": 0.18
+      "score": 0.46
     }
   ],
   "posts": {
@@ -475,9 +487,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 230
+        "views": 250
       },
-      "score": 8.3
+      "score": 8.5
     },
     "youtube:1Ucl7C71CW4": {
       "network": "youtube",
@@ -497,9 +509,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 2
+        "views": 3
       },
-      "score": 0.02
+      "score": 0.03
     },
     "youtube:GPxPpZR-PS8": {
       "network": "youtube",
@@ -508,9 +520,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 0
+        "views": 2
       },
-      "score": 0
+      "score": 0.02
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhvjyz4752y": {
       "network": "bluesky",
@@ -541,6 +553,80 @@
         "quotes": 0
       },
       "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzj76d4zaa2d": {
+      "network": "bluesky",
+      "slug": "report-41-of-users-convinced-cookie-banners-are-literacy-exams-to",
+      "style": "fake-outrage",
+      "category": "conspiracy",
+      "format": "news",
+      "at": "2026-11-04T20:32:50.091Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzj76basdl2f": {
+      "network": "bluesky",
+      "slug": "nexora-unveils-rapidfuel-a-high-viscosity-meat-slurry-administered",
+      "style": "ranking-bait",
+      "category": "corporate",
+      "format": "announcement",
+      "at": "2026-11-04T20:32:50.091Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "youtube:EYYY4xuIXRU": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-05T01:43:59.512Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 46
+      },
+      "score": 0.46
+    },
+    "youtube:MiT0IvMQZds": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-05T01:45:17.717Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 8
+      },
+      "score": 0.08
+    },
+    "youtube:a8X1LZziHj8": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-04T20:34:28.367Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 25
+      },
+      "score": 0.25
+    },
+    "youtube:_MZ__1ZOFts": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-04T20:35:41.360Z",
+      "metrics": {
+        "likes": 1,
+        "replies": 0,
+        "views": 376
+      },
+      "score": 4.76
     }
   }
 }

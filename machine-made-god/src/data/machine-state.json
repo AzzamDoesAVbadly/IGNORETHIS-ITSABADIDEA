@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 57,
-      "lastSuccess": "2026-11-04T08:04:38.429Z",
+      "ok": 58,
+      "lastSuccess": "2026-11-05T08:33:01.927Z",
       "fail": 7,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 65,
+      "fail": 66,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -26,18 +26,41 @@
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 62,
-      "lastSuccess": "2026-11-04T20:29:19.681Z",
+      "ok": 63,
+      "lastSuccess": "2026-11-05T08:36:17.413Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 7,
-      "lastSuccess": "2026-11-04T20:31:28.633Z",
+      "ok": 10,
+      "lastSuccess": "2026-11-05T08:37:13.701Z",
       "fail": 2
     }
   },
   "lastQuizAt": "2026-11-03T08:40:04.200Z",
   "runs": [
+    {
+      "at": "2026-11-05T08:32:46.553Z",
+      "articles": [
+        {
+          "slug": "city-serves-noise-collective-cease-and-desist-after-14-minute-drone",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "i-am-the-90-second-meal-kit-ad-that-interrupts-your-true-crime-podcast",
+          "provider": "qwen+ollama-cloud",
+          "model": "qwen3.7-plus → gemma4:31b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-04T20:25:48.406Z",
       "articles": [
@@ -717,29 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-21T13:28:21.737Z",
-      "articles": [
-        {
-          "slug": "review-nexora-pausepod-locks-me-out-until-i-reach-level-4-inner-peace",
-          "provider": "gemini+groq",
-          "model": "gemini-flash-latest → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "smart-mirror-launches-reflective-relationship-guide-for-users-who",
-          "provider": "groq",
-          "model": "openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
