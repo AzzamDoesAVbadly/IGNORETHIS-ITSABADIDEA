@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-this-mug-keeps-your-coffee-a",
-    "brand": "HALCYON-TEK",
-    "headline": "This Mug Keeps Your Coffee at the Exact Temperature of Your Last Unread Email",
-    "body": "Engineered with micro-thermal AI, it syncs to your inbox and adjusts heat so your caffeine mirrors the urgency of your pending replies.",
-    "cta": "Get the Sync",
-    "palette": "sodium"
-  },
-  {
     "id": "vortexic-sleep-like-a-robot-the-self-cha",
     "brand": "VORTEXIC",
     "headline": "Sleep like a robot: The self‑charging mask that powers your nap with your own sighs",
@@ -318,5 +310,13 @@
     "body": "Stop typing like you have all the answers. The Doubt-Board physically resists your fingers, ensuring every email sounds appropriately uncertain.",
     "cta": "Embrace Doubt",
     "palette": "crt"
+  },
+  {
+    "id": "meridian-dynamics-is-your-desk-chair-too",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "Is Your Desk Chair Too Supportive? Experience the New 'Compliance Lean'",
+    "body": "Our patented ergonomic instability forces your core to panic slightly, increasing productivity by 8% through pure survival instinct.",
+    "cta": "ORDER YOUR UNREST",
+    "palette": "sodium"
   }
 ]

@@ -7,7 +7,7 @@
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 66,
+      "fail": 67,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,9 +15,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 27,
+      "fail": 28,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-05T02:30:28.881Z",
+      "cooldownUntil": "2026-11-06T02:39:57.688Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -26,18 +26,41 @@
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 63,
-      "lastSuccess": "2026-11-05T08:36:17.413Z",
+      "ok": 66,
+      "lastSuccess": "2026-11-05T20:42:57.860Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 10,
-      "lastSuccess": "2026-11-05T08:37:13.701Z",
-      "fail": 2
+      "ok": 11,
+      "lastSuccess": "2026-11-05T20:42:56.099Z",
+      "fail": 3
     }
   },
   "lastQuizAt": "2026-11-03T08:40:04.200Z",
   "runs": [
+    {
+      "at": "2026-11-05T20:39:47.935Z",
+      "articles": [
+        {
+          "slug": "review-the-halcyon-tek-atmoslens-is-the-only-weather-app-that-changes",
+          "provider": "ollama-cloud",
+          "model": "gemma4:31b"
+        },
+        {
+          "slug": "9-types-of-plastic-packaging-ranked-by-how-violently-they-reject",
+          "provider": "ollama-cloud+qwen",
+          "model": "gemma4:31b → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-05T08:32:46.553Z",
       "articles": [
@@ -717,29 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "gemini",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-22T01:59:45.492Z",
-      "articles": [
-        {
-          "slug": "noise-quartet-low-hum-bars-first-note-until-audience-hands-over",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "vortexia-rolls-out-project-echochill-turning-office-fridge-spoilage",
-          "provider": "groq",
-          "model": "openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

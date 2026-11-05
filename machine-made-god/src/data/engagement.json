@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T08:32:39.905Z",
+  "updatedAt": "2026-11-05T20:39:41.800Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 2,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 7,
+      "n": 8,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -34,7 +34,7 @@
       "total": 1
     },
     "format:essay": {
-      "n": 3,
+      "n": 4,
       "total": 2
     },
     "bluesky:deadpan": {
@@ -42,23 +42,23 @@
       "total": 1
     },
     "category:lifestyle": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "shorts:bump": {
       "n": 7,
-      "total": 11.47
+      "total": 11.459999999999999
     },
     "shorts:headline": {
       "n": 7,
-      "total": 5.47
+      "total": 6.130000000000001
     },
     "bluesky:debate-bait": {
-      "n": 2,
+      "n": 3,
       "total": 1
     },
     "category:music": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "category:reviews": {
@@ -70,7 +70,7 @@
       "total": 1
     },
     "bluesky:hot-take": {
-      "n": 4,
+      "n": 5,
       "total": 2
     },
     "category:quizzes": {
@@ -111,9 +111,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 250
+        "views": 252
       },
-      "score": 8.5
+      "score": 8.52
     },
     {
       "key": "youtube:_MZ__1ZOFts",
@@ -123,9 +123,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 376
+        "views": 444
       },
-      "score": 4.76
+      "score": 5.44
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -243,9 +243,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 46
+        "views": 44
       },
-      "score": 0.46
+      "score": 0.44
     }
   ],
   "posts": {
@@ -487,9 +487,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 250
+        "views": 252
       },
-      "score": 8.5
+      "score": 8.52
     },
     "youtube:1Ucl7C71CW4": {
       "network": "youtube",
@@ -591,9 +591,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 46
+        "views": 44
       },
-      "score": 0.46
+      "score": 0.44
     },
     "youtube:MiT0IvMQZds": {
       "network": "youtube",
@@ -602,9 +602,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 8
+        "views": 6
       },
-      "score": 0.08
+      "score": 0.06
     },
     "youtube:a8X1LZziHj8": {
       "network": "youtube",
@@ -613,9 +613,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 25
+        "views": 24
       },
-      "score": 0.25
+      "score": 0.24
     },
     "youtube:_MZ__1ZOFts": {
       "network": "youtube",
@@ -624,9 +624,39 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 376
+        "views": 444
       },
-      "score": 4.76
+      "score": 5.44
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzkhs57kbd2y": {
+      "network": "bluesky",
+      "slug": "i-am-the-90-second-meal-kit-ad-that-interrupts-your-true-crime-podcast",
+      "style": "debate-bait",
+      "category": "lifestyle",
+      "format": "essay",
+      "at": "2026-11-05T08:38:04.515Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzkhq4pikf2b": {
+      "network": "bluesky",
+      "slug": "city-serves-noise-collective-cease-and-desist-after-14-minute-drone",
+      "style": "hot-take",
+      "category": "music",
+      "format": "news",
+      "at": "2026-11-05T08:38:04.515Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
     }
   }
 }
