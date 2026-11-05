@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-05T20:43:49.139Z",
+    "slug": "review-the-halcyon-tek-atmoslens-is-the-only-weather-app-that-changes,9-types-of-plastic-packaging-ranked-by-how-violently-they-reject",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-05T20:43:49.139Z",
+    "slug": "9-types-of-plastic-packaging-ranked-by-how-violently-they-reject",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzlqatlxzw2b",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzlqatlxzw2b",
+    "caption": "Clamshell plastic is the only objectively correct choice for the most hostile material. If you think shrink-wrap is harder to open, you’ve never actually tried to enter a blister pack. #Packaging",
+    "style": "ranking-bait",
+    "category": "lists",
+    "format": "listicle"
+  },
+  {
+    "at": "2026-11-05T20:43:49.139Z",
+    "slug": "review-the-halcyon-tek-atmoslens-is-the-only-weather-app-that-changes",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzlqasxbxw24",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzlqasxbxw24",
+    "caption": "The correct way to use AtmosLens is to set your zip code to 'Sunny' and let your neighbors handle the humidity. Any other configuration is objectively inefficient. #WeatherTech",
+    "style": "ranking-bait",
+    "category": "reviews",
+    "format": "review"
+  },
+  {
     "at": "2026-11-05T08:38:04.515Z",
     "slug": "city-serves-noise-collective-cease-and-desist-after-14-minute-drone,i-am-the-90-second-meal-kit-ad-that-interrupts-your-true-crime-podcast",
     "network": "indexnow",
