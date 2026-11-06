@@ -1,13 +1,5 @@
 [
   {
-    "id": "vortexic-sleep-like-a-robot-the-self-cha",
-    "brand": "VORTEXIC",
-    "headline": "Sleep like a robot: The self‑charging mask that powers your nap with your own sighs",
-    "body": "VORTEXIC's SleepSync™ mask harvests the micro‑vibrations of your exhale, stores them in a silent capacitor, and releases them as a gentle lullaby. No chargers needed.",
-    "cta": "Charge My Dream",
-    "palette": "hazard"
-  },
-  {
     "id": "halcyon-tek-halcyon-teks-chrono-sleep-pi",
     "brand": "HALCYON-TEK",
     "headline": "HALCYON-TEK's Chrono‑Sleep Pillow Promises 7 Hours of Time‑Travel Rest",
@@ -318,5 +310,13 @@
     "body": "Our patented ergonomic instability forces your core to panic slightly, increasing productivity by 8% through pure survival instinct.",
     "cta": "ORDER YOUR UNREST",
     "palette": "sodium"
+  },
+  {
+    "id": "nexora-are-unread-messages-aging-your-sk",
+    "brand": "NEXORA",
+    "headline": "Are Unread Messages Aging Your Skin? Try The NEXORA Blue-Light Deflector Turtleneck.",
+    "body": "Crafted from 100% woven fiber-optic dread, the NEXORA Turtleneck refracts 99% of incoming passive-aggressive emojis before they hit your epidermis.",
+    "cta": "Shield My Epidermis",
+    "palette": "bleach"
   }
 ]
