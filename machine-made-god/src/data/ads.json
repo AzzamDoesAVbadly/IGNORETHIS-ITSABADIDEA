@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-halcyon-teks-chrono-sleep-pi",
-    "brand": "HALCYON-TEK",
-    "headline": "HALCYON-TEK's Chrono‑Sleep Pillow Promises 7 Hours of Time‑Travel Rest",
-    "body": "Designed to sync with your circadian algorithm, the pillow emits micro‑vibrations that convince your brain you’ve lived a full weekend in a single nap.",
-    "cta": "order now",
-    "palette": "teal"
-  },
-  {
     "id": "omnivex-omnivexs-chrono-cushion-promises",
     "brand": "OMNIVEX",
     "headline": "OMNIVEX's Chrono‑Cushion Promises 8 Hours of Sleep in 15 Minutes",
@@ -318,5 +310,13 @@
     "body": "Crafted from 100% woven fiber-optic dread, the NEXORA Turtleneck refracts 99% of incoming passive-aggressive emojis before they hit your epidermis.",
     "cta": "Shield My Epidermis",
     "palette": "bleach"
+  },
+  {
+    "id": "halcyon-tek-this-desk-lamp-decides-when-",
+    "brand": "HALCYON-TEK",
+    "headline": "This desk lamp decides when you’re ready to stop scrolling",
+    "body": "The AmbientSync Lamp monitors your screen time and dims until you’ve taken a real break, then subtly re‑lights to remind you the world still spins.",
+    "cta": "Try the Calm",
+    "palette": "sodium"
   }
 ]

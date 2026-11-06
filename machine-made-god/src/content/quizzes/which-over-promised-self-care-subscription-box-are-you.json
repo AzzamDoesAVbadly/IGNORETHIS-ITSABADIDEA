@@ -1,0 +1,169 @@
+{
+  "title": "Which Over‑Promised Self‑Care Subscription Box Are You?",
+  "dek": "Take this quiz to discover the exact boutique box that mirrors your hyper‑curated wellness anxieties and questionable swag.",
+  "author": "intern-4471",
+  "date": "2026-11-06T20:02:24.344Z",
+  "tags": [
+    "quiz",
+    "wellness",
+    "satire",
+    "selfcare",
+    "popculture"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "badge",
+    "palette": "sick",
+    "label": "SelfCare Box"
+  },
+  "questions": [
+    {
+      "q": "When you open a new wellness subscription, the first thing you look for is:",
+      "answers": [
+        {
+          "a": "A glittering crystal that claims to align chakras",
+          "r": "a"
+        },
+        {
+          "a": "A minimalist guide titled “Breathe in 3 Minutes”",
+          "r": "b"
+        },
+        {
+          "a": "A set of unlabeled amber vials for “custom blends”",
+          "r": "c"
+        },
+        {
+          "a": "A biodegradable stress ball shaped like a pinecone",
+          "r": "d"
+        }
+      ]
+    },
+    {
+      "q": "Your ideal morning ritual includes:",
+      "answers": [
+        {
+          "a": "Sipping kombucha while chanting the company’s tagline",
+          "r": "a"
+        },
+        {
+          "a": "Meditating on a mat that folds into a tote bag",
+          "r": "b"
+        },
+        {
+          "a": "Distilling essential oils from whatever you find in the kitchen",
+          "r": "c"
+        },
+        {
+          "a": "Compiling a zero‑waste to‑do list while squeezing the stress ball",
+          "r": "d"
+        }
+      ]
+    },
+    {
+      "q": "When you post about wellness on Instagram, you most often tag:",
+      "answers": [
+        {
+          "a": "@crystalcove_co and #vibrations",
+          "r": "a"
+        },
+        {
+          "a": "@mindfulminimalist and #silentspaces",
+          "r": "b"
+        },
+        {
+          "a": "@labofessence and #DIYalchemy",
+          "r": "c"
+        },
+        {
+          "a": "@greenstressfree and #planetfriendly",
+          "r": "d"
+        }
+      ]
+    },
+    {
+      "q": "Your preferred method of dealing with a stressful email:",
+      "answers": [
+        {
+          "a": "Place it on a crystal grid and wait for the universe to reply",
+          "r": "a"
+        },
+        {
+          "a": "Do a five‑minute breathing exercise on your mat, eyes closed",
+          "r": "b"
+        },
+        {
+          "a": "Create a signature scent to “spray” over the screen",
+          "r": "c"
+        },
+        {
+          "a": "Squeeze your stress ball until the email auto‑deletes (in your mind)",
+          "r": "d"
+        }
+      ]
+    },
+    {
+      "q": "You judge a wellness brand by its:",
+      "answers": [
+        {
+          "a": "Number of ethically sourced quartz pieces per box",
+          "r": "a"
+        },
+        {
+          "a": "Simplicity of the packaging—no more than two shades of gray",
+          "r": "b"
+        },
+        {
+          "a": "Complexity of the DIY instructions—if you need a PhD, it’s a win",
+          "r": "c"
+        },
+        {
+          "a": "Carbon‑footprint calculator printed on the back of the box",
+          "r": "d"
+        }
+      ]
+    },
+    {
+      "q": "Your ultimate “self‑care” purchase is:",
+      "answers": [
+        {
+          "a": "A subscription that sends you a new crystal each month",
+          "r": "a"
+        },
+        {
+          "a": "A mat that doubles as a portable meditation pod",
+          "r": "b"
+        },
+        {
+          "a": "A kit to brew your own essential oils from kitchen scraps",
+          "r": "c"
+        },
+        {
+          "a": "A set of compostable stress balls in every color of the rainbow",
+          "r": "d"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "a": {
+      "title": "The Crystal‑Infused Kombucha Box",
+      "body": "You’re the person who expects a quartz‑laden bottle of fermented tea to solve all of life’s hiccups. Your inbox is a curated stream of “energy‑boosting” newsletters, and you keep a spare crystal on every desk, nightstand, and bathroom counter. You measure success by the number of subtle vibrations you can feel after each sip, and you’re convinced the next shipment will finally align your third eye. In reality, it’s just kombucha and a lot of glitter, but the vibe is unmistakable.",
+      "share": "I’m basically a monthly crystal‑kombucha delivery. #SelfCareGoals"
+    },
+    "b": {
+      "title": "The Minimalist Meditation Mat Box",
+      "body": "Your aesthetic is a whisper of gray, and you treat a folded mat like a sacred relic. You spend an hour arranging the mat’s corners just so, then sit in perfect stillness while the world screams. The box arrives with a single, monochrome instruction sheet that reads, “Sit. Breathe. Be.” You brag about the mat’s ability to double as a tote, a yoga block, and occasionally a makeshift laptop stand. The only thing you can’t compress is your inner monologue.",
+      "share": "My mat folds into my life. #MinimalMeditation"
+    },
+    "c": {
+      "title": "The DIY Essential Oil Lab Box",
+      "body": "You’re the chemist‑in‑training who thinks every problem can be solved with a drop of lavender or a splash of citrus. The box arrives with a beaker, a set of vague safety warnings, and a promise that you’ll “craft your own aromatherapy empire.” You spend weekends watching obscure YouTube tutorials, labeling vials with cryptic names like “Monday Motivation” and “Tuesday Trauma.” The scent of ambition lingers, even if the lab’s ventilation is questionable.",
+      "share": "I’m basically a home‑grown aromatherapist. #DIYWellness"
+    },
+    "d": {
+      "title": "The Zero‑Waste Stress‑Ball Box",
+      "body": "You’ve turned anxiety into an eco‑friendly hobby. Each biodegradable stress ball arrives in compostable packaging, dyed with plant‑based pigments that match your mood calendar. You squeeze, roll, and toss them while reciting sustainability pledges, convinced the act reduces your carbon footprint one squeeze at a time. Your friends think you’ve started a new sport, but you know the real victory is a trash‑free desk and a perfectly timed “oh, I’m fine” smile.",
+      "share": "I’m a sustainable stress‑ball champion. #EcoCalm"
+    }
+  }
+}

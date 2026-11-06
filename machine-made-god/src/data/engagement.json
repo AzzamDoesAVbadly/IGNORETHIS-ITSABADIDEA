@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T08:31:50.417Z",
+  "updatedAt": "2026-11-06T19:57:15.486Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 2,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 8,
+      "n": 9,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -26,7 +26,7 @@
       "total": 1
     },
     "bluesky:confession": {
-      "n": 2,
+      "n": 4,
       "total": 1
     },
     "category:internet": {
@@ -47,18 +47,18 @@
     },
     "shorts:bump": {
       "n": 9,
-      "total": 11.88
+      "total": 11.9
     },
     "shorts:headline": {
       "n": 9,
-      "total": 6.16
+      "total": 6.21
     },
     "bluesky:debate-bait": {
       "n": 3,
       "total": 1
     },
     "category:music": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "category:reviews": {
@@ -94,11 +94,11 @@
       "total": 0
     },
     "category:corporate": {
-      "n": 1,
+      "n": 2,
       "total": 1
     },
     "format:announcement": {
-      "n": 1,
+      "n": 2,
       "total": 1
     }
   },
@@ -135,9 +135,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 72
+        "views": 73
       },
-      "score": 1.72
+      "score": 1.73
     },
     {
       "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b",
@@ -316,9 +316,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 72
+        "views": 73
       },
-      "score": 1.72
+      "score": 1.73
     },
     "youtube:2V2vMAjhJss": {
       "network": "youtube",
@@ -602,9 +602,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 7
+        "views": 8
       },
-      "score": 0.07
+      "score": 0.08
     },
     "youtube:a8X1LZziHj8": {
       "network": "youtube",
@@ -613,9 +613,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 24
+        "views": 25
       },
-      "score": 0.24
+      "score": 0.25
     },
     "youtube:_MZ__1ZOFts": {
       "network": "youtube",
@@ -706,9 +706,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 0
+        "views": 4
       },
-      "score": 0
+      "score": 0.04
     },
     "youtube:kWz4L8dBugE": {
       "network": "youtube",
@@ -731,6 +731,36 @@
         "views": 11
       },
       "score": 0.11
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzmy7pibym2q": {
+      "network": "bluesky",
+      "slug": "synth-punk-band-wires-14-demo-sedans-into-a-single-amplifier-forces",
+      "style": "confession",
+      "category": "music",
+      "format": "news",
+      "at": "2026-11-06T08:39:00.118Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzmy7ns6k32t": {
+      "network": "bluesky",
+      "slug": "meridian-dynamics-unveils-pathfinder-a-gps-update-that-prioritizes",
+      "style": "confession",
+      "category": "corporate",
+      "format": "announcement",
+      "at": "2026-11-06T08:39:00.118Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
     }
   }
 }

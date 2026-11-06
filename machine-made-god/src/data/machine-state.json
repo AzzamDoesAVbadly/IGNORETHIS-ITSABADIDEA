@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 59,
-      "lastSuccess": "2026-11-06T08:35:41.019Z",
+      "ok": 61,
+      "lastSuccess": "2026-11-06T20:01:41.768Z",
       "fail": 7,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 68,
+      "fail": 71,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,29 +15,56 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 29,
+      "fail": 30,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-06T14:31:56.533Z",
+      "cooldownUntil": "2026-11-07T01:58:17.945Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 53,
-      "lastSuccess": "2026-11-04T08:04:50.997Z",
+      "ok": 55,
+      "lastSuccess": "2026-11-06T20:01:42.997Z",
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 67,
-      "lastSuccess": "2026-11-06T08:34:07.498Z",
+      "ok": 68,
+      "lastSuccess": "2026-11-06T19:57:30.438Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 14,
-      "lastSuccess": "2026-11-06T08:37:54.495Z",
+      "ok": 15,
+      "lastSuccess": "2026-11-06T19:59:34.812Z",
       "fail": 3
     }
   },
-  "lastQuizAt": "2026-11-03T08:40:04.200Z",
+  "lastQuizAt": "2026-11-06T20:01:41.824Z",
   "runs": [
+    {
+      "at": "2026-11-06T19:57:24.344Z",
+      "articles": [
+        {
+          "slug": "omnivex-launches-coldstart-a-34-f-four-minute-ice-bath-that",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        },
+        {
+          "slug": "sci-fi-star-luna-vex-forces-1-2-million-viewers-to-attend-six-hour-vr",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        }
+      ],
+      "quiz": {
+        "slug": "which-over-promised-self-care-subscription-box-are-you",
+        "provider": "groq",
+        "model": "openai/gpt-oss-120b"
+      },
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-06T08:31:56.192Z",
       "articles": [
@@ -717,29 +744,6 @@
       "quiz": null,
       "extras": {
         "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-23T02:01:00.327Z",
-      "articles": [
-        {
-          "slug": "omniprint-9x-unit-at-co-working-space-formally-unions-refuses-to",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        },
-        {
-          "slug": "im-a-smart-thermostat-and-ive-been-running-a-secret-air-control-cult",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
