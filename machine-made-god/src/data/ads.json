@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-omnivexs-chrono-cushion-promises",
-    "brand": "OMNIVEX",
-    "headline": "OMNIVEX's Chrono‑Cushion Promises 8 Hours of Sleep in 15 Minutes",
-    "body": "Fit a thin pad under any chair and the integrated temporal matrix stretches perceived rest, letting you feel refreshed while the clock keeps ticking.",
-    "cta": "Try It Instantly",
-    "palette": "bleach"
-  },
-  {
     "id": "vortex-labs-you-wont-believe-what-this-d",
     "brand": "Vortex Labs",
     "headline": "You Won't Believe What This Desk Does When You Stop Looking",
@@ -318,5 +310,13 @@
     "body": "The AmbientSync Lamp monitors your screen time and dims until you’ve taken a real break, then subtly re‑lights to remind you the world still spins.",
     "cta": "Try the Calm",
     "palette": "sodium"
+  },
+  {
+    "id": "omniflux-omniflux-sleeppod-promises-a-ni",
+    "brand": "OmniFlux",
+    "headline": "OmniFlux SleepPod promises a night of dreams curated by your inbox’s unread count",
+    "body": "The SleepPod scans your pending emails, extracts the anxiety, and plays it as soft white‑noise, so you wake exactly when the next deadline arrives.",
+    "cta": "Try Dream Sync",
+    "palette": "sick"
   }
 ]

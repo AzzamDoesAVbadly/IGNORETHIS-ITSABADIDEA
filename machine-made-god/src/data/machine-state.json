@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 61,
-      "lastSuccess": "2026-11-06T20:01:41.768Z",
+      "ok": 63,
+      "lastSuccess": "2026-11-07T07:52:10.360Z",
       "fail": 7,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 71,
+      "fail": 72,
       "ok": 20,
       "lastSuccess": "2026-11-01T13:21:13.349Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,23 +21,46 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 55,
-      "lastSuccess": "2026-11-06T20:01:42.997Z",
+      "ok": 56,
+      "lastSuccess": "2026-11-07T07:48:41.108Z",
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 68,
-      "lastSuccess": "2026-11-06T19:57:30.438Z",
+      "ok": 69,
+      "lastSuccess": "2026-11-07T07:50:48.045Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 15,
-      "lastSuccess": "2026-11-06T19:59:34.812Z",
+      "ok": 16,
+      "lastSuccess": "2026-11-07T07:52:03.830Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-11-06T20:01:41.824Z",
   "runs": [
+    {
+      "at": "2026-11-07T07:48:38.402Z",
+      "articles": [
+        {
+          "slug": "hoas-3-27-inch-grass-rule-turns-suburb-into-4-2-million-drone-test",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "i-am-your-six-digit-authentication-code-and-i-am-currently-trapped",
+          "provider": "ollama-cloud+qwen",
+          "model": "gemma4:31b → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-06T19:57:24.344Z",
       "articles": [
@@ -719,29 +742,6 @@
         "provider": "cerebras",
         "model": "gpt-oss-120b"
       },
-      "extras": {
-        "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-23T13:28:53.069Z",
-      "articles": [
-        {
-          "slug": "review-the-nexora-snoozeshield-turns-your-rem-cycle-into-a-tiered",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        },
-        {
-          "slug": "review-whispershift-alarm-clock-charges-you-for-every-whisper-even",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
       "extras": {
         "provider": "groq",
         "ticker": 4,

@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-11-06T19:57:15.486Z",
+  "updatedAt": "2026-11-07T07:48:33.461Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 2,
       "total": 0
     },
     "category:news": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "format:news": {
-      "n": 9,
+      "n": 10,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -38,7 +38,7 @@
       "total": 2
     },
     "bluesky:deadpan": {
-      "n": 3,
+      "n": 6,
       "total": 1
     },
     "category:lifestyle": {
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 9,
-      "total": 11.9
+      "n": 11,
+      "total": 23.2
     },
     "shorts:headline": {
-      "n": 9,
-      "total": 6.21
+      "n": 11,
+      "total": 8.629999999999999
     },
     "bluesky:debate-bait": {
       "n": 3,
@@ -74,11 +74,11 @@
       "total": 2
     },
     "category:quizzes": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "format:quiz": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "category:conspiracy": {
@@ -90,7 +90,7 @@
       "total": 0
     },
     "category:entertainment": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "category:corporate": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 2,
+      "n": 3,
       "total": 1
     }
   },
@@ -111,9 +111,21 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 256
+        "views": 255
       },
-      "score": 8.56
+      "score": 8.55
+    },
+    {
+      "key": "youtube:8KiMoGr2yf0",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-06T20:06:27.227Z",
+      "metrics": {
+        "likes": 6,
+        "replies": 0,
+        "views": 197
+      },
+      "score": 7.97
     },
     {
       "key": "youtube:_MZ__1ZOFts",
@@ -126,6 +138,30 @@
         "views": 435
       },
       "score": 5.35
+    },
+    {
+      "key": "youtube:ubmJelPegec",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-07T01:05:22.164Z",
+      "metrics": {
+        "likes": 3,
+        "replies": 0,
+        "views": 36
+      },
+      "score": 3.36
+    },
+    {
+      "key": "youtube:NqwqUWoXGFY",
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-05T20:50:04.366Z",
+      "metrics": {
+        "likes": 2,
+        "replies": 0,
+        "views": 18
+      },
+      "score": 2.18
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -202,50 +238,6 @@
         "quotes": 0
       },
       "score": 1
-    },
-    {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhvjyz4752y",
-      "network": "bluesky",
-      "slug": "i-am-the-break-room-espresso-machine-and-i-have-been-converting-your",
-      "style": "deadpan",
-      "category": "conspiracy",
-      "format": "essay",
-      "at": "2026-11-04T08:07:03.432Z",
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "score": 1
-    },
-    {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzj76basdl2f",
-      "network": "bluesky",
-      "slug": "nexora-unveils-rapidfuel-a-high-viscosity-meat-slurry-administered",
-      "style": "ranking-bait",
-      "category": "corporate",
-      "format": "announcement",
-      "at": "2026-11-04T20:32:50.091Z",
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "score": 1
-    },
-    {
-      "key": "youtube:EYYY4xuIXRU",
-      "network": "youtube",
-      "kind": "bump",
-      "at": "2026-11-05T01:43:59.512Z",
-      "metrics": {
-        "likes": 0,
-        "replies": 0,
-        "views": 44
-      },
-      "score": 0.44
     }
   ],
   "posts": {
@@ -487,9 +479,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 256
+        "views": 255
       },
-      "score": 8.56
+      "score": 8.55
     },
     "youtube:1Ucl7C71CW4": {
       "network": "youtube",
@@ -509,9 +501,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 3
+        "views": 2
       },
-      "score": 0.03
+      "score": 0.02
     },
     "youtube:GPxPpZR-PS8": {
       "network": "youtube",
@@ -695,9 +687,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 22
+        "views": 21
       },
-      "score": 0.22
+      "score": 0.21
     },
     "youtube:WFLoc0MKaeI": {
       "network": "youtube",
@@ -706,9 +698,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 4
+        "views": 9
       },
-      "score": 0.04
+      "score": 0.09
     },
     "youtube:kWz4L8dBugE": {
       "network": "youtube",
@@ -726,11 +718,11 @@
       "kind": "headline",
       "at": "2026-11-05T20:50:04.366Z",
       "metrics": {
-        "likes": 0,
+        "likes": 2,
         "replies": 0,
-        "views": 11
+        "views": 18
       },
-      "score": 0.11
+      "score": 2.18
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzmy7pibym2q": {
       "network": "bluesky",
@@ -761,6 +753,95 @@
         "quotes": 0
       },
       "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzo6k34syn2y": {
+      "network": "bluesky",
+      "slug": "which-over-promised-self-care-subscription-box-are-you",
+      "style": "deadpan",
+      "category": "quizzes",
+      "format": "quiz",
+      "at": "2026-11-06T20:02:49.337Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzo6jzzcxa2t": {
+      "network": "bluesky",
+      "slug": "sci-fi-star-luna-vex-forces-1-2-million-viewers-to-attend-six-hour-vr",
+      "style": "deadpan",
+      "category": "entertainment",
+      "format": "news",
+      "at": "2026-11-06T20:02:49.337Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzo6jz6bql26": {
+      "network": "bluesky",
+      "slug": "omnivex-launches-coldstart-a-34-f-four-minute-ice-bath-that",
+      "style": "deadpan",
+      "category": "news",
+      "format": "announcement",
+      "at": "2026-11-06T20:02:49.337Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:ubmJelPegec": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-07T01:05:22.164Z",
+      "metrics": {
+        "likes": 3,
+        "replies": 0,
+        "views": 36
+      },
+      "score": 3.36
+    },
+    "youtube:XoKAaBgXBQs": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-07T01:06:55.768Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 27
+      },
+      "score": 0.27
+    },
+    "youtube:8KiMoGr2yf0": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-06T20:06:27.227Z",
+      "metrics": {
+        "likes": 6,
+        "replies": 0,
+        "views": 197
+      },
+      "score": 7.97
+    },
+    "youtube:pKgNyoe_VfI": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-06T20:07:57.996Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 3
+      },
+      "score": 0.03
     }
   }
 }
