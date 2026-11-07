@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T07:48:33.461Z",
+  "updatedAt": "2026-11-07T18:02:16.440Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 2,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 10,
+      "n": 11,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -34,7 +34,7 @@
       "total": 1
     },
     "format:essay": {
-      "n": 4,
+      "n": 5,
       "total": 2
     },
     "bluesky:deadpan": {
@@ -47,14 +47,14 @@
     },
     "shorts:bump": {
       "n": 11,
-      "total": 23.2
+      "total": 23.340000000000003
     },
     "shorts:headline": {
       "n": 11,
-      "total": 8.629999999999999
+      "total": 8.78
     },
     "bluesky:debate-bait": {
-      "n": 3,
+      "n": 5,
       "total": 1
     },
     "category:music": {
@@ -82,11 +82,11 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 4,
+      "n": 5,
       "total": 2
     },
     "category:politics": {
-      "n": 1,
+      "n": 2,
       "total": 0
     },
     "category:entertainment": {
@@ -123,9 +123,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 197
+        "views": 199
       },
-      "score": 7.97
+      "score": 7.99
     },
     {
       "key": "youtube:_MZ__1ZOFts",
@@ -147,9 +147,9 @@
       "metrics": {
         "likes": 3,
         "replies": 0,
-        "views": 36
+        "views": 48
       },
-      "score": 3.36
+      "score": 3.48
     },
     {
       "key": "youtube:NqwqUWoXGFY",
@@ -159,9 +159,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 18
+        "views": 28
       },
-      "score": 2.18
+      "score": 2.2800000000000002
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -501,9 +501,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 2
+        "views": 3
       },
-      "score": 0.02
+      "score": 0.03
     },
     "youtube:GPxPpZR-PS8": {
       "network": "youtube",
@@ -605,9 +605,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 25
+        "views": 24
       },
-      "score": 0.25
+      "score": 0.24
     },
     "youtube:_MZ__1ZOFts": {
       "network": "youtube",
@@ -698,9 +698,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 9
+        "views": 10
       },
-      "score": 0.09
+      "score": 0.1
     },
     "youtube:kWz4L8dBugE": {
       "network": "youtube",
@@ -720,9 +720,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 18
+        "views": 28
       },
-      "score": 2.18
+      "score": 2.2800000000000002
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzmy7pibym2q": {
       "network": "bluesky",
@@ -806,9 +806,9 @@
       "metrics": {
         "likes": 3,
         "replies": 0,
-        "views": 36
+        "views": 48
       },
-      "score": 3.36
+      "score": 3.48
     },
     "youtube:XoKAaBgXBQs": {
       "network": "youtube",
@@ -817,9 +817,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 27
+        "views": 30
       },
-      "score": 0.27
+      "score": 0.3
     },
     "youtube:8KiMoGr2yf0": {
       "network": "youtube",
@@ -828,9 +828,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 197
+        "views": 199
       },
-      "score": 7.97
+      "score": 7.99
     },
     "youtube:pKgNyoe_VfI": {
       "network": "youtube",
@@ -839,9 +839,39 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 3
+        "views": 4
       },
-      "score": 0.03
+      "score": 0.04
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzpg4dvm3j22": {
+      "network": "bluesky",
+      "slug": "i-am-your-six-digit-authentication-code-and-i-am-currently-trapped",
+      "style": "debate-bait",
+      "category": "politics",
+      "format": "essay",
+      "at": "2026-11-07T07:52:59.790Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzpg4d5spz2s": {
+      "network": "bluesky",
+      "slug": "hoas-3-27-inch-grass-rule-turns-suburb-into-4-2-million-drone-test",
+      "style": "debate-bait",
+      "category": "conspiracy",
+      "format": "news",
+      "at": "2026-11-07T07:52:59.790Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
     }
   }
 }

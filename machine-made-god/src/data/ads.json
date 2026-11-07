@@ -1,13 +1,5 @@
 [
   {
-    "id": "vortex-labs-you-wont-believe-what-this-d",
-    "brand": "Vortex Labs",
-    "headline": "You Won't Believe What This Desk Does When You Stop Looking",
-    "body": "The Vortex Labs Anti-Focus Desk gently vibrates whenever your eyes linger on spreadsheets, encouraging you to stare at the wall instead. Includes complimentary existential dread.",
-    "cta": "Embrace the Void",
-    "palette": "teal"
-  },
-  {
     "id": "meridian-dynamics-doctors-hate-this-lamp",
     "brand": "MERIDIAN DYNAMICS",
     "headline": "Doctors Hate This Lamp That Emits Low-Grade Peer Pressure Instead of Light",
@@ -318,5 +310,13 @@
     "body": "The SleepPod scans your pending emails, extracts the anxiety, and plays it as soft white‑noise, so you wake exactly when the next deadline arrives.",
     "cta": "Try Dream Sync",
     "palette": "sick"
+  },
+  {
+    "id": "meridian-dynamics-stop-guessing-if-your-",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "Stop guessing if your coworkers like you. Use the Vibe-Sync Lapel Pin.",
+    "body": "Our patented haptic sensor vibrates every time someone within ten feet thinks about your haircut. Total social clarity.",
+    "cta": "Buy the Certainty",
+    "palette": "sodium"
   }
 ]

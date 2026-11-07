@@ -8,8 +8,8 @@
     },
     "gemini": {
       "fail": 72,
-      "ok": 20,
-      "lastSuccess": "2026-11-01T13:21:13.349Z",
+      "ok": 21,
+      "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -21,13 +21,13 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 56,
-      "lastSuccess": "2026-11-07T07:48:41.108Z",
+      "ok": 58,
+      "lastSuccess": "2026-11-07T18:02:33.930Z",
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 69,
-      "lastSuccess": "2026-11-07T07:50:48.045Z",
+      "ok": 71,
+      "lastSuccess": "2026-11-07T18:04:25.197Z",
       "fail": 5
     },
     "qwen": {
@@ -38,6 +38,29 @@
   },
   "lastQuizAt": "2026-11-06T20:01:41.824Z",
   "runs": [
+    {
+      "at": "2026-11-07T18:02:25.405Z",
+      "articles": [
+        {
+          "slug": "10-calendar-invites-that-are-actually-crying-for-help-ranked-by",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        },
+        {
+          "slug": "nexora-collapses-11-400-internal-slack-channels-into-single",
+          "provider": "cerebras+gemini",
+          "model": "gpt-oss-120b → gemini-flash-latest"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-07T07:48:38.402Z",
       "articles": [
@@ -717,33 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-24T01:58:45.620Z",
-      "articles": [
-        {
-          "slug": "pickleball-is-my-therapist-and-youre-the-unpaid-intern",
-          "provider": "gemini+groq",
-          "model": "gemini-flash-latest → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "8-corporate-retreat-icebreakers-ranked-by-threat-to-human-dignity",
-          "provider": "gemini+groq",
-          "model": "gemini-flash-latest → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": {
-        "slug": "which-reply-all-email-archetype-defines-your-office-persona",
-        "provider": "cerebras",
-        "model": "gpt-oss-120b"
-      },
-      "extras": {
-        "provider": "groq",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
