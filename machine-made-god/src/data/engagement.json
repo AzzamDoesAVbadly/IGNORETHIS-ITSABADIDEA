@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-07T18:02:16.440Z",
+  "updatedAt": "2026-11-08T08:00:02.853Z",
   "arms": {
     "bluesky:fake-outrage": {
-      "n": 2,
+      "n": 4,
       "total": 0
     },
     "category:news": {
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 11,
+      "n": 12,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -18,11 +18,11 @@
       "total": 1
     },
     "category:lists": {
-      "n": 3,
+      "n": 4,
       "total": 1
     },
     "format:listicle": {
-      "n": 3,
+      "n": 4,
       "total": 1
     },
     "bluesky:confession": {
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 11,
-      "total": 23.340000000000003
+      "n": 13,
+      "total": 28.000000000000004
     },
     "shorts:headline": {
-      "n": 11,
-      "total": 8.78
+      "n": 13,
+      "total": 9.06
     },
     "bluesky:debate-bait": {
       "n": 5,
@@ -94,7 +94,7 @@
       "total": 0
     },
     "category:corporate": {
-      "n": 2,
+      "n": 3,
       "total": 1
     },
     "format:announcement": {
@@ -123,9 +123,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 199
+        "views": 203
       },
-      "score": 7.99
+      "score": 8.03
     },
     {
       "key": "youtube:_MZ__1ZOFts",
@@ -135,9 +135,21 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 435
+        "views": 428
       },
-      "score": 5.35
+      "score": 5.28
+    },
+    {
+      "key": "youtube:KqlcAjpB68c",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-08T00:53:08.992Z",
+      "metrics": {
+        "likes": 4,
+        "replies": 0,
+        "views": 46
+      },
+      "score": 4.46
     },
     {
       "key": "youtube:ubmJelPegec",
@@ -147,9 +159,9 @@
       "metrics": {
         "likes": 3,
         "replies": 0,
-        "views": 48
+        "views": 47
       },
-      "score": 3.48
+      "score": 3.4699999999999998
     },
     {
       "key": "youtube:NqwqUWoXGFY",
@@ -159,9 +171,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 28
+        "views": 31
       },
-      "score": 2.2800000000000002
+      "score": 2.31
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -214,22 +226,6 @@
       "style": "hot-take",
       "category": "conspiracy",
       "format": "news",
-      "at": "2026-11-03T08:41:57.557Z",
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "score": 1
-    },
-    {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzfgy7ukd52d",
-      "network": "bluesky",
-      "slug": "10-hand-dryers-ranked-by-how-much-they-feel-like-a-personal-attack",
-      "style": "hot-take",
-      "category": "lists",
-      "format": "listicle",
       "at": "2026-11-03T08:41:57.557Z",
       "metrics": {
         "likes": 1,
@@ -438,9 +434,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 16
+        "views": 17
       },
-      "score": 0.16
+      "score": 0.17
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzgntnoeaz2g": {
       "network": "bluesky",
@@ -616,9 +612,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 435
+        "views": 428
       },
-      "score": 5.35
+      "score": 5.28
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzkhs57kbd2y": {
       "network": "bluesky",
@@ -687,9 +683,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 21
+        "views": 22
       },
-      "score": 0.21
+      "score": 0.22
     },
     "youtube:WFLoc0MKaeI": {
       "network": "youtube",
@@ -698,9 +694,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 10
+        "views": 11
       },
-      "score": 0.1
+      "score": 0.11
     },
     "youtube:kWz4L8dBugE": {
       "network": "youtube",
@@ -720,9 +716,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 28
+        "views": 31
       },
-      "score": 2.2800000000000002
+      "score": 2.31
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzmy7pibym2q": {
       "network": "bluesky",
@@ -806,9 +802,9 @@
       "metrics": {
         "likes": 3,
         "replies": 0,
-        "views": 48
+        "views": 47
       },
-      "score": 3.48
+      "score": 3.4699999999999998
     },
     "youtube:XoKAaBgXBQs": {
       "network": "youtube",
@@ -817,9 +813,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 30
+        "views": 31
       },
-      "score": 0.3
+      "score": 0.31
     },
     "youtube:8KiMoGr2yf0": {
       "network": "youtube",
@@ -828,9 +824,9 @@
       "metrics": {
         "likes": 6,
         "replies": 0,
-        "views": 199
+        "views": 203
       },
-      "score": 7.99
+      "score": 8.03
     },
     "youtube:pKgNyoe_VfI": {
       "network": "youtube",
@@ -839,9 +835,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 4
+        "views": 5
       },
-      "score": 0.04
+      "score": 0.05
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzpg4dvm3j22": {
       "network": "bluesky",
@@ -872,6 +868,80 @@
         "quotes": 0
       },
       "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzqieoi2zc2k": {
+      "network": "bluesky",
+      "slug": "nexora-collapses-11-400-internal-slack-channels-into-single",
+      "style": "fake-outrage",
+      "category": "corporate",
+      "format": "news",
+      "at": "2026-11-07T18:05:31.535Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzqidm7aji2e": {
+      "network": "bluesky",
+      "slug": "10-calendar-invites-that-are-actually-crying-for-help-ranked-by",
+      "style": "fake-outrage",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-07T18:05:31.535Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:KqlcAjpB68c": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-08T00:53:08.992Z",
+      "metrics": {
+        "likes": 4,
+        "replies": 0,
+        "views": 46
+      },
+      "score": 4.46
+    },
+    "youtube:rdJxtFimqsM": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-08T00:54:31.570Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 27
+      },
+      "score": 0.27
+    },
+    "youtube:JlaqalZ9uho": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-07T18:13:33.594Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 16
+      },
+      "score": 0.16
+    },
+    "youtube:kIu66I6P8VU": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-07T18:15:22.554Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 1
+      },
+      "score": 0.01
     }
   }
 }

@@ -1,13 +1,5 @@
 [
   {
-    "id": "meridian-dynamics-doctors-hate-this-lamp",
-    "brand": "MERIDIAN DYNAMICS",
-    "headline": "Doctors Hate This Lamp That Emits Low-Grade Peer Pressure Instead of Light",
-    "body": "Replace 100% of your vitamin D with the crushing sensation that your peers from high school are doing better. Plugs into USB-C.",
-    "cta": "Feel It Now",
-    "palette": "sodium"
-  },
-  {
     "id": "meridian-dynamics-replace-your-entire-mo",
     "brand": "MERIDIAN DYNAMICS",
     "headline": "Replace Your Entire Morning Routine With A Single, Extremely Loud Tone",
@@ -318,5 +310,13 @@
     "body": "Our patented haptic sensor vibrates every time someone within ten feet thinks about your haircut. Total social clarity.",
     "cta": "Buy the Certainty",
     "palette": "sodium"
+  },
+  {
+    "id": "omnivex-is-your-internal-monologue-too-l",
+    "brand": "OMNIVEX",
+    "headline": "Is Your Internal Monologue Too Loud? Install The Quiet-Mind Dampener",
+    "body": "A discreet wearable that replaces your intrusive thoughts with the sound of a distant, polite vacuum cleaner.",
+    "cta": "Mute My Brain",
+    "palette": "bleach"
   }
 ]
