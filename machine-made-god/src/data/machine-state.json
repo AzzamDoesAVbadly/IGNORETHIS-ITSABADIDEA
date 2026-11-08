@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 64,
-      "lastSuccess": "2026-11-08T08:02:15.359Z",
+      "ok": 66,
+      "lastSuccess": "2026-11-08T18:25:00.487Z",
       "fail": 7,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 74,
+      "fail": 76,
       "ok": 21,
       "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,23 +21,46 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 58,
-      "lastSuccess": "2026-11-07T18:02:33.930Z",
+      "ok": 59,
+      "lastSuccess": "2026-11-08T18:24:56.792Z",
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 74,
-      "lastSuccess": "2026-11-08T08:03:55.701Z",
+      "ok": 75,
+      "lastSuccess": "2026-11-08T18:25:02.628Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 17,
-      "lastSuccess": "2026-11-08T08:03:45.151Z",
+      "ok": 18,
+      "lastSuccess": "2026-11-08T18:22:51.342Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-11-06T20:01:41.824Z",
   "runs": [
+    {
+      "at": "2026-11-08T18:21:21.474Z",
+      "articles": [
+        {
+          "slug": "review-omnivex-frostbyte-freezes-my-lettuce-after-i-missed-my-14-day",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "form-28-4-demands-a-coffee-break-before-you-can-move-a-trash-can-two",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-08T08:00:10.740Z",
       "articles": [
@@ -717,29 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-25T02:01:14.953Z",
-      "articles": [
-        {
-          "slug": "study-14-of-gym-members-insist-treadmills-are-slow-motion-conveyors",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "i-am-your-saved-folder-and-you-are-never-going-to-reupholster-that",
-          "provider": "ollama-cloud+gemini",
-          "model": "gemma4:31b → gemini-flash-latest"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "gemini",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

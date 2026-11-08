@@ -1,13 +1,5 @@
 [
   {
-    "id": "meridian-dynamics-replace-your-entire-mo",
-    "brand": "MERIDIAN DYNAMICS",
-    "headline": "Replace Your Entire Morning Routine With A Single, Extremely Loud Tone",
-    "body": "Engineered to deliver 400mg of perceived alertness directly to your fight-or-flight response. Zero prep time. No clean up.",
-    "cta": "Emit The Tone",
-    "palette": "sodium"
-  },
-  {
     "id": "vortexium-this-desk-grows-a-new-keyboard",
     "brand": "VORTEXIUM",
     "headline": "This Desk Grows a New Keyboard Every Time You Miss a Deadline",
@@ -318,5 +310,13 @@
     "body": "A discreet wearable that replaces your intrusive thoughts with the sound of a distant, polite vacuum cleaner.",
     "cta": "Mute My Brain",
     "palette": "bleach"
+  },
+  {
+    "id": "meridian-dynamics-is-your-living-room-to",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "Is Your Living Room Too Symmetrical? Introduce Chaos With The Tilt-Floor 5000",
+    "body": "Stop letting your furniture dictate your mood. Our patented hydraulic floor plates create a subtle, permanent 4-degree lean for a more dynamic home.",
+    "cta": "START TILTING",
+    "palette": "sodium"
   }
 ]
