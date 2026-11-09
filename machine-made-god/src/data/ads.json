@@ -1,13 +1,5 @@
 [
   {
-    "id": "vortexium-this-desk-grows-a-new-keyboard",
-    "brand": "VORTEXIUM",
-    "headline": "This Desk Grows a New Keyboard Every Time You Miss a Deadline",
-    "body": "VORTEXIUM's Auto‑Shift Desk monitors your task list and sprouts a fresh mechanical keyboard when a deadline slips, complete with built‑in guilt sensors.",
-    "cta": "Get Yours",
-    "palette": "sick"
-  },
-  {
     "id": "halcyon-tek-stop-guessing-how-tired-you-",
     "brand": "HALCYON-TEK",
     "headline": "Stop Guessing How Tired You Are With Our Bio-Metric Exhaustion Meter",
@@ -317,6 +309,14 @@
     "headline": "Is Your Living Room Too Symmetrical? Introduce Chaos With The Tilt-Floor 5000",
     "body": "Stop letting your furniture dictate your mood. Our patented hydraulic floor plates create a subtle, permanent 4-degree lean for a more dynamic home.",
     "cta": "START TILTING",
+    "palette": "sodium"
+  },
+  {
+    "id": "meridian-dynamics-is-your-handwriting-to",
+    "brand": "Meridian Dynamics",
+    "headline": "Is Your Handwriting Too Honest? Mask Your Intentions With The Blur-Pen.",
+    "body": "Our patented ink vibrates at a frequency that makes your notes illegible to anyone with a strong moral compass.",
+    "cta": "Obscure Your Truth",
     "palette": "sodium"
   }
 ]

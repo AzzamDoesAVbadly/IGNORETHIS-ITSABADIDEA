@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 66,
-      "lastSuccess": "2026-11-08T18:25:00.487Z",
+      "ok": 67,
+      "lastSuccess": "2026-11-09T08:42:13.640Z",
       "fail": 7,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 76,
+      "fail": 77,
       "ok": 21,
       "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,23 +21,46 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 59,
-      "lastSuccess": "2026-11-08T18:24:56.792Z",
+      "ok": 60,
+      "lastSuccess": "2026-11-09T08:46:05.260Z",
       "fail": 8
     },
     "ollama-cloud": {
-      "ok": 75,
-      "lastSuccess": "2026-11-08T18:25:02.628Z",
+      "ok": 77,
+      "lastSuccess": "2026-11-09T08:46:06.839Z",
       "fail": 5
     },
     "qwen": {
-      "ok": 18,
-      "lastSuccess": "2026-11-08T18:22:51.342Z",
+      "ok": 19,
+      "lastSuccess": "2026-11-09T08:46:00.105Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-11-06T20:01:41.824Z",
   "runs": [
+    {
+      "at": "2026-11-09T08:42:06.785Z",
+      "articles": [
+        {
+          "slug": "open-plan-floor-declares-independence-classifies-overhead-lighting-as",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "the-standing-desk-that-knows-youre-just-leaning",
+          "provider": "ollama-cloud+cerebras",
+          "model": "gemma4:31b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "ollama-cloud",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-08T18:21:21.474Z",
       "articles": [
@@ -717,29 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-25T13:24:17.946Z",
-      "articles": [
-        {
-          "slug": "indie-band-pixel-purgatoria-locks-debut-album-behind-vending-machine",
-          "provider": "cerebras+ollama-cloud",
-          "model": "gpt-oss-120b → gemma4:31b"
-        },
-        {
-          "slug": "omnivex-rolls-out-nutrisync-bars-that-lock-your-hunger-to-your-9-to-5",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T18:21:14.349Z",
+  "updatedAt": "2026-11-09T08:42:01.268Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 4,
@@ -14,7 +14,7 @@
       "total": 1
     },
     "bluesky:ranking-bait": {
-      "n": 4,
+      "n": 6,
       "total": 1
     },
     "category:lists": {
@@ -34,7 +34,7 @@
       "total": 1
     },
     "format:essay": {
-      "n": 5,
+      "n": 6,
       "total": 2
     },
     "bluesky:deadpan": {
@@ -62,11 +62,11 @@
       "total": 0
     },
     "category:reviews": {
-      "n": 3,
+      "n": 4,
       "total": 1
     },
     "format:review": {
-      "n": 3,
+      "n": 4,
       "total": 1
     },
     "bluesky:hot-take": {
@@ -86,7 +86,7 @@
       "total": 2
     },
     "category:politics": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "category:entertainment": {
@@ -961,6 +961,36 @@
       "category": "reviews",
       "format": "review",
       "at": "2026-11-08T08:04:46.115Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzszxumi362s": {
+      "network": "bluesky",
+      "slug": "form-28-4-demands-a-coffee-break-before-you-can-move-a-trash-can-two",
+      "style": "ranking-bait",
+      "category": "politics",
+      "format": "essay",
+      "at": "2026-11-08T18:25:54.124Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzszxtseap2y": {
+      "network": "bluesky",
+      "slug": "review-omnivex-frostbyte-freezes-my-lettuce-after-i-missed-my-14-day",
+      "style": "ranking-bait",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-08T18:25:54.124Z",
       "metrics": {
         "likes": 0,
         "reposts": 0,
