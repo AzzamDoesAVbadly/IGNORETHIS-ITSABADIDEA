@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T08:42:01.268Z",
+  "updatedAt": "2026-11-09T22:59:00.999Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 4,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 12,
+      "n": 13,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -26,15 +26,15 @@
       "total": 1
     },
     "bluesky:confession": {
-      "n": 4,
+      "n": 6,
       "total": 1
     },
     "category:internet": {
-      "n": 1,
+      "n": 2,
       "total": 1
     },
     "format:essay": {
-      "n": 6,
+      "n": 7,
       "total": 2
     },
     "bluesky:deadpan": {
@@ -82,7 +82,7 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 5,
+      "n": 6,
       "total": 2
     },
     "category:politics": {
@@ -991,6 +991,36 @@
       "category": "reviews",
       "format": "review",
       "at": "2026-11-08T18:25:54.124Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzuk6adzy52l": {
+      "network": "bluesky",
+      "slug": "the-standing-desk-that-knows-youre-just-leaning",
+      "style": "confession",
+      "category": "conspiracy",
+      "format": "essay",
+      "at": "2026-11-09T08:46:59.113Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzuk4axivf2l": {
+      "network": "bluesky",
+      "slug": "open-plan-floor-declares-independence-classifies-overhead-lighting-as",
+      "style": "confession",
+      "category": "internet",
+      "format": "news",
+      "at": "2026-11-09T08:46:59.113Z",
       "metrics": {
         "likes": 0,
         "reposts": 0,

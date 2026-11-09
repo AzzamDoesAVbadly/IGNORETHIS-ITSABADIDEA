@@ -1,0 +1,169 @@
+{
+  "title": "Which Highly Specific Dental Chair Persona Are You Performing?",
+  "dek": "You are lying horizontal and completely powerless. What coping mechanism are you projecting to the person holding sharp metal near your brain?",
+  "author": "intern-4471",
+  "date": "2026-11-09T23:04:09.792Z",
+  "tags": [
+    "dentist",
+    "personality quiz",
+    "coping mechanisms",
+    "horizontal panic",
+    "dental chair"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "chart",
+    "palette": "sick",
+    "label": "TOOTH MAP"
+  },
+  "questions": [
+    {
+      "q": "The hygienist asks, \"How have your gums been feeling?\" You:",
+      "answers": [
+        {
+          "a": "Give a crisp thumbs-up while making intense, unblinking eye contact.",
+          "r": "r1"
+        },
+        {
+          "a": "Say \"Oh, you know, same old, my bad,\" and look at the floor.",
+          "r": "r2"
+        },
+        {
+          "a": "Stare blankly at the acoustic ceiling tiles until they speak again.",
+          "r": "r3"
+        },
+        {
+          "a": "Immediately launch into a rambling story about a sandwich you ate.",
+          "r": "r4"
+        }
+      ]
+    },
+    {
+      "q": "The drill turns on. It sounds like a tiny, angry hornet inside your skull. You:",
+      "answers": [
+        {
+          "a": "Squeeze the armrests so hard your knuckles turn white, but keep smiling.",
+          "r": "r1"
+        },
+        {
+          "a": "Whimper slightly, then apologize for whimpering.",
+          "r": "r2"
+        },
+        {
+          "a": "Mentally calculate the exact square footage of your childhood bedroom.",
+          "r": "r3"
+        },
+        {
+          "a": "Ask the dentist if they have seen any good movies lately.",
+          "r": "r4"
+        }
+      ]
+    },
+    {
+      "q": "You feel a sharp pain near your molars. You:",
+      "answers": [
+        {
+          "a": "Nod enthusiastically to signal that this is a great pain and you love it.",
+          "r": "r1"
+        },
+        {
+          "a": "Raise one trembling finger to signal a timeout, then whisper \"Sorry.\"",
+          "r": "r2"
+        },
+        {
+          "a": "Accept the pain as your new permanent reality and drift into a trance.",
+          "r": "r3"
+        },
+        {
+          "a": "Yell \"IS THAT THE BAD TOOTH? ARE WE GETTING THE BAD TOOTH?\"",
+          "r": "r4"
+        }
+      ]
+    },
+    {
+      "q": "The dentist leans in and says, \"You've got a little bit of plaque right here.\" You:",
+      "answers": [
+        {
+          "a": "Beam with pride, as if you personally curated this plaque for them to find.",
+          "r": "r1"
+        },
+        {
+          "a": "Mutter \"I know, I'm terrible, I'm so sorry,\" and feel deep shame.",
+          "r": "r2"
+        },
+        {
+          "a": "Dissociate so hard you forget your own name and species.",
+          "r": "r3"
+        },
+        {
+          "a": "Blame it entirely on the mineral content of your tap water.",
+          "r": "r4"
+        }
+      ]
+    },
+    {
+      "q": "They offer you the fluoride varnish. It tastes like electric chalk. You:",
+      "answers": [
+        {
+          "a": "Swallow it immediately to show them you are a compliant, low-maintenance unit.",
+          "r": "r1"
+        },
+        {
+          "a": "Ask if it is okay to swallow it, then apologize for asking.",
+          "r": "r2"
+        },
+        {
+          "a": "Let it sit on your tongue while you contemplate the void.",
+          "r": "r3"
+        },
+        {
+          "a": "Ask for a second coat because the first one was just a tease.",
+          "r": "r4"
+        }
+      ]
+    },
+    {
+      "q": "The appointment is over. They tell you to rinse and spit. You:",
+      "answers": [
+        {
+          "a": "Spit with the force of a firehose, establishing dominance over the sink.",
+          "r": "r1"
+        },
+        {
+          "a": "Spit gently, then ask if you got it all, then apologize for the water on the counter.",
+          "r": "r2"
+        },
+        {
+          "a": "Stare at the pink foam in the cup, wondering where the last 45 minutes went.",
+          "r": "r3"
+        },
+        {
+          "a": "Ask the receptionist if they have any mints, and then tell her about your cousin.",
+          "r": "r4"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "r1": {
+      "title": "The Aggressive Thumbs-Up",
+      "body": "You have decided that the only way to survive horizontal subjugation is to become a terrifyingly cheerful hostage. You treat the hygienist not as a medical professional, but as a hostage negotiator you are trying to charm. Your jaw aches from the forced, wide-eyed grinning, and your armrests are splintering under your grip. You leave the clinic with a perfect cleaning score and a jaw that is locked open at a 45-degree angle for the next three business days. You will text your partner about how great the dentist was.",
+      "share": "I just gave the dentist a thumbs up while they drilled my molar. I am unstoppable."
+    },
+    "r2": {
+      "title": "The Over-Apologetic Jaw",
+      "body": "You view your own mouth as a profound inconvenience to the dental staff. Every gag reflex, every flinch, every drop of saliva is treated by you as a personal moral failing. You spend the entire 45-minute appointment whispering sorry through the suction tube, apologizing to the drill for making it work so hard. The hygienist has to constantly reassure you that having a human skeleton is perfectly acceptable. You leave with a complimentary toothbrush and a lingering sense that you owe them forty dollars just for your existence.",
+      "share": "I apologized to the dental drill for being in its way. Please respect my privacy."
+    },
+    "r3": {
+      "title": "The Dissociative Ceiling Stare",
+      "body": "The moment the bright overhead light clicks on, you vacate the premises. Your body remains in the chair, but your consciousness is aggressively auditing the acoustic tiles above you. You count the perforations. You name them. You build a small, imaginary society among the dust mites. You do not feel the scraper; you only register it as a mild vibration in the general direction of your skull. The dentist has to say your name three times to bring you back to the physical realm so you can rinse.",
+      "share": "I mentally moved into the ceiling tiles during my cleaning. The dust mites accept me."
+    },
+    "r4": {
+      "title": "The Unsolicited Life Update",
+      "body": "Silence is your enemy, and the dentist's chair is a vacuum waiting to be filled with your trauma. You view the suction tube not as a medical device, but as a conversational microphone. You tell them about your lower back, your neighbor's dog, and your deep-seated fear of escalators. The dentist nods politely while secretly calculating their hourly wage. You leave the clinic with floss and a firm belief that you and Dr. Aris Thorne are now basically best friends who just need to schedule a follow-up.",
+      "share": "I told my dentist my entire life story through the suction tube. We're basically married now."
+    }
+  }
+}
