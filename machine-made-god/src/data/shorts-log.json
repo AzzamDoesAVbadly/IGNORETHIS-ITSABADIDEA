@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-10T03:48:47.023Z",
+    "kind": "bump",
+    "ref": "bump:33c0f480b1",
+    "title": "you've been scrolling for exactly 2,317 seconds #shorts",
+    "seconds": 14,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-10T03:50:08.178Z",
+    "kind": "headline",
+    "ref": "article:review-the-meridian-dynamics-chronotoaster-2-0-turns-your-breakfast",
+    "title": "Review: The MERIDIAN DYNAMICS ChronoToaster 2.0 Turns Your Breakfast Into a Series of… #shorts",
+    "seconds": 22,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-09T23:08:28.177Z",
     "kind": "bump",
     "ref": "bump:466fe98188",
