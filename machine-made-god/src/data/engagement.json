@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T22:59:00.999Z",
+  "updatedAt": "2026-11-10T08:51:39.356Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 4,
@@ -34,7 +34,7 @@
       "total": 1
     },
     "format:essay": {
-      "n": 7,
+      "n": 8,
       "total": 2
     },
     "bluesky:deadpan": {
@@ -62,23 +62,23 @@
       "total": 0
     },
     "category:reviews": {
-      "n": 4,
+      "n": 5,
       "total": 1
     },
     "format:review": {
-      "n": 4,
+      "n": 5,
       "total": 1
     },
     "bluesky:hot-take": {
-      "n": 6,
+      "n": 9,
       "total": 2
     },
     "category:quizzes": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "format:quiz": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "category:conspiracy": {
@@ -86,7 +86,7 @@
       "total": 2
     },
     "category:politics": {
-      "n": 3,
+      "n": 4,
       "total": 0
     },
     "category:entertainment": {
@@ -1021,6 +1021,51 @@
       "category": "internet",
       "format": "news",
       "at": "2026-11-09T08:46:59.113Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzvzvanuko2f": {
+      "network": "bluesky",
+      "slug": "which-highly-specific-dental-chair-persona-are-you-performing",
+      "style": "hot-take",
+      "category": "quizzes",
+      "format": "quiz",
+      "at": "2026-11-09T23:02:07.800Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzvzusfecb2w": {
+      "network": "bluesky",
+      "slug": "form-42-7-the-only-document-more-exhausted-than-cedar-falls-residents",
+      "style": "hot-take",
+      "category": "politics",
+      "format": "essay",
+      "at": "2026-11-09T23:02:07.800Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzvztu4ccq2f": {
+      "network": "bluesky",
+      "slug": "review-the-meridian-dynamics-chronotoaster-2-0-turns-your-breakfast",
+      "style": "hot-take",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-09T23:02:07.800Z",
       "metrics": {
         "likes": 0,
         "reposts": 0,

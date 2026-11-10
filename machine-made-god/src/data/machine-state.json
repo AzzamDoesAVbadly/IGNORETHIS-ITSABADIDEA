@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 70,
-      "lastSuccess": "2026-11-09T23:01:16.692Z",
-      "fail": 7,
+      "ok": 73,
+      "lastSuccess": "2026-11-10T08:55:38.009Z",
+      "fail": 8,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 78,
+      "fail": 81,
       "ok": 21,
       "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -28,16 +28,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 5
+      "fail": 7
     },
     "qwen": {
-      "ok": 20,
-      "lastSuccess": "2026-11-09T23:01:09.297Z",
+      "ok": 22,
+      "lastSuccess": "2026-11-10T08:55:30.927Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-11-09T23:01:09.353Z",
   "runs": [
+    {
+      "at": "2026-11-10T08:51:47.920Z",
+      "articles": [
+        {
+          "slug": "9-ways-to-position-your-conference-badge-for-maximum-power-trip",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "password-confirmation-field-rejects-exact-match-cites-mismatched",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-09T22:59:09.792Z",
       "articles": [
@@ -726,29 +749,6 @@
       "failures": [
         "quiz: every provider failed: groq: out of credits; ollama-cloud: draft quiz: contains banned phrase \"attention economy\"; gemini: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]; cerebras: means the same as /quiz/which-overengineered-sleep-tracker-perk-matches-your-nighttime-persona/ (0.84)"
       ]
-    },
-    {
-      "at": "2026-10-26T14:48:13.907Z",
-      "articles": [
-        {
-          "slug": "vortexia-to-convert-break-room-gossip-into-classified-strategic",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        },
-        {
-          "slug": "meridian-dynamics-launches-role-roulette-subscription-that-randomizes",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
     }
   ]
 }
