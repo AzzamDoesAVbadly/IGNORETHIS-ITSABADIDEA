@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-10T20:39:43.006Z",
+    "kind": "bump",
+    "ref": "bump:220f858659",
+    "title": "the screen sighs when you blink #shorts",
+    "seconds": 12,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-10T20:40:59.966Z",
+    "kind": "headline",
+    "ref": "article:password-confirmation-field-rejects-exact-match-cites-mismatched",
+    "title": "Password Confirmation Field Rejects Exact Match, Cites ‘Mismatched Energies’ #shorts",
+    "seconds": 21,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-10T03:48:47.023Z",
     "kind": "bump",
     "ref": "bump:33c0f480b1",
