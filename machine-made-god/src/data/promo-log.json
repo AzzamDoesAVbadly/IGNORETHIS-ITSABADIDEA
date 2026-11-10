@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-10T20:36:16.564Z",
+    "slug": "review-nexora-kinshiptray-turns-holiday-dinner-into-a-bureaucratic,four-strangers-turn-airport-lounge-table-into-feudal-microstate",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-10T20:36:16.564Z",
+    "slug": "four-strangers-turn-airport-lounge-table-into-feudal-microstate",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzycb3eb2q22",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzycb3eb2q22",
+    "caption": "We have lost our minds. A 28-inch high-top table now requires a gold-plated coaster to claim the outlet, and sighing is punishable by exile. Society is officially over. #Airport",
+    "style": "fake-outrage",
+    "category": "lifestyle",
+    "format": "news"
+  },
+  {
+    "at": "2026-11-10T20:36:16.564Z",
+    "slug": "review-nexora-kinshiptray-turns-holiday-dinner-into-a-bureaucratic",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3mzyc7omcyh2k",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzyc7omcyh2k",
+    "caption": "NEXORA demands a notarized Form 7-B just to keep my gravy at 142 degrees. This violates the Thanksgiving Accords. I am eating cold potatoes in the hallway until the CEO resigns. #NEXORA",
+    "style": "fake-outrage",
+    "category": "reviews",
+    "format": "review"
+  },
+  {
     "at": "2026-11-10T08:56:29.672Z",
     "slug": "9-ways-to-position-your-conference-badge-for-maximum-power-trip,password-confirmation-field-rejects-exact-match-cites-mismatched",
     "network": "indexnow",
