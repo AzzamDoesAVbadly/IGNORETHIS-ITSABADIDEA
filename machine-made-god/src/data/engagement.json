@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T08:51:39.356Z",
+  "updatedAt": "2026-11-10T20:27:58.650Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 4,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 13,
+      "n": 14,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -18,19 +18,19 @@
       "total": 1
     },
     "category:lists": {
-      "n": 4,
+      "n": 5,
       "total": 1
     },
     "format:listicle": {
-      "n": 4,
+      "n": 5,
       "total": 1
     },
     "bluesky:confession": {
-      "n": 6,
+      "n": 7,
       "total": 1
     },
     "category:internet": {
-      "n": 2,
+      "n": 3,
       "total": 1
     },
     "format:essay": {
@@ -54,7 +54,7 @@
       "total": 10.06
     },
     "bluesky:debate-bait": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "category:music": {
@@ -1066,6 +1066,36 @@
       "category": "reviews",
       "format": "review",
       "at": "2026-11-09T23:02:07.800Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzx34dhdwv25": {
+      "network": "bluesky",
+      "slug": "password-confirmation-field-rejects-exact-match-cites-mismatched",
+      "style": "confession",
+      "category": "internet",
+      "format": "news",
+      "at": "2026-11-10T08:56:29.672Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzx32n6uho2l": {
+      "network": "bluesky",
+      "slug": "9-ways-to-position-your-conference-badge-for-maximum-power-trip",
+      "style": "debate-bait",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-10T08:56:29.672Z",
       "metrics": {
         "likes": 0,
         "reposts": 0,

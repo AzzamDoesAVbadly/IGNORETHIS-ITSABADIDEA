@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-stop-worrying-if-youre-liked",
-    "brand": "HALCYON-TEK",
-    "headline": "Stop Worrying If You're Liked With The Social-Sync Aura Ring",
-    "body": "Our patented haptic pulse vibrates every time someone within 50 feet thinks you are 'mildly tolerable.' Never guess your status again.",
-    "cta": "BUY YOUR VALIDATION",
-    "palette": "crt"
-  },
-  {
     "id": "omnivex-why-are-dentists-begging-people-",
     "brand": "OMNIVEX",
     "headline": "Why Are Dentists Begging People To Stop Chewing On Standard-Issue Keycards?",
@@ -318,5 +310,13 @@
     "body": "Our patented DreamSync engine translates each unopened message into a soothing scenario, so you wake ready to hit reply.",
     "cta": "Start Dreaming",
     "palette": "teal"
+  },
+  {
+    "id": "halcyon-tek-sleep-on-a-pillow-that-draft",
+    "brand": "HALCYON-TEK",
+    "headline": "Sleep on a pillow that drafts tomorrow’s to‑do list while you snooze",
+    "body": "The DreamSync Pillow records your REM cycles, converts them into actionable tasks, and whispers them at sunrise. Wake up with a plan you never made.",
+    "cta": "Get Yours",
+    "palette": "sodium"
   }
 ]
