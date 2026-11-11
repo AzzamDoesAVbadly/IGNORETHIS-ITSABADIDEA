@@ -1,0 +1,60 @@
+/* MACHINE MADE GOD: Big Cartel theme CSS.
+   Paste at: Big Cartel admin → Design → Customize → Edit theme code (or "Custom CSS") → bottom of the stylesheet.
+   Built against this store's theme class names (header, prod-thumb, button, footer-nav). */
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;600&display=swap");
+
+:root {
+  --mmg-black: #0b0a09;
+  --mmg-night: #171512;
+  --mmg-paper: #f1ede2;
+  --mmg-grey: #7c766a;
+  --mmg-sodium: #ff6a13;
+  --mmg-acid: #c8ff1a;
+}
+
+body, .theme {
+  background: var(--mmg-black) !important;
+  color: var(--mmg-paper) !important;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* header */
+.header, .header-wrapper { background: var(--mmg-black) !important; border-bottom: 3px solid var(--mmg-sodium) !important; }
+.header a, .header-cart, .header-cart-count, .header-cart-total, .nav-home-text, .nav-home-link, .nav-cart-link, .nav-section-title-text {
+  color: var(--mmg-paper) !important;
+  font-family: "Archivo Black", Impact, sans-serif !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.header a:hover, .nav-home-link:hover, .nav-cart-link:hover { color: var(--mmg-sodium) !important; }
+
+/* products */
+.prod-thumb-background, .prod-thumb { background: var(--mmg-night) !important; }
+.product-list-image-container { border: 2px solid var(--mmg-paper); box-shadow: 5px 5px 0 var(--mmg-sodium); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.prod-thumb:hover .product-list-image-container { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--mmg-sodium); }
+.prod-thumb-name { color: var(--mmg-paper) !important; font-family: "Archivo Black", Impact, sans-serif !important; text-transform: uppercase; letter-spacing: 0.03em; }
+.prod-thumb-price { color: var(--mmg-acid) !important; font-family: "IBM Plex Mono", monospace !important; }
+
+/* buttons */
+.button, button, input[type="submit"] {
+  background: var(--mmg-sodium) !important;
+  color: var(--mmg-black) !important;
+  border: 2px solid var(--mmg-paper) !important;
+  border-radius: 0 !important;
+  font-family: "Archivo Black", Impact, sans-serif !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--mmg-paper);
+}
+.button:hover, button:hover, input[type="submit"]:hover { background: var(--mmg-acid) !important; }
+
+/* forms */
+input, select, textarea { background: var(--mmg-night) !important; color: var(--mmg-paper) !important; border: 2px solid var(--mmg-grey) !important; border-radius: 0 !important; }
+
+/* footer */
+.footer-nav, .footer-nav-section, .nav-section-credit { background: var(--mmg-black) !important; color: var(--mmg-grey) !important; font-family: "IBM Plex Mono", monospace !important; }
+.footer-nav a { color: var(--mmg-paper) !important; }
+
+/* links */
+a { color: var(--mmg-sodium); }

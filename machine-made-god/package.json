@@ -17,6 +17,7 @@
     "promote": "node --env-file-if-exists=.env scripts/promote.mjs",
     "shorts": "node --env-file-if-exists=.env scripts/shorts.mjs",
     "replies": "node --env-file-if-exists=.env scripts/replies.mjs",
+    "queue": "node scripts/queue.mjs",
     "podcast": "node --env-file-if-exists=.env scripts/podcast.mjs"
   },
   "dependencies": {

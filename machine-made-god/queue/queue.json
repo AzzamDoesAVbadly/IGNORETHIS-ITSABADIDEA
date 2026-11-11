@@ -1,0 +1,179 @@
+[
+  {
+    "status": "done",
+    "added": "2026-11-03T23:59:16.178Z",
+    "id": "gh:13268009381",
+    "type": "artifact",
+    "name": "shorts-41710736403",
+    "ref": "shorts-41710736403",
+    "finished": "2026-11-03T23:59:39.078Z"
+  },
+  {
+    "status": "done",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:13201380682",
+    "type": "artifact",
+    "name": "shorts-41569546669",
+    "ref": "shorts-41569546669",
+    "finished": "2026-11-03T23:59:54.296Z"
+  },
+  {
+    "status": "done",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:13184008987",
+    "type": "artifact",
+    "name": "shorts-41537228922",
+    "ref": "shorts-41537228922",
+    "finished": "2026-11-04T00:00:23.266Z"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:13112034195",
+    "type": "artifact",
+    "name": "shorts-41378595348",
+    "ref": "shorts-41378595348",
+    "error": "error downloading shorts-41378595348: error extracting zip archive: error extracting \"article-the-7-58-a-m-run-miss-notification-is-fi.mp4\": openat article-the-7-58-a-m-run-miss-notification-is-fi.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:13110651793",
+    "type": "artifact",
+    "name": "shorts-41374421583",
+    "ref": "shorts-41374421583",
+    "error": "error downloading shorts-41374421583: error extracting zip archive: error extracting \"article-jam-quartet-trapped-in-14-hour-bridge-af.mp4\": openat article-jam-quartet-trapped-in-14-hour-bridge-af.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:13091448295",
+    "type": "artifact",
+    "name": "shorts-41326821278",
+    "ref": "shorts-41326821278",
+    "error": "error downloading shorts-41326821278: error extracting zip archive: error extracting \"article-cirrusync-turns-employee-eyelid-closures.mp4\": openat article-cirrusync-turns-employee-eyelid-closures.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:13049373531",
+    "type": "artifact",
+    "name": "shorts-41220081551",
+    "ref": "shorts-41220081551",
+    "error": "error downloading shorts-41220081551: error extracting zip archive: error extracting \"article-action-star-sterling-thorne-sues-grand-a.mp4\": openat article-action-star-sterling-thorne-sues-grand-a.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12994860496",
+    "type": "artifact",
+    "name": "shorts-41090747732",
+    "ref": "shorts-41090747732",
+    "error": "error downloading shorts-41090747732: error extracting zip archive: error extracting \"article-9-ways-to-fail-a-captcha-and-make-the-se.mp4\": openat article-9-ways-to-fail-a-captcha-and-make-the-se.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12914886392",
+    "type": "artifact",
+    "name": "shorts-40912652396",
+    "ref": "shorts-40912652396",
+    "error": "error downloading shorts-40912652396: error writing zip archive: read tcp 10.0.0.227:55311->57.150.86.161:443: read: connection reset by peer"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12833815834",
+    "type": "artifact",
+    "name": "shorts-40727009753",
+    "ref": "shorts-40727009753",
+    "error": "error downloading shorts-40727009753: error extracting zip archive: error extracting \"article-review-halcyon-tek-aurastream-only-lets-.mp4\": openat article-review-halcyon-tek-aurastream-only-lets-.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12750573544",
+    "type": "artifact",
+    "name": "shorts-40542110641",
+    "ref": "shorts-40542110641",
+    "error": "error downloading shorts-40542110641: error extracting zip archive: error extracting \"article-omnivex-unveils-soniccompliance-corporat.mp4\": openat article-omnivex-unveils-soniccompliance-corporat.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12667374179",
+    "type": "artifact",
+    "name": "shorts-40361404367",
+    "ref": "shorts-40361404367",
+    "error": "error downloading shorts-40361404367: error extracting zip archive: error extracting \"article-meridian-dynamics-launches-role-roulette.mp4\": openat article-meridian-dynamics-launches-role-roulette.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12606252318",
+    "type": "artifact",
+    "name": "shorts-40212461241",
+    "ref": "shorts-40212461241",
+    "error": "error downloading shorts-40212461241: error extracting zip archive: error extracting \"article-omnivex-rolls-out-nutrisync-bars-that-lo.mp4\": openat article-omnivex-rolls-out-nutrisync-bars-that-lo.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12567297331",
+    "type": "artifact",
+    "name": "shorts-40112272445",
+    "ref": "shorts-40112272445",
+    "error": "error downloading shorts-40112272445: error extracting zip archive: error extracting \"article-i-am-the-public-comment-microphone-and-y.mp4\": openat article-i-am-the-public-comment-microphone-and-y.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12516377401",
+    "type": "artifact",
+    "name": "shorts-39988543640",
+    "ref": "shorts-39988543640",
+    "error": "error downloading shorts-39988543640: error extracting zip archive: error extracting \"article-review-whispershift-alarm-clock-charges-.mp4\": openat article-review-whispershift-alarm-clock-charges-.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12442791145",
+    "type": "artifact",
+    "name": "shorts-39815632849",
+    "ref": "shorts-39815632849",
+    "error": "error downloading shorts-39815632849: error extracting zip archive: error extracting \"article-the-5-words-youll-click-update-for-bug-f.mp4\": openat article-the-5-words-youll-click-update-for-bug-f.mp4"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.179Z",
+    "id": "gh:12361283445",
+    "type": "artifact",
+    "name": "shorts-39636584039",
+    "ref": "shorts-39636584039",
+    "error": "error downloading shorts-39636584039: error extracting zip archive: error extracting \"article-smart-mirror-launches-reflective-relatio.mp4\": openat article-smart-mirror-launches-reflective-relatio.mp4"
+  },
+  {
+    "status": "done",
+    "added": "2026-11-03T23:59:16.254Z",
+    "id": "url:https://youtube.com/shorts/v1GY8Cpuh0Q",
+    "type": "url",
+    "ref": "https://youtube.com/shorts/v1GY8Cpuh0Q",
+    "finished": "2026-11-04T00:06:07.301Z"
+  },
+  {
+    "status": "failed",
+    "added": "2026-11-03T23:59:16.256Z",
+    "id": "url:https://www.forbes.com/sites/technology/article/how-to-tell-if-a-video-is-ai/",
+    "type": "url",
+    "ref": "https://www.forbes.com/sites/technology/article/how-to-tell-if-a-video-is-ai/",
+    "error": "ERROR: [generic] how-to-tell-if-a-video-is-ai: Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)"
+  },
+  {
+    "status": "done",
+    "added": "2026-11-03T23:59:16.257Z",
+    "id": "url:https://youtu.be/dltfrqu_6_c",
+    "type": "url",
+    "ref": "https://youtu.be/dltfrqu_6_c",
+    "finished": "2026-11-04T00:06:10.932Z"
+  }
+]

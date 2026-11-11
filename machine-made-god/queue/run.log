@@ -1,0 +1,59 @@
+→ shorts-41378595348
+  ✗ error downloading shorts-41378595348: error extracting zip archive: error extracting "article-the-7-58-a-m-run-miss-notification-i  ✓ done
+→ shorts-41326821278
+  ✓ done
+→ shorts-41220081551
+  ✓ done
+→ shorts-41090747732
+  ✓ done
+→ shorts-40912652396
+  ✓ done
+→ shorts-40727009753
+  ✓ done
+→ shorts-40542110641
+  ✓ done
+→ shorts-40361404367
+  ✓ done
+→ shorts-40212461241
+  ✓ done
+→ shorts-40112272445
+  ✓ done
+→ shorts-39988543640
+  ✓ done
+→ shorts-39815632849
+  ✓ done
+→ shorts-39636584039
+  ✓ done
+→ https://youtube.com/shorts/v1GY8Cpuh0Q
+  ✓ done
+→ https://www.forbes.com/sites/technology/article/how-to-tell-if-a-video-is-ai/
+  ✗ ERROR: [generic] how-to-tell-if-a-video-is-ai: Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)
+→ https://youtu.be/dltfrqu_6_c
+  ✓ done
+ues-grand-a.mp4
+→ shorts-41090747732
+  ✗ error downloading shorts-41090747732: error extracting zip archive: error extracting "article-9-ways-to-fail-a-captcha-and-make-the-se.mp4": openat article-9-ways-to-fail-a-captcha-and-make-the-se.mp4
+→ shorts-40912652396
+  ✗ error downloading shorts-40912652396: error writing zip archive: read tcp 10.0.0.227:55311->57.150.86.161:443: read: connection reset by peer
+→ shorts-40727009753
+  ✗ error downloading shorts-40727009753: error extracting zip archive: error extracting "article-review-halcyon-tek-aurastream-only-lets-.mp4": openat article-review-halcyon-tek-aurastream-only-lets-.mp4
+→ shorts-40542110641
+  ✗ error downloading shorts-40542110641: error extracting zip archive: error extracting "article-omnivex-unveils-soniccompliance-corporat.mp4": openat article-omnivex-unveils-soniccompliance-corporat.mp4
+→ shorts-40361404367
+  ✗ error downloading shorts-40361404367: error extracting zip archive: error extracting "article-meridian-dynamics-launches-role-roulette.mp4": openat article-meridian-dynamics-launches-role-roulette.mp4
+→ shorts-40212461241
+  ✗ error downloading shorts-40212461241: error extracting zip archive: error extracting "article-omnivex-rolls-out-nutrisync-bars-that-lo.mp4": openat article-omnivex-rolls-out-nutrisync-bars-that-lo.mp4
+→ shorts-40112272445
+  ✗ error downloading shorts-40112272445: error extracting zip archive: error extracting "article-i-am-the-public-comment-microphone-and-y.mp4": openat article-i-am-the-public-comment-microphone-and-y.mp4
+→ shorts-39988543640
+  ✗ error downloading shorts-39988543640: error extracting zip archive: error extracting "article-review-whispershift-alarm-clock-charges-.mp4": openat article-review-whispershift-alarm-clock-charges-.mp4
+→ shorts-39815632849
+  ✗ error downloading shorts-39815632849: error extracting zip archive: error extracting "article-the-5-words-youll-click-update-for-bug-f.mp4": openat article-the-5-words-youll-click-update-for-bug-f.mp4
+→ shorts-39636584039
+  ✗ error downloading shorts-39636584039: error extracting zip archive: error extracting "article-smart-mirror-launches-reflective-relatio.mp4": openat article-smart-mirror-launches-reflective-relatio.mp4
+→ https://youtube.com/shorts/v1GY8Cpuh0Q
+  ✓ done
+→ https://www.forbes.com/sites/technology/article/how-to-tell-if-a-video-is-ai/
+  ✗ ERROR: [generic] how-to-tell-if-a-video-is-ai: Unable to download webpage: HTTP Error 403: Forbidden (caused by <HTTPError 403: Forbidden>)
+→ https://youtu.be/dltfrqu_6_c
+  ✓ done

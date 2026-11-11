@@ -7,6 +7,7 @@
 //   npm run shorts -- --no-upload        render only
 //   npm run shorts -- --kind bump        only a bump short (or --kind headline)
 //   npm run shorts -- --slug <slug>      a headline short for one article
+//   npm run shorts -- --kind weird       AI-slop visual short (add --animate for image-to-video, --hint "topic")
 //
 // Needs: ffmpeg on PATH, a built site in dist/ (for headline art).
 // Optional: DASHSCOPE_API_KEY (voice), YOUTUBE_CLIENT_ID / YOUTUBE_CLIENT_SECRET / YOUTUBE_REFRESH_TOKEN (upload).
@@ -20,6 +21,7 @@ import { Resvg } from "@resvg/resvg-js";
 import { tiktokReady, tiktokPost } from "./lib/tiktok.mjs";
 import { xReady, xUploadMedia, xPost } from "./lib/x.mjs";
 import { ytReady, uploadToYouTube } from "./lib/youtube.mjs";
+import { makeWeird } from "./lib/weird.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const env = process.env;
@@ -29,6 +31,7 @@ const arg = (f) => (argv.includes(f) ? argv[argv.indexOf(f) + 1] : null);
 const readJson = (p, d) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : d);
 
 const config = readJson(join(root, "machine.config.json"));
+const state = readJson(join(root, "src/data/machine-state.json"), { providers: {} });
 const shortsCfg = { perRun: 2, privacy: "public", voice: "Ethan", ...(config.shorts || {}) };
 const SITE = (env.SITE_URL || JSON.parse(readFileSync(join(root, "src/data/site.json"), "utf8")).url).replace(/\/$/, "");
 const HOST = new URL(SITE).host.replace(/^www\./, "");
@@ -248,6 +251,20 @@ async function makeBump(b) {
   };
 }
 
+async function makeWeirdShort() {
+  const ctx = {
+    config: { ...config, maxAttemptsPerPiece: 4 },
+    state,
+    env,
+    random: Math.random,
+    log: (m) => console.log(m),
+    siteUrl: SITE,
+    remember: (id, patch) => (state.providers[id] = { ...(state.providers[id] || {}), ...patch }),
+    record: () => {},
+  };
+  return makeWeird({ root, env, out: OUT, ff, duration, speak, png, spinCtx: ctx, hint: arg("--hint"), animate: has("--animate") || shortsCfg.animate === true, W, H });
+}
+
 async function makeHeadline(item) {
   const art = articleArt(item.slug);
   const script = `${item.title}. ${item.dek}`;
@@ -285,15 +302,16 @@ async function main() {
     process.exit(1);
   }
   const kinds = arg("--kind") ? [arg("--kind")] : arg("--slug") ? ["headline"] : Array.from({ length: shortsCfg.perRun }, (_, i) => (i % 2 ? "headline" : "bump"));
+  if (!arg("--kind") && !arg("--slug") && shortsCfg.weird === true) kinds.push("weird");
   const made = [];
   for (const kind of kinds) {
-    const source = kind === "bump" ? pickBump() : pickArticle(arg("--slug"));
+    const source = kind === "weird" ? { ref: `weird:${Date.now()}` } : kind === "bump" ? pickBump() : pickArticle(arg("--slug"));
     if (!source) {
       console.log(`No unused ${kind} left to turn into a short.`);
       continue;
     }
     console.log(`→ ${kind}: ${source.ref}`);
-    const video = kind === "bump" ? await makeBump(source) : await makeHeadline(source);
+    const video = kind === "weird" ? await makeWeirdShort() : kind === "bump" ? await makeBump(source) : await makeHeadline(source);
     console.log(`  ✓ rendered ${video.file.replace(root, "")} (${video.seconds.toFixed(1)}s)`);
     const entry = { at: new Date().toISOString(), kind, ref: source.ref, title: video.title, seconds: Math.round(video.seconds) };
     if (ytReady(env) && !has("--no-upload")) {
