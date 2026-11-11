@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T08:25:39.606Z",
+  "updatedAt": "2026-11-11T20:12:19.004Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 6,
@@ -18,11 +18,11 @@
       "total": 1
     },
     "category:lists": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "format:listicle": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "bluesky:confession": {
@@ -46,15 +46,15 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 13,
-      "total": 28.01
+      "n": 15,
+      "total": 28.220000000000006
     },
     "shorts:headline": {
-      "n": 13,
-      "total": 10.06
+      "n": 15,
+      "total": 10.169999999999998
     },
     "bluesky:debate-bait": {
-      "n": 6,
+      "n": 8,
       "total": 1
     },
     "category:music": {
@@ -86,7 +86,7 @@
       "total": 2
     },
     "category:politics": {
-      "n": 4,
+      "n": 5,
       "total": 0
     },
     "category:entertainment": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 4,
+      "n": 5,
       "total": 1
     }
   },
@@ -147,9 +147,9 @@
       "metrics": {
         "likes": 4,
         "replies": 0,
-        "views": 47
+        "views": 46
       },
-      "score": 4.47
+      "score": 4.46
     },
     {
       "key": "youtube:ubmJelPegec",
@@ -159,9 +159,9 @@
       "metrics": {
         "likes": 3,
         "replies": 0,
-        "views": 47
+        "views": 46
       },
-      "score": 3.4699999999999998
+      "score": 3.46
     },
     {
       "key": "youtube:NqwqUWoXGFY",
@@ -171,9 +171,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 31
+        "views": 30
       },
-      "score": 2.31
+      "score": 2.3
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -195,9 +195,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 25
+        "views": 27
       },
-      "score": 1.25
+      "score": 1.27
     },
     {
       "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b",
@@ -430,9 +430,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 17
+        "views": 18
       },
-      "score": 0.17
+      "score": 0.18
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzgntnoeaz2g": {
       "network": "bluesky",
@@ -493,9 +493,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 3
+        "views": 5
       },
-      "score": 0.03
+      "score": 0.05
     },
     "youtube:GPxPpZR-PS8": {
       "network": "youtube",
@@ -504,9 +504,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 2
+        "views": 5
       },
-      "score": 0.02
+      "score": 0.05
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzhvjyz4752y": {
       "network": "bluesky",
@@ -679,9 +679,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 22
+        "views": 21
       },
-      "score": 0.22
+      "score": 0.21
     },
     "youtube:WFLoc0MKaeI": {
       "network": "youtube",
@@ -712,9 +712,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 31
+        "views": 30
       },
-      "score": 2.31
+      "score": 2.3
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzmy7pibym2q": {
       "network": "bluesky",
@@ -798,9 +798,9 @@
       "metrics": {
         "likes": 3,
         "replies": 0,
-        "views": 47
+        "views": 46
       },
-      "score": 3.4699999999999998
+      "score": 3.46
     },
     "youtube:XoKAaBgXBQs": {
       "network": "youtube",
@@ -809,9 +809,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 33
+        "views": 32
       },
-      "score": 0.33
+      "score": 0.32
     },
     "youtube:8KiMoGr2yf0": {
       "network": "youtube",
@@ -902,9 +902,9 @@
       "metrics": {
         "likes": 4,
         "replies": 0,
-        "views": 47
+        "views": 46
       },
-      "score": 4.47
+      "score": 4.46
     },
     "youtube:rdJxtFimqsM": {
       "network": "youtube",
@@ -913,9 +913,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 25
+        "views": 27
       },
-      "score": 1.25
+      "score": 1.27
     },
     "youtube:JlaqalZ9uho": {
       "network": "youtube",
@@ -924,9 +924,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 16
+        "views": 21
       },
-      "score": 0.16
+      "score": 0.21
     },
     "youtube:kIu66I6P8VU": {
       "network": "youtube",
@@ -1133,6 +1133,80 @@
         "quotes": 0
       },
       "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzzkgvuyqi2w": {
+      "network": "bluesky",
+      "slug": "civicore-unveils-mandatory-sigh-filing-system-to-quantify-employee",
+      "style": "debate-bait",
+      "category": "politics",
+      "format": "announcement",
+      "at": "2026-11-11T08:36:31.555Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzzkgtgbvk2n": {
+      "network": "bluesky",
+      "slug": "9-unquantifiable-workplace-agonies-quantified",
+      "style": "debate-bait",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-11T08:36:31.555Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:CtVjuMtC0Go": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-09T01:10:14.411Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 16
+      },
+      "score": 0.16
+    },
+    "youtube:cY_xLqS9MrY": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-09T01:11:26.862Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 4
+      },
+      "score": 0.04
+    },
+    "youtube:nLFuoMk1PYQ": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-08T18:27:52.195Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 1
+      },
+      "score": 0.01
+    },
+    "youtube:Gx4YQPQP3jI": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-08T18:29:00.210Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 3
+      },
+      "score": 0.03
     }
   }
 }

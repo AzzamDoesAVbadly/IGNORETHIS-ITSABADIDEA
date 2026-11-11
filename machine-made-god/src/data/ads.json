@@ -1,13 +1,5 @@
 [
   {
-    "id": "meridian-dynamics-stop-wondering-who-is-",
-    "brand": "MERIDIAN DYNAMICS",
-    "headline": "Stop Wondering Who Is Talking About You With The Proximity-Shame Radar",
-    "body": "A discreet wearable that vibrates every time someone within 50 feet mentions your name in a tone that suggests a critique.",
-    "cta": "BUY THE PARANOIA",
-    "palette": "sodium"
-  },
-  {
     "id": "halcyon-tek-this-one-click-desk-rewrites",
     "brand": "HALCYON-TEK",
     "headline": "This One‑Click Desk Rewrites Your Emails While You Nap—Never Misses a Grammar Error",
@@ -318,5 +310,13 @@
     "body": "NimbusCo's DreamSync Pillow monitors your inbox while you sleep, turning each new message into a subtle shift in the mattress. It guarantees you’ll remember the subject line at sunrise.",
     "cta": "Try DreamSync",
     "palette": "sick"
+  },
+  {
+    "id": "voxylite-sleeppod-3000-syncs-your-dreams",
+    "brand": "Voxylite",
+    "headline": "SleepPod 3000 syncs your dreams to your unread email count - wake up ready for meetings",
+    "body": "The Voxylite SleepPod monitors your inbox, translates the stress level into a lullaby, and delivers a sunrise schedule you'll actually follow.",
+    "cta": "Sync Now",
+    "palette": "teal"
   }
 ]
