@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-10T20:27:58.650Z",
+  "updatedAt": "2026-11-11T08:25:39.606Z",
   "arms": {
     "bluesky:fake-outrage": {
-      "n": 4,
+      "n": 6,
       "total": 0
     },
     "category:news": {
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 14,
+      "n": 15,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -42,7 +42,7 @@
       "total": 1
     },
     "category:lifestyle": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "shorts:bump": {
@@ -62,11 +62,11 @@
       "total": 0
     },
     "category:reviews": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "format:review": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "bluesky:hot-take": {
@@ -1096,6 +1096,36 @@
       "category": "lists",
       "format": "listicle",
       "at": "2026-11-10T08:56:29.672Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzycb3eb2q22": {
+      "network": "bluesky",
+      "slug": "four-strangers-turn-airport-lounge-table-into-feudal-microstate",
+      "style": "fake-outrage",
+      "category": "lifestyle",
+      "format": "news",
+      "at": "2026-11-10T20:36:16.564Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzyc7omcyh2k": {
+      "network": "bluesky",
+      "slug": "review-nexora-kinshiptray-turns-holiday-dinner-into-a-bureaucratic",
+      "style": "fake-outrage",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-10T20:36:16.564Z",
       "metrics": {
         "likes": 0,
         "reposts": 0,

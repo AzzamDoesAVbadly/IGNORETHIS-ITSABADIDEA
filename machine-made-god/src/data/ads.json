@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-why-are-dentists-begging-people-",
-    "brand": "OMNIVEX",
-    "headline": "Why Are Dentists Begging People To Stop Chewing On Standard-Issue Keycards?",
-    "body": "Engineered from medical-grade lanyard polyester. Gives your jaw that confident, middle-management crunch without the magnetic strip aftertaste.",
-    "cta": "Request A Sample Spool",
-    "palette": "sodium"
-  },
-  {
     "id": "meridian-dynamics-stop-wondering-who-is-",
     "brand": "MERIDIAN DYNAMICS",
     "headline": "Stop Wondering Who Is Talking About You With The Proximity-Shame Radar",
@@ -318,5 +310,13 @@
     "body": "The DreamSync Pillow records your REM cycles, converts them into actionable tasks, and whispers them at sunrise. Wake up with a plan you never made.",
     "cta": "Get Yours",
     "palette": "sodium"
+  },
+  {
+    "id": "nimbusco-this-pillow-syncs-your-nightly-",
+    "brand": "NimbusCo",
+    "headline": "This pillow syncs your nightly dreams to your unread email count—wake up ready for meetings",
+    "body": "NimbusCo's DreamSync Pillow monitors your inbox while you sleep, turning each new message into a subtle shift in the mattress. It guarantees you’ll remember the subject line at sunrise.",
+    "cta": "Try DreamSync",
+    "palette": "sick"
   }
 ]
