@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 82,
-      "lastSuccess": "2026-11-11T20:17:26.255Z",
+      "ok": 84,
+      "lastSuccess": "2026-11-12T08:55:28.285Z",
       "fail": 9,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 91,
+      "fail": 94,
       "ok": 21,
       "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,29 +15,52 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 35,
+      "fail": 36,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-12T02:12:26.879Z",
+      "cooldownUntil": "2026-11-12T14:52:05.103Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 61,
-      "lastSuccess": "2026-11-09T22:59:22.485Z",
+      "ok": 62,
+      "lastSuccess": "2026-11-12T08:55:16.666Z",
       "fail": 9
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 13
+      "fail": 15
     },
     "qwen": {
-      "ok": 27,
-      "lastSuccess": "2026-11-11T20:17:11.571Z",
+      "ok": 29,
+      "lastSuccess": "2026-11-12T08:54:49.217Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-11-09T23:01:09.353Z",
   "runs": [
+    {
+      "at": "2026-11-12T08:51:58.654Z",
+      "articles": [
+        {
+          "slug": "aurora-sync-unveils-whispernet-to-base-q3-earnings-projections",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "review-meridian-dynamics-culturesack-forces-you-to-meditate-until",
+          "provider": "qwen+cerebras",
+          "model": "qwen3.7-plus → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-11T20:12:26.331Z",
       "articles": [
@@ -715,29 +738,6 @@
       "quiz": null,
       "extras": {
         "provider": "cerebras",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-28T13:22:15.440Z",
-      "articles": [
-        {
-          "slug": "review-the-nexora-airmug-is-the-first-coffee-cup-that-requires-a",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        },
-        {
-          "slug": "review-halcyon-tek-aurastream-only-lets-you-drink-when-your-brain",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "groq",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

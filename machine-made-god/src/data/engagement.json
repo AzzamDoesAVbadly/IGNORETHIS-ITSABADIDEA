@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-11T20:12:19.004Z",
+  "updatedAt": "2026-11-12T08:51:53.219Z",
   "arms": {
     "bluesky:fake-outrage": {
-      "n": 6,
+      "n": 7,
       "total": 0
     },
     "category:news": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "format:news": {
-      "n": 15,
+      "n": 16,
       "total": 1
     },
     "bluesky:ranking-bait": {
-      "n": 6,
+      "n": 7,
       "total": 1
     },
     "category:lists": {
@@ -30,7 +30,7 @@
       "total": 1
     },
     "category:internet": {
-      "n": 3,
+      "n": 4,
       "total": 1
     },
     "format:essay": {
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 15,
+      "n": 16,
       "total": 28.220000000000006
     },
     "shorts:headline": {
-      "n": 15,
-      "total": 10.169999999999998
+      "n": 16,
+      "total": 10.189999999999998
     },
     "bluesky:debate-bait": {
       "n": 8,
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 5,
+      "n": 6,
       "total": 1
     }
   },
@@ -195,9 +195,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 27
+        "views": 29
       },
-      "score": 1.27
+      "score": 1.29
     },
     {
       "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b",
@@ -913,9 +913,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 27
+        "views": 29
       },
-      "score": 1.27
+      "score": 1.29
     },
     "youtube:JlaqalZ9uho": {
       "network": "youtube",
@@ -1207,6 +1207,58 @@
         "views": 3
       },
       "score": 0.03
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n22rohoits22": {
+      "network": "bluesky",
+      "slug": "mindful-block-forces-soup-critic-and-victim-into-30-day-mediation-and",
+      "style": "fake-outrage",
+      "category": "internet",
+      "format": "news",
+      "at": "2026-11-11T20:18:33.254Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n22rofiklw2o": {
+      "network": "bluesky",
+      "slug": "synapse-sync-launches-echo-chamber-to-package-employee-sighs-as",
+      "style": "ranking-bait",
+      "category": "news",
+      "format": "announcement",
+      "at": "2026-11-11T20:18:33.254Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:knijURffZL8": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-12T02:25:23.122Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "score": 0
+    },
+    "youtube:C51itM4HfL8": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-12T02:26:17.669Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "score": 0
     }
   }
 }

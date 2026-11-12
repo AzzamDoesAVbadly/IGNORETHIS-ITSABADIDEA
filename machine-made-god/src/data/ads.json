@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-this-one-click-desk-rewrites",
-    "brand": "HALCYON-TEK",
-    "headline": "This One‑Click Desk Rewrites Your Emails While You Nap—Never Misses a Grammar Error",
-    "body": "HALCYON‑TEK's DeskBot monitors your eyelid rhythm, drafts replies, and files reports while you dream of spreadsheets. Battery lasts until the next coffee break.",
-    "cta": "order your desk",
-    "palette": "teal"
-  },
-  {
     "id": "nebulasync-nebulasync-launches-mood-matc",
     "brand": "NebulaSync",
     "headline": "NebulaSync launches \"Mood‑Match\" thermostat that adjusts temperature to your unread email count",
@@ -317,6 +309,14 @@
     "headline": "SleepPod 3000 syncs your dreams to your unread email count - wake up ready for meetings",
     "body": "The Voxylite SleepPod monitors your inbox, translates the stress level into a lullaby, and delivers a sunrise schedule you'll actually follow.",
     "cta": "Sync Now",
+    "palette": "teal"
+  },
+  {
+    "id": "nexora-this-pillow-syncs-your-dreams-to-",
+    "brand": "NEXORA",
+    "headline": "This Pillow Syncs Your Dreams To Unread Emails—Wake Up Ready For Meetings",
+    "body": "The EchoSleep Pillow monitors your inbox while you nap, converting each unread message into a narrative that nudges you awake just before the first meeting.",
+    "cta": "Sync Your Dreams",
     "palette": "teal"
   }
 ]
