@@ -1,13 +1,5 @@
 [
   {
-    "id": "nebulasync-nebulasync-launches-mood-matc",
-    "brand": "NebulaSync",
-    "headline": "NebulaSync launches \"Mood‑Match\" thermostat that adjusts temperature to your unread email count",
-    "body": "The device reads your inbox, lowers the heat when you’re overwhelmed, and raises it when you finally hit zero. Comes with a silent fan that sighs.",
-    "cta": "Sync My Comfort",
-    "palette": "teal"
-  },
-  {
     "id": "meridian-dynamics-is-your-inner-monologu",
     "brand": "MERIDIAN DYNAMICS",
     "headline": "Is Your Inner Monologue Too Loud? Try The Mental Mute Button",
@@ -318,5 +310,13 @@
     "body": "The EchoSleep Pillow monitors your inbox while you nap, converting each unread message into a narrative that nudges you awake just before the first meeting.",
     "cta": "Sync Your Dreams",
     "palette": "teal"
+  },
+  {
+    "id": "omnivex-omnivexs-new-desk-mat-converts-y",
+    "brand": "OMNIVEX",
+    "headline": "OMNIVEX’s New Desk Mat Converts Your Micro-Sighs Into Billable Corporate Synergy",
+    "body": "Stop wasting respiratory frustrations. The Ergo-Sync Pad captures involuntary groans and translates them into actionable Q3 deliverables for your manager.",
+    "cta": "Monetize My Sighs",
+    "palette": "crt"
   }
 ]

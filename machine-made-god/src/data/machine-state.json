@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 84,
-      "lastSuccess": "2026-11-12T08:55:28.285Z",
+      "ok": 85,
+      "lastSuccess": "2026-11-12T20:50:02.702Z",
       "fail": 9,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 94,
+      "fail": 95,
       "ok": 21,
       "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,23 +21,46 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 62,
-      "lastSuccess": "2026-11-12T08:55:16.666Z",
+      "ok": 63,
+      "lastSuccess": "2026-11-12T20:52:35.802Z",
       "fail": 9
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 15
+      "fail": 17
     },
     "qwen": {
-      "ok": 29,
-      "lastSuccess": "2026-11-12T08:54:49.217Z",
+      "ok": 32,
+      "lastSuccess": "2026-11-12T20:53:26.514Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-11-09T23:01:09.353Z",
   "runs": [
+    {
+      "at": "2026-11-12T20:49:33.425Z",
+      "articles": [
+        {
+          "slug": "baelen-vance-to-perform-48-hour-whisper-marathon-vespera-audio-will",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "oakhaven-amusements-turns-roller-coaster-queue-into-14-hour-podcast",
+          "provider": "qwen+cerebras",
+          "model": "qwen3.7-plus → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-12T08:51:58.654Z",
       "articles": [
@@ -715,29 +738,6 @@
       "quiz": null,
       "extras": {
         "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-29T01:50:49.909Z",
-      "articles": [
-        {
-          "slug": "im-voice-memo-47-the-14-second-recording-youve-ignored-for-1-826-days",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        },
-        {
-          "slug": "meridian-dynamics-unveils-synergysphere-letting-employees-work-as",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

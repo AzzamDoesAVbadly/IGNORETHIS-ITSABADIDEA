@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T08:51:53.219Z",
+  "updatedAt": "2026-11-12T20:49:23.888Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 7,
@@ -38,7 +38,7 @@
       "total": 2
     },
     "bluesky:deadpan": {
-      "n": 7,
+      "n": 9,
       "total": 1
     },
     "category:lifestyle": {
@@ -62,11 +62,11 @@
       "total": 0
     },
     "category:reviews": {
-      "n": 6,
+      "n": 7,
       "total": 1
     },
     "format:review": {
-      "n": 6,
+      "n": 7,
       "total": 1
     },
     "bluesky:hot-take": {
@@ -82,7 +82,7 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 6,
+      "n": 7,
       "total": 2
     },
     "category:politics": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 6,
+      "n": 7,
       "total": 1
     }
   },
@@ -1257,6 +1257,36 @@
         "likes": 0,
         "replies": 0,
         "views": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n243zqndcc2j": {
+      "network": "bluesky",
+      "slug": "review-meridian-dynamics-culturesack-forces-you-to-meditate-until",
+      "style": "deadpan",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-12T08:56:19.072Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n243yoirbv2m": {
+      "network": "bluesky",
+      "slug": "aurora-sync-unveils-whispernet-to-base-q3-earnings-projections",
+      "style": "deadpan",
+      "category": "conspiracy",
+      "format": "announcement",
+      "at": "2026-11-12T08:56:19.072Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
       },
       "score": 0
     }
