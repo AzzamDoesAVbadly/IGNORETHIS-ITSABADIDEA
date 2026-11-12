@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-12T20:55:04.289Z",
+    "slug": "baelen-vance-to-perform-48-hour-whisper-marathon-vespera-audio-will,oakhaven-amusements-turns-roller-coaster-queue-into-14-hour-podcast",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-12T20:55:04.289Z",
+    "slug": "oakhaven-amusements-turns-roller-coaster-queue-into-14-hour-podcast",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n25e6jspyd2j",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n25e6jspyd2j",
+    "caption": "Objectively, Oakhaven's 14‑hour roof‑talk roller‑coaster queue is the pinnacle of wasted attention. Prove me wrong. #ThemeParkFail",
+    "style": "ranking-bait",
+    "category": "news",
+    "format": "news"
+  },
+  {
+    "at": "2026-11-12T20:55:04.289Z",
+    "slug": "baelen-vance-to-perform-48-hour-whisper-marathon-vespera-audio-will",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n25e6iieei2c",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n25e6iieei2c",
+    "caption": "Currently holding my breath through hour seven of the Baelen Vance whisper marathon so the Vespera Audio firmware won't brick my phone over a 14-decibel sneeze. #AcousticIntimacy",
+    "style": "deadpan",
+    "category": "entertainment",
+    "format": "announcement"
+  },
+  {
     "at": "2026-11-12T08:56:19.072Z",
     "slug": "aurora-sync-unveils-whispernet-to-base-q3-earnings-projections,review-meridian-dynamics-culturesack-forces-you-to-meditate-until",
     "network": "indexnow",
