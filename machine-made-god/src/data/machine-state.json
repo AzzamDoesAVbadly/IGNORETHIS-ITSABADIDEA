@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 87,
-      "lastSuccess": "2026-11-13T08:52:55.709Z",
+      "ok": 88,
+      "lastSuccess": "2026-11-13T20:29:07.809Z",
       "fail": 9,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 99,
+      "fail": 101,
       "ok": 21,
       "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,29 +15,52 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 37,
+      "fail": 38,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-13T14:52:51.994Z",
+      "cooldownUntil": "2026-11-14T02:31:08.069Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 65,
-      "lastSuccess": "2026-11-13T08:50:02.518Z",
+      "ok": 66,
+      "lastSuccess": "2026-11-13T20:34:19.401Z",
       "fail": 9
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 19
+      "fail": 20
     },
     "qwen": {
-      "ok": 34,
-      "lastSuccess": "2026-11-13T08:51:41.538Z",
+      "ok": 37,
+      "lastSuccess": "2026-11-13T20:35:28.517Z",
       "fail": 3
     }
   },
   "lastQuizAt": "2026-11-13T08:51:41.633Z",
   "runs": [
+    {
+      "at": "2026-11-13T20:29:02.917Z",
+      "articles": [
+        {
+          "slug": "fans-donate-18-4-million-to-keep-holographic-pop-stars-gluten-free",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "confession-of-the-two-inch-duct-tape-keeping-ocular-drifts-bass-amp",
+          "provider": "qwen+cerebras",
+          "model": "qwen3.7-plus → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-13T08:47:34.424Z",
       "articles": [
@@ -719,29 +742,6 @@
       "quiz": null,
       "extras": {
         "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-30T01:50:18.957Z",
-      "articles": [
-        {
-          "slug": "i-am-the-onboarding-app-that-sends-you-423-mandatory-trainings-before",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "omnivex-launches-waitstate-the-hold-line-that-awards-you-a-medal-for",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

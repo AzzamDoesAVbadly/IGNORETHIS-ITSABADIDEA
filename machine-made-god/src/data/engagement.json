@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T08:47:26.437Z",
+  "updatedAt": "2026-11-13T20:28:57.982Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 7,
@@ -26,15 +26,15 @@
       "total": 1
     },
     "bluesky:confession": {
-      "n": 7,
+      "n": 9,
       "total": 1
     },
     "category:internet": {
-      "n": 4,
+      "n": 5,
       "total": 1
     },
     "format:essay": {
-      "n": 8,
+      "n": 9,
       "total": 2
     },
     "bluesky:deadpan": {
@@ -47,7 +47,7 @@
     },
     "shorts:bump": {
       "n": 18,
-      "total": 28.840000000000003
+      "total": 28.860000000000003
     },
     "shorts:headline": {
       "n": 18,
@@ -62,23 +62,23 @@
       "total": 0
     },
     "category:reviews": {
-      "n": 7,
+      "n": 8,
       "total": 1
     },
     "format:review": {
-      "n": 7,
+      "n": 8,
       "total": 1
     },
     "bluesky:hot-take": {
-      "n": 9,
+      "n": 10,
       "total": 2
     },
     "category:quizzes": {
-      "n": 3,
+      "n": 4,
       "total": 0
     },
     "format:quiz": {
-      "n": 3,
+      "n": 4,
       "total": 0
     },
     "category:conspiracy": {
@@ -1349,9 +1349,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 54
+        "views": 56
       },
-      "score": 0.54
+      "score": 0.56
     },
     "youtube:ixJgmb4yAfY": {
       "network": "youtube",
@@ -1361,6 +1361,51 @@
         "likes": 0,
         "replies": 0,
         "views": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n26me6ogjg2g": {
+      "network": "bluesky",
+      "slug": "which-unspoken-home-climate-control-treaty-are-you-enforcing",
+      "style": "hot-take",
+      "category": "quizzes",
+      "format": "quiz",
+      "at": "2026-11-13T08:53:51.019Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n26me5ci672y": {
+      "network": "bluesky",
+      "slug": "review-omnivex-coffeecycle-locks-your-mug-until-you-earn-it",
+      "style": "confession",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-13T08:53:51.019Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n26me2z5el2s": {
+      "network": "bluesky",
+      "slug": "your-seen-receipt-is-filing-a-formal-complaint-against-you",
+      "style": "confession",
+      "category": "internet",
+      "format": "essay",
+      "at": "2026-11-13T08:53:51.019Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
       },
       "score": 0
     }

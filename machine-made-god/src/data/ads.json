@@ -1,13 +1,5 @@
 [
   {
-    "id": "dormant-labs-why-are-ergonomic-chairs-su",
-    "brand": "DORMANT LABS",
-    "headline": "Why Are Ergonomic Chairs Suddenly Demanding Formal Resignation Letters?",
-    "body": "Our lumbar-support mesh remembers every unearned promotion. Upgrade to the Non-Judgemental Stool today.",
-    "cta": "Surrender Posture",
-    "palette": "sodium"
-  },
-  {
     "id": "halcyon-tek-stop-wondering-if-your-cowor",
     "brand": "HALCYON-TEK",
     "headline": "Stop Wondering If Your Coworkers Actually Like You With The Vibe-Scan Collar",
@@ -318,5 +310,13 @@
     "body": "The WhisperDesk uses patented QuietSync™ to translate idle brainwaves into neatly organized to‑do lists, so your coffee can finally stay warm.",
     "cta": "Get Quiet Now",
     "palette": "teal"
+  },
+  {
+    "id": "vexil-corp-this-smart-water-bottle-legal",
+    "brand": "VEXIL CORP",
+    "headline": "This Smart Water Bottle Legally Subpoenas You To Drink When You're Clearly Dehydrated",
+    "body": "Tired of ignoring your own thirst? The Hydration Gavel doesn't just remind you to drink; it issues a binding verbal contract and docks your pay if you refuse.",
+    "cta": "Accept The Subpoena",
+    "palette": "sodium"
   }
 ]
