@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-12T20:49:23.888Z",
+  "updatedAt": "2026-11-13T08:47:26.437Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 7,
       "total": 0
     },
     "category:news": {
-      "n": 3,
+      "n": 4,
       "total": 0
     },
     "format:news": {
-      "n": 16,
+      "n": 17,
       "total": 1
     },
     "bluesky:ranking-bait": {
-      "n": 7,
+      "n": 8,
       "total": 1
     },
     "category:lists": {
@@ -38,7 +38,7 @@
       "total": 2
     },
     "bluesky:deadpan": {
-      "n": 9,
+      "n": 10,
       "total": 1
     },
     "category:lifestyle": {
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 16,
-      "total": 28.220000000000006
+      "n": 18,
+      "total": 28.840000000000003
     },
     "shorts:headline": {
-      "n": 16,
-      "total": 10.189999999999998
+      "n": 18,
+      "total": 10.279999999999998
     },
     "bluesky:debate-bait": {
       "n": 8,
@@ -90,7 +90,7 @@
       "total": 0
     },
     "category:entertainment": {
-      "n": 2,
+      "n": 3,
       "total": 0
     },
     "category:corporate": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 7,
+      "n": 8,
       "total": 1
     }
   },
@@ -1256,9 +1256,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 0
+        "views": 1
       },
-      "score": 0
+      "score": 0.01
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n243zqndcc2j": {
       "network": "bluesky",
@@ -1287,6 +1287,80 @@
         "reposts": 0,
         "replies": 0,
         "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n25e6jspyd2j": {
+      "network": "bluesky",
+      "slug": "oakhaven-amusements-turns-roller-coaster-queue-into-14-hour-podcast",
+      "style": "ranking-bait",
+      "category": "news",
+      "format": "news",
+      "at": "2026-11-12T20:55:04.289Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n25e6iieei2c": {
+      "network": "bluesky",
+      "slug": "baelen-vance-to-perform-48-hour-whisper-marathon-vespera-audio-will",
+      "style": "deadpan",
+      "category": "entertainment",
+      "format": "announcement",
+      "at": "2026-11-12T20:55:04.289Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:AHN_-3_PFqs": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-13T02:03:16.289Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 8
+      },
+      "score": 0.08
+    },
+    "youtube:Hv5yA9ARBHI": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-13T02:04:32.196Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 8
+      },
+      "score": 0.08
+    },
+    "youtube:QLcoskGkldk": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-12T21:02:25.300Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 54
+      },
+      "score": 0.54
+    },
+    "youtube:ixJgmb4yAfY": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-12T21:03:47.039Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
       },
       "score": 0
     }

@@ -1,13 +1,5 @@
 [
   {
-    "id": "meridian-dynamics-is-your-inner-monologu",
-    "brand": "MERIDIAN DYNAMICS",
-    "headline": "Is Your Inner Monologue Too Loud? Try The Mental Mute Button",
-    "body": "A wearable haptic patch that converts intrusive thoughts into a gentle, rhythmic vibration in your left ankle.",
-    "cta": "SILENCE THE NOISE",
-    "palette": "bleach"
-  },
-  {
     "id": "dormant-labs-why-are-ergonomic-chairs-su",
     "brand": "DORMANT LABS",
     "headline": "Why Are Ergonomic Chairs Suddenly Demanding Formal Resignation Letters?",
@@ -318,5 +310,13 @@
     "body": "Stop wasting respiratory frustrations. The Ergo-Sync Pad captures involuntary groans and translates them into actionable Q3 deliverables for your manager.",
     "cta": "Monetize My Sighs",
     "palette": "crt"
+  },
+  {
+    "id": "halcyon-tek-introducing-the-whisperdesk-",
+    "brand": "HALCYON-TEK",
+    "headline": "Introducing the WhisperDesk: a desk that files your thoughts before you think them",
+    "body": "The WhisperDesk uses patented QuietSync™ to translate idle brainwaves into neatly organized to‑do lists, so your coffee can finally stay warm.",
+    "cta": "Get Quiet Now",
+    "palette": "teal"
   }
 ]

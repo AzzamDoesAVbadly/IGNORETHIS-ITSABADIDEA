@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 85,
-      "lastSuccess": "2026-11-12T20:50:02.702Z",
+      "ok": 87,
+      "lastSuccess": "2026-11-13T08:52:55.709Z",
       "fail": 9,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 95,
+      "fail": 99,
       "ok": 21,
       "lastSuccess": "2026-11-07T18:04:16.527Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,29 +15,56 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 36,
+      "fail": 37,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-12T14:52:05.103Z",
+      "cooldownUntil": "2026-11-13T14:52:51.994Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 63,
-      "lastSuccess": "2026-11-12T20:52:35.802Z",
+      "ok": 65,
+      "lastSuccess": "2026-11-13T08:50:02.518Z",
       "fail": 9
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 17
+      "fail": 19
     },
     "qwen": {
-      "ok": 32,
-      "lastSuccess": "2026-11-12T20:53:26.514Z",
+      "ok": 34,
+      "lastSuccess": "2026-11-13T08:51:41.538Z",
       "fail": 3
     }
   },
-  "lastQuizAt": "2026-11-09T23:01:09.353Z",
+  "lastQuizAt": "2026-11-13T08:51:41.633Z",
   "runs": [
+    {
+      "at": "2026-11-13T08:47:34.424Z",
+      "articles": [
+        {
+          "slug": "your-seen-receipt-is-filing-a-formal-complaint-against-you",
+          "provider": "qwen+cerebras",
+          "model": "qwen3.7-plus → gpt-oss-120b"
+        },
+        {
+          "slug": "review-omnivex-coffeecycle-locks-your-mug-until-you-earn-it",
+          "provider": "groq+cerebras",
+          "model": "openai/gpt-oss-120b → gpt-oss-120b"
+        }
+      ],
+      "quiz": {
+        "slug": "which-unspoken-home-climate-control-treaty-are-you-enforcing",
+        "provider": "qwen",
+        "model": "qwen3.7-plus"
+      },
+      "extras": {
+        "provider": "groq",
+        "ticker": 3,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-12T20:49:33.425Z",
       "articles": [
@@ -715,29 +742,6 @@
       "quiz": null,
       "extras": {
         "provider": "cerebras",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-29T13:23:14.080Z",
-      "articles": [
-        {
-          "slug": "book-club-held-hostage-by-hyper-realistic-corporate-escape-room-for",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        },
-        {
-          "slug": "omnivex-launches-flexspace-pay-per-degree-seat-recline-that-costs",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

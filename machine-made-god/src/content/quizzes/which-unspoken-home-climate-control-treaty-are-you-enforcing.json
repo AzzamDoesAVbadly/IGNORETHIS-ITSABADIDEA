@@ -1,0 +1,168 @@
+{
+  "title": "Which Unspoken Home Climate-Control Treaty Are You Enforcing?",
+  "dek": "You think you're just adjusting the dial, but your partner knows you're actually establishing a sovereign thermal zone.",
+  "author": "dirk-hotfix",
+  "date": "2026-11-13T08:52:34.425Z",
+  "tags": [
+    "climate-control",
+    "domestic-warfare",
+    "thermostat",
+    "personality-quiz"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "chart",
+    "palette": "sodium",
+    "label": "TEMP WARS"
+  },
+  "questions": [
+    {
+      "q": "How do you react when you walk into a room and it feels 'off'?",
+      "answers": [
+        {
+          "a": "I put on a fleece blanket and glare at the ceiling vent.",
+          "r": "arctic_sovereign"
+        },
+        {
+          "a": "I strip off my sweater and complain that the air is stagnant.",
+          "r": "tropical_warlord"
+        },
+        {
+          "a": "I subtly plug in my personal tower fan without saying a word.",
+          "r": "microclimate_smuggler"
+        },
+        {
+          "a": "I ask the room if it feels fine, then casually bump the dial down two degrees later.",
+          "r": "thermostat_gaslighter"
+        }
+      ]
+    },
+    {
+      "q": "It’s 11 PM. What is your relationship with the hallway thermostat?",
+      "answers": [
+        {
+          "a": "It is set to 64. If anyone touches it, we are calling the authorities.",
+          "r": "arctic_sovereign"
+        },
+        {
+          "a": "It is set to 76. The furnace is running so hard it sounds like a jet engine.",
+          "r": "tropical_warlord"
+        },
+        {
+          "a": "I’ve placed a small ceramic heater directly next to it to trick the sensor.",
+          "r": "microclimate_smuggler"
+        },
+        {
+          "a": "I check it, adjust it by one degree, and tell my roommate I didn't touch it.",
+          "r": "thermostat_gaslighter"
+        }
+      ]
+    },
+    {
+      "q": "A guest comes over and asks if it feels freezing or boiling in here. What do you say?",
+      "answers": [
+        {
+          "a": "It's 66 degrees. You're just used to the sweltering heat of the outdoors.",
+          "r": "arctic_sovereign"
+        },
+        {
+          "a": "I'm so sorry, the pipes must be acting up again. Let me grab you a towel.",
+          "r": "tropical_warlord"
+        },
+        {
+          "a": "The main zone is fine, but I can get you a heated blanket for the couch.",
+          "r": "microclimate_smuggler"
+        },
+        {
+          "a": "Really? It feels like a perfect 71 to me. Are you sure you're not coming down with something?",
+          "r": "thermostat_gaslighter"
+        }
+      ]
+    },
+    {
+      "q": "What is your primary weapon in a climate dispute?",
+      "answers": [
+        {
+          "a": "A heavy-duty winter parka worn entirely indoors.",
+          "r": "arctic_sovereign"
+        },
+        {
+          "a": "A spray bottle of water to mist my face continuously.",
+          "r": "tropical_warlord"
+        },
+        {
+          "a": "A USB-powered desk fan and a plug-in heating pad.",
+          "r": "microclimate_smuggler"
+        },
+        {
+          "a": "Feigned confusion and a perfectly straight face.",
+          "r": "thermostat_gaslighter"
+        }
+      ]
+    },
+    {
+      "q": "The thermostat is locked with a PIN code. What is your strategy?",
+      "answers": [
+        {
+          "a": "I demand the PIN be changed to 65, and I will withhold affection until it is.",
+          "r": "arctic_sovereign"
+        },
+        {
+          "a": "I try to guess it until the screen locks me out, then I just sit in the sun.",
+          "r": "tropical_warlord"
+        },
+        {
+          "a": "I drape a hot towel over the sensor to trick it into cooling the whole house.",
+          "r": "microclimate_smuggler"
+        },
+        {
+          "a": "I tell the person with the PIN the battery is dying and it needs a reset, which I will do myself.",
+          "r": "thermostat_gaslighter"
+        }
+      ]
+    },
+    {
+      "q": "How do you justify your preferred indoor temperature to a visiting relative?",
+      "answers": [
+        {
+          "a": "We're preserving the structural integrity of the hardwood floors.",
+          "r": "arctic_sovereign"
+        },
+        {
+          "a": "I have poor circulation. It's a medical thing, but I don't want to bore you with the details.",
+          "r": "tropical_warlord"
+        },
+        {
+          "a": "We have a very advanced zoning system. You're just standing in the wrong quadrant.",
+          "r": "microclimate_smuggler"
+        },
+        {
+          "a": "The house naturally settles at this temperature. If it feels different, you're just tired.",
+          "r": "thermostat_gaslighter"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "arctic_sovereign": {
+      "title": "The Arctic Sovereign",
+      "body": "You believe that 66 degrees is not a temperature, but a moral baseline. You view sweating as a personal failure and have convinced everyone around you that wearing a down vest to dinner is just practical layering. When the furnace kicks on, you don't just adjust the dial; you launch a full diplomatic campaign to restore the permafrost. Your ideal living room looks like a high-end expedition basecamp, complete with thermal socks and a deep, abiding resentment for anyone who touches the vent.",
+      "share": "I demand the thermostat be locked at 66. Sweating is a personal failure."
+    },
+    "tropical_warlord": {
+      "title": "The Tropical Warlord",
+      "body": "To you, anything below 74 degrees is a direct insult to your circulatory system. You don't just want to be warm; you want the ambient air to feel like a humid terrarium. You will absolutely blame the drafty windows, the poor insulation, and the house's original architect for the fact that your toes are slightly chilly. You’ve considered replacing the drywall with radiant floor heating, and you genuinely believe that anyone who prefers a brisk room is secretly trying to freeze you out of the family.",
+      "share": "Anything below 74 is a personal attack on my circulatory system."
+    },
+    "microclimate_smuggler": {
+      "title": "The Microclimate Smuggler",
+      "body": "You have accepted that the central dial is compromised, so you have built a shadow empire of localized weather. Your person is surrounded by a 15-foot radius of perfectly calibrated 71-degree air, achieved through a complex, unregulated network of tower fans, ceramic space heaters, and damp washcloths. You don't fight for the thermostat; you bypass it entirely. When someone complains about the room's temperature, you just nod sympathetically while secretly sliding a heating pad under your own thighs.",
+      "share": "I don't fight for the thermostat. I just smuggle my own 71-degree microclimate."
+    },
+    "thermostat_gaslighter": {
+      "title": "The Thermostat Gaslighter",
+      "body": "You don't care what the temperature actually is, as long as you are the one controlling the narrative. You will casually bump the dial up when your partner is in the shower, then look them directly in the eye and say, 'I think the house is just naturally warmer today.' You thrive in the psychological warfare of the half-degree adjustment. Your greatest joy isn't being comfortable; it's watching someone else put on a sweater because you silently lowered the ambient environment by two degrees while they were reading.",
+      "share": "I didn't touch the thermostat. The house is just naturally warmer today."
+    }
+  }
+}
