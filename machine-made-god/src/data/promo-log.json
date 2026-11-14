@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-14T08:06:29.024Z",
+    "slug": "i-am-the-password-confirmation-field-and-i-am-exhausted,city-wi-fi-upgrade-deletes-indie-ep-band-schedules-compost-bin-concert",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-14T08:06:29.024Z",
+    "slug": "city-wi-fi-upgrade-deletes-indie-ep-band-schedules-compost-bin-concert",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2b2fditq52c",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2b2fditq52c",
+    "caption": "Name one municipal broadband project that accidentally created a better acoustic venue than a compost bin. You can't. #CivicConnect",
+    "style": "debate-bait",
+    "category": "music",
+    "format": "news"
+  },
+  {
+    "at": "2026-11-14T08:06:29.024Z",
+    "slug": "i-am-the-password-confirmation-field-and-i-am-exhausted",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2b2aixlon2c",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2b2aixlon2c",
+    "caption": "Think the password confirmation field is just a glitch? Prove me wrong—why does it love making you doubt your own memory?",
+    "style": "debate-bait",
+    "category": "corporate",
+    "format": "essay"
+  },
+  {
     "at": "2026-11-13T20:36:23.408Z",
     "slug": "fans-donate-18-4-million-to-keep-holographic-pop-stars-gluten-free,confession-of-the-two-inch-duct-tape-keeping-ocular-drifts-bass-amp",
     "network": "indexnow",
