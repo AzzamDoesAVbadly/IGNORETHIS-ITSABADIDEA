@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 90,
-      "lastSuccess": "2026-11-14T08:04:33.854Z",
+      "ok": 92,
+      "lastSuccess": "2026-11-14T18:48:36.023Z",
       "fail": 9,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 104,
+      "fail": 105,
       "ok": 22,
       "lastSuccess": "2026-11-14T08:05:36.752Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -21,23 +21,46 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 67,
-      "lastSuccess": "2026-11-14T08:04:37.070Z",
+      "ok": 68,
+      "lastSuccess": "2026-11-14T18:48:37.379Z",
       "fail": 9
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 22
+      "fail": 24
     },
     "qwen": {
-      "ok": 37,
-      "lastSuccess": "2026-11-13T20:35:28.517Z",
-      "fail": 3
+      "ok": 39,
+      "lastSuccess": "2026-11-14T18:49:40.697Z",
+      "fail": 4
     }
   },
   "lastQuizAt": "2026-11-13T08:51:41.633Z",
   "runs": [
+    {
+      "at": "2026-11-14T18:44:18.735Z",
+      "articles": [
+        {
+          "slug": "review-halcyon-tek-battersync-smart-waffle-iron-imposes-a-14-day",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "mount-creek-council-bans-free-wi-fi-after-router-led-turns-into-a",
+          "provider": "groq+cerebras",
+          "model": "openai/gpt-oss-120b → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-14T08:04:09.400Z",
       "articles": [
@@ -716,33 +739,6 @@
       "extras": {
         "provider": "cerebras",
         "ticker": 1,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-31T01:50:53.708Z",
-      "articles": [
-        {
-          "slug": "zyla-kross-forces-fans-into-48-hour-read-of-1-342-page-autobiography",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        },
-        {
-          "slug": "9-wedding-toast-silences-that-demand-an-immediate-exit-ranked-by-how",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": {
-        "slug": "which-obscure-escape-room-prop-matches-your-real-world-problem",
-        "provider": "cerebras",
-        "model": "gpt-oss-120b"
-      },
-      "extras": {
-        "provider": "ollama-cloud",
-        "ticker": 4,
         "bumps": 2,
         "ads": 1
       },

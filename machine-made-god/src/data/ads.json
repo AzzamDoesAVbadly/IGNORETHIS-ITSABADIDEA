@@ -1,13 +1,5 @@
 [
   {
-    "id": "nexora-nexoras-sleepsync-pillow-promises",
-    "brand": "NEXORA",
-    "headline": "NEXORA's SleepSync Pillow Promises to Align Your Dreams With Your Calendar",
-    "body": "The pillow’s embedded chrono‑sensor emits micro‑pulses timed to your 9 a.m. meeting, so you wake up already drafting the agenda in your sleep.",
-    "cta": "sync my slumber",
-    "palette": "sodium"
-  },
-  {
     "id": "virtuo-this-desk-lamp-claims-it-can-sync",
     "brand": "VIRTUO",
     "headline": "This Desk Lamp Claims It Can Sync Your Mood With Your Calendar, So You Never Miss a Break",
@@ -318,5 +310,13 @@
     "body": "Maintains a polite, noncommittal 4-degree head tilt during budget reviews. Prevents accidental promotions.",
     "cta": "Calibrate Posture",
     "palette": "sodium"
+  },
+  {
+    "id": "vellum-dynamics-this-smart-mirror-tracks",
+    "brand": "VELLUM DYNAMICS",
+    "headline": "This Smart Mirror Tracks Your Slouching And Drafts Apology Emails To Your Spine",
+    "body": "VELLUM DYNAMICS’ SlouchGaze detects when your shoulders drop, automatically CCs your chiropractor, and dims your lights to match your poor life choices.",
+    "cta": "Accept My Structural Flaws",
+    "palette": "crt"
   }
 ]
