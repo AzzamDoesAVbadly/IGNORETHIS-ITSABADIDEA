@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-14T18:50:32.245Z",
+    "slug": "review-halcyon-tek-battersync-smart-waffle-iron-imposes-a-14-day,mount-creek-council-bans-free-wi-fi-after-router-led-turns-into-a",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-14T18:50:32.245Z",
+    "slug": "mount-creek-council-bans-free-wi-fi-after-router-led-turns-into-a",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2c6b722xt2s",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2c6b722xt2s",
+    "caption": "Objectively correct ranking of municipal infrastructure: 1. Caffeine streetlights. 2. Chalkboards. 3. 0.28 Hz router sleep bombs. If you prefer Wi-Fi, you just hate being awake.",
+    "style": "ranking-bait",
+    "category": "conspiracy",
+    "format": "news"
+  },
+  {
+    "at": "2026-11-14T18:50:32.245Z",
+    "slug": "review-halcyon-tek-battersync-smart-waffle-iron-imposes-a-14-day",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2c6a4o7tf2o",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2c6a4o7tf2o",
+    "caption": "Objectively, the HALCYON‑TEK BatterSync Smart Waffle Iron is the only kitchen appliance that should be banned after 15 missed Saturdays. Prove me wrong #BrunchGate",
+    "style": "ranking-bait",
+    "category": "reviews",
+    "format": "review"
+  },
+  {
     "at": "2026-11-14T08:06:29.024Z",
     "slug": "i-am-the-password-confirmation-field-and-i-am-exhausted,city-wi-fi-upgrade-deletes-indie-ep-band-schedules-compost-bin-concert",
     "network": "indexnow",
