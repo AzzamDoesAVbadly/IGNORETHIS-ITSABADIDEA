@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T20:28:57.982Z",
+  "updatedAt": "2026-11-14T08:04:02.799Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 7,
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 17,
+      "n": 18,
       "total": 1
     },
     "bluesky:ranking-bait": {
@@ -34,11 +34,11 @@
       "total": 1
     },
     "format:essay": {
-      "n": 9,
-      "total": 2
+      "n": 10,
+      "total": 3
     },
     "bluesky:deadpan": {
-      "n": 10,
+      "n": 11,
       "total": 1
     },
     "category:lifestyle": {
@@ -46,20 +46,20 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 18,
-      "total": 28.860000000000003
+      "n": 20,
+      "total": 44.05
     },
     "shorts:headline": {
-      "n": 18,
-      "total": 10.279999999999998
+      "n": 20,
+      "total": 20.099999999999998
     },
     "bluesky:debate-bait": {
-      "n": 8,
-      "total": 1
+      "n": 9,
+      "total": 2
     },
     "category:music": {
-      "n": 3,
-      "total": 0
+      "n": 4,
+      "total": 1
     },
     "category:reviews": {
       "n": 8,
@@ -90,7 +90,7 @@
       "total": 0
     },
     "category:entertainment": {
-      "n": 3,
+      "n": 4,
       "total": 0
     },
     "category:corporate": {
@@ -109,11 +109,11 @@
       "kind": "bump",
       "at": "2026-11-04T01:36:22.728Z",
       "metrics": {
-        "likes": 6,
+        "likes": 7,
         "replies": 0,
-        "views": 255
+        "views": 256
       },
-      "score": 8.55
+      "score": 9.56
     },
     {
       "key": "youtube:8KiMoGr2yf0",
@@ -121,11 +121,11 @@
       "kind": "bump",
       "at": "2026-11-06T20:06:27.227Z",
       "metrics": {
-        "likes": 6,
+        "likes": 7,
         "replies": 0,
-        "views": 203
+        "views": 204
       },
-      "score": 8.03
+      "score": 9.04
     },
     {
       "key": "youtube:_MZ__1ZOFts",
@@ -133,11 +133,11 @@
       "kind": "headline",
       "at": "2026-11-04T20:35:41.360Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
-        "views": 428
+        "views": 430
       },
-      "score": 5.28
+      "score": 6.3
     },
     {
       "key": "youtube:KqlcAjpB68c",
@@ -145,11 +145,11 @@
       "kind": "bump",
       "at": "2026-11-08T00:53:08.992Z",
       "metrics": {
-        "likes": 4,
+        "likes": 5,
         "replies": 0,
-        "views": 46
+        "views": 47
       },
-      "score": 4.46
+      "score": 5.47
     },
     {
       "key": "youtube:ubmJelPegec",
@@ -157,11 +157,11 @@
       "kind": "bump",
       "at": "2026-11-07T01:05:22.164Z",
       "metrics": {
-        "likes": 3,
+        "likes": 4,
         "replies": 0,
-        "views": 46
+        "views": 47
       },
-      "score": 3.46
+      "score": 4.47
     },
     {
       "key": "youtube:NqwqUWoXGFY",
@@ -169,11 +169,11 @@
       "kind": "headline",
       "at": "2026-11-05T20:50:04.366Z",
       "metrics": {
-        "likes": 2,
+        "likes": 3,
         "replies": 0,
-        "views": 30
+        "views": 31
       },
-      "score": 2.3
+      "score": 3.31
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -181,11 +181,11 @@
       "kind": "bump",
       "at": "2026-11-02T02:37:22.298Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
-        "views": 73
+        "views": 74
       },
-      "score": 1.73
+      "score": 2.74
     },
     {
       "key": "youtube:rdJxtFimqsM",
@@ -193,43 +193,35 @@
       "kind": "headline",
       "at": "2026-11-08T00:54:31.570Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
         "views": 29
       },
-      "score": 1.29
+      "score": 2.29
     },
     {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzc7rgflgt2b",
-      "network": "bluesky",
-      "slug": "the-7-58-a-m-run-miss-notification-is-filing-a-formal-complaint",
-      "style": "confession",
-      "category": "internet",
-      "format": "essay",
-      "at": "2026-11-02T01:54:12.716Z",
+      "key": "youtube:OjvopaQPEOk",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-14T01:39:15.868Z",
       "metrics": {
         "likes": 1,
-        "reposts": 0,
         "replies": 0,
-        "quotes": 0
+        "views": 74
       },
-      "score": 1
+      "score": 1.74
     },
     {
-      "key": "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzeemjumvc2p",
-      "network": "bluesky",
-      "slug": "review-halcyon-tek-musebox-turns-your-nightstand-into-a-lit-gate",
-      "style": "debate-bait",
-      "category": "reviews",
-      "format": "review",
-      "at": "2026-11-02T22:24:59.271Z",
+      "key": "youtube:LJ8ND0YxWOM",
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-14T01:40:41.756Z",
       "metrics": {
-        "likes": 1,
-        "reposts": 0,
+        "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "views": 172
       },
-      "score": 1
+      "score": 1.72
     }
   ],
   "posts": {
@@ -298,22 +290,22 @@
       "kind": "bump",
       "at": "2026-11-02T02:37:22.298Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
-        "views": 73
+        "views": 74
       },
-      "score": 1.73
+      "score": 2.74
     },
     "youtube:2V2vMAjhJss": {
       "network": "youtube",
       "kind": "headline",
       "at": "2026-11-02T02:38:23.352Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
         "views": 25
       },
-      "score": 0.25
+      "score": 1.25
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzeemkrrg62y": {
       "network": "bluesky",
@@ -350,11 +342,11 @@
       "kind": "bump",
       "at": "2026-11-02T22:29:18.902Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 33
+        "views": 34
       },
-      "score": 0.33
+      "score": 1.34
     },
     "youtube:DPiRYi22sz4": {
       "network": "youtube",
@@ -417,22 +409,22 @@
       "kind": "bump",
       "at": "2026-11-03T03:01:54.042Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 18
+        "views": 19
       },
-      "score": 0.18
+      "score": 1.19
     },
     "youtube:0rmbHJ8uF8I": {
       "network": "youtube",
       "kind": "headline",
       "at": "2026-11-03T03:03:10.941Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 18
+        "views": 19
       },
-      "score": 0.18
+      "score": 1.19
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzgntnoeaz2g": {
       "network": "bluesky",
@@ -469,11 +461,11 @@
       "kind": "bump",
       "at": "2026-11-04T01:36:22.728Z",
       "metrics": {
-        "likes": 6,
+        "likes": 7,
         "replies": 0,
-        "views": 255
+        "views": 256
       },
-      "score": 8.55
+      "score": 9.56
     },
     "youtube:1Ucl7C71CW4": {
       "network": "youtube",
@@ -573,11 +565,11 @@
       "kind": "bump",
       "at": "2026-11-05T01:43:59.512Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 44
+        "views": 45
       },
-      "score": 0.44
+      "score": 1.45
     },
     "youtube:MiT0IvMQZds": {
       "network": "youtube",
@@ -595,22 +587,22 @@
       "kind": "bump",
       "at": "2026-11-04T20:34:28.367Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 24
+        "views": 25
       },
-      "score": 0.24
+      "score": 1.25
     },
     "youtube:_MZ__1ZOFts": {
       "network": "youtube",
       "kind": "headline",
       "at": "2026-11-04T20:35:41.360Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
-        "views": 428
+        "views": 430
       },
-      "score": 5.28
+      "score": 6.3
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzkhs57kbd2y": {
       "network": "bluesky",
@@ -677,11 +669,11 @@
       "kind": "bump",
       "at": "2026-11-06T01:44:50.732Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 21
+        "views": 22
       },
-      "score": 0.21
+      "score": 1.22
     },
     "youtube:WFLoc0MKaeI": {
       "network": "youtube",
@@ -699,22 +691,22 @@
       "kind": "bump",
       "at": "2026-11-05T20:48:45.131Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 16
+        "views": 17
       },
-      "score": 0.16
+      "score": 1.17
     },
     "youtube:NqwqUWoXGFY": {
       "network": "youtube",
       "kind": "headline",
       "at": "2026-11-05T20:50:04.366Z",
       "metrics": {
-        "likes": 2,
+        "likes": 3,
         "replies": 0,
-        "views": 30
+        "views": 31
       },
-      "score": 2.3
+      "score": 3.31
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3mzmy7pibym2q": {
       "network": "bluesky",
@@ -796,33 +788,33 @@
       "kind": "bump",
       "at": "2026-11-07T01:05:22.164Z",
       "metrics": {
-        "likes": 3,
+        "likes": 4,
         "replies": 0,
-        "views": 46
+        "views": 47
       },
-      "score": 3.46
+      "score": 4.47
     },
     "youtube:XoKAaBgXBQs": {
       "network": "youtube",
       "kind": "headline",
       "at": "2026-11-07T01:06:55.768Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 32
+        "views": 33
       },
-      "score": 0.32
+      "score": 1.33
     },
     "youtube:8KiMoGr2yf0": {
       "network": "youtube",
       "kind": "bump",
       "at": "2026-11-06T20:06:27.227Z",
       "metrics": {
-        "likes": 6,
+        "likes": 7,
         "replies": 0,
-        "views": 203
+        "views": 204
       },
-      "score": 8.03
+      "score": 9.04
     },
     "youtube:pKgNyoe_VfI": {
       "network": "youtube",
@@ -900,33 +892,33 @@
       "kind": "bump",
       "at": "2026-11-08T00:53:08.992Z",
       "metrics": {
-        "likes": 4,
+        "likes": 5,
         "replies": 0,
-        "views": 46
+        "views": 47
       },
-      "score": 4.46
+      "score": 5.47
     },
     "youtube:rdJxtFimqsM": {
       "network": "youtube",
       "kind": "headline",
       "at": "2026-11-08T00:54:31.570Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
         "views": 29
       },
-      "score": 1.29
+      "score": 2.29
     },
     "youtube:JlaqalZ9uho": {
       "network": "youtube",
       "kind": "bump",
       "at": "2026-11-07T18:13:33.594Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 21
+        "views": 22
       },
-      "score": 0.21
+      "score": 1.22
     },
     "youtube:kIu66I6P8VU": {
       "network": "youtube",
@@ -1171,20 +1163,20 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 16
+        "views": 20
       },
-      "score": 0.16
+      "score": 0.2
     },
     "youtube:cY_xLqS9MrY": {
       "network": "youtube",
       "kind": "headline",
       "at": "2026-11-09T01:11:26.862Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 4
+        "views": 8
       },
-      "score": 0.04
+      "score": 1.08
     },
     "youtube:nLFuoMk1PYQ": {
       "network": "youtube",
@@ -1202,11 +1194,11 @@
       "kind": "headline",
       "at": "2026-11-08T18:29:00.210Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 3
+        "views": 4
       },
-      "score": 0.03
+      "score": 1.04
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n22rohoits22": {
       "network": "bluesky",
@@ -1406,6 +1398,80 @@
         "reposts": 0,
         "replies": 0,
         "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n27tm7qx6t2y": {
+      "network": "bluesky",
+      "slug": "confession-of-the-two-inch-duct-tape-keeping-ocular-drifts-bass-amp",
+      "style": "debate-bait",
+      "category": "music",
+      "format": "essay",
+      "at": "2026-11-13T20:36:23.408Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n27tkvnd7o2j": {
+      "network": "bluesky",
+      "slug": "fans-donate-18-4-million-to-keep-holographic-pop-stars-gluten-free",
+      "style": "deadpan",
+      "category": "entertainment",
+      "format": "news",
+      "at": "2026-11-13T20:36:23.408Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:OjvopaQPEOk": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-14T01:39:15.868Z",
+      "metrics": {
+        "likes": 1,
+        "replies": 0,
+        "views": 74
+      },
+      "score": 1.74
+    },
+    "youtube:LJ8ND0YxWOM": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-14T01:40:41.756Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 172
+      },
+      "score": 1.72
+    },
+    "youtube:nx7b6OfKG7M": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-13T20:38:19.254Z",
+      "metrics": {
+        "likes": 1,
+        "replies": 0,
+        "views": 29
+      },
+      "score": 1.29
+    },
+    "youtube:Dcfi0PbMMCI": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-13T20:39:13.560Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
       },
       "score": 0
     }

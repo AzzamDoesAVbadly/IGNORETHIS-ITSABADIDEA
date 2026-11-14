@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-stop-wondering-if-your-cowor",
-    "brand": "HALCYON-TEK",
-    "headline": "Stop Wondering If Your Coworkers Actually Like You With The Vibe-Scan Collar",
-    "body": "Our proprietary haptic sensors translate subtle social cues into gentle electric shocks. Know exactly when a conversation has reached its natural end.",
-    "cta": "BUY THE SILENCE",
-    "palette": "sodium"
-  },
-  {
     "id": "nexora-nexoras-sleepsync-pillow-promises",
     "brand": "NEXORA",
     "headline": "NEXORA's SleepSync Pillow Promises to Align Your Dreams With Your Calendar",
@@ -317,6 +309,14 @@
     "headline": "This Smart Water Bottle Legally Subpoenas You To Drink When You're Clearly Dehydrated",
     "body": "Tired of ignoring your own thirst? The Hydration Gavel doesn't just remind you to drink; it issues a binding verbal contract and docks your pay if you refuse.",
     "cta": "Accept The Subpoena",
+    "palette": "sodium"
+  },
+  {
+    "id": "meridian-dynamics-stop-nodding-too-hard-",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "Stop Nodding Too Hard On Video Calls. This Smart Brace Regulates Your Agreement.",
+    "body": "Maintains a polite, noncommittal 4-degree head tilt during budget reviews. Prevents accidental promotions.",
+    "cta": "Calibrate Posture",
     "palette": "sodium"
   }
 ]
