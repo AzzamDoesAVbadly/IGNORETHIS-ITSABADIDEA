@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T08:28:10.098Z",
+  "updatedAt": "2026-11-15T19:22:42.464Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 7,
@@ -10,8 +10,8 @@
       "total": 0
     },
     "format:news": {
-      "n": 20,
-      "total": 1
+      "n": 21,
+      "total": 2
     },
     "bluesky:ranking-bait": {
       "n": 10,
@@ -34,7 +34,7 @@
       "total": 1
     },
     "format:essay": {
-      "n": 11,
+      "n": 12,
       "total": 3
     },
     "bluesky:deadpan": {
@@ -47,7 +47,7 @@
     },
     "shorts:bump": {
       "n": 22,
-      "total": 47.33
+      "total": 48.4
     },
     "shorts:headline": {
       "n": 22,
@@ -58,8 +58,8 @@
       "total": 2
     },
     "category:music": {
-      "n": 5,
-      "total": 1
+      "n": 6,
+      "total": 2
     },
     "category:reviews": {
       "n": 9,
@@ -70,8 +70,8 @@
       "total": 1
     },
     "bluesky:hot-take": {
-      "n": 10,
-      "total": 2
+      "n": 12,
+      "total": 3
     },
     "category:quizzes": {
       "n": 4,
@@ -94,7 +94,7 @@
       "total": 0
     },
     "category:corporate": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "format:announcement": {
@@ -183,9 +183,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 93
+        "views": 95
       },
-      "score": 2.93
+      "score": 2.95
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -200,6 +200,18 @@
       "score": 2.74
     },
     {
+      "key": "youtube:2AcNGOdIU_4",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-15T01:13:36.260Z",
+      "metrics": {
+        "likes": 2,
+        "replies": 0,
+        "views": 70
+      },
+      "score": 2.7
+    },
+    {
       "key": "youtube:rdJxtFimqsM",
       "network": "youtube",
       "kind": "headline",
@@ -210,18 +222,6 @@
         "views": 29
       },
       "score": 2.29
-    },
-    {
-      "key": "youtube:LJ8ND0YxWOM",
-      "network": "youtube",
-      "kind": "headline",
-      "at": "2026-11-14T01:40:41.756Z",
-      "metrics": {
-        "likes": 0,
-        "replies": 0,
-        "views": 173
-      },
-      "score": 1.73
     }
   ],
   "posts": {
@@ -1341,9 +1341,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 56
+        "views": 57
       },
-      "score": 0.56
+      "score": 0.57
     },
     "youtube:ixJgmb4yAfY": {
       "network": "youtube",
@@ -1438,9 +1438,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 93
+        "views": 95
       },
-      "score": 2.93
+      "score": 2.95
     },
     "youtube:LJ8ND0YxWOM": {
       "network": "youtube",
@@ -1540,11 +1540,11 @@
       "kind": "bump",
       "at": "2026-11-15T01:13:36.260Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
-        "views": 66
+        "views": 70
       },
-      "score": 1.6600000000000001
+      "score": 2.7
     },
     "youtube:LAiX4RM4zI0": {
       "network": "youtube",
@@ -1576,6 +1576,36 @@
         "likes": 0,
         "replies": 0,
         "views": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2dmbusied26": {
+      "network": "bluesky",
+      "slug": "post-punk-band-halts-show-forces-45-minute-recycling-exam-after-fan",
+      "style": "hot-take",
+      "category": "music",
+      "format": "news",
+      "at": "2026-11-15T08:35:09.568Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2dmaioevp24": {
+      "network": "bluesky",
+      "slug": "i-am-the-accept-all-button-and-i-am-enabling-you",
+      "style": "hot-take",
+      "category": "corporate",
+      "format": "essay",
+      "at": "2026-11-15T08:35:09.568Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
       },
       "score": 0
     }

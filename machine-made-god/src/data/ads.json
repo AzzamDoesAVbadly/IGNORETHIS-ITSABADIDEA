@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-stop-guessing-which-coworker-is-",
-    "brand": "OMNIVEX",
-    "headline": "Stop Guessing Which Coworker Is Quietly Judging Your Lunch With The Scent-Sentry 3000",
-    "body": "Our proprietary olfactory sensors detect micro-expressions of disgust and passive-aggressive sighs in real-time.",
-    "cta": "SMELL THE HATE",
-    "palette": "sodium"
-  },
-  {
     "id": "halcyon-tek-these-headphones-promise-to-",
     "brand": "HALCYON-TEK",
     "headline": "These Headphones Promise to Silence Your Inner Monologue During Zoom Calls",
@@ -318,5 +310,13 @@
     "body": "The NEXORA FocusCollar delivers a mild static correction whenever your eyes drift toward non-revenue-generating textures like blank walls or windows.",
     "cta": "Submit To Alignment",
     "palette": "sick"
+  },
+  {
+    "id": "nexora-this-smart-insole-tracks-your-foo",
+    "brand": "NEXORA",
+    "headline": "This Smart Insole Tracks Your Footsteps To Prove You Are Actually Walking During 'Lunch'",
+    "body": "Stop faking lunch breaks. NEXORA StepAudit insoles sync with HR to verify your walking pace. Stroll under 2 mph and it auto-deducts the time from your PTO.",
+    "cta": "Audit My Stride",
+    "palette": "crt"
   }
 ]
