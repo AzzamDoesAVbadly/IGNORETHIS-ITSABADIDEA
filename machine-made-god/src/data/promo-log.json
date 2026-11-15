@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-15T08:35:09.568Z",
+    "slug": "i-am-the-accept-all-button-and-i-am-enabling-you,post-punk-band-halts-show-forces-45-minute-recycling-exam-after-fan",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-15T08:35:09.568Z",
+    "slug": "post-punk-band-halts-show-forces-45-minute-recycling-exam-after-fan",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2dmbusied26",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2dmbusied26",
+    "caption": "Tare Weight was too lenient. If you can't identify the resin code on a yogurt cup, you shouldn't be allowed in the venue. They should have made the front row sort the parking lot. #ResinCodes",
+    "style": "hot-take",
+    "category": "music",
+    "format": "news"
+  },
+  {
+    "at": "2026-11-15T08:35:09.568Z",
+    "slug": "i-am-the-accept-all-button-and-i-am-enabling-you",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2dmaioevp24",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2dmaioevp24",
+    "caption": "You don't click me to save time. You click me because you desperately want a machine to tell you which air fryer to buy. Stop lying. You actually love being tracked. #AcceptAll",
+    "style": "hot-take",
+    "category": "corporate",
+    "format": "essay"
+  },
+  {
     "at": "2026-11-14T18:50:32.245Z",
     "slug": "review-halcyon-tek-battersync-smart-waffle-iron-imposes-a-14-day,mount-creek-council-bans-free-wi-fi-after-router-led-turns-into-a",
     "network": "indexnow",
