@@ -1,13 +1,5 @@
 [
   {
-    "id": "virtuo-this-desk-lamp-claims-it-can-sync",
-    "brand": "VIRTUO",
-    "headline": "This Desk Lamp Claims It Can Sync Your Mood With Your Calendar, So You Never Miss a Break",
-    "body": "The VIRTUO MoodSync Lamp reads your Outlook alerts and shifts hue from sunrise amber to deadline‑red, guaranteeing coworkers notice exactly when you’re overloaded.",
-    "cta": "Try MoodSync Now",
-    "palette": "teal"
-  },
-  {
     "id": "omnivex-stop-guessing-which-coworker-is-",
     "brand": "OMNIVEX",
     "headline": "Stop Guessing Which Coworker Is Quietly Judging Your Lunch With The Scent-Sentry 3000",
@@ -318,5 +310,13 @@
     "body": "VELLUM DYNAMICS’ SlouchGaze detects when your shoulders drop, automatically CCs your chiropractor, and dims your lights to match your poor life choices.",
     "cta": "Accept My Structural Flaws",
     "palette": "crt"
+  },
+  {
+    "id": "nexora-this-smart-collar-prevents-you-fr",
+    "brand": "NEXORA",
+    "headline": "This Smart Collar Prevents You From Staring At The Wall During Morning Standups",
+    "body": "The NEXORA FocusCollar delivers a mild static correction whenever your eyes drift toward non-revenue-generating textures like blank walls or windows.",
+    "cta": "Submit To Alignment",
+    "palette": "sick"
   }
 ]

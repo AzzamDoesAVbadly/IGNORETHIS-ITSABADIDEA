@@ -3,11 +3,11 @@
     "groq": {
       "ok": 92,
       "lastSuccess": "2026-11-14T18:48:36.023Z",
-      "fail": 9,
+      "fail": 10,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 105,
+      "fail": 107,
       "ok": 22,
       "lastSuccess": "2026-11-14T08:05:36.752Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,29 +15,52 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 39,
+      "fail": 40,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-14T14:04:24.269Z",
+      "cooldownUntil": "2026-11-15T14:31:34.252Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 68,
-      "lastSuccess": "2026-11-14T18:48:37.379Z",
-      "fail": 9
+      "ok": 69,
+      "lastSuccess": "2026-11-15T08:33:11.584Z",
+      "fail": 10
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 24
+      "fail": 26
     },
     "qwen": {
-      "ok": 39,
-      "lastSuccess": "2026-11-14T18:49:40.697Z",
+      "ok": 42,
+      "lastSuccess": "2026-11-15T08:34:18.333Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-11-13T08:51:41.633Z",
   "runs": [
+    {
+      "at": "2026-11-15T08:28:15.333Z",
+      "articles": [
+        {
+          "slug": "i-am-the-accept-all-button-and-i-am-enabling-you",
+          "provider": "qwen",
+          "model": "qwen3.7-plus"
+        },
+        {
+          "slug": "post-punk-band-halts-show-forces-45-minute-recycling-exam-after-fan",
+          "provider": "qwen+cerebras",
+          "model": "qwen3.7-plus → gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-14T18:44:18.735Z",
       "articles": [
@@ -716,29 +739,6 @@
       "extras": {
         "provider": "cerebras",
         "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-10-31T13:20:00.861Z",
-      "articles": [
-        {
-          "slug": "vortexia-launches-echoloop-employees-earn-snack-vouchers-for-every",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        },
-        {
-          "slug": "action-star-sterling-thorne-sues-grand-azure-hotel-after-tipping",
-          "provider": "ollama-cloud+groq",
-          "model": "gemma4:31b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
-        "ticker": 1,
         "bumps": 2,
         "ads": 1
       },

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T18:44:12.021Z",
+  "updatedAt": "2026-11-15T08:28:10.098Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 7,
@@ -10,11 +10,11 @@
       "total": 0
     },
     "format:news": {
-      "n": 19,
+      "n": 20,
       "total": 1
     },
     "bluesky:ranking-bait": {
-      "n": 8,
+      "n": 10,
       "total": 1
     },
     "category:lists": {
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 20,
-      "total": 44.24999999999999
+      "n": 22,
+      "total": 47.33
     },
     "shorts:headline": {
-      "n": 20,
-      "total": 20.099999999999998
+      "n": 22,
+      "total": 20.11
     },
     "bluesky:debate-bait": {
       "n": 11,
@@ -62,11 +62,11 @@
       "total": 1
     },
     "category:reviews": {
-      "n": 8,
+      "n": 9,
       "total": 1
     },
     "format:review": {
-      "n": 8,
+      "n": 9,
       "total": 1
     },
     "bluesky:hot-take": {
@@ -82,7 +82,7 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 7,
+      "n": 8,
       "total": 2
     },
     "category:politics": {
@@ -176,6 +176,18 @@
       "score": 3.31
     },
     {
+      "key": "youtube:OjvopaQPEOk",
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-14T01:39:15.868Z",
+      "metrics": {
+        "likes": 2,
+        "replies": 0,
+        "views": 93
+      },
+      "score": 2.93
+    },
+    {
       "key": "youtube:jBDAp5I2L5I",
       "network": "youtube",
       "kind": "bump",
@@ -200,18 +212,6 @@
       "score": 2.29
     },
     {
-      "key": "youtube:OjvopaQPEOk",
-      "network": "youtube",
-      "kind": "bump",
-      "at": "2026-11-14T01:39:15.868Z",
-      "metrics": {
-        "likes": 1,
-        "replies": 0,
-        "views": 93
-      },
-      "score": 1.9300000000000002
-    },
-    {
       "key": "youtube:LJ8ND0YxWOM",
       "network": "youtube",
       "kind": "headline",
@@ -219,9 +219,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 172
+        "views": 173
       },
-      "score": 1.72
+      "score": 1.73
     }
   ],
   "posts": {
@@ -1436,11 +1436,11 @@
       "kind": "bump",
       "at": "2026-11-14T01:39:15.868Z",
       "metrics": {
-        "likes": 1,
+        "likes": 2,
         "replies": 0,
         "views": 93
       },
-      "score": 1.9300000000000002
+      "score": 2.93
     },
     "youtube:LJ8ND0YxWOM": {
       "network": "youtube",
@@ -1449,9 +1449,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 172
+        "views": 173
       },
-      "score": 1.72
+      "score": 1.73
     },
     "youtube:nx7b6OfKG7M": {
       "network": "youtube",
@@ -1502,6 +1502,80 @@
         "reposts": 0,
         "replies": 0,
         "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2c6b722xt2s": {
+      "network": "bluesky",
+      "slug": "mount-creek-council-bans-free-wi-fi-after-router-led-turns-into-a",
+      "style": "ranking-bait",
+      "category": "conspiracy",
+      "format": "news",
+      "at": "2026-11-14T18:50:32.245Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2c6a4o7tf2o": {
+      "network": "bluesky",
+      "slug": "review-halcyon-tek-battersync-smart-waffle-iron-imposes-a-14-day",
+      "style": "ranking-bait",
+      "category": "reviews",
+      "format": "review",
+      "at": "2026-11-14T18:50:32.245Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:2AcNGOdIU_4": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-15T01:13:36.260Z",
+      "metrics": {
+        "likes": 1,
+        "replies": 0,
+        "views": 66
+      },
+      "score": 1.6600000000000001
+    },
+    "youtube:LAiX4RM4zI0": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-15T01:14:41.775Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "score": 0
+    },
+    "youtube:CtOaEzTByKU": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-14T18:54:47.968Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 42
+      },
+      "score": 0.42
+    },
+    "youtube:49Q0qhnF_iM": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-14T18:56:23.910Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
       },
       "score": 0
     }
