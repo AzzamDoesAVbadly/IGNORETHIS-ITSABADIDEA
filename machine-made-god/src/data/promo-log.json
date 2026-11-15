@@ -1,5 +1,36 @@
 [
   {
+    "at": "2026-11-15T19:28:23.513Z",
+    "slug": "civicore-deploys-project-whisper-9-842-workers-daydreams-live,6-hyper-specific-metrics-compiled-by-the-sub-committee-on-redundant",
+    "network": "indexnow",
+    "ok": true,
+    "detail": "3 URL(s) submitted"
+  },
+  {
+    "at": "2026-11-15T19:28:23.513Z",
+    "slug": "6-hyper-specific-metrics-compiled-by-the-sub-committee-on-redundant",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2eqrx3qel2a",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2eqrx3qel2a",
+    "caption": "Sickened that a secondary sub-committee is billing 4,000 hours to review the Sub-Committee on Redundant Audits. We are literally paying a committee to audit a committee. #Waste",
+    "style": "fake-outrage",
+    "category": "lists",
+    "format": "listicle"
+  },
+  {
+    "at": "2026-11-15T19:28:23.513Z",
+    "slug": "civicore-deploys-project-whisper-9-842-workers-daydreams-live",
+    "network": "bluesky",
+    "ok": true,
+    "url": "https://bsky.app/profile/machinemadegod.bsky.social/post/3n2eqq6vx3o2v",
+    "uri": "at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2eqq6vx3o2v",
+    "caption": "Civicore streaming our 3:17 a.m. daydreams to the cloud is a national scandal. I didn’t consent to my subconscious craving for shredded cheese being monetized for Q3 synergy. #ProjectWhisper",
+    "style": "fake-outrage",
+    "category": "conspiracy",
+    "format": "announcement"
+  },
+  {
     "at": "2026-11-15T08:35:09.568Z",
     "slug": "i-am-the-accept-all-button-and-i-am-enabling-you,post-punk-band-halts-show-forces-45-minute-recycling-exam-after-fan",
     "network": "indexnow",
