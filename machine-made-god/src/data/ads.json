@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-these-headphones-promise-to-",
-    "brand": "HALCYON-TEK",
-    "headline": "These Headphones Promise to Silence Your Inner Monologue During Zoom Calls",
-    "body": "Halcyon‑Tek’s EchoMute mutes external noise and the mental commentary that erupts during screen sharing. 30‑day comfort guarantee.",
-    "cta": "Get Silence",
-    "palette": "sick"
-  },
-  {
     "id": "halcyon-tek-stop-guessing-which-version-",
     "brand": "HALCYON-TEK",
     "headline": "Stop Guessing Which Version of You Is Winning The Argument In Your Head",
@@ -318,5 +310,13 @@
     "body": "Stop faking lunch breaks. NEXORA StepAudit insoles sync with HR to verify your walking pace. Stroll under 2 mph and it auto-deducts the time from your PTO.",
     "cta": "Audit My Stride",
     "palette": "crt"
+  },
+  {
+    "id": "nexora-nexoras-moodsync-desk-pad-turns-y",
+    "brand": "NEXORA",
+    "headline": "NEXORA's MoodSync Desk Pad Turns Your Desk's Mood into Real‑Time Stock Alerts",
+    "body": "The pad reads micro‑vibrations from your keyboard and translates them into buy‑or‑sell signals, so your spreadsheets feel the same anxiety as your boss.",
+    "cta": "try the sync",
+    "palette": "sodium"
   }
 ]

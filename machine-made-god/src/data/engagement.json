@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-15T19:22:42.464Z",
+  "updatedAt": "2026-11-16T08:37:07.926Z",
   "arms": {
     "bluesky:fake-outrage": {
-      "n": 7,
-      "total": 0
+      "n": 9,
+      "total": 1
     },
     "category:news": {
       "n": 4,
@@ -18,11 +18,11 @@
       "total": 1
     },
     "category:lists": {
-      "n": 6,
+      "n": 7,
       "total": 1
     },
     "format:listicle": {
-      "n": 6,
+      "n": 7,
       "total": 1
     },
     "bluesky:confession": {
@@ -46,12 +46,12 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 22,
-      "total": 48.4
+      "n": 24,
+      "total": 50.849999999999994
     },
     "shorts:headline": {
-      "n": 22,
-      "total": 20.11
+      "n": 24,
+      "total": 20.490000000000002
     },
     "bluesky:debate-bait": {
       "n": 11,
@@ -82,8 +82,8 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 8,
-      "total": 2
+      "n": 9,
+      "total": 3
     },
     "category:politics": {
       "n": 5,
@@ -98,8 +98,8 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 8,
-      "total": 1
+      "n": 9,
+      "total": 2
     }
   },
   "top": [
@@ -1183,11 +1183,11 @@
       "kind": "bump",
       "at": "2026-11-08T18:27:52.195Z",
       "metrics": {
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "views": 1
+        "views": 4
       },
-      "score": 0.01
+      "score": 1.04
     },
     "youtube:Gx4YQPQP3jI": {
       "network": "youtube",
@@ -1341,9 +1341,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 57
+        "views": 55
       },
-      "score": 0.57
+      "score": 0.55
     },
     "youtube:ixJgmb4yAfY": {
       "network": "youtube",
@@ -1564,9 +1564,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 42
+        "views": 43
       },
-      "score": 0.42
+      "score": 0.43
     },
     "youtube:49Q0qhnF_iM": {
       "network": "youtube",
@@ -1608,6 +1608,80 @@
         "quotes": 0
       },
       "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2eqrx3qel2a": {
+      "network": "bluesky",
+      "slug": "6-hyper-specific-metrics-compiled-by-the-sub-committee-on-redundant",
+      "style": "fake-outrage",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-15T19:28:23.513Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2eqq6vx3o2v": {
+      "network": "bluesky",
+      "slug": "civicore-deploys-project-whisper-9-842-workers-daydreams-live",
+      "style": "fake-outrage",
+      "category": "conspiracy",
+      "format": "announcement",
+      "at": "2026-11-15T19:28:23.513Z",
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 1
+    },
+    "youtube:6o3QHgfC5YA": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-16T01:19:47.748Z",
+      "metrics": {
+        "likes": 1,
+        "replies": 0,
+        "views": 25
+      },
+      "score": 1.25
+    },
+    "youtube:1m0eSTN0g7Q": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-16T01:20:48.509Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 35
+      },
+      "score": 0.35
+    },
+    "youtube:gIhUEpmUU20": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-15T19:31:32.281Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 18
+      },
+      "score": 0.18
+    },
+    "youtube:bDNAJ0zCxfw": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-15T19:32:37.781Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 3
+      },
+      "score": 0.03
     }
   }
 }
