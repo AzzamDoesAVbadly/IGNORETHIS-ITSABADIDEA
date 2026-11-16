@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T08:37:07.926Z",
+  "updatedAt": "2026-11-16T22:53:21.383Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 9,
@@ -18,11 +18,11 @@
       "total": 1
     },
     "category:lists": {
-      "n": 7,
+      "n": 8,
       "total": 1
     },
     "format:listicle": {
-      "n": 7,
+      "n": 8,
       "total": 1
     },
     "bluesky:confession": {
@@ -30,7 +30,7 @@
       "total": 1
     },
     "category:internet": {
-      "n": 5,
+      "n": 6,
       "total": 1
     },
     "format:essay": {
@@ -47,7 +47,7 @@
     },
     "shorts:bump": {
       "n": 24,
-      "total": 50.849999999999994
+      "total": 50.879999999999995
     },
     "shorts:headline": {
       "n": 24,
@@ -70,7 +70,7 @@
       "total": 1
     },
     "bluesky:hot-take": {
-      "n": 12,
+      "n": 14,
       "total": 3
     },
     "category:quizzes": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 9,
+      "n": 10,
       "total": 2
     }
   },
@@ -1668,9 +1668,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 18
+        "views": 21
       },
-      "score": 0.18
+      "score": 0.21
     },
     "youtube:bDNAJ0zCxfw": {
       "network": "youtube",
@@ -1682,6 +1682,36 @@
         "views": 3
       },
       "score": 0.03
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2g56ulsp72v": {
+      "network": "bluesky",
+      "slug": "synapse-sync-mandates-biometric-coffee-mugs-to-track-pre-meeting",
+      "style": "hot-take",
+      "category": "internet",
+      "format": "announcement",
+      "at": "2026-11-16T08:43:39.648Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2g56t3d7x2w": {
+      "network": "bluesky",
+      "slug": "10-ways-a-hotel-room-key-card-denies-you-entry-ranked-by-degree-of",
+      "style": "hot-take",
+      "category": "lists",
+      "format": "listicle",
+      "at": "2026-11-16T08:43:39.648Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
     }
   }
 }

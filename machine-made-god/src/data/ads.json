@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-stop-guessing-which-version-",
-    "brand": "HALCYON-TEK",
-    "headline": "Stop Guessing Which Version of You Is Winning The Argument In Your Head",
-    "body": "The Ego-Mirror captures your subconscious contradictions and displays them as a readable PDF. Finally, settle the debate.",
-    "cta": "Audit My Psyche",
-    "palette": "crt"
-  },
-  {
     "id": "halcyon-tek-smart-pillow-syncs-rem-cycle",
     "brand": "HALCYON-TEK",
     "headline": "Smart Pillow Syncs REM Cycles To Your Calendar—Never Miss a Dream Meeting",
@@ -318,5 +310,13 @@
     "body": "The pad reads micro‑vibrations from your keyboard and translates them into buy‑or‑sell signals, so your spreadsheets feel the same anxiety as your boss.",
     "cta": "try the sync",
     "palette": "sodium"
+  },
+  {
+    "id": "meridian-dynamics-this-smart-notebook-ph",
+    "brand": "Meridian Dynamics",
+    "headline": "This Smart Notebook Physically Locks You Out If You Journal About Your Feelings Again",
+    "body": "The Meridian Ledger detects emotional venting via micro-vibrations. It physically fuses the pages shut until you draft a clear, actionable deliverable.",
+    "cta": "Optimize My Thoughts",
+    "palette": "bleach"
   }
 ]

@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 96,
-      "lastSuccess": "2026-11-16T08:42:44.566Z",
-      "fail": 10,
+      "ok": 99,
+      "lastSuccess": "2026-11-16T22:56:34.437Z",
+      "fail": 11,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 111,
+      "fail": 114,
       "ok": 22,
       "lastSuccess": "2026-11-14T08:05:36.752Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,9 +15,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 42,
+      "fail": 43,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-16T14:41:08.202Z",
+      "cooldownUntil": "2026-11-17T04:53:32.429Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -28,16 +28,43 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 31
+      "fail": 33
     },
     "qwen": {
-      "ok": 46,
-      "lastSuccess": "2026-11-16T08:42:38.990Z",
+      "ok": 49,
+      "lastSuccess": "2026-11-16T22:57:31.894Z",
       "fail": 4
     }
   },
-  "lastQuizAt": "2026-11-13T08:51:41.633Z",
+  "lastQuizAt": "2026-11-16T22:56:34.485Z",
   "runs": [
+    {
+      "at": "2026-11-16T22:53:27.357Z",
+      "articles": [
+        {
+          "slug": "express-train-slashes-12-minute-silence-to-four-forcing-bogie-drop-to",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "nexora-rolls-out-echoroute-gps-that-turns-your-drive-into-a-14-minute",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": {
+        "slug": "which-overly-specific-password-rule-mirrors-your-life",
+        "provider": "groq",
+        "model": "openai/gpt-oss-120b"
+      },
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-16T08:37:12.497Z",
       "articles": [
@@ -710,29 +737,6 @@
           "slug": "city-deploys-forensic-tech-team-to-recover-deleted-brunch-notification",
           "provider": "cerebras+ollama-cloud",
           "model": "gpt-oss-120b → gemma4:31b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-02T01:51:10.338Z",
-      "articles": [
-        {
-          "slug": "ficus-launches-first-relationship-advice-column-cites-sunlight",
-          "provider": "groq",
-          "model": "openai/gpt-oss-120b"
-        },
-        {
-          "slug": "the-7-58-a-m-run-miss-notification-is-filing-a-formal-complaint",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
         }
       ],
       "quiz": null,
