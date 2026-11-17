@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T09:45:01.282Z",
+  "updatedAt": "2026-11-17T21:45:35.582Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 11,
@@ -26,7 +26,7 @@
       "total": 1
     },
     "bluesky:confession": {
-      "n": 9,
+      "n": 11,
       "total": 1
     },
     "category:internet": {
@@ -34,7 +34,7 @@
       "total": 1
     },
     "format:essay": {
-      "n": 12,
+      "n": 13,
       "total": 3
     },
     "bluesky:deadpan": {
@@ -46,19 +46,19 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 25,
-      "total": 50.98
+      "n": 26,
+      "total": 51.35
     },
     "shorts:headline": {
-      "n": 25,
-      "total": 20.540000000000003
+      "n": 26,
+      "total": 20.610000000000003
     },
     "bluesky:debate-bait": {
       "n": 11,
       "total": 2
     },
     "category:music": {
-      "n": 7,
+      "n": 8,
       "total": 2
     },
     "category:reviews": {
@@ -90,7 +90,7 @@
       "total": 0
     },
     "category:entertainment": {
-      "n": 4,
+      "n": 5,
       "total": 0
     },
     "category:corporate": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 11,
+      "n": 12,
       "total": 2
     }
   },
@@ -183,9 +183,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 95
+        "views": 92
       },
-      "score": 2.95
+      "score": 2.92
     },
     {
       "key": "youtube:jBDAp5I2L5I",
@@ -1438,9 +1438,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 95
+        "views": 92
       },
-      "score": 2.95
+      "score": 2.92
     },
     "youtube:LJ8ND0YxWOM": {
       "network": "youtube",
@@ -1449,9 +1449,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 173
+        "views": 169
       },
-      "score": 1.73
+      "score": 1.69
     },
     "youtube:nx7b6OfKG7M": {
       "network": "youtube",
@@ -1460,9 +1460,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 30
+        "views": 28
       },
-      "score": 1.3
+      "score": 1.28
     },
     "youtube:Dcfi0PbMMCI": {
       "network": "youtube",
@@ -1679,9 +1679,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 3
+        "views": 5
       },
-      "score": 0.03
+      "score": 0.05
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2g56ulsp72v": {
       "network": "bluesky",
@@ -1765,9 +1765,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 7
+        "views": 11
       },
-      "score": 0.07
+      "score": 0.11
     },
     "youtube:_Nj3b4HsLnk": {
       "network": "youtube",
@@ -1776,9 +1776,61 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 0
+        "views": 2
+      },
+      "score": 0.02
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2irbqqqwb2p": {
+      "network": "bluesky",
+      "slug": "silas-thorne-unveils-asphalt-brine-the-vinyl-that-crumbles-into-beef",
+      "style": "confession",
+      "category": "entertainment",
+      "format": "announcement",
+      "at": "2026-11-17T09:49:24.891Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
       },
       "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2irboxxka2d": {
+      "network": "bluesky",
+      "slug": "why-the-gaff-taped-setlist-is-the-only-thing-stopping-your-frontman",
+      "style": "confession",
+      "category": "music",
+      "format": "essay",
+      "at": "2026-11-17T09:49:24.891Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:UpWeZKgFKf8": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-17T04:07:46.854Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 38
+      },
+      "score": 0.38
+    },
+    "youtube:-AtLXIv8Q_s": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-17T04:09:32.079Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 7
+      },
+      "score": 0.07
     }
   }
 }

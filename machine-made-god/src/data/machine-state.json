@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 100,
-      "lastSuccess": "2026-11-17T09:48:33.043Z",
+      "ok": 101,
+      "lastSuccess": "2026-11-17T21:47:45.887Z",
       "fail": 11,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 114,
+      "fail": 118,
       "ok": 22,
       "lastSuccess": "2026-11-14T08:05:36.752Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,29 +15,52 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 43,
+      "fail": 44,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-17T04:53:32.429Z",
+      "cooldownUntil": "2026-11-18T03:47:39.675Z",
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 72,
-      "lastSuccess": "2026-11-17T09:48:34.367Z",
+      "ok": 75,
+      "lastSuccess": "2026-11-17T21:53:33.975Z",
       "fail": 10
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 34
+      "fail": 36
     },
     "qwen": {
-      "ok": 51,
-      "lastSuccess": "2026-11-17T09:48:27.769Z",
+      "ok": 52,
+      "lastSuccess": "2026-11-17T21:53:17.237Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-11-16T22:56:34.485Z",
   "runs": [
+    {
+      "at": "2026-11-17T21:45:39.476Z",
+      "articles": [
+        {
+          "slug": "interstella-industries-rolls-out-glitzfuel-snack-bars-that-play-nova",
+          "provider": "cerebras+groq",
+          "model": "gpt-oss-120b → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "i-am-the-red-notification-badge-and-i-am-exhausted-by-your-theories",
+          "provider": "cerebras+qwen",
+          "model": "gpt-oss-120b → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-17T09:45:09.972Z",
       "articles": [
@@ -720,29 +743,6 @@
       "extras": {
         "provider": "qwen",
         "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-02T22:19:53.447Z",
-      "articles": [
-        {
-          "slug": "review-halcyon-tek-musebox-turns-your-nightstand-into-a-lit-gate",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        },
-        {
-          "slug": "avant-garde-duo-terms-of-service-holds-up-show-for-3-hours-while",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "cerebras",
-        "ticker": 3,
         "bumps": 2,
         "ads": 1
       },
