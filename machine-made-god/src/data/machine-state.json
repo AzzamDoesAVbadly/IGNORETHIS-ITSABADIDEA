@@ -1,8 +1,8 @@
 {
   "providers": {
     "groq": {
-      "ok": 99,
-      "lastSuccess": "2026-11-16T22:56:34.437Z",
+      "ok": 100,
+      "lastSuccess": "2026-11-17T09:48:33.043Z",
       "fail": 11,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
@@ -21,23 +21,46 @@
       "lastError": "rate limited"
     },
     "cerebras": {
-      "ok": 70,
-      "lastSuccess": "2026-11-15T19:22:52.995Z",
+      "ok": 72,
+      "lastSuccess": "2026-11-17T09:48:34.367Z",
       "fail": 10
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 33
+      "fail": 34
     },
     "qwen": {
-      "ok": 49,
-      "lastSuccess": "2026-11-16T22:57:31.894Z",
+      "ok": 51,
+      "lastSuccess": "2026-11-17T09:48:27.769Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-11-16T22:56:34.485Z",
   "runs": [
+    {
+      "at": "2026-11-17T09:45:09.972Z",
+      "articles": [
+        {
+          "slug": "why-the-gaff-taped-setlist-is-the-only-thing-stopping-your-frontman",
+          "provider": "qwen+cerebras",
+          "model": "qwen3.7-plus → gpt-oss-120b"
+        },
+        {
+          "slug": "silas-thorne-unveils-asphalt-brine-the-vinyl-that-crumbles-into-beef",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "cerebras",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-16T22:53:27.357Z",
       "articles": [
@@ -720,29 +743,6 @@
       "extras": {
         "provider": "cerebras",
         "ticker": 3,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-02T04:00:04.899Z",
-      "articles": [
-        {
-          "slug": "9-precise-gaze-durations-of-a-stranger-holding-a-door-ranked-by",
-          "provider": "qwen+ollama-cloud",
-          "model": "qwen3.7-plus → gemma4:31b"
-        },
-        {
-          "slug": "city-deploys-forensic-tech-team-to-recover-deleted-brunch-notification",
-          "provider": "cerebras+ollama-cloud",
-          "model": "gpt-oss-120b → gemma4:31b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
-        "ticker": 4,
         "bumps": 2,
         "ads": 1
       },

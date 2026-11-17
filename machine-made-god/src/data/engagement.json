@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-16T22:53:21.383Z",
+  "updatedAt": "2026-11-17T09:45:01.282Z",
   "arms": {
     "bluesky:fake-outrage": {
-      "n": 9,
+      "n": 11,
       "total": 1
     },
     "category:news": {
@@ -10,7 +10,7 @@
       "total": 0
     },
     "format:news": {
-      "n": 21,
+      "n": 22,
       "total": 2
     },
     "bluesky:ranking-bait": {
@@ -38,7 +38,7 @@
       "total": 3
     },
     "bluesky:deadpan": {
-      "n": 11,
+      "n": 12,
       "total": 1
     },
     "category:lifestyle": {
@@ -46,19 +46,19 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 24,
-      "total": 50.879999999999995
+      "n": 25,
+      "total": 50.98
     },
     "shorts:headline": {
-      "n": 24,
-      "total": 20.490000000000002
+      "n": 25,
+      "total": 20.540000000000003
     },
     "bluesky:debate-bait": {
       "n": 11,
       "total": 2
     },
     "category:music": {
-      "n": 6,
+      "n": 7,
       "total": 2
     },
     "category:reviews": {
@@ -74,15 +74,15 @@
       "total": 3
     },
     "category:quizzes": {
-      "n": 4,
+      "n": 5,
       "total": 0
     },
     "format:quiz": {
-      "n": 4,
+      "n": 5,
       "total": 0
     },
     "category:conspiracy": {
-      "n": 9,
+      "n": 10,
       "total": 3
     },
     "category:politics": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 10,
+      "n": 11,
       "total": 2
     }
   },
@@ -1174,9 +1174,9 @@
       "metrics": {
         "likes": 1,
         "replies": 0,
-        "views": 8
+        "views": 10
       },
-      "score": 1.08
+      "score": 1.1
     },
     "youtube:nLFuoMk1PYQ": {
       "network": "youtube",
@@ -1657,9 +1657,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 35
+        "views": 38
       },
-      "score": 0.35
+      "score": 0.38
     },
     "youtube:gIhUEpmUU20": {
       "network": "youtube",
@@ -1668,9 +1668,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 21
+        "views": 24
       },
-      "score": 0.21
+      "score": 0.24
     },
     "youtube:bDNAJ0zCxfw": {
       "network": "youtube",
@@ -1710,6 +1710,73 @@
         "reposts": 0,
         "replies": 0,
         "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2hmx3fpxz2a": {
+      "network": "bluesky",
+      "slug": "which-overly-specific-password-rule-mirrors-your-life",
+      "style": "deadpan",
+      "category": "quizzes",
+      "format": "quiz",
+      "at": "2026-11-16T22:58:23.655Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2hmwzsr4j2p": {
+      "network": "bluesky",
+      "slug": "nexora-rolls-out-echoroute-gps-that-turns-your-drive-into-a-14-minute",
+      "style": "fake-outrage",
+      "category": "conspiracy",
+      "format": "announcement",
+      "at": "2026-11-16T22:58:23.655Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2hmvlxbqn2m": {
+      "network": "bluesky",
+      "slug": "express-train-slashes-12-minute-silence-to-four-forcing-bogie-drop-to",
+      "style": "fake-outrage",
+      "category": "music",
+      "format": "news",
+      "at": "2026-11-16T22:58:23.655Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:15iaFGjcnDo": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-16T23:01:12.426Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 7
+      },
+      "score": 0.07
+    },
+    "youtube:_Nj3b4HsLnk": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-16T23:02:27.338Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
       },
       "score": 0
     }

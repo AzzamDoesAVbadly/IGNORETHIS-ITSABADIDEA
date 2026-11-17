@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-smart-pillow-syncs-rem-cycle",
-    "brand": "HALCYON-TEK",
-    "headline": "Smart Pillow Syncs REM Cycles To Your Calendar—Never Miss a Dream Meeting",
-    "body": "HALCYON-TEK's pillow monitors brainwaves, aligns nap schedules with your Outlook invites, and emits a gentle hum when you’re late to yourself.",
-    "cta": "Sync Your Snooze",
-    "palette": "teal"
-  },
-  {
     "id": "halcyon-tek-thermostat-that-learns-your-",
     "brand": "HALCYON-TEK",
     "headline": "Thermostat that learns your procrastination and cools the room right before deadlines",
@@ -318,5 +310,13 @@
     "body": "The Meridian Ledger detects emotional venting via micro-vibrations. It physically fuses the pages shut until you draft a clear, actionable deliverable.",
     "cta": "Optimize My Thoughts",
     "palette": "bleach"
+  },
+  {
+    "id": "meridian-dynamics-this-desk-lamp-detects",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "This Desk Lamp Detects When Your Brain Is Daydreaming and Sends a Reminder",
+    "body": "The LampSense™ monitors EEG flickers and flashes a soft amber when your mind wanders, prompting a 5‑second focus drill. Works in any office cubicle.",
+    "cta": "Buy Focus Light",
+    "palette": "sodium"
   }
 ]
