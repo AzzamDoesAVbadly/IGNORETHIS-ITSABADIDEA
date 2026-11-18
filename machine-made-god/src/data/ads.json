@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-does-your-living-room-feel-too-h",
-    "brand": "OmniVex",
-    "headline": "Does Your Living Room Feel Too Honest? Try The Ambient-Static Generator",
-    "body": "Fill your home with the soothing, corporate hum of a mid-sized insurance firm's lobby to drown out your own thoughts.",
-    "cta": "Buy The Silence",
-    "palette": "crt"
-  },
-  {
     "id": "omnivox-this-desk-fog-claims-to-erase-di",
     "brand": "OmniVox",
     "headline": "This Desk Fog Claims to Erase Distractions in 7 Seconds – Scientists Are Skeptical",
@@ -318,5 +310,13 @@
     "body": "HALCYON‑TEK’s PausePad reads the frequency of your exhale and automatically blocks your calendar for a short stretch, so you finally move.",
     "cta": "Add a Break",
     "palette": "teal"
+  },
+  {
+    "id": "luminex-luminex-night-shift-lamp-promise",
+    "brand": "LUMINEX",
+    "headline": "LUMINEX Night-Shift Lamp Promises to Dim Your Thoughts Before They Spark",
+    "body": "The lamp uses patented ambient-silence sensors to detect when your brain is over-thinking and automatically lowers brightness to a level that feels like a polite nap.",
+    "cta": "Buy Quiet Light",
+    "palette": "sick"
   }
 ]

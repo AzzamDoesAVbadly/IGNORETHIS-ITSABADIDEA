@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 101,
-      "lastSuccess": "2026-11-17T21:47:45.887Z",
+      "ok": 104,
+      "lastSuccess": "2026-11-18T09:17:38.549Z",
       "fail": 11,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 118,
+      "fail": 119,
       "ok": 22,
       "lastSuccess": "2026-11-14T08:05:36.752Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,9 +15,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 44,
+      "fail": 45,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-18T03:47:39.675Z",
+      "cooldownUntil": "2026-11-18T15:14:04.626Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -28,16 +28,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 36
+      "fail": 38
     },
     "qwen": {
-      "ok": 52,
-      "lastSuccess": "2026-11-17T21:53:17.237Z",
+      "ok": 54,
+      "lastSuccess": "2026-11-18T09:15:30.570Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-11-16T22:56:34.485Z",
   "runs": [
+    {
+      "at": "2026-11-18T09:12:45.494Z",
+      "articles": [
+        {
+          "slug": "echoloft-launches-living-from-the-void-a-life-coach-that-has-never",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "review-halcyon-teks-snackshame-cooler-door-wont-let-you-grab-a-diet",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-17T21:45:39.476Z",
       "articles": [
@@ -715,33 +738,6 @@
       "quiz": null,
       "extras": {
         "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-03T08:37:23.848Z",
-      "articles": [
-        {
-          "slug": "10-hand-dryers-ranked-by-how-much-they-feel-like-a-personal-attack",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        },
-        {
-          "slug": "briarfield-police-seize-14-000-coffee-receipts-after-discovering",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        }
-      ],
-      "quiz": {
-        "slug": "which-specific-level-of-open-plan-office-despair-are-you-currently",
-        "provider": "ollama-cloud",
-        "model": "gemma4:31b"
-      },
-      "extras": {
-        "provider": "qwen",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

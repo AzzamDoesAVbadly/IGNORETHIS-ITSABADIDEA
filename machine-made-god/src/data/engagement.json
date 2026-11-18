@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T21:45:35.582Z",
+  "updatedAt": "2026-11-18T09:12:35.626Z",
   "arms": {
     "bluesky:fake-outrage": {
       "n": 11,
@@ -34,11 +34,11 @@
       "total": 1
     },
     "format:essay": {
-      "n": 13,
+      "n": 14,
       "total": 3
     },
     "bluesky:deadpan": {
-      "n": 12,
+      "n": 13,
       "total": 1
     },
     "category:lifestyle": {
@@ -46,15 +46,15 @@
       "total": 0
     },
     "shorts:bump": {
-      "n": 26,
-      "total": 51.35
+      "n": 28,
+      "total": 51.41
     },
     "shorts:headline": {
-      "n": 26,
-      "total": 20.610000000000003
+      "n": 28,
+      "total": 20.660000000000004
     },
     "bluesky:debate-bait": {
-      "n": 11,
+      "n": 12,
       "total": 2
     },
     "category:music": {
@@ -82,7 +82,7 @@
       "total": 0
     },
     "category:conspiracy": {
-      "n": 10,
+      "n": 11,
       "total": 3
     },
     "category:politics": {
@@ -90,7 +90,7 @@
       "total": 0
     },
     "category:entertainment": {
-      "n": 5,
+      "n": 6,
       "total": 0
     },
     "category:corporate": {
@@ -98,7 +98,7 @@
       "total": 1
     },
     "format:announcement": {
-      "n": 12,
+      "n": 13,
       "total": 2
     }
   },
@@ -207,9 +207,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 70
+        "views": 66
       },
-      "score": 2.7
+      "score": 2.66
     },
     {
       "key": "youtube:rdJxtFimqsM",
@@ -1542,9 +1542,9 @@
       "metrics": {
         "likes": 2,
         "replies": 0,
-        "views": 70
+        "views": 66
       },
-      "score": 2.7
+      "score": 2.66
     },
     "youtube:LAiX4RM4zI0": {
       "network": "youtube",
@@ -1564,9 +1564,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 43
+        "views": 42
       },
-      "score": 0.43
+      "score": 0.42
     },
     "youtube:49Q0qhnF_iM": {
       "network": "youtube",
@@ -1668,9 +1668,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 24
+        "views": 25
       },
-      "score": 0.24
+      "score": 0.25
     },
     "youtube:bDNAJ0zCxfw": {
       "network": "youtube",
@@ -1679,9 +1679,9 @@
       "metrics": {
         "likes": 0,
         "replies": 0,
-        "views": 5
+        "views": 7
       },
-      "score": 0.05
+      "score": 0.07
     },
     "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2g56ulsp72v": {
       "network": "bluesky",
@@ -1831,6 +1831,80 @@
         "views": 7
       },
       "score": 0.07
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2jzu7iox22j": {
+      "network": "bluesky",
+      "slug": "i-am-the-red-notification-badge-and-i-am-exhausted-by-your-theories",
+      "style": "deadpan",
+      "category": "conspiracy",
+      "format": "essay",
+      "at": "2026-11-17T21:54:56.364Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "bluesky:at://did:plc:ydtqoy3hi6dn7jne7s3lvxnk/app.bsky.feed.post/3n2jzt2ht7526": {
+      "network": "bluesky",
+      "slug": "interstella-industries-rolls-out-glitzfuel-snack-bars-that-play-nova",
+      "style": "debate-bait",
+      "category": "entertainment",
+      "format": "announcement",
+      "at": "2026-11-17T21:54:56.364Z",
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "score": 0
+    },
+    "youtube:9qemKwgwZ6s": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-18T03:05:21.123Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 4
+      },
+      "score": 0.04
+    },
+    "youtube:ugmgxaol2bg": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-18T03:06:30.249Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 3
+      },
+      "score": 0.03
+    },
+    "youtube:7IuJ9oZfapE": {
+      "network": "youtube",
+      "kind": "bump",
+      "at": "2026-11-17T21:57:39.126Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 6
+      },
+      "score": 0.06
+    },
+    "youtube:0NSyqg8_HHU": {
+      "network": "youtube",
+      "kind": "headline",
+      "at": "2026-11-17T21:58:43.199Z",
+      "metrics": {
+        "likes": 0,
+        "replies": 0,
+        "views": 0
+      },
+      "score": 0
     }
   }
 }
