@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-stop-wondering-who-is-breathing-",
-    "brand": "OMNIVEX",
-    "headline": "Stop Wondering Who Is Breathing Too Loudly In The Quiet Car",
-    "body": "The SonicSieve 400 isolates individual respiratory rhythms, turning distracting human noises into a gentle, corporate harp melody.",
-    "cta": "SILENCE THE HUMANS",
-    "palette": "crt"
-  },
-  {
     "id": "novaquad-desk-lamp-that-blames-you-for-w",
     "brand": "NOVAQUAD",
     "headline": "Desk Lamp That Blames You for Working Late—And Sends You a Receipt",
@@ -317,6 +309,14 @@
     "headline": "This Weighted Blanket Actively Judges Your REM Cycle And Files a Report To HR",
     "body": "Stop resting like it's 2014. The OmniRest Pro monitors your heart rate and vibrates gently whenever your subconscious starts thinking about unpaid invoices.",
     "cta": "Upgrade My Sleep Audit",
+    "palette": "crt"
+  },
+  {
+    "id": "somnexis-this-smart-pillow-records-your-",
+    "brand": "SOMNEXIS",
+    "headline": "This Smart Pillow Records Your Night Terrors And Plays Them Back At 1.5x Speed",
+    "body": "Stop wasting REM on unmonitored dread. The Somnexis NeuroFoam Pillow captures your subconscious screams and optimizes them for efficient morning playback.",
+    "cta": "Optimize My Dread",
     "palette": "crt"
   }
 ]

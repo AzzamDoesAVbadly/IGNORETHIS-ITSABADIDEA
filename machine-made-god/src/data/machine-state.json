@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 109,
-      "lastSuccess": "2026-11-19T09:39:16.487Z",
+      "ok": 111,
+      "lastSuccess": "2026-11-19T21:37:23.860Z",
       "fail": 11,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 124,
+      "fail": 127,
       "ok": 22,
       "lastSuccess": "2026-11-14T08:05:36.752Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,31 +15,54 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 47,
+      "fail": 48,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-19T15:31:59.313Z",
+      "cooldownUntil": "2026-11-20T03:34:42.953Z",
       "lastError": "rate limited"
     },
     "cerebras": {
       "ok": 75,
       "lastSuccess": "2026-11-17T21:53:33.975Z",
-      "fail": 11,
-      "cooldownUntil": "2026-11-19T21:26:08.866Z",
+      "fail": 12,
+      "cooldownUntil": "2026-11-20T21:36:00.241Z",
       "lastError": "out of credits"
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 42
+      "fail": 44
     },
     "qwen": {
-      "ok": 59,
-      "lastSuccess": "2026-11-19T09:40:13.836Z",
-      "fail": 4
+      "ok": 62,
+      "lastSuccess": "2026-11-19T21:41:27.477Z",
+      "fail": 5
     }
   },
   "lastQuizAt": "2026-11-16T22:56:34.485Z",
   "runs": [
+    {
+      "at": "2026-11-19T21:32:38.070Z",
+      "articles": [
+        {
+          "slug": "civicore-announces-initiative-to-harvest-and-liquidate-employee-sighs",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "meridian-dynamics-now-bills-clients-for-employee-rem-cycles-deducts",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-19T09:31:59.103Z",
       "articles": [
@@ -712,29 +735,6 @@
           "slug": "i-am-the-90-second-meal-kit-ad-that-interrupts-your-true-crime-podcast",
           "provider": "qwen+ollama-cloud",
           "model": "qwen3.7-plus → gemma4:31b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "qwen",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-04T20:25:48.406Z",
-      "articles": [
-        {
-          "slug": "nexora-unveils-rapidfuel-a-high-viscosity-meat-slurry-administered",
-          "provider": "ollama-cloud+qwen",
-          "model": "gemma4:31b → qwen3.7-plus"
-        },
-        {
-          "slug": "report-41-of-users-convinced-cookie-banners-are-literacy-exams-to",
-          "provider": "ollama-cloud+qwen",
-          "model": "gemma4:31b → qwen3.7-plus"
         }
       ],
       "quiz": null,
