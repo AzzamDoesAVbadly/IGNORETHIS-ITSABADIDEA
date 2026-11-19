@@ -1,13 +1,5 @@
 [
   {
-    "id": "voxloom-this-desk-mat-claims-to-absorb-y",
-    "brand": "VoxLoom",
-    "headline": "This Desk Mat Claims to Absorb Your Unspoken Emails Before They Exist",
-    "body": "Made from recycled meeting minutes, VoxLoom's mat senses tension in your fingertips and redirects it into background music, keeping supervisors satisfied.",
-    "cta": "Get One Now",
-    "palette": "teal"
-  },
-  {
     "id": "omnivex-stop-wondering-who-is-breathing-",
     "brand": "OMNIVEX",
     "headline": "Stop Wondering Who Is Breathing Too Loudly In The Quiet Car",
@@ -318,5 +310,13 @@
     "body": "VORTEXIA's SmartSurface detects micro‑tremors, auto‑generates a coffee order, and sends a polite apology to your ergonomics coach. No more jittery meetings.",
     "cta": "Get Your Latte",
     "palette": "sodium"
+  },
+  {
+    "id": "omnirest-pro-this-weighted-blanket-activ",
+    "brand": "OMNIREST PRO",
+    "headline": "This Weighted Blanket Actively Judges Your REM Cycle And Files a Report To HR",
+    "body": "Stop resting like it's 2014. The OmniRest Pro monitors your heart rate and vibrates gently whenever your subconscious starts thinking about unpaid invoices.",
+    "cta": "Upgrade My Sleep Audit",
+    "palette": "crt"
   }
 ]

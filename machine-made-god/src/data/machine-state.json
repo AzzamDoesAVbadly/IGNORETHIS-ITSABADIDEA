@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 107,
-      "lastSuccess": "2026-11-18T21:33:09.285Z",
+      "ok": 109,
+      "lastSuccess": "2026-11-19T09:39:16.487Z",
       "fail": 11,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 122,
+      "fail": 124,
       "ok": 22,
       "lastSuccess": "2026-11-14T08:05:36.752Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,9 +15,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 46,
+      "fail": 47,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-19T03:26:09.051Z",
+      "cooldownUntil": "2026-11-19T15:31:59.313Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -30,16 +30,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 39
+      "fail": 42
     },
     "qwen": {
-      "ok": 56,
-      "lastSuccess": "2026-11-18T21:33:06.021Z",
+      "ok": 59,
+      "lastSuccess": "2026-11-19T09:40:13.836Z",
       "fail": 4
     }
   },
   "lastQuizAt": "2026-11-16T22:56:34.485Z",
   "runs": [
+    {
+      "at": "2026-11-19T09:31:59.103Z",
+      "articles": [
+        {
+          "slug": "harvest-protocol-unveils-root-reckon-one-unwashed-turnip-a-40-page",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "actor-demands-oscar-for-1-4-second-walk-past-window-2",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-18T21:26:08.667Z",
       "articles": [
@@ -717,29 +740,6 @@
       "quiz": null,
       "extras": {
         "provider": "qwen",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-04T08:04:33.608Z",
-      "articles": [
-        {
-          "slug": "self-portrait-museum-charges-0-42-per-glance-and-threatens-to-sell",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        },
-        {
-          "slug": "i-am-the-break-room-espresso-machine-and-i-have-been-converting-your",
-          "provider": "cerebras+qwen",
-          "model": "gpt-oss-120b → qwen3.7-plus"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
