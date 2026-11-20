@@ -1,13 +1,5 @@
 [
   {
-    "id": "novaquad-desk-lamp-that-blames-you-for-w",
-    "brand": "NOVAQUAD",
-    "headline": "Desk Lamp That Blames You for Working Late—And Sends You a Receipt",
-    "body": "The NovaBright Lamp monitors ambient light and your screen time. When you cross the 9 p.m. threshold, it flashes a polite warning and emails a bill to your inbox.",
-    "cta": "Get the Lamp",
-    "palette": "teal"
-  },
-  {
     "id": "omnivex-desk-fog-erases-distractions-in-",
     "brand": "OmniVex",
     "headline": "Desk Fog Erases Distractions in 7 Seconds—Scientists Call It ‘Pure Mist’",
@@ -318,5 +310,13 @@
     "body": "Stop wasting REM on unmonitored dread. The Somnexis NeuroFoam Pillow captures your subconscious screams and optimizes them for efficient morning playback.",
     "cta": "Optimize My Dread",
     "palette": "crt"
+  },
+  {
+    "id": "vortexia-your-floor-now-knows-when-youre",
+    "brand": "VORTEXIA",
+    "headline": "Your Floor Now Knows When You’re Stressed and Sends a Vibration Alert",
+    "body": "VORTEXIA’s MoodMap tiles read foot pressure patterns, turn anxiety into gentle pulses, and auto‑order a calming playlist. No more silent office tension.",
+    "cta": "Try the Pulse",
+    "palette": "sodium"
   }
 ]
