@@ -1,15 +1,15 @@
 {
   "providers": {
     "groq": {
-      "ok": 114,
-      "lastSuccess": "2026-11-20T09:20:43.503Z",
+      "ok": 115,
+      "lastSuccess": "2026-11-20T21:06:27.611Z",
       "fail": 12,
       "cooldownUntil": "2026-11-03T01:51:21.886Z"
     },
     "gemini": {
-      "fail": 132,
-      "ok": 22,
-      "lastSuccess": "2026-11-14T08:05:36.752Z",
+      "fail": 134,
+      "ok": 23,
+      "lastSuccess": "2026-11-20T21:08:38.121Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -30,16 +30,43 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 46
+      "fail": 50
     },
     "qwen": {
-      "ok": 64,
-      "lastSuccess": "2026-11-20T09:17:44.502Z",
-      "fail": 6
+      "ok": 68,
+      "lastSuccess": "2026-11-20T21:13:03.127Z",
+      "fail": 7
     }
   },
-  "lastQuizAt": "2026-11-16T22:56:34.485Z",
+  "lastQuizAt": "2026-11-20T21:12:02.262Z",
   "runs": [
+    {
+      "at": "2026-11-20T21:04:52.498Z",
+      "articles": [
+        {
+          "slug": "omnivex-introduces-performance-tilt-seating-bottom-25-locked-at-84",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "an-open-letter-from-the-2-00-pm-marker-on-your-40-ounce-motivational",
+          "provider": "gemini+qwen",
+          "model": "gemini-flash-latest → qwen3.7-plus"
+        }
+      ],
+      "quiz": {
+        "slug": "which-specific-theme-park-line-justification-are-you-using-to-avoid",
+        "provider": "qwen",
+        "model": "qwen3.7-plus"
+      },
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 2
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-20T09:12:35.518Z",
       "articles": [
@@ -719,29 +746,6 @@
       "quiz": null,
       "extras": {
         "provider": "qwen",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-05T20:39:47.935Z",
-      "articles": [
-        {
-          "slug": "review-the-halcyon-tek-atmoslens-is-the-only-weather-app-that-changes",
-          "provider": "ollama-cloud",
-          "model": "gemma4:31b"
-        },
-        {
-          "slug": "9-types-of-plastic-packaging-ranked-by-how-violently-they-reject",
-          "provider": "ollama-cloud+qwen",
-          "model": "gemma4:31b → qwen3.7-plus"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

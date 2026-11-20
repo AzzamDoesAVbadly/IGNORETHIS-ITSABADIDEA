@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-desk-fog-erases-distractions-in-",
-    "brand": "OmniVex",
-    "headline": "Desk Fog Erases Distractions in 7 Seconds—Scientists Call It ‘Pure Mist’",
-    "body": "The new Desk Fog releases a micro‑mist that dissolves open tabs, email drafts, and the urge to reorganize your pen holder. Works even on Tuesdays.",
-    "cta": "Buy the Mist",
-    "palette": "hazard"
-  },
-  {
     "id": "nexora-stop-wondering-if-your-coworkers-",
     "brand": "NEXORA",
     "headline": "Stop Wondering If Your Coworkers Are Actually Listening During The Stand-Up",
@@ -317,6 +309,14 @@
     "headline": "Your Floor Now Knows When You’re Stressed and Sends a Vibration Alert",
     "body": "VORTEXIA’s MoodMap tiles read foot pressure patterns, turn anxiety into gentle pulses, and auto‑order a calming playlist. No more silent office tension.",
     "cta": "Try the Pulse",
+    "palette": "sodium"
+  },
+  {
+    "id": "halcyon-tek-this-smart-mug-refuses-to-be",
+    "brand": "HALCYON-TEK",
+    "headline": "This Smart Mug Refuses To Be Held If Your Coffee Drops Below 140 Degrees",
+    "body": "Equipped with thermal-spite sensors, the BrewGuard turns its handle away when the liquid cools. It also emails your manager about your poor timing.",
+    "cta": "Submit My Grievance",
     "palette": "sodium"
   }
 ]
