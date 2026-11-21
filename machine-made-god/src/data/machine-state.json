@@ -1,13 +1,14 @@
 {
   "providers": {
     "groq": {
-      "ok": 115,
-      "lastSuccess": "2026-11-20T21:06:27.611Z",
-      "fail": 12,
-      "cooldownUntil": "2026-11-03T01:51:21.886Z"
+      "ok": 116,
+      "lastSuccess": "2026-11-21T08:52:46.173Z",
+      "fail": 14,
+      "cooldownUntil": "2026-11-22T08:52:46.431Z",
+      "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 134,
+      "fail": 138,
       "ok": 23,
       "lastSuccess": "2026-11-20T21:08:38.121Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,31 +16,54 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 49,
+      "fail": 50,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-20T15:14:09.576Z",
+      "cooldownUntil": "2026-11-21T14:52:42.902Z",
       "lastError": "rate limited"
     },
     "cerebras": {
       "ok": 75,
       "lastSuccess": "2026-11-17T21:53:33.975Z",
-      "fail": 12,
-      "cooldownUntil": "2026-11-20T21:36:00.241Z",
+      "fail": 13,
+      "cooldownUntil": "2026-11-22T08:52:46.826Z",
       "lastError": "out of credits"
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 50
+      "fail": 52
     },
     "qwen": {
-      "ok": 68,
-      "lastSuccess": "2026-11-20T21:13:03.127Z",
+      "ok": 72,
+      "lastSuccess": "2026-11-21T08:56:48.779Z",
       "fail": 7
     }
   },
   "lastQuizAt": "2026-11-20T21:12:02.262Z",
   "runs": [
+    {
+      "at": "2026-11-21T08:49:05.396Z",
+      "articles": [
+        {
+          "slug": "venue-engineers-designate-fan-phone-wall-as-official-load-bearing",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "review-omnivex-synergytag-mistakes-a-commercial-dehumidifier-for-a",
+          "provider": "qwen+qwen",
+          "model": "qwen3.7-plus → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-20T21:04:52.498Z",
       "articles": [
@@ -723,29 +747,6 @@
       },
       "extras": {
         "provider": "cerebras",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-06T08:31:56.192Z",
-      "articles": [
-        {
-          "slug": "meridian-dynamics-unveils-pathfinder-a-gps-update-that-prioritizes",
-          "provider": "ollama-cloud+qwen",
-          "model": "gemma4:31b → qwen3.7-plus"
-        },
-        {
-          "slug": "synth-punk-band-wires-14-demo-sedans-into-a-single-amplifier-forces",
-          "provider": "groq+qwen",
-          "model": "openai/gpt-oss-120b → qwen3.7-plus"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "qwen",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

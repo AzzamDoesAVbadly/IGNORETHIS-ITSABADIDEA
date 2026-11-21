@@ -1,13 +1,5 @@
 [
   {
-    "id": "nexora-stop-wondering-if-your-coworkers-",
-    "brand": "NEXORA",
-    "headline": "Stop Wondering If Your Coworkers Are Actually Listening During The Stand-Up",
-    "body": "The Nexora Focus-Beam projects a subtle, high-frequency pulse that physically aligns the gaze of everyone in a 5-foot radius.",
-    "cta": "Claim Your Focus",
-    "palette": "sodium"
-  },
-  {
     "id": "omnivex-is-your-mirror-being-too-critica",
     "brand": "OMNIVEX",
     "headline": "Is Your Mirror Being Too Critical? Install The Ego-Filter Overlay",
@@ -318,5 +310,13 @@
     "body": "Equipped with thermal-spite sensors, the BrewGuard turns its handle away when the liquid cools. It also emails your manager about your poor timing.",
     "cta": "Submit My Grievance",
     "palette": "sodium"
+  },
+  {
+    "id": "omnivex-this-smart-toilet-refuses-to-flu",
+    "brand": "OMNIVEX",
+    "headline": "This Smart Toilet Refuses To Flush Until You Confess A Minor Regret To The Bowl",
+    "body": "The OMNIVEX Porcelain Empathy Suite uses acoustic resonance to detect hesitation. It won't flush until you admit you still think about that awkward handshake.",
+    "cta": "Confess And Flush",
+    "palette": "crt"
   }
 ]
