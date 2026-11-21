@@ -8,17 +8,17 @@
       "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 138,
-      "ok": 23,
-      "lastSuccess": "2026-11-20T21:08:38.121Z",
+      "fail": 141,
+      "ok": 24,
+      "lastSuccess": "2026-11-21T20:12:45.311Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 50,
+      "fail": 51,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-21T14:52:42.902Z",
+      "cooldownUntil": "2026-11-22T02:05:42.848Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -31,16 +31,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 52
+      "fail": 55
     },
     "qwen": {
-      "ok": 72,
-      "lastSuccess": "2026-11-21T08:56:48.779Z",
+      "ok": 76,
+      "lastSuccess": "2026-11-21T20:13:30.021Z",
       "fail": 7
     }
   },
   "lastQuizAt": "2026-11-20T21:12:02.262Z",
   "runs": [
+    {
+      "at": "2026-11-21T20:05:34.766Z",
+      "articles": [
+        {
+          "slug": "cassian-vane-pauses-arena-show-to-personally-downgrade-800-fans-text",
+          "provider": "qwen+qwen",
+          "model": "qwen3.7-plus → qwen3.7-plus"
+        },
+        {
+          "slug": "omnivex-rolls-out-strategic-friction-architecture-to-ensure",
+          "provider": "qwen+gemini",
+          "model": "qwen3.7-plus → gemini-flash-latest"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-21T08:49:05.396Z",
       "articles": [
@@ -720,33 +743,6 @@
       "quiz": null,
       "extras": {
         "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-06T19:57:24.344Z",
-      "articles": [
-        {
-          "slug": "omnivex-launches-coldstart-a-34-f-four-minute-ice-bath-that",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        },
-        {
-          "slug": "sci-fi-star-luna-vex-forces-1-2-million-viewers-to-attend-six-hour-vr",
-          "provider": "groq+qwen",
-          "model": "openai/gpt-oss-120b → qwen3.7-plus"
-        }
-      ],
-      "quiz": {
-        "slug": "which-over-promised-self-care-subscription-box-are-you",
-        "provider": "groq",
-        "model": "openai/gpt-oss-120b"
-      },
-      "extras": {
-        "provider": "cerebras",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

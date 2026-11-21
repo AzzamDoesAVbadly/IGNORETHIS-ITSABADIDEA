@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-is-your-mirror-being-too-critica",
-    "brand": "OMNIVEX",
-    "headline": "Is Your Mirror Being Too Critical? Install The Ego-Filter Overlay",
-    "body": "A smart-glass layer that subtly adjusts your reflection to look like you've had 8 hours of sleep and a meaningful hobby.",
-    "cta": "BEAUTIFY MY TRUTH",
-    "palette": "sodium"
-  },
-  {
     "id": "omnivex-is-your-silence-too-loud-try-the",
     "brand": "Omnivex",
     "headline": "Is Your Silence Too Loud? Try The White-Noise Sculptor",
@@ -318,5 +310,13 @@
     "body": "The OMNIVEX Porcelain Empathy Suite uses acoustic resonance to detect hesitation. It won't flush until you admit you still think about that awkward handshake.",
     "cta": "Confess And Flush",
     "palette": "crt"
+  },
+  {
+    "id": "vellum-industries-stop-letting-your-resp",
+    "brand": "VELLUM INDUSTRIES",
+    "headline": "Stop Letting Your Respiratory Disappointment Ruin the Open Floor Plan",
+    "body": "The VELLUM Sigh-Baffle neutralizes heavy breathing in a 4-foot radius using proprietary compressed foam. Reclaim your cubicle dignity today.",
+    "cta": "Muffle My Disappointment",
+    "palette": "sodium"
   }
 ]
