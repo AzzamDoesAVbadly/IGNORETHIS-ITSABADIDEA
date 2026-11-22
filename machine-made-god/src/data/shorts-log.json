@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-22T01:31:01.517Z",
+    "kind": "bump",
+    "ref": "bump:484f6a0099",
+    "title": "the drywall is settling again #shorts",
+    "seconds": 14,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-22T01:32:35.037Z",
+    "kind": "headline",
+    "ref": "article:omnivex-rolls-out-strategic-friction-architecture-to-ensure",
+    "title": "OMNIVEX Rolls Out 'Strategic Friction' Architecture to Ensure Submitting an Expense R… #shorts",
+    "seconds": 26,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-21T20:23:17.035Z",
     "kind": "bump",
     "ref": "bump:aee8a94ffa",
