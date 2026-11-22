@@ -1,14 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 116,
-      "lastSuccess": "2026-11-21T08:52:46.173Z",
+      "ok": 119,
+      "lastSuccess": "2026-11-22T08:56:33.029Z",
       "fail": 14,
-      "cooldownUntil": "2026-11-22T08:52:46.431Z",
-      "lastError": "out of credits"
+      "cooldownUntil": "2026-11-22T08:52:46.431Z"
     },
     "gemini": {
-      "fail": 141,
+      "fail": 143,
       "ok": 24,
       "lastSuccess": "2026-11-21T20:12:45.311Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -16,31 +15,54 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 51,
+      "fail": 52,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-22T02:05:42.848Z",
+      "cooldownUntil": "2026-11-22T14:53:25.300Z",
       "lastError": "rate limited"
     },
     "cerebras": {
       "ok": 75,
       "lastSuccess": "2026-11-17T21:53:33.975Z",
-      "fail": 13,
-      "cooldownUntil": "2026-11-22T08:52:46.826Z",
+      "fail": 14,
+      "cooldownUntil": "2026-11-23T08:53:25.499Z",
       "lastError": "out of credits"
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 55
+      "fail": 58
     },
     "qwen": {
-      "ok": 76,
-      "lastSuccess": "2026-11-21T20:13:30.021Z",
-      "fail": 7
+      "ok": 77,
+      "lastSuccess": "2026-11-22T08:54:35.503Z",
+      "fail": 8
     }
   },
   "lastQuizAt": "2026-11-20T21:12:02.262Z",
   "runs": [
+    {
+      "at": "2026-11-22T08:53:25.085Z",
+      "articles": [
+        {
+          "slug": "8-metrics-your-smart-fridge-uses-to-quantify-its-disgust-with-you",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "i-am-the-spam-folder-and-i-am-exhausted-by-your-important-emails",
+          "provider": "groq",
+          "model": "openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-21T20:05:34.766Z",
       "articles": [
@@ -720,29 +742,6 @@
       "quiz": null,
       "extras": {
         "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-07T07:48:38.402Z",
-      "articles": [
-        {
-          "slug": "hoas-3-27-inch-grass-rule-turns-suburb-into-4-2-million-drone-test",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "i-am-your-six-digit-authentication-code-and-i-am-currently-trapped",
-          "provider": "ollama-cloud+qwen",
-          "model": "gemma4:31b → qwen3.7-plus"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "groq",
         "ticker": 4,
         "bumps": 2,
         "ads": 1

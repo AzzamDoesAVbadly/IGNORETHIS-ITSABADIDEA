@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-is-your-silence-too-loud-try-the",
-    "brand": "Omnivex",
-    "headline": "Is Your Silence Too Loud? Try The White-Noise Sculptor",
-    "body": "Custom-engineered frequencies that mimic the sound of a medium-sized office where everyone is pretending to be busy.",
-    "cta": "Mute Your Life",
-    "palette": "crt"
-  },
-  {
     "id": "halcyon-tek-say-goodbye-to-the-office-bu",
     "brand": "HALCYON-TEK",
     "headline": "Say goodbye to the office buzz: HALCYON-TEK's Quietus Desk silences every click",
@@ -318,5 +310,13 @@
     "body": "The VELLUM Sigh-Baffle neutralizes heavy breathing in a 4-foot radius using proprietary compressed foam. Reclaim your cubicle dignity today.",
     "cta": "Muffle My Disappointment",
     "palette": "sodium"
+  },
+  {
+    "id": "nexora-this-sleep-mask-turns-your-nightm",
+    "brand": "NEXORA",
+    "headline": "This Sleep Mask Turns Your Nightmares into Office Memes",
+    "body": "Wear the DreamWeave and watch your subconscious rewrite anxiety as quarterly reports, so you wake refreshed and oddly ready for spreadsheets.",
+    "cta": "Get Masked",
+    "palette": "sick"
   }
 ]
