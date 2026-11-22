@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 119,
-      "lastSuccess": "2026-11-22T08:56:33.029Z",
-      "fail": 14,
+      "ok": 121,
+      "lastSuccess": "2026-11-22T20:25:06.288Z",
+      "fail": 15,
       "cooldownUntil": "2026-11-22T08:52:46.431Z"
     },
     "gemini": {
-      "fail": 143,
+      "fail": 145,
       "ok": 24,
       "lastSuccess": "2026-11-21T20:12:45.311Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,9 +15,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 52,
+      "fail": 53,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-22T14:53:25.300Z",
+      "cooldownUntil": "2026-11-23T02:23:36.822Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -30,16 +30,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 58
+      "fail": 60
     },
     "qwen": {
-      "ok": 77,
-      "lastSuccess": "2026-11-22T08:54:35.503Z",
+      "ok": 80,
+      "lastSuccess": "2026-11-22T20:26:22.534Z",
       "fail": 8
     }
   },
   "lastQuizAt": "2026-11-20T21:12:02.262Z",
   "runs": [
+    {
+      "at": "2026-11-22T20:21:22.136Z",
+      "articles": [
+        {
+          "slug": "municipal-automated-portal-auto-voids-4-000-complaints-prompting",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "8-mic-stand-rituals-that-turn-tuesday-night-open-mics-into-public",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-22T08:53:25.085Z",
       "articles": [
@@ -714,29 +737,6 @@
           "slug": "kinetix-group-mandates-adult-group-projects-to-eliminate-the-burden",
           "provider": "qwen+ollama-cloud",
           "model": "qwen3.7-plus → gemma4:31b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-07T18:02:25.405Z",
-      "articles": [
-        {
-          "slug": "10-calendar-invites-that-are-actually-crying-for-help-ranked-by",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        },
-        {
-          "slug": "nexora-collapses-11-400-internal-slack-channels-into-single",
-          "provider": "cerebras+gemini",
-          "model": "gpt-oss-120b → gemini-flash-latest"
         }
       ],
       "quiz": null,

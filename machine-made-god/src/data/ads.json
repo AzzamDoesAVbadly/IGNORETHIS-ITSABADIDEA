@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-say-goodbye-to-the-office-bu",
-    "brand": "HALCYON-TEK",
-    "headline": "Say goodbye to the office buzz: HALCYON-TEK's Quietus Desk silences every click",
-    "body": "A magnetic mat that detects keystroke vibrations and emits a soothing low‑frequency tone, convincing you the workday is already over.",
-    "cta": "Try the hush",
-    "palette": "sick"
-  },
-  {
     "id": "omnivex-is-open-office-breathing-ruining",
     "brand": "OMNIVEX",
     "headline": "Is Open-Office Breathing Ruining Your Q3? This Server-Foam Putty Blocks It All.",
@@ -318,5 +310,13 @@
     "body": "Wear the DreamWeave and watch your subconscious rewrite anxiety as quarterly reports, so you wake refreshed and oddly ready for spreadsheets.",
     "cta": "Get Masked",
     "palette": "sick"
+  },
+  {
+    "id": "meridian-dynamics-this-desktop-humidifie",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "This Desktop Humidifier Only Mists You When You Miss A KPI",
+    "body": "MERIDIAN AeroMist releases a judgmental mist of eucalyptus and corporate disappointment when your typing drops below 40 WPM. Hydrate efficiently.",
+    "cta": "Optimize My Lungs",
+    "palette": "teal"
   }
 ]
