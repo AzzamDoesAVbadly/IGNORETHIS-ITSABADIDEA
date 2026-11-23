@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-is-open-office-breathing-ruining",
-    "brand": "OMNIVEX",
-    "headline": "Is Open-Office Breathing Ruining Your Q3? This Server-Foam Putty Blocks It All.",
-    "body": "Made from recycled server foam, OmniVex putty blocks open-office breathing and distant chewing. Just roll, press, and pretend you aren't in the room.",
-    "cta": "Seal My Ears",
-    "palette": "sick"
-  },
-  {
     "id": "omnivex-this-bio-metric-pillow-predicts-",
     "brand": "OMNIVEX",
     "headline": "This Bio-Metric Pillow Predicts Exactly Which Dream Will Give You Anxiety",
@@ -317,6 +309,14 @@
     "headline": "This Desktop Humidifier Only Mists You When You Miss A KPI",
     "body": "MERIDIAN AeroMist releases a judgmental mist of eucalyptus and corporate disappointment when your typing drops below 40 WPM. Hydrate efficiently.",
     "cta": "Optimize My Lungs",
+    "palette": "teal"
+  },
+  {
+    "id": "halcyon-tek-this-desk-pad-changes-its-co",
+    "brand": "HALCYON-TEK",
+    "headline": "This Desk Pad Changes Its Color Based on Your Unspoken Stress Levels",
+    "body": "The pad reads micro‑vibrations from your keyboard, then shifts from teal to crimson, letting coworkers guess your mood without a meeting.",
+    "cta": "Try the Mood Pad",
     "palette": "teal"
   }
 ]
