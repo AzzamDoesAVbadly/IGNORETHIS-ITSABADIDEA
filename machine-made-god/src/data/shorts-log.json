@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-24T23:20:55.544Z",
+    "kind": "bump",
+    "ref": "bump:ccee3df028",
+    "title": "the streetlamp outside is flickering in morse code #shorts",
+    "seconds": 15,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-24T23:22:15.315Z",
+    "kind": "headline",
+    "ref": "article:omnivex-unveils-checkout-terminal-that-adjusts-suggested-tip-based-on",
+    "title": "OMNIVEX Unveils Checkout Terminal That Adjusts Suggested Tip Based on Cashier’s Galva… #shorts",
+    "seconds": 22,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-24T05:28:57.479Z",
     "kind": "bump",
     "ref": "bump:832cdab597",
