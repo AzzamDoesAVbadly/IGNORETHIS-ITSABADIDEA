@@ -1,23 +1,23 @@
 {
   "providers": {
     "groq": {
-      "ok": 123,
-      "lastSuccess": "2026-11-23T09:54:52.121Z",
+      "ok": 125,
+      "lastSuccess": "2026-11-24T00:51:43.834Z",
       "fail": 16,
       "cooldownUntil": "2026-11-22T08:52:46.431Z"
     },
     "gemini": {
-      "fail": 148,
-      "ok": 24,
-      "lastSuccess": "2026-11-21T20:12:45.311Z",
+      "fail": 150,
+      "ok": 25,
+      "lastSuccess": "2026-11-24T00:55:05.474Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 54,
+      "fail": 55,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-23T15:50:49.746Z",
+      "cooldownUntil": "2026-11-24T06:53:07.266Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -30,16 +30,43 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 62
+      "fail": 63
     },
     "qwen": {
-      "ok": 81,
-      "lastSuccess": "2026-11-23T09:52:22.960Z",
+      "ok": 84,
+      "lastSuccess": "2026-11-24T00:54:54.687Z",
       "fail": 9
     }
   },
-  "lastQuizAt": "2026-11-20T21:12:02.262Z",
+  "lastQuizAt": "2026-11-24T00:54:54.801Z",
   "runs": [
+    {
+      "at": "2026-11-24T00:50:25.593Z",
+      "articles": [
+        {
+          "slug": "reunion-sludge-band-requires-parking-app-validation-for-every-riff",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "civicore-unveils-echoaudit-a-webcam-overlay-that-automatically",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        }
+      ],
+      "quiz": {
+        "slug": "which-passive-aggressive-smart-home-routine-are-you-secretly-running",
+        "provider": "qwen",
+        "model": "qwen3.7-plus"
+      },
+      "extras": {
+        "provider": "gemini",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-23T09:50:49.442Z",
       "articles": [
@@ -711,29 +738,6 @@
           "slug": "the-standing-desk-that-knows-youre-just-leaning",
           "provider": "ollama-cloud+cerebras",
           "model": "gemma4:31b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-08T18:21:21.474Z",
-      "articles": [
-        {
-          "slug": "review-omnivex-frostbyte-freezes-my-lettuce-after-i-missed-my-14-day",
-          "provider": "qwen+groq",
-          "model": "qwen3.7-plus → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "form-28-4-demands-a-coffee-break-before-you-can-move-a-trash-can-two",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
         }
       ],
       "quiz": null,

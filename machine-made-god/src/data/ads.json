@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-this-bio-metric-pillow-predicts-",
-    "brand": "OMNIVEX",
-    "headline": "This Bio-Metric Pillow Predicts Exactly Which Dream Will Give You Anxiety",
-    "body": "Stop guessing why you woke up sweating. Our proprietary neural-mesh maps your subconscious stressors and sends a PDF report to your phone by 7:00 AM.",
-    "cta": "Audit My Dreams",
-    "palette": "crt"
-  },
-  {
     "id": "omnivex-stop-wondering-if-your-roomba-is",
     "brand": "OMNIVEX",
     "headline": "Stop Wondering If Your Roomba Is Judging Your Floor-Dust Patterns",
@@ -318,5 +310,13 @@
     "body": "The pad reads micro‑vibrations from your keyboard, then shifts from teal to crimson, letting coworkers guess your mood without a meeting.",
     "cta": "Try the Mood Pad",
     "palette": "teal"
+  },
+  {
+    "id": "halcyon-tek-this-ergonomic-chair-resigns",
+    "brand": "HALCYON-TEK",
+    "headline": "This Ergonomic Chair Resigns On Your Behalf If You Slouch Past 3 PM",
+    "body": "Crafted from memory foam that refuses to support quiet despair. Features automated Slack notifications and immediate lumbar detachment.",
+    "cta": "Pre-Order Your Release",
+    "palette": "bleach"
   }
 ]
