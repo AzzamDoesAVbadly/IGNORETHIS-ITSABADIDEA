@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-stop-wondering-if-your-roomba-is",
-    "brand": "OMNIVEX",
-    "headline": "Stop Wondering If Your Roomba Is Judging Your Floor-Dust Patterns",
-    "body": "The OmniVex Privacy-Shroud ensures your vacuum sees only what you want it to. Total floor-level anonymity starting at $149.",
-    "cta": "Cloak Your Carpets",
-    "palette": "crt"
-  },
-  {
     "id": "lumen-core-your-smart-blinds-are-secretl",
     "brand": "LUMEN-CORE",
     "headline": "Your Smart-Blinds Are Secretly Timing How Long You Stare Out The Window",
@@ -317,6 +309,14 @@
     "headline": "This Ergonomic Chair Resigns On Your Behalf If You Slouch Past 3 PM",
     "body": "Crafted from memory foam that refuses to support quiet despair. Features automated Slack notifications and immediate lumbar detachment.",
     "cta": "Pre-Order Your Release",
+    "palette": "bleach"
+  },
+  {
+    "id": "halo-statics-we-tested-the-desk-lamp-tha",
+    "brand": "HALO-STATICS",
+    "headline": "We Tested The Desk Lamp That Dims When You Procrastinate And It Ruined My Life",
+    "body": "The HALO-STATICS Empathy Bulb tracks keystroke hesitation. When you switch tabs, it drops to 40% brightness to physically manifest your lack of focus.",
+    "cta": "Shop The Dimness",
     "palette": "bleach"
   }
 ]

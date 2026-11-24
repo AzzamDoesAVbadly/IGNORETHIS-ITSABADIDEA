@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 125,
-      "lastSuccess": "2026-11-24T00:51:43.834Z",
+      "ok": 126,
+      "lastSuccess": "2026-11-24T11:43:03.545Z",
       "fail": 16,
       "cooldownUntil": "2026-11-22T08:52:46.431Z"
     },
     "gemini": {
-      "fail": 150,
+      "fail": 153,
       "ok": 25,
       "lastSuccess": "2026-11-24T00:55:05.474Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,31 +15,54 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 55,
+      "fail": 56,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-24T06:53:07.266Z",
+      "cooldownUntil": "2026-11-24T17:40:23.259Z",
       "lastError": "rate limited"
     },
     "cerebras": {
       "ok": 75,
       "lastSuccess": "2026-11-17T21:53:33.975Z",
-      "fail": 15,
-      "cooldownUntil": "2026-11-24T09:52:40.441Z",
+      "fail": 16,
+      "cooldownUntil": "2026-11-25T11:41:43.896Z",
       "lastError": "out of credits"
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 63
+      "fail": 67
     },
     "qwen": {
-      "ok": 84,
-      "lastSuccess": "2026-11-24T00:54:54.687Z",
+      "ok": 87,
+      "lastSuccess": "2026-11-24T11:44:09.912Z",
       "fail": 9
     }
   },
   "lastQuizAt": "2026-11-24T00:54:54.801Z",
   "runs": [
+    {
+      "at": "2026-11-24T11:39:50.659Z",
+      "articles": [
+        {
+          "slug": "i-am-the-resume-playback-button-and-ive-been-holding-your-place-in-a",
+          "provider": "qwen",
+          "model": "qwen3.7-plus"
+        },
+        {
+          "slug": "reply-all-chain-hits-14-months-declares-corporate-caste-system-based",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-24T00:50:25.593Z",
       "articles": [
@@ -720,29 +743,6 @@
       },
       "extras": {
         "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-09T08:42:06.785Z",
-      "articles": [
-        {
-          "slug": "open-plan-floor-declares-independence-classifies-overhead-lighting-as",
-          "provider": "groq+qwen",
-          "model": "openai/gpt-oss-120b → qwen3.7-plus"
-        },
-        {
-          "slug": "the-standing-desk-that-knows-youre-just-leaning",
-          "provider": "ollama-cloud+cerebras",
-          "model": "gemma4:31b → gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "ollama-cloud",
         "ticker": 4,
         "bumps": 2,
         "ads": 1
