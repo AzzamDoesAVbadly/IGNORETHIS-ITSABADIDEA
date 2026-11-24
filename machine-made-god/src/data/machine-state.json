@@ -1,15 +1,15 @@
 {
   "providers": {
     "groq": {
-      "ok": 126,
-      "lastSuccess": "2026-11-24T11:43:03.545Z",
+      "ok": 127,
+      "lastSuccess": "2026-11-24T23:01:40.294Z",
       "fail": 16,
       "cooldownUntil": "2026-11-22T08:52:46.431Z"
     },
     "gemini": {
-      "fail": 153,
-      "ok": 25,
-      "lastSuccess": "2026-11-24T00:55:05.474Z",
+      "fail": 156,
+      "ok": 26,
+      "lastSuccess": "2026-11-24T23:08:18.925Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -30,16 +30,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 67
+      "fail": 70
     },
     "qwen": {
-      "ok": 87,
-      "lastSuccess": "2026-11-24T11:44:09.912Z",
+      "ok": 90,
+      "lastSuccess": "2026-11-24T23:11:08.827Z",
       "fail": 9
     }
   },
   "lastQuizAt": "2026-11-24T00:54:54.801Z",
   "runs": [
+    {
+      "at": "2026-11-24T23:01:35.955Z",
+      "articles": [
+        {
+          "slug": "maintenance-request-the-suite-402-hydration-unit-is-formally",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "omnivex-unveils-checkout-terminal-that-adjusts-suggested-tip-based-on",
+          "provider": "qwen+gemini",
+          "model": "qwen3.7-plus → gemini-flash-latest"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-24T11:39:50.659Z",
       "articles": [
@@ -714,33 +737,6 @@
         }
       ],
       "quiz": null,
-      "extras": {
-        "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-09T22:59:09.792Z",
-      "articles": [
-        {
-          "slug": "review-the-meridian-dynamics-chronotoaster-2-0-turns-your-breakfast",
-          "provider": "groq+ollama-cloud",
-          "model": "openai/gpt-oss-120b → gemma4:31b"
-        },
-        {
-          "slug": "form-42-7-the-only-document-more-exhausted-than-cedar-falls-residents",
-          "provider": "cerebras+groq",
-          "model": "gpt-oss-120b → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": {
-        "slug": "which-highly-specific-dental-chair-persona-are-you-performing",
-        "provider": "qwen",
-        "model": "qwen3.7-plus"
-      },
       "extras": {
         "provider": "groq",
         "ticker": 4,

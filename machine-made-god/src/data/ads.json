@@ -1,13 +1,5 @@
 [
   {
-    "id": "lumen-core-your-smart-blinds-are-secretl",
-    "brand": "LUMEN-CORE",
-    "headline": "Your Smart-Blinds Are Secretly Timing How Long You Stare Out The Window",
-    "body": "LUMEN-CORE's Ambient Tracker proves your window-gazing is inefficient. Upgrade to Auto-Tint glass that darkens the second you start daydreaming.",
-    "cta": "Stop Daydreaming Now",
-    "palette": "crt"
-  },
-  {
     "id": "omnivex-your-keyboard-is-too-confident-a",
     "brand": "OMNIVEX",
     "headline": "Your Keyboard Is Too Confident. Add Hesitation To Keystrokes With The Doubt-Board Pro.",
@@ -317,6 +309,14 @@
     "headline": "We Tested The Desk Lamp That Dims When You Procrastinate And It Ruined My Life",
     "body": "The HALO-STATICS Empathy Bulb tracks keystroke hesitation. When you switch tabs, it drops to 40% brightness to physically manifest your lack of focus.",
     "cta": "Shop The Dimness",
+    "palette": "bleach"
+  },
+  {
+    "id": "crisp-logic-we-bought-the-smart-toaster-",
+    "brand": "CRISP-LOGIC",
+    "headline": "We Bought The Smart Toaster That Judges Your Carb Intake And It Refused To Toast My Bagel",
+    "body": "The CRISP-LOGIC Air-Scorn 4000 uses optical sensors to analyze your bread. If it detects sourdough, it unplugs itself out of sheer dietary disappointment.",
+    "cta": "Apologize To My Bread Now",
     "palette": "bleach"
   }
 ]
