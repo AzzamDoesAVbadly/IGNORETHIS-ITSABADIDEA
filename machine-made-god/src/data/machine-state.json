@@ -1,13 +1,13 @@
 {
   "providers": {
     "groq": {
-      "ok": 127,
-      "lastSuccess": "2026-11-24T23:01:40.294Z",
+      "ok": 130,
+      "lastSuccess": "2026-11-25T02:16:03.565Z",
       "fail": 16,
       "cooldownUntil": "2026-11-22T08:52:46.431Z"
     },
     "gemini": {
-      "fail": 156,
+      "fail": 160,
       "ok": 26,
       "lastSuccess": "2026-11-24T23:08:18.925Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,9 +15,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 56,
+      "fail": 57,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-24T17:40:23.259Z",
+      "cooldownUntil": "2026-11-25T08:11:12.691Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -30,16 +30,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 70
+      "fail": 73
     },
     "qwen": {
-      "ok": 90,
-      "lastSuccess": "2026-11-24T23:11:08.827Z",
+      "ok": 92,
+      "lastSuccess": "2026-11-25T02:14:15.126Z",
       "fail": 9
     }
   },
   "lastQuizAt": "2026-11-24T00:54:54.801Z",
   "runs": [
+    {
+      "at": "2026-11-25T02:10:55.674Z",
+      "articles": [
+        {
+          "slug": "halcyon-tek-replaces-two-factor-authentication-with-mandatory-14",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        },
+        {
+          "slug": "open-letter-to-the-post-hardcore-quartet-mistaking-my-corner-for-a",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-24T23:01:35.955Z",
       "articles": [
@@ -709,29 +732,6 @@
         },
         {
           "slug": "four-strangers-turn-airport-lounge-table-into-feudal-microstate",
-          "provider": "qwen+groq",
-          "model": "qwen3.7-plus → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-10T08:51:47.920Z",
-      "articles": [
-        {
-          "slug": "9-ways-to-position-your-conference-badge-for-maximum-power-trip",
-          "provider": "qwen+groq",
-          "model": "qwen3.7-plus → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "password-confirmation-field-rejects-exact-match-cites-mismatched",
           "provider": "qwen+groq",
           "model": "qwen3.7-plus → openai/gpt-oss-120b"
         }

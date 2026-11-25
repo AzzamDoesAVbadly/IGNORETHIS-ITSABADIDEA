@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-your-keyboard-is-too-confident-a",
-    "brand": "OMNIVEX",
-    "headline": "Your Keyboard Is Too Confident. Add Hesitation To Keystrokes With The Doubt-Board Pro.",
-    "body": "Stop typing like you have all the answers. The Doubt-Board physically resists your fingers, ensuring every email sounds appropriately uncertain.",
-    "cta": "Embrace Doubt",
-    "palette": "crt"
-  },
-  {
     "id": "meridian-dynamics-is-your-desk-chair-too",
     "brand": "MERIDIAN DYNAMICS",
     "headline": "Is Your Desk Chair Too Supportive? Experience the New 'Compliance Lean'",
@@ -318,5 +310,13 @@
     "body": "The CRISP-LOGIC Air-Scorn 4000 uses optical sensors to analyze your bread. If it detects sourdough, it unplugs itself out of sheer dietary disappointment.",
     "cta": "Apologize To My Bread Now",
     "palette": "bleach"
+  },
+  {
+    "id": "halcyon-tek-this-smart-pillow-refuses-to",
+    "brand": "HALCYON-TEK",
+    "headline": "This Smart Pillow Refuses to Sleep Until You Finish Your To‑Do List",
+    "body": "The SleepSync Pillow monitors your task list via Bluetooth and gently vibrates until every checkbox is green. Comfort meets productivity.",
+    "cta": "Try the Quiet",
+    "palette": "teal"
   }
 ]
