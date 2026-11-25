@@ -1,13 +1,5 @@
 [
   {
-    "id": "nexora-are-unread-messages-aging-your-sk",
-    "brand": "NEXORA",
-    "headline": "Are Unread Messages Aging Your Skin? Try The NEXORA Blue-Light Deflector Turtleneck.",
-    "body": "Crafted from 100% woven fiber-optic dread, the NEXORA Turtleneck refracts 99% of incoming passive-aggressive emojis before they hit your epidermis.",
-    "cta": "Shield My Epidermis",
-    "palette": "bleach"
-  },
-  {
     "id": "halcyon-tek-this-desk-lamp-decides-when-",
     "brand": "HALCYON-TEK",
     "headline": "This desk lamp decides when you’re ready to stop scrolling",
@@ -318,5 +310,13 @@
     "body": "The HYDRA-STATICS Coaster clamps your glass shut when your water intake drops. It instantly files a formal grievance with your doctor.",
     "cta": "Enforce Hydration",
     "palette": "sodium"
+  },
+  {
+    "id": "meridian-dynamics-we-bought-the-smart-de",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "We Bought The Smart Desk Fan That Cuts Off Your Air When You Stop Typing",
+    "body": "The BreezeSync 4000 monitors your keystrokes. Pause to think, and the airflow stops immediately. Sweat through your next big quarterly brainstorm.",
+    "cta": "Sweat Through It",
+    "palette": "crt"
   }
 ]

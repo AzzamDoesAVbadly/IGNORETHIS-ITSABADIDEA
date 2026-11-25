@@ -8,7 +8,7 @@
       "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 162,
+      "fail": 166,
       "ok": 26,
       "lastSuccess": "2026-11-24T23:08:18.925Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -16,31 +16,54 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 58,
+      "fail": 59,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-25T16:33:34.251Z",
+      "cooldownUntil": "2026-11-26T04:34:37.406Z",
       "lastError": "rate limited"
     },
     "cerebras": {
       "ok": 75,
       "lastSuccess": "2026-11-17T21:53:33.975Z",
-      "fail": 16,
-      "cooldownUntil": "2026-11-25T11:41:43.896Z",
+      "fail": 17,
+      "cooldownUntil": "2026-11-26T22:34:44.692Z",
       "lastError": "out of credits"
     },
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 76
+      "fail": 78
     },
     "qwen": {
-      "ok": 96,
-      "lastSuccess": "2026-11-25T10:39:18.134Z",
-      "fail": 9
+      "ok": 99,
+      "lastSuccess": "2026-11-25T22:42:27.841Z",
+      "fail": 10
     }
   },
   "lastQuizAt": "2026-11-24T00:54:54.801Z",
   "runs": [
+    {
+      "at": "2026-11-25T22:31:14.182Z",
+      "articles": [
+        {
+          "slug": "review-nexora-binhider-smart-enclosure-refuses-to-open-unless-you-use",
+          "provider": "qwen",
+          "model": "qwen3.7-plus"
+        },
+        {
+          "slug": "it-department-deploys-liquid-nitrogen-to-cool-reply-all-chain-now",
+          "provider": "qwen",
+          "model": "qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-25T10:32:00.199Z",
       "articles": [
@@ -712,29 +735,6 @@
           "slug": "mindful-block-forces-soup-critic-and-victim-into-30-day-mediation-and",
           "provider": "qwen+groq",
           "model": "qwen3.7-plus → openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-11T08:25:47.043Z",
-      "articles": [
-        {
-          "slug": "9-unquantifiable-workplace-agonies-quantified",
-          "provider": "groq+qwen",
-          "model": "openai/gpt-oss-120b → qwen3.7-plus"
-        },
-        {
-          "slug": "civicore-unveils-mandatory-sigh-filing-system-to-quantify-employee",
-          "provider": "groq",
-          "model": "openai/gpt-oss-120b"
         }
       ],
       "quiz": null,
