@@ -1,13 +1,5 @@
 [
   {
-    "id": "meridian-dynamics-is-your-desk-chair-too",
-    "brand": "MERIDIAN DYNAMICS",
-    "headline": "Is Your Desk Chair Too Supportive? Experience the New 'Compliance Lean'",
-    "body": "Our patented ergonomic instability forces your core to panic slightly, increasing productivity by 8% through pure survival instinct.",
-    "cta": "ORDER YOUR UNREST",
-    "palette": "sodium"
-  },
-  {
     "id": "nexora-are-unread-messages-aging-your-sk",
     "brand": "NEXORA",
     "headline": "Are Unread Messages Aging Your Skin? Try The NEXORA Blue-Light Deflector Turtleneck.",
@@ -318,5 +310,13 @@
     "body": "The SleepSync Pillow monitors your task list via Bluetooth and gently vibrates until every checkbox is green. Comfort meets productivity.",
     "cta": "Try the Quiet",
     "palette": "teal"
+  },
+  {
+    "id": "hydra-statics-this-smart-coaster-seals-y",
+    "brand": "HYDRA-STATICS",
+    "headline": "This Smart Coaster Seals Your Glass If You Fail To Meet Your Daily Hydration Quota",
+    "body": "The HYDRA-STATICS Coaster clamps your glass shut when your water intake drops. It instantly files a formal grievance with your doctor.",
+    "cta": "Enforce Hydration",
+    "palette": "sodium"
   }
 ]

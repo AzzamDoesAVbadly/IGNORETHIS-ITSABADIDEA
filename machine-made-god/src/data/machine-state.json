@@ -1,13 +1,14 @@
 {
   "providers": {
     "groq": {
-      "ok": 130,
-      "lastSuccess": "2026-11-25T02:16:03.565Z",
-      "fail": 16,
-      "cooldownUntil": "2026-11-22T08:52:46.431Z"
+      "ok": 131,
+      "lastSuccess": "2026-11-25T10:33:32.299Z",
+      "fail": 18,
+      "cooldownUntil": "2026-11-26T10:33:34.353Z",
+      "lastError": "out of credits"
     },
     "gemini": {
-      "fail": 160,
+      "fail": 162,
       "ok": 26,
       "lastSuccess": "2026-11-24T23:08:18.925Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
@@ -15,9 +16,9 @@
     "openrouter": {
       "ok": 4,
       "lastSuccess": "2026-10-19T13:34:54.892Z",
-      "fail": 57,
+      "fail": 58,
       "model": "google/gemma-4-31b-it:free",
-      "cooldownUntil": "2026-11-25T08:11:12.691Z",
+      "cooldownUntil": "2026-11-25T16:33:34.251Z",
       "lastError": "rate limited"
     },
     "cerebras": {
@@ -30,16 +31,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 73
+      "fail": 76
     },
     "qwen": {
-      "ok": 92,
-      "lastSuccess": "2026-11-25T02:14:15.126Z",
+      "ok": 96,
+      "lastSuccess": "2026-11-25T10:39:18.134Z",
       "fail": 9
     }
   },
   "lastQuizAt": "2026-11-24T00:54:54.801Z",
   "runs": [
+    {
+      "at": "2026-11-25T10:32:00.199Z",
+      "articles": [
+        {
+          "slug": "9-ways-to-physically-torment-the-shared-office-birthday-card-ranked",
+          "provider": "qwen+groq",
+          "model": "qwen3.7-plus → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "post-punk-trio-refuses-to-merge-out-of-hov-lane-citing-textural",
+          "provider": "qwen+qwen",
+          "model": "qwen3.7-plus → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "qwen",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-25T02:10:55.674Z",
       "articles": [
@@ -711,29 +735,6 @@
           "slug": "civicore-unveils-mandatory-sigh-filing-system-to-quantify-employee",
           "provider": "groq",
           "model": "openai/gpt-oss-120b"
-        }
-      ],
-      "quiz": null,
-      "extras": {
-        "provider": "groq",
-        "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-10T20:28:08.609Z",
-      "articles": [
-        {
-          "slug": "review-nexora-kinshiptray-turns-holiday-dinner-into-a-bureaucratic",
-          "provider": "qwen+groq",
-          "model": "qwen3.7-plus → openai/gpt-oss-120b"
-        },
-        {
-          "slug": "four-strangers-turn-airport-lounge-table-into-feudal-microstate",
-          "provider": "qwen+groq",
-          "model": "qwen3.7-plus → openai/gpt-oss-120b"
         }
       ],
       "quiz": null,
