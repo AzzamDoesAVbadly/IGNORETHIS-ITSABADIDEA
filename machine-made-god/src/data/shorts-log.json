@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-25T04:31:47.460Z",
+    "kind": "bump",
+    "ref": "bump:b1691b549f",
+    "title": "the streetlamp outside is humming a lullaby in amber #shorts",
+    "seconds": 15,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-25T04:32:53.940Z",
+    "kind": "headline",
+    "ref": "article:open-letter-to-the-post-hardcore-quartet-mistaking-my-corner-for-a",
+    "title": "Open Letter to the Post‑Hardcore Quartet Mistaking My Corner for a Drum Kit #shorts",
+    "seconds": 18,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-24T23:20:55.544Z",
     "kind": "bump",
     "ref": "bump:ccee3df028",
