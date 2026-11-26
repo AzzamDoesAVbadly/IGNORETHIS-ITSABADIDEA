@@ -1,13 +1,5 @@
 [
   {
-    "id": "omniflux-omniflux-sleeppod-promises-a-ni",
-    "brand": "OmniFlux",
-    "headline": "OmniFlux SleepPod promises a night of dreams curated by your inbox’s unread count",
-    "body": "The SleepPod scans your pending emails, extracts the anxiety, and plays it as soft white‑noise, so you wake exactly when the next deadline arrives.",
-    "cta": "Try Dream Sync",
-    "palette": "sick"
-  },
-  {
     "id": "meridian-dynamics-stop-guessing-if-your-",
     "brand": "MERIDIAN DYNAMICS",
     "headline": "Stop guessing if your coworkers like you. Use the Vibe-Sync Lapel Pin.",
@@ -318,5 +310,13 @@
     "body": "The NEXORA Bind-M8 monitors your keystrokes. If you stop typing for ten seconds, it jams a staple into your knuckle as a mandatory grounding exercise.",
     "cta": "Accept The Staple",
     "palette": "sodium"
+  },
+  {
+    "id": "voxyl-this-mug-changes-color-when-your-b",
+    "brand": "Voxyl",
+    "headline": "This Mug Changes Color When Your Boss Sends a Passive‑Aggressive Email",
+    "body": "The mug’s thermochrome surface shifts from calm teal to alarm red the instant your inbox flags a passive‑aggressive note. Sip sanity, watch the drama.",
+    "cta": "Buy the Mug",
+    "palette": "teal"
   }
 ]
