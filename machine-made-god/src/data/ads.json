@@ -1,13 +1,5 @@
 [
   {
-    "id": "halcyon-tek-this-desk-lamp-decides-when-",
-    "brand": "HALCYON-TEK",
-    "headline": "This desk lamp decides when you’re ready to stop scrolling",
-    "body": "The AmbientSync Lamp monitors your screen time and dims until you’ve taken a real break, then subtly re‑lights to remind you the world still spins.",
-    "cta": "Try the Calm",
-    "palette": "sodium"
-  },
-  {
     "id": "omniflux-omniflux-sleeppod-promises-a-ni",
     "brand": "OmniFlux",
     "headline": "OmniFlux SleepPod promises a night of dreams curated by your inbox’s unread count",
@@ -318,5 +310,13 @@
     "body": "The BreezeSync 4000 monitors your keystrokes. Pause to think, and the airflow stops immediately. Sweat through your next big quarterly brainstorm.",
     "cta": "Sweat Through It",
     "palette": "crt"
+  },
+  {
+    "id": "nexora-this-smart-stapler-refuses-to-bin",
+    "brand": "NEXORA",
+    "headline": "This Smart Stapler Refuses To Bind Documents Unless You Admit You Are Overwhelmed",
+    "body": "The NEXORA Bind-M8 monitors your keystrokes. If you stop typing for ten seconds, it jams a staple into your knuckle as a mandatory grounding exercise.",
+    "cta": "Accept The Staple",
+    "palette": "sodium"
   }
 ]
