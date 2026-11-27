@@ -1,13 +1,5 @@
 [
   {
-    "id": "meridian-dynamics-stop-guessing-if-your-",
-    "brand": "MERIDIAN DYNAMICS",
-    "headline": "Stop guessing if your coworkers like you. Use the Vibe-Sync Lapel Pin.",
-    "body": "Our patented haptic sensor vibrates every time someone within ten feet thinks about your haircut. Total social clarity.",
-    "cta": "Buy the Certainty",
-    "palette": "sodium"
-  },
-  {
     "id": "omnivex-is-your-internal-monologue-too-l",
     "brand": "OMNIVEX",
     "headline": "Is Your Internal Monologue Too Loud? Install The Quiet-Mind Dampener",
@@ -318,5 +310,13 @@
     "body": "The mug’s thermochrome surface shifts from calm teal to alarm red the instant your inbox flags a passive‑aggressive note. Sip sanity, watch the drama.",
     "cta": "Buy the Mug",
     "palette": "teal"
+  },
+  {
+    "id": "nexora-this-weighted-blanket-replicates-",
+    "brand": "NEXORA",
+    "headline": "This Weighted Blanket Replicates The Exact Weight Of Unmet Q3 Expectations",
+    "body": "Woven with micro-fibers of dread, this quilt applies fourteen pounds of pressure, perfectly mimicking the moment your manager says we need to pivot.",
+    "cta": "Submit To The Quilt",
+    "palette": "sodium"
   }
 ]

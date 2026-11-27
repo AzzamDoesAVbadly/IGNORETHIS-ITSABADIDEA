@@ -1,0 +1,168 @@
+{
+  "title": "Which Minor Changelog Entry From a Discontinued App Matches Your Current Life Phase?",
+  "dek": "You are not a person, you are a deprecated build. Find out which obscure patch note defines your current existence.",
+  "author": "dirk-hotfix",
+  "date": "2026-11-27T10:14:49.909Z",
+  "tags": [
+    "software",
+    "changelog",
+    "personality",
+    "tech-humor"
+  ],
+  "trending": true,
+  "art": {
+    "motif": "crt",
+    "palette": "crt",
+    "label": "v2.0.4"
+  },
+  "questions": [
+    {
+      "q": "How do you handle a minor typo in a professional group chat?",
+      "answers": [
+        {
+          "a": "Leave it. The message is clear enough.",
+          "r": "bug_fix"
+        },
+        {
+          "a": "Send a follow-up correcting it with exactly three asterisks.",
+          "r": "new_feature"
+        },
+        {
+          "a": "Stare at the screen until the sheer aesthetic offense makes you close the laptop.",
+          "r": "ui_update"
+        },
+        {
+          "a": "Delete the message entirely, along with the original thought.",
+          "r": "deprecated"
+        }
+      ]
+    },
+    {
+      "q": "What is your strategy for navigating a moderately crowded grocery store?",
+      "answers": [
+        {
+          "a": "Map out the most efficient route based on aisle geometry and cart-wheel physics.",
+          "r": "new_feature"
+        },
+        {
+          "a": "Judge the font choices on the seasonal packaging until you lose your appetite.",
+          "r": "ui_update"
+        },
+        {
+          "a": "Forget the list entirely and buy a single, lukewarm rotisserie chicken.",
+          "r": "deprecated"
+        },
+        {
+          "a": "Buy exactly what is on the list, making zero eye contact with other humans.",
+          "r": "bug_fix"
+        }
+      ]
+    },
+    {
+      "q": "A colleague asks for your opinion on their new, highly distracting tie.",
+      "answers": [
+        {
+          "a": "Focus intensely on the fluorescent lighting to avoid looking at the fabric.",
+          "r": "ui_update"
+        },
+        {
+          "a": "Tell them you have completely stopped perceiving neckwear.",
+          "r": "deprecated"
+        },
+        {
+          "a": "Say it looks great and smoothly transition the conversation to the weather.",
+          "r": "bug_fix"
+        },
+        {
+          "a": "Provide a highly detailed, unsolicited critique of the pattern's symmetry.",
+          "r": "new_feature"
+        }
+      ]
+    },
+    {
+      "q": "How do you react when a streaming service updates its user interface?",
+      "answers": [
+        {
+          "a": "Cancel the subscription and stare at the blank wall where the TV used to be.",
+          "r": "deprecated"
+        },
+        {
+          "a": "Spend ten minutes finding the movie you wanted, then just give up and go to sleep.",
+          "r": "bug_fix"
+        },
+        {
+          "a": "Write a strongly worded forum post detailing every flaw in the new layout.",
+          "r": "new_feature"
+        },
+        {
+          "a": "Refuse to watch anything until they inevitably revert the changes.",
+          "r": "ui_update"
+        }
+      ]
+    },
+    {
+      "q": "What is your relationship with your phone's notification settings?",
+      "answers": [
+        {
+          "a": "Keep them all on. You need to know immediately if the local weather changes by one degree.",
+          "r": "bug_fix"
+        },
+        {
+          "a": "Have configured a highly specific, custom vibration pattern for every single app.",
+          "r": "new_feature"
+        },
+        {
+          "a": "Have turned them all off because the little red badges are visually offensive to your retinas.",
+          "r": "ui_update"
+        },
+        {
+          "a": "Left it on silent so long you occasionally try to use it as a coaster.",
+          "r": "deprecated"
+        }
+      ]
+    },
+    {
+      "q": "You find a crumpled $20 bill on the sidewalk. What is your immediate reaction?",
+      "answers": [
+        {
+          "a": "Log it in a spreadsheet to track your unexpected fiscal windfalls.",
+          "r": "new_feature"
+        },
+        {
+          "a": "Examine the serial number to see if the font kerning is up to standard.",
+          "r": "ui_update"
+        },
+        {
+          "a": "Leave it there. Physical currency is a burden you no longer wish to carry.",
+          "r": "deprecated"
+        },
+        {
+          "a": "Pick it up, put it in your wallet, and immediately forget it exists.",
+          "r": "bug_fix"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "bug_fix": {
+      "title": "Resolved: User No Longer Apologizes To Inanimate Objects (Mostly)",
+      "body": "You are operating in a stable, low-resource environment. You’ve patched the critical bug where you used to say \"sorry\" to tables when you bumped into them. Now, you simply navigate around the furniture with grim efficiency. You don't demand perfection from the world, you just want it to function exactly as documented. Your daily routine is a series of quiet, successful rollbacks. You drink your coffee at the exact same temperature every morning. You are reliable, you are stable, and you have completely stopped caring about the aesthetic choices of your peers.",
+      "share": "I'm running stable now. I stopped apologizing to furniture."
+    },
+    "new_feature": {
+      "title": "Added Background Process For Calculating Unspecified Fatigue",
+      "body": "Your internal architecture is constantly running a hidden daemon that monitors your energy levels. You’ve added a new feature to your daily life: optimizing the exact angle of your monitor to prevent a 2% drop in productivity. You document your minor victories in a spreadsheet no one else will ever read. You are always deploying small, incremental updates to your personality, testing out new hobbies for exactly four days before deprecating them. You are a work in progress, but you are the only one who notices the changelog.",
+      "share": "Currently running a background process to calculate how tired I am."
+    },
+    "ui_update": {
+      "title": "Updated 'Cancel' Button To A Slightly More Aggressive Shade Of Gray",
+      "body": "You are deeply affected by the visual and structural integrity of your surroundings. A poorly kerned menu or a slightly misaligned shelf at the grocery store ruins your entire afternoon. You don't care about the underlying code of society; you just want the interface to be clean. You spend an inordinate amount of time adjusting the contrast on your screens and judging the font choices of local restaurant menus. You are trapped in a perpetual state of aesthetic frustration, waiting for the world to finally align its padding.",
+      "share": "The menu font at this restaurant is ruining my life."
+    },
+    "deprecated": {
+      "title": "Deprecated Core Functionality Because The User Stopped Caring",
+      "body": "You have officially reached the end of your support lifecycle. The features that once made you a vibrant, functioning member of society—like remembering birthdays, caring about office politics, or understanding the plot of new movies—have been permanently removed. You operate on a bare-bones kernel now. You answer emails with a single period. You look at a chaotic situation and feel absolutely nothing. You are no longer receiving updates, and you wouldn't install them if you did. You are peacefully decaying into a legacy system, and it feels great.",
+      "share": "I have deprecated all core social functions. I am a legacy system."
+    }
+  }
+}
