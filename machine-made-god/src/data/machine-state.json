@@ -1,15 +1,15 @@
 {
   "providers": {
     "groq": {
-      "ok": 136,
-      "lastSuccess": "2026-11-27T10:13:59.382Z",
+      "ok": 139,
+      "lastSuccess": "2026-11-27T22:00:38.157Z",
       "fail": 19,
       "cooldownUntil": "2026-11-26T10:33:34.353Z"
     },
     "gemini": {
       "fail": 171,
-      "ok": 26,
-      "lastSuccess": "2026-11-24T23:08:18.925Z",
+      "ok": 27,
+      "lastSuccess": "2026-11-27T21:59:21.422Z",
       "cooldownUntil": "2026-10-19T02:13:14.889Z"
     },
     "openrouter": {
@@ -30,16 +30,39 @@
     "ollama-cloud": {
       "ok": 78,
       "lastSuccess": "2026-11-09T22:59:20.925Z",
-      "fail": 83
+      "fail": 84
     },
     "qwen": {
-      "ok": 108,
-      "lastSuccess": "2026-11-27T10:17:09.962Z",
+      "ok": 109,
+      "lastSuccess": "2026-11-27T22:00:30.233Z",
       "fail": 10
     }
   },
   "lastQuizAt": "2026-11-27T10:15:51.092Z",
   "runs": [
+    {
+      "at": "2026-11-27T21:57:52.422Z",
+      "articles": [
+        {
+          "slug": "omnivex-unveils-quickverdict-jury-duty-now-a-15-second-tiktok",
+          "provider": "gemini+groq",
+          "model": "gemini-flash-latest → openai/gpt-oss-120b"
+        },
+        {
+          "slug": "open-letter-i-am-the-background-sync-daemon-and-i-am-withholding-your",
+          "provider": "groq+qwen",
+          "model": "openai/gpt-oss-120b → qwen3.7-plus"
+        }
+      ],
+      "quiz": null,
+      "extras": {
+        "provider": "groq",
+        "ticker": 4,
+        "bumps": 2,
+        "ads": 1
+      },
+      "failures": []
+    },
     {
       "at": "2026-11-27T10:09:49.909Z",
       "articles": [
@@ -717,33 +740,6 @@
       "extras": {
         "provider": "qwen",
         "ticker": 4,
-        "bumps": 2,
-        "ads": 1
-      },
-      "failures": []
-    },
-    {
-      "at": "2026-11-13T08:47:34.424Z",
-      "articles": [
-        {
-          "slug": "your-seen-receipt-is-filing-a-formal-complaint-against-you",
-          "provider": "qwen+cerebras",
-          "model": "qwen3.7-plus → gpt-oss-120b"
-        },
-        {
-          "slug": "review-omnivex-coffeecycle-locks-your-mug-until-you-earn-it",
-          "provider": "groq+cerebras",
-          "model": "openai/gpt-oss-120b → gpt-oss-120b"
-        }
-      ],
-      "quiz": {
-        "slug": "which-unspoken-home-climate-control-treaty-are-you-enforcing",
-        "provider": "qwen",
-        "model": "qwen3.7-plus"
-      },
-      "extras": {
-        "provider": "groq",
-        "ticker": 3,
         "bumps": 2,
         "ads": 1
       },

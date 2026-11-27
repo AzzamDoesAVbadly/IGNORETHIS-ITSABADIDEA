@@ -1,13 +1,5 @@
 [
   {
-    "id": "omnivex-is-your-internal-monologue-too-l",
-    "brand": "OMNIVEX",
-    "headline": "Is Your Internal Monologue Too Loud? Install The Quiet-Mind Dampener",
-    "body": "A discreet wearable that replaces your intrusive thoughts with the sound of a distant, polite vacuum cleaner.",
-    "cta": "Mute My Brain",
-    "palette": "bleach"
-  },
-  {
     "id": "meridian-dynamics-is-your-living-room-to",
     "brand": "MERIDIAN DYNAMICS",
     "headline": "Is Your Living Room Too Symmetrical? Introduce Chaos With The Tilt-Floor 5000",
@@ -318,5 +310,13 @@
     "body": "Woven with micro-fibers of dread, this quilt applies fourteen pounds of pressure, perfectly mimicking the moment your manager says we need to pivot.",
     "cta": "Submit To The Quilt",
     "palette": "sodium"
+  },
+  {
+    "id": "meridian-dynamics-this-mug-changes-color",
+    "brand": "MERIDIAN DYNAMICS",
+    "headline": "This Mug Changes Color When Your Boss Extends a Meeting—And It’s Not Happy",
+    "body": "The Chrono‑Cup watches calendar invites and flips from calm teal to angry amber the instant a meeting runs over. A silent protest for your schedule.",
+    "cta": "Get Yours Now",
+    "palette": "teal"
   }
 ]
