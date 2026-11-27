@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-27T03:45:14.325Z",
+    "kind": "bump",
+    "ref": "bump:1b3019c246",
+    "title": "you've turned off the lights. the ceiling hums a lullaby only the d… #shorts",
+    "seconds": 14,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-27T03:46:15.542Z",
+    "kind": "headline",
+    "ref": "article:the-bottom-right-captcha-square-is-a-test-of-your-tolerance-for",
+    "title": "The Bottom‑Right CAPTCHA Square Is a Test of Your Tolerance for Ambiguity, Not a Cros… #shorts",
+    "seconds": 22,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-26T22:33:48.472Z",
     "kind": "bump",
     "ref": "bump:59f04a8e8c",
