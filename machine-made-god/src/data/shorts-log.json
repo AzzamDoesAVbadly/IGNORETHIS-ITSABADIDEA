@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-27T22:16:08.619Z",
+    "kind": "bump",
+    "ref": "bump:ef61bc2b5e",
+    "title": "the clock stopped at 2:07 am #shorts",
+    "seconds": 12,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-27T22:17:12.597Z",
+    "kind": "headline",
+    "ref": "article:open-letter-i-am-the-background-sync-daemon-and-i-am-withholding-your",
+    "title": "Open Letter: I Am the Background Sync Daemon, and I Am Withholding Your Q3 Files to E… #shorts",
+    "seconds": 21,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-27T03:45:14.325Z",
     "kind": "bump",
     "ref": "bump:1b3019c246",
