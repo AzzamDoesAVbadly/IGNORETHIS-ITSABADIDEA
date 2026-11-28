@@ -1,13 +1,5 @@
 [
   {
-    "id": "meridian-dynamics-is-your-living-room-to",
-    "brand": "MERIDIAN DYNAMICS",
-    "headline": "Is Your Living Room Too Symmetrical? Introduce Chaos With The Tilt-Floor 5000",
-    "body": "Stop letting your furniture dictate your mood. Our patented hydraulic floor plates create a subtle, permanent 4-degree lean for a more dynamic home.",
-    "cta": "START TILTING",
-    "palette": "sodium"
-  },
-  {
     "id": "meridian-dynamics-is-your-handwriting-to",
     "brand": "Meridian Dynamics",
     "headline": "Is Your Handwriting Too Honest? Mask Your Intentions With The Blur-Pen.",
@@ -318,5 +310,13 @@
     "body": "The Chrono‑Cup watches calendar invites and flips from calm teal to angry amber the instant a meeting runs over. A silent protest for your schedule.",
     "cta": "Get Yours Now",
     "palette": "teal"
+  },
+  {
+    "id": "apex-home-this-smart-mailbox-shreds-your",
+    "brand": "APEX HOME",
+    "headline": "This Smart Mailbox Shreds Your Bills If You Cry Near It And It Ruined My Credit Score",
+    "body": "It uses acoustic tear detection to automatically incinerate utility statements. Now I have no record of my debt, but the mailbox keeps asking for a hug.",
+    "cta": "Incinerate My Debt",
+    "palette": "sodium"
   }
 ]
