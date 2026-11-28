@@ -1,5 +1,21 @@
 [
   {
+    "at": "2026-11-28T03:28:31.861Z",
+    "kind": "bump",
+    "ref": "bump:2f63a468e3",
+    "title": "you've been watching the night shift #shorts",
+    "seconds": 12,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
+    "at": "2026-11-28T03:29:19.370Z",
+    "kind": "headline",
+    "ref": "article:omnivex-unveils-quickverdict-jury-duty-now-a-15-second-tiktok",
+    "title": "OMNIVEX Unveils QuickVerdict™: Jury Duty Now a 15‑Second TikTok Challenge #shorts",
+    "seconds": 13,
+    "error": "YouTube auth failed: Token has been expired or revoked."
+  },
+  {
     "at": "2026-11-27T22:16:08.619Z",
     "kind": "bump",
     "ref": "bump:ef61bc2b5e",
